@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+@use 'styles/_variables' as *;
+@use 'styles/_mixins' as *;
+@use "sass:color";
+@use 'sass:math';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  font-size: 100%;
+  scroll-behavior: smooth;
+  display: inline-block;
+}
+
+body {
+  min-height: 100dvh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow: visible;
+  direction: ltr;
+  background-color: white;
+}
+
+.d-none {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+.greenTheme {
+    color: #70E61C;
+}
+
+.purpleTheme {
+    color: #9747FF;
+}
+
+
+// Breakpoints 
+@media (max-width: $breakpoint-content) {}
+@media (max-width: $breakpoint-lg) {}
+@media (max-width: $breakpoint-md) {}
+@media (max-width: $breakpoint-sm) {}
+@media (max-width: $breakpoint-xs) {}
+@media (max-width: $breakpoint-xxs) {}

@@ -1,0 +1,27 @@
+@use "sass:color";
+@use 'sass:math';
+
+$color-primary: #70E61C;
+$color-secondary: #9747FF;
+$color-text_primary: #ffffff;
+$color-text_purple: #9747FF;
+$color-text_green: #70E61C;
+
+
+// 1440px max contentwidth
+$breakpoint-content: 90rem!default;
+
+// 1200px oder schmaler 
+$breakpoint-lg: 75em!default;
+
+// 992px oder schmaler 
+$breakpoint-md: 62em!default;
+
+// 768px oder schmaler 
+$breakpoint-sm: 48em!default;
+
+// 576px oder schmaler 
+$breakpoint-xs: 36em!default;
+
+// 448px oder schmaler 
+$breakpoint-xxs: 28em!default;
