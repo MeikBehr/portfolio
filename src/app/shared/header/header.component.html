@@ -1,1 +1,28 @@
-<p>header works!</p>
+<header class="welcomeHeader">
+  <div class="name">
+    <a routerLink="/">Meik<span class="greenTheme">B</span>ehr</a>
+  </div>
+
+  <nav class="normalNav">
+    <a routerLink="/about-me">{{ 'ABOUT_ME' | translate }}</a>
+    <a routerLink="/skill-set">{{ 'SKILLS' | translate }}</a>
+    <a routerLink="/projects">{{ 'PORTFOLIO' | translate }}</a>
+    <a routerLink="/contact">{{ 'CONTACT' | translate }}</a>
+    <a (click)="switchLanguage()">{{ currentLang }}</a>
+  </nav>
+
+  <div (click)="openWrapper()" class="navIcon" id="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Mobile Menü Overlay -->
+  <nav class="navAlternative" [class.open]="isMobileMenuOpen">
+    <a (click)="navigateAndClose('/about-me')">{{ 'ABOUT_ME' | translate }}</a>
+    <a (click)="navigateAndClose('/skill-set')">{{ 'SKILLS' | translate }}</a>
+    <a (click)="navigateAndClose('/projects')">{{ 'PORTFOLIO' | translate }}</a>
+    <a (click)="navigateAndClose('/contact')">{{ 'CONTACT' | translate }}</a>
+    <a (click)="switchLanguage()">{{ currentLang }}</a>
+  </nav>
+</header>

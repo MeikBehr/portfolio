@@ -1,0 +1,99 @@
+@use 'styles/variables' as *;
+
+.welcomeHeader {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #141D2F;
+  z-index: 300;
+  box-sizing: border-box;
+  min-height: 72px;
+  .name > a {
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+  }
+  .greenTheme {
+    color: $color-primary;
+  }
+  .purpleTheme {
+    color: $color-secondary;
+  }
+  .normalNav {
+    display: flex;
+    gap: 32px;
+    font-size: 16px;
+    > a {
+      font-size: 20px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+    > a:last-child {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  .navIcon {
+    width: 32px;
+    height: 24px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+  }
+  .navAlternative {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,29,47,0.95);
+    z-index: 999;
+    > a {
+      margin: 24px 0;
+      font-size: 28px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+    &.open {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .welcomeHeader {
+    padding: 12px 24px;
+    .normalNav { display: none; }
+    .navIcon { display: flex; }
+  }
+}

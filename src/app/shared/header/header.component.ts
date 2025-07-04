@@ -1,12 +1,40 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  isMobileMenuOpen = false;
+  currentLang = 'EN';
 
+  constructor(private translate: TranslateService, private router: Router) {
+    this.currentLang = this.translate.currentLang?.toUpperCase() || 'EN';
+  }
+
+  openWrapper() {
+    this.isMobileMenuOpen = true;
+  }
+
+  closeWrapper() {
+    this.isMobileMenuOpen = false;
+  }
+
+  switchLanguage() {
+    const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
+    this.translate.use(newLang);
+    this.currentLang = newLang.toUpperCase();
+    this.closeWrapper();
+  }
+
+  navigateAndClose(route: string) {
+    this.router.navigate([route]);
+    this.closeWrapper();
+  }
 }
