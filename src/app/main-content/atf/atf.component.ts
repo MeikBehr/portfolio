@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-atf',
+  selector: 'app-welcome',
   standalone: true,
   imports: [],
   templateUrl: './atf.component.html',
