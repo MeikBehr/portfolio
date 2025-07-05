@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +13,7 @@ export class HeaderComponent {
   isMobileMenuOpen = false;
   currentLang = 'EN';
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(private translate: TranslateService) {
     this.currentLang = this.translate.currentLang?.toUpperCase() || 'EN';
   }
 
@@ -33,8 +32,12 @@ export class HeaderComponent {
     this.closeWrapper();
   }
 
-  navigateAndClose(route: string) {
-    this.router.navigate([route]);
+  scrollTo(targetId: string, event: Event) {
+    event.preventDefault();
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
     this.closeWrapper();
   }
 }

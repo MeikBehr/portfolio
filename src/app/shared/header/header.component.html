@@ -1,12 +1,12 @@
 <header class="welcomeHeader">
   <div class="name">
-    <a routerLink="/">Meik<span class="greenTheme">B</span>ehr</a>
+    <a href="#welcome">Meik<span class="greenTheme">B</span>ehr</a>
   </div>
 
   <nav class="normalNav">
-    <a (click)="navigateAndClose('/about-me')">{{ 'ABOUT_ME' | translate }}</a>
-    <a (click)="navigateAndClose('/skill-set')">{{ 'SKILLS' | translate }}</a>
-    <a (click)="navigateAndClose('/projects')">{{ 'PORTFOLIO' | translate }}</a>
+    <a href="#aboutMe" (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a>
+    <a href="#mySkills" (click)="scrollTo('mySkills', $event)">{{ 'SKILLS' | translate }}</a>
+    <a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a>
     <a (click)="switchLanguage()">{{ currentLang }}</a>
   </nav>
 
@@ -18,9 +18,9 @@
 
   <!-- Mobile Menü Overlay -->
   <nav class="navAlternative" [class.open]="isMobileMenuOpen">
-    <a (click)="navigateAndClose('/about-me')">{{ 'ABOUT_ME' | translate }}</a>
-    <a (click)="navigateAndClose('/skill-set')">{{ 'SKILLS' | translate }}</a>
-    <a (click)="navigateAndClose('/projects')">{{ 'PORTFOLIO' | translate }}</a>
+    <a href="#aboutMe" (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a>
+    <a href="#mySkills" (click)="scrollTo('mySkills', $event)">{{ 'SKILLS' | translate }}</a>
+    <a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a>
     <a (click)="switchLanguage()">{{ currentLang }}</a>
   </nav>
 </header>
