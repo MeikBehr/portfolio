@@ -1,0 +1,97 @@
+@use '../../../styles/_variables' as *;
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    border-top: 6px solid $color-primary;
+    height: 290px;
+    background-color: #141D2F;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    z-index: 1001;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+
+}
+
+.purpleTheme {
+    color: $color-secondary;
+}
+
+.greenTheme {
+    color: $color-primary;
+}
+
+.cRight {
+    font-size: 23px;
+}
+
+.footerIconContainer {
+    display: flex;
+    gap: 32px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+img {
+    cursor: pointer;
+}
+
+
+.contentFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+}
+
+@media(min-width:1921px) {
+    .footer {
+        width: 100vw;
+    }
+
+}
+
+@media (max-width:778px) {
+    .footer {
+
+        >.contentFooter {
+            >.footerStart {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .contentFooter {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width:480px) {
+    .footer {
+        >.contentFooter{
+        >.cRight {
+            font-size: 16px;
+        }
+    }
+    }
+}

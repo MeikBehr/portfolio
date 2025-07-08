@@ -1,7 +1,18 @@
-<footer>
-  <div>
-    <a (click)="navigate('/imprint')">{{ 'IMPRINT' | translate }}</a>
-    <span> | </span>
-    <a (click)="navigate('/privacy-policy')">{{ 'PRIVACY-POLICY' | translate }}</a>
+<footer class="footer">
+  <div class="contentFooter">
+    <div class="footerStart">
+      <h1>Meik<span class="greenTheme">B</span>ehr</h1>
+      <a (click)="navigate('/imprint')">{{ 'IMPRINT' | translate }}</a>
+      <span> | </span>
+      <a (click)="navigate('/privacy-policy')">{{ 'PRIVACY-POLICY' | translate }}</a>
+    </div>
+    <span class="cRight">
+      © Meik Behr {{ currentYear }}
+    </span>
+    <div class="footerIconContainer">
+      <a href="https://github.com/MeikBehr" target="_blank" aria-label="GitHub"><img src="assets/img/github.png" alt="GitHub"></a>
+      <a href="#contact" (click)="scrollTo('contact', $event)" aria-label="E-Mail"><img src="assets/img/mail.png" alt="Mail"></a>
+      <a href="https://www.linkedin.com/in/meikbehr/" target="_blank" aria-label="LinkedIn"><img src="assets/img/linkedIn.png" alt="LinkedIn"></a>
+    </div>
   </div>
 </footer>
