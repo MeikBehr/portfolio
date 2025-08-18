@@ -25,12 +25,22 @@ export class HeaderComponent {
     this.isMobileMenuOpen = false;
   }
 
+  // switchLanguage() {
+  //   const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
+  //   this.translate.use(newLang);
+  //   this.currentLang = newLang.toUpperCase();
+  //   this.closeWrapper();
+  // }
+
   switchLanguage() {
-    const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
-    this.translate.use(newLang);
-    this.currentLang = newLang.toUpperCase();
+    // Prüfen, welche Sprache aktiv ist, Default ist DE
+    const next = this.translate.currentLang === 'de' ? 'en' : 'de';
+    this.translate.use(next);
+    localStorage.setItem('lang', next);
+    this.currentLang = next.toUpperCase();
     this.closeWrapper();
   }
+
 
   scrollTo(targetId: string, event: Event) {
     event.preventDefault();
