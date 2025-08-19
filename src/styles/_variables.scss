@@ -8,6 +8,65 @@ $color-text_purple: #9747FF;
 $color-text_green: #70E61C;
 
 
+
+
+/* === DESIGN TOKENS (Figma) =================================== */
+/* Farben */
+$color-primary:        #70E61C;
+$color-secondary:      #9747FF;
+$color-bg:             #141D2F; // TODO
+$color-surface:        #141417; // TODO
+$color-text:           #EAEAEA; // TODO
+$color-muted:          #A0A0A0; // TODO
+$color-border:         #2A2A2E; // TODO
+$color-accent:         #00D1FF; // optional / TODO
+
+/* Typo */
+$font-family:          'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+$h1-size:              48px;   // TODO
+$h2-size:              32px;   // TODO
+$h3-size:              24px;   // TODO
+$body-size:            16px;   // TODO
+$line-height:          1.5;
+
+/* Spacing Scale */
+$sp-1: 4px;
+$sp-2: 8px;
+$sp-3: 12px;
+$sp-4: 16px;
+$sp-5: 24px;
+$sp-6: 32px;
+$sp-7: 48px;
+
+/* Radii & Shadow */
+$radius-sm:            8px;
+$radius-md:            16px;
+$radius-lg:            24px;
+$shadow-sm:            0 2px 10px rgba(0,0,0,.25);
+$shadow-md:            0 8px 24px rgba(0,0,0,.35);
+
+/* Container */
+$container-max:        1200px; // TODO: Figma width
+$container-pad:        24px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 1440px max contentwidth
 $breakpoint-content: 90rem!default;
 
