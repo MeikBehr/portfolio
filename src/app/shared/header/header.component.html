@@ -4,7 +4,7 @@
     
     <a routerLink="/" class="logoWrap" aria-label="Meik Behr – Logo">
   
-      <svg class="logo" viewBox="0 0 360 110" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
+    <svg class="logo" viewBox="0 0 360 110" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
       <title id="logoTitle">Meik</title>
 
     <!-- Wortmarke -->
@@ -24,7 +24,7 @@
       <path d="M17 19.3466C17 19.6565 17 19.9665 16.6913 19.9665C16.6913 20.2764 16.3827 20.2764 16.074 20.2764H10.5185C10.2099 20.2764 9.90121 20.2764 9.59257 19.9665C9.59257 19.9665 9.59256 19.9665 9.28392 19.9665C8.97528 19.9665 8.97529 19.6565 8.97529 19.6565L4.65429 14.6972L0.950598 10.6677C0.641956 10.3578 0.641956 9.73784 0.950598 9.11792L8.04936 1.36894C8.04936 1.36894 8.35801 1.05898 8.66665 1.05898C8.97529 1.05898 9.28393 0.749023 9.59257 0.749023H15.1481C15.4568 0.749023 15.4568 0.749023 15.7654 1.05898C16.0741 1.36894 16.074 1.36894 16.074 1.6789V1.98886L15.7654 2.29882L9.28392 9.73784L17 18.4167C16.6913 18.7267 16.6913 18.7267 17 19.3466C17 19.0366 17 19.0366 17 19.3466Z" fill="#70E61C"/>
     </g>
 
-  </svg>
+    </svg>
 
 </a>
 
@@ -42,20 +42,51 @@
 
   </nav>
 
-  <button 
-    class="navIcon" 
-    (click)="toggleMobileMenu()"
-    [attr.aria-expanded]="isMobileMenuOpen" 
-    aria-controls="mobileNav" 
-    aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-  
-  <!-- Mobile Menü Overlay -->
-  <nav id="mobileNav" class="navAlternative" [class.open]="isMobileMenuOpen">
-    <a href="#aboutMe" (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a>
-    <a href="#mySkills" (click)="scrollTo('mySkills', $event)">{{ 'SKILLS' | translate }}</a>
-    <a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a>
-    <a (click)="switchLanguage()">{{ currentLang }}</a>
+<!-- Header-Right -->
+<!-- <button
+  class="navIcon"
+  (click)="toggleMobileMenu()"
+  [attr.aria-expanded]="isMobileMenuOpen"
+  [class.open]="isMobileMenuOpen"
+  aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button> -->
+
+
+
+<main  class="burger_animated-main" [class.shifted]="isMobileMenuOpen">
+  <section>
+    <div 
+      class="burger_animated-container " 
+      [class.cross]="isMobileMenuOpen" 
+      (click)="toggleMobileMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+<!-- Vollbild-Overlay (klick auf dunklen Bereich schließt) -->
+<div class="mobileMenu" [class.open]="isMobileMenuOpen" (click)="toggleMenu()">
+  <nav class="pane" (click)="$event.stopPropagation()" aria-modal="true" role="dialog">
+    <ul class="menuList">
+      <li><a href="#aboutMe"   (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME'  | translate }}</a></li>
+      <li><a href="#mySkills"  (click)="scrollTo('mySkills', $event)">{{ 'SKILLS'    | translate }}</a></li>
+      <li><a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO'| translate }}</a></li>
+      <li><a href="#contact"   (click)="scrollTo('contact', $event)">{{ 'CONTACT'   | translate }}</a></li>
+      <li class="langRow">
+        <button type="button" (click)="switchLanguage()">{{ currentLang }} / {{ currentLang === 'DE' ? 'EN' : 'DE' }}</button>
+      </li>
+    </ul>
   </nav>
+</div>
+
+
 </header>

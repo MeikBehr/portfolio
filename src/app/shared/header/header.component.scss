@@ -2,18 +2,17 @@
 
 /* Header-Container */
 .welcomeHeader {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1200;
   background: $color-bg;
   color: $color-text;
   padding: $sp-5 $sp-7;
   box-shadow: $shadow-sm;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 109px;
 }
 
 /* Name/Logo links */
@@ -27,8 +26,17 @@
 .greenTheme { color: $color-primary; }
 .purpleTheme { color: $color-secondary; }
 
-.logoWrap { display: inline-block; line-height: 0; }
-.logo     { height: 40px; width: auto; display: block; pointer-events: none; }
+.logoWrap { 
+  display: inline-block; 
+  line-height: 0; 
+}
+
+.logo { 
+  height: 40px; 
+  width: auto; 
+  display: block; 
+  pointer-events: none;
+}
 
 
 
@@ -97,17 +105,309 @@
 
 
 
+///////////////////////////////////
+
+
+#mobileNav.navAlternative {
+  display: none; // standardmäßig unsichtbar
+}
+
+#mobileNav.navAlternative.open {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color-bg-mobile;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1000;
+
+  a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+}
+
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;                  // top:0; right:0; bottom:0; left:0;
+  background: rgba(20, 29, 47, 0.9);
+  display: none;             // per Default unsichtbar
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;              // ganz oben
+}
+
+.menu-overlay.open {
+  display: flex;
+}
+
+.menu-overlay ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-overlay li {
+  margin: 1rem 0;
+}
+
+.menu-overlay a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+
+////////////////////////////////   Burgeranimation
+
+
+/* Verknüpfung Overlay-Status -> Drawer-Animation */
+.mobileMenu.open { transform: translateX(0); }
+
+/* === Links und Language-Row === */
+.langRow button {
+  display: block;
+  text-decoration: none;
+  font-size: clamp(18px, 4.6vw, 22px);
+  line-height: 1.3;
+  padding: 10px 8px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+.langRow { margin-top: 10px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 12px; }
+
+
+////////////////
+
+
+:host{
+  /* gleiche Abstände für Burger UND X */
+  --header-pad: clamp(12px, 4vw, 32px);
+  --nav-top: calc(28px + env(safe-area-inset-top));
+}
+
+/* ===== Burger-Button: fix oben rechts; animiert zu X ===== */
+.navIcon{
+  --line-h: 2px;
+  --line-w: 26px;
+  --gap: 8px;
+  position: fixed;
+  top: var(--nav-top);
+  right: var(--header-pad);
+  left: auto;
+  z-index: 1200;
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; background: transparent; cursor: pointer;
+
+  span{
+    display:block; width:var(--line-w); height:var(--line-h);
+    background: #fff; border-radius:2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  span + span{ margin-top: var(--gap); }
+
+  &.open span:nth-child(1){
+    transform: translateY(calc(var(--gap) + var(--line-h))) rotate(45deg);
+  }
+  &.open span:nth-child(2){ opacity:0; }
+  &.open span:nth-child(3){
+    transform: translateY(calc(-1 * (var(--gap) + var(--line-h)))) rotate(-45deg);
+  }
+}
+
+/* ===== Vollbild-Overlay + Pane, das von rechts reinfährt ===== */
+.mobileMenu{
+  position: fixed; 
+  inset: 0;
+  background: $color-bg-mobile;
+  opacity: 0; 
+  pointer-events: none;
+  transition: opacity .22s ease;
+  z-index: 1100;
+
+  &.open{ opacity:1; pointer-events:auto; }
+}
+
+/* Seiten-Pane (rechts), das den Inhalt trägt */
+.pane{
+  position: absolute; top:0; right:0;
+  width: 100%; height: 100%;
+  /* Start: komplett rechts draußen, kommt dann rein */
+  transform: translateX(100%);
+  transition: transform .28s ease;
+  background: $color-bg-mobile; /* dunkler als Overlay; ggf. anpassen */
+
+  /* Inhalt mittig (horizontal + vertikal) */
+  display: grid; place-items: center;
+}
+.mobileMenu.open .pane{ transform: translateX(0); }
+
+/* Menü in der Mitte */
+.menuList{
+  list-style: none; margin:0; padding:0;
+  display:flex; flex-direction:column; align-items:center; gap: 18px;
+  text-align:center;
+}
+.menuList a, .menuList .langRow button{
+  text-decoration:none; border:0; background:transparent; cursor:pointer;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height:1.3; color:#fff; padding: 8px 10px;
+}
+.langRow{ margin-top: 6px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.15); }
+
+/* ===== Sichtbarkeiten: Mobile/Tablet = Default ===== */
+.normalNav{ display: none; }   /* Desktop-Nav standardmäßig aus */
+
+
+
+/* ******************* T E S T **************************************   */
 
 
 
 
 
 
+.burger_animated-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 16px;
+    top: 32px;
+    z-index: 1300;
+}
 
+
+.burger_animated-container {
+    cursor: pointer;
+}
+
+
+.burger_animated-container div {
+    background-color: $color-text_primary;
+    width: 32px;
+    height: 3.2px;
+    margin: 6.4px;
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+
+.burger_animated-container.cross div:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+
+.burger_animated-container.cross div:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+.burger_animated-container.cross div:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -6px);
+}
+
+
+/* ********************************************************** */
+
+
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+.mobileMenu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlayNav {
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: #10131a;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobileMenu.open .overlayNav {
+  transform: translateX(0);
+}
+
+
+
+
+
+
+/* *********************************************************   */
+
+
+
+
+/* Desktop: Drawer/Overlay/Burger ausblenden, normale Nav nutzen */
+@media (min-width: $breakpoint-sm) {
+  .navIcon { display: none; }
+  .mobileMenu { display: none;}
+}
+
+
+/* Desktop erst ab 769px */
+@media (min-width: calc($breakpoint-sm + 1px)){
+  .navIcon, 
+  .mobileMenu,
+  .burger_animated-main{ 
+    display:none !important; 
+  }
+  .normalNav{ 
+    display:flex; 
+  }
+}
 
 
 /* Breakpoint: Mobile zeigt Burger + Overlay; Desktop zeigt normale Nav */
 @media (max-width: $breakpoint-sm) {
-  .normalNav { display: none; }
-  .navIcon { display: block; }
+  .normalNav { 
+    display: none; 
+  }
+  .navIcon { 
+    display: block; 
+  }
+  .mobileMenu { 
+    display: flex;
+  }
+
+
+}
+
+
+.burger_animated-main {
+  margin-right: 0;
+  transition: margin-right 0.25s ease; /* sanfter Übergang */
+}
+
+.burger_animated-main.shifted {
+  margin-right: 16px;
 }
