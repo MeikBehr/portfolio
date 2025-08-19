@@ -70,6 +70,13 @@ export class HeaderComponent implements OnDestroy {
     this.closeWrapper();
   }
 
+  switchLanguageTo(lang: 'de'|'en'){ 
+    if ((this.currentLang || '').toLowerCase() === lang) return;
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+    this.currentLang = lang.toUpperCase();
+  }
+
   scrollTo(targetId: string, event: Event): void {
     event.preventDefault();
     const el = this.doc.getElementById(targetId);

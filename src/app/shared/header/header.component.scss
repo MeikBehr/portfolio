@@ -15,6 +15,10 @@
   height: 109px;
 }
 
+.name {
+  z-index: 1201;
+}
+
 /* Name/Logo links */
 .welcomeHeader .name a {
   color: $color-text;
@@ -177,8 +181,8 @@
   text-decoration: none;
   font-size: clamp(18px, 4.6vw, 22px);
   line-height: 1.3;
-  padding: 10px 8px;
-  color: #fff;
+  // padding: 10px 8px;
+  // color: $color-primary;
   background: transparent;
   border: none;
   text-align: left;
@@ -259,23 +263,35 @@
   display:flex; flex-direction:column; align-items:center; gap: 18px;
   text-align:center;
 }
-.menuList a, .menuList .langRow button{
-  text-decoration:none; border:0; background:transparent; cursor:pointer;
+// .menuList a, .menuList .langRow button{
+.menuList a {
+  text-decoration:none; 
+  border:0; 
+  background:transparent; 
+  cursor:pointer;
   font-size: clamp(20px, 5vw, 28px);
-  line-height:1.3; color:#fff; padding: 8px 10px;
+  line-height:1.3; 
+  color: $color-text_primary;
+  padding: 8px 10px;
 }
-.langRow{ margin-top: 6px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.15); }
+
+.button {
+    color:$color-primary;
+    cursor: pointer;
+}
+
+.langBtn {
+  cursor: pointer;
+}
+
+.langRow{ 
+  margin-top: 6px; 
+  padding-top: 10px; 
+  border-top: 1px solid rgba(255,255,255,.15); 
+}
 
 /* ===== Sichtbarkeiten: Mobile/Tablet = Default ===== */
 .normalNav{ display: none; }   /* Desktop-Nav standardmäßig aus */
-
-
-
-/* ******************* T E S T **************************************   */
-
-
-
-
 
 
 .burger_animated-main {
@@ -320,10 +336,6 @@
 }
 
 
-/* ********************************************************** */
-
-
-
 .mobileMenu {
   position: fixed;
   inset: 0;
@@ -359,13 +371,54 @@
 
 
 
+/* Overlay-Logo sitzt exakt wie das Header-Logo */
+.overlayBrand{
+  position: absolute;
+  top: calc(var(--nav-top) + 0px);
+  left: calc(var(--header-pad) + 0px);
+  z-index: 2; /* über Pane-Inhalt */
+}
+
+/* Header-Logo ausblenden nur auf Mobile, Desktop bleibt normal */
+@media (max-width: 789px){
+  .hiddenMobile{ visibility: hidden; }
+}
 
 
+
+
+
+
+/* ********************************************************** */
+/* ******************* T E S T **************************************   */
+
+
+
+.langToggle{ 
+  display:flex; 
+  gap: 12px; 
+}
+
+.langBtn{
+  min-width: 54px; 
+  padding: 6px 12px; 
+  border-radius: 12px;
+  font-weight: 600; 
+  border: 1.5px solid $color-primary;
+  color: $color-text_primary; /* inaktiv = weiß auf dunkel */
+}
+
+.langBtn.is-active{
+  color: $color-primary;                          // Text dunkel (guter Kontrast auf grün)
+  border-color: $color-primary; 
+}
+
+.langBtn_separator {
+  color: $color-text_primary;
+}
 
 /* *********************************************************   */
-
-
-
+/* ********************************************************** */
 
 /* Desktop: Drawer/Overlay/Burger ausblenden, normale Nav nutzen */
 @media (min-width: $breakpoint-sm) {
