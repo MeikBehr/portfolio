@@ -17,23 +17,19 @@ export class HeaderComponent {
     this.currentLang = this.translate.currentLang?.toUpperCase() || 'EN';
   }
 
-  openWrapper() {
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  openWrapper(): void {
     this.isMobileMenuOpen = true;
   }
 
-  closeWrapper() {
+  closeWrapper(): void {
     this.isMobileMenuOpen = false;
   }
 
-  // switchLanguage() {
-  //   const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
-  //   this.translate.use(newLang);
-  //   this.currentLang = newLang.toUpperCase();
-  //   this.closeWrapper();
-  // }
-
-  switchLanguage() {
-    // Prüfen, welche Sprache aktiv ist, Default ist DE
+  switchLanguage(): void {
     const next = this.translate.currentLang === 'de' ? 'en' : 'de';
     this.translate.use(next);
     localStorage.setItem('lang', next);
@@ -42,7 +38,7 @@ export class HeaderComponent {
   }
 
 
-  scrollTo(targetId: string, event: Event) {
+  scrollTo(targetId: string, event: Event): void {
     event.preventDefault();
     const el = document.getElementById(targetId);
     if (el) {

@@ -27,9 +27,14 @@
 .greenTheme { color: $color-primary; }
 .purpleTheme { color: $color-secondary; }
 
+.logoWrap { display: inline-block; line-height: 0; }
+.logo     { height: 40px; width: auto; display: block; pointer-events: none; }
+
+
+
 /* Desktop-Navigation */
 .normalNav a {
-  color: $color-muted;
+  color: $color-text_primary;
   text-decoration: none;
   margin-left: $sp-5;
 }
@@ -38,25 +43,71 @@
   color: $color-primary;
 }
 
-/* Burger-Icon (mobil) */
-.navIcon { display: none; cursor: pointer; }
 
-/* Mobile-Overlay-Navigation */
-.navAlternative {
+.navIcon {
+  background: none;
+  border: none;    
+  padding: 0;      
+  cursor: pointer; 
   display: none;
   flex-direction: column;
-  gap: $sp-4;
-  background: $color-surface;
-  padding: $sp-5;
+  justify-content: center;
+  align-items: center;
 }
-.navAlternative a {
-  color: $color-text;
-  text-decoration: none;
+
+.navIcon span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background: $color-text;   // oder deine Variable
+  border-radius: 2px;
 }
-.navAlternative.open { display: flex; }
+
+.navAlternative {
+  position: absolute;
+  top: 75%;     // direkt unter dem Button
+  right: 0;      // am rechten Rand des Buttons
+  background: $color-bg-mobile; 
+  padding: 1rem;
+  border-radius: 0.25rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 160px;
+  z-index: 1000;
+
+  &.open {
+    display: flex;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.navIcon {
+  position: relative;   // macht den Button zum Bezugspunkt
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Breakpoint: Mobile zeigt Burger + Overlay; Desktop zeigt normale Nav */
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-sm) {
   .normalNav { display: none; }
   .navIcon { display: block; }
 }
