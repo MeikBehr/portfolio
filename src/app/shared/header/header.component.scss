@@ -42,6 +42,22 @@
   pointer-events: none;
 }
 
+.normalNav {
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+
+   @media (max-width: $breakpoint-md) {
+    font-size: 20px;
+  }
+    
+}
 
 
 /* Desktop-Navigation */
@@ -108,10 +124,6 @@
 }
 
 
-
-///////////////////////////////////
-
-
 #mobileNav.navAlternative {
   display: none; // standardmäßig unsichtbar
 }
@@ -169,9 +181,6 @@
 }
 
 
-////////////////////////////////   Burgeranimation
-
-
 /* Verknüpfung Overlay-Status -> Drawer-Animation */
 .mobileMenu.open { transform: translateX(0); }
 
@@ -189,9 +198,6 @@
 }
 
 .langRow { margin-top: 10px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 12px; }
-
-
-////////////////
 
 
 :host{
@@ -291,7 +297,9 @@
 }
 
 /* ===== Sichtbarkeiten: Mobile/Tablet = Default ===== */
-.normalNav{ display: none; }   /* Desktop-Nav standardmäßig aus */
+// .normalNav{ 
+//   display: none; 
+// }   /* Desktop-Nav standardmäßig aus */
 
 
 .burger_animated-main {
@@ -385,15 +393,6 @@
 }
 
 
-
-
-
-
-/* ********************************************************** */
-/* ******************* T E S T **************************************   */
-
-
-
 .langToggle{ 
   display:flex; 
   gap: 12px; 
@@ -416,6 +415,65 @@
 .langBtn_separator {
   color: $color-text_primary;
 }
+
+
+
+
+
+
+/* ********************************************************** */
+/* ******************* T E S T **************************************   */
+
+
+
+/* Desktop-Sprachumschalter (sichtbar > 768px) */
+.desktopLang { 
+  display: none; 
+  gap: 5px; 
+  margin-left: 92px; 
+}
+
+@media (min-width: 769px) {
+  .desktopLang { display: flex; align-items: center; }
+}
+
+/* Pill-Basis nach Figma: 40x32, Radius 10, Padding 5/8, Border 1 */
+.langBtn--desktop {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 32px;
+  padding: 5px 8px;
+  border-radius: 10px;
+  border: 1px solid $color-primary;
+  background: transparent;                 /* inaktiv */
+  color: $color-text_primary;              /* inaktiv: weiß */
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* aktiv: filled green + dunkler Text (Kontrast wie Figma) */
+.langBtn--desktop.is-active {
+  background: $color-primary;
+  color: $color-text_primary;
+  border-color: $color-primary;
+  font-weight: bold;
+}
+
+
+.burger_animated-main {
+  margin-right: 0;
+  transition: margin-right 0.25s ease; /* sanfter Übergang */
+}
+
+.burger_animated-main.shifted {
+  margin-right: 16px;
+}
+
+
 
 /* *********************************************************   */
 /* ********************************************************** */
@@ -452,15 +510,40 @@
     display: flex;
   }
 
-
 }
 
 
-.burger_animated-main {
-  margin-right: 0;
-  transition: margin-right 0.25s ease; /* sanfter Übergang */
+@media (max-width: $breakpoint-md) {
+    .normalNav {
+      font-size: 24px;
+    }
+
+    .langBtn--desktop {
+      min-width: 32px;
+      height: 26px;
+      padding: 4px 6px;
+      border-radius: 8px;
+    }
+
+    .desktopLang { 
+      margin-left: 76px; 
+    }
 }
 
-.burger_animated-main.shifted {
-  margin-right: 16px;
+@media (max-width: 880px) {
+    .normalNav {
+      font-size: 20px;
+    }
+
+    .langBtn--desktop {
+      min-width: 28px;
+      height: 24px;
+      padding: 3px 5px;
+      border-radius: 6px;
+    }
+
+    .desktopLang { 
+      margin-left: 60px; 
+    }
+
 }

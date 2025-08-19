@@ -33,14 +33,26 @@
 
   </div>
 
-  <nav class="normalNav">
-    <a href="#aboutMe" (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a>
-    <a href="#mySkills" (click)="scrollTo('mySkills', $event)">{{ 'SKILLS' | translate }}</a>
-    <a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a>
-    <!--  vorher: <a (click)="switchLanguage()">{{ currentLang }}</a>  -->
-    <button type="button" (click)="switchLanguage()" aria-label="Switch language">{{ currentLang }}</button>
+<nav class="normalNav">
+  <a href="#aboutMe" (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a>
+  <a href="#mySkills" (click)="scrollTo('mySkills', $event)">{{ 'SKILLS' | translate }}</a>
+  <a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a>
 
-  </nav>
+  <!-- Desktop language pills (Figma) -->
+  <div class="desktopLang">
+    <button type="button"
+            class="langBtn langBtn--desktop"
+            [class.is-active]="currentLang === 'DE'"
+            (click)="switchLanguageTo('de')">DE</button>
+    <button type="button"
+            class="langBtn langBtn--desktop"
+            [class.is-active]="currentLang === 'EN'"
+            (click)="switchLanguageTo('en')">EN</button>
+  </div>
+</nav>
+
+
+
 
 
 <main  class="burger_animated-main" [class.shifted]="isMobileMenuOpen">
