@@ -115,12 +115,12 @@ a:hover {
 @media (max-width: $breakpoint-xxs) {}
 
 footer {
-  border: 2px solid red;
+  border: 1px solid $color-muted;
 }
 
 .test {
     margin-top: 100px;
     min-height: 200px;
-    background-color: aqua;
-    border: 5px solid red;
+    background-color: $color-bg;
+    border: 1px solid $color-muted;
 }
