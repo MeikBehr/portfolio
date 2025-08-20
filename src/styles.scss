@@ -73,7 +73,6 @@ body {
   box-sizing: border-box;
   width: 100%;
   max-width: $container-max;
-  padding-inline: $container-pad;
   margin-inline: auto;
 }
 
@@ -117,5 +116,6 @@ a:hover {
     margin-top: 50px;
     min-height: 100px;
     background-color: $color-bg;
-    border: 1px solid $color-muted;
+    text-align: center;
+    // border: 1px solid $color-muted;
 }
