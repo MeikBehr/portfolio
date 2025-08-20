@@ -1,6 +1,7 @@
 import { Component, Inject, HostListener, OnDestroy } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
+import { ViewportScroller } from '@angular/common'; 
 
 type NavId = 'aboutMe' | 'mySkills' | 'portfolio';
 
@@ -14,10 +15,11 @@ type NavId = 'aboutMe' | 'mySkills' | 'portfolio';
 export class HeaderComponent implements OnDestroy {
   isMobileMenuOpen = false;
   currentLang = 'EN';
-  activeLink: NavId | null = 'aboutMe';
+  activeLink: NavId | null = null;
 
   constructor(
     private translate: TranslateService,
+    private viewport: ViewportScroller,
     @Inject(DOCUMENT) private doc: Document
   ) {
     this.currentLang = this.translate.currentLang?.toUpperCase() || 'EN';
@@ -29,23 +31,6 @@ export class HeaderComponent implements OnDestroy {
   }
 
 
-  // toggleMobileMenu(): void {
-  //   this.isMobileMenuOpen = !this.isMobileMenuOpen;
-
-  //   if (this.isMobileMenuOpen) {
-  //     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-  //     document.body.style.overflow = 'hidden';
-
-  //     // Nur wenn > 0 (also Scrollbar existiert → Desktop)
-  //     if (scrollBarWidth > 0) {
-  //       document.body.style.paddingRight = `${scrollBarWidth}px`;
-  //     }
-  //   } else {
-  //     document.body.style.overflow = '';
-  //     document.body.style.paddingRight = '';
-  //   }
-  // }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -142,6 +127,16 @@ export class HeaderComponent implements OnDestroy {
     document.body.style.paddingRight = '';
   }
 
+
+  scrollToTop(event: Event): void {
+    event.preventDefault();
+    this.isMobileMenuOpen = false;
+    (this as any).unlockScroll?.(); 
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    this.activeLink = null as any;
+    setTimeout(() => this.viewport.scrollToPosition([0, 0]), 0);
+  }
 
 
 }
