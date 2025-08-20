@@ -70,9 +70,16 @@ body {
 }
 
 .container {
+  box-sizing: border-box;
+  width: 100%;
   max-width: $container-max;
   padding-inline: $container-pad;
   margin-inline: auto;
+}
+
+.container--full {
+  max-width: none;
+  padding-inline: 0;
 }
 
 .d-none {
@@ -105,18 +112,6 @@ a:hover {
     color: $color-secondary;
 }
 
-
-// Breakpoints 
-@media (max-width: $breakpoint-content) {}
-@media (max-width: $breakpoint-lg) {}
-@media (max-width: $breakpoint-md) {}
-@media (max-width: $breakpoint-sm) {}
-@media (max-width: $breakpoint-xs) {}
-@media (max-width: $breakpoint-xxs) {}
-
-footer {
-  border: 1px solid $color-muted;
-}
 
 .test {
     margin-top: 50px;

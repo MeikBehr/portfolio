@@ -15,6 +15,12 @@
   height: 109px;
 }
 
+.header__layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .name {
   z-index: 1201;
 }
@@ -427,12 +433,6 @@
   margin-left: 92px; 
 }
 
-@media (min-width: 769px) {
-  .desktopLang { 
-    display: flex; 
-    align-items: center; }
-}
-
 .langBtn--desktop {
   all: unset;
   display: inline-flex;
@@ -472,7 +472,15 @@
 /* *********************************************************   */
 /* ********************************************************** */
 
-@media (max-width: 789px){
+
+@media (min-width: 769px) {
+  .desktopLang { 
+    display: flex; 
+    align-items: center; }
+}
+
+
+@media (max-width: calc($breakpoint-sm + 1px)){
   .hiddenMobile{ visibility: hidden; }
 }
 
@@ -483,8 +491,17 @@
 }
 
 
+@media (min-width: 769px) {
+  .langBtn--desktop:not(.is-active):hover {
+    background: $color-secondary;
+    border-color: $color-secondary;
+    color: $color-text_primary;
+  }
+}
+
 /* Desktop erst ab 769px */
 @media (min-width: calc($breakpoint-sm + 1px)){
+
   .navIcon, 
   .mobileMenu,
   .burger_animated-main{ 
@@ -528,9 +545,23 @@
     }
 }
 
+
+.normalNav {
+  @media (max-width: $breakpoint-lg) {
+    font-size: 22px;
+  }
+}
+
+.normalNav {
+  @media (max-width: $breakpoint-md) {
+    font-size: 20px;
+  }
+}
+
+
 @media (max-width: 880px) {
     .normalNav {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .langBtn--desktop {
@@ -544,12 +575,8 @@
       margin-left: 60px; 
     }
 
-}
+    .container {
+      padding-inline: 0;
+    }
 
-@media (min-width: 769px) {
-  .langBtn--desktop:not(.is-active):hover {
-    background: $color-secondary;
-    border-color: $color-secondary;
-    color: $color-text_primary;
-  }
 }

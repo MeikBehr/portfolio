@@ -122,16 +122,6 @@
 }
 
 
-
-
-@media(min-width: $breakpoint-lg) {
-    .footer {
-        width: 100vw;
-    }
-
-}
-
-
 /* desktop */
 @media (min-width: calc($breakpoint-sm + 1px)){
   .contentFooter{
@@ -167,6 +157,10 @@
 
 /* mobile */
 @media (max-width: $breakpoint-sm) {
+
+    .footer {
+      height: 380px;
+    }
 
     .footerStart{ 
         justify-self: center; 
