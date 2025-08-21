@@ -1,10 +1,11 @@
 @use '../../../styles/_variables' as *;
 
 
+$breakpoint880 : 880px;
+
 section.atf { 
   position: relative;
   background-color: $color-bg;
-  // padding-top: calc($header-high + 24px);
 }
 
 .atf {
@@ -14,8 +15,18 @@ section.atf {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
+
+.atf__wrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
 .atf__art{
   display: flex;
@@ -72,34 +83,237 @@ section.atf {
   max-width: $container-max;
   margin-inline: auto;
 
+  @media (max-width: 768px) {
+    top: 20%;
+  } 
+
   @media (max-width: 700px) {
-    top: 31%;
+    top: 22%;
   }  
   @media (max-width: 654px) {
-    top: 35%;
+    top: 24%;
   }
   @media (max-width: 616px) {
-    top: 38%;
+    top: 25%;
   }
   @media (max-width: 576px) {
-    top: 42.5%;
+    top: 27.5%;
   }
   @media (max-width: 544px) {
-    top: 46%;
+    top: 28%;
   }
   @media (max-width: 480px) {
-    top: 51.5%;
+    top: 31.5%;
   }
   @media (max-width: 448px) {
-    top: 54%;
+    top: 33%;
   }
   @media (max-width: 400px) {
-    top: 58%;
+    top: 35%;
   }
-  @media (max-width: 380px) {
-    top: 61%;
+  @media (max-width: 390px) {
+    top: 36%;
   }
   @media (max-width: 340px) {
-    top: 64%;
+    top: 38%;
+  }
+}
+
+
+
+.atf-headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  gap: 16px;
+  margin-top: 48px;
+  z-index: 25;
+
+  @media (max-width: $breakpoint-xxs) {
+    // padding-left: 65px;
+  }
+
+  .iam {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: $color-text;
+      margin-right: 12px;
+      padding-top: 80px;
+      z-index: 30;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 54px;
+      }
+
+      @media (max-width: $breakpoint-norm) {
+          font-size: 46px;
+          padding-top: 90px;
+      }
+
+      @media (max-width: $breakpoint880) {
+          font-size: 40px;
+          padding-top: 80px;
+      }
+
+      @media (max-width: $breakpoint-xxs) {
+          font-size: 30px;
+          padding-top: 50px;
+          padding-right: 20px;
+      }
+
+  }
+}
+
+  
+.atf-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0;
+    max-width: 1000px; 
+    width: 80vw;
+    z-index: 30;
+
+    @media (max-width: 768px) {
+      width: 0px;
+    }
+}
+
+   
+.atf-info .name {
+      font-size: 90px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: $color-text;
+      white-space: nowrap;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 80px;
+      }
+
+      @media (max-width: $breakpoint-norm) {
+        font-size: 60px;
+      }
+
+      @media (max-width: $breakpoint880) {
+        font-size: 50px;
+      }
+
+      @media (max-width: $breakpoint-xxs) {
+        font-size: 40px;
+      }
+}
+    
+.atf-info .title {
+      font-size: 58px;
+      color: $color-text_purple;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      text-transform: capitalize;
+      min-width: 300px;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 48px;
+      }
+
+      @media (max-width: $breakpoint-norm) {
+        font-size: 40px;
+      }
+
+      @media (max-width: $breakpoint880) {
+        font-size: 32px;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 28px;
+        margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: $breakpoint-xxs) {
+        font-size: 20px;
+      }
+}
+    
+.atf-info .cta {
+        width: 165px;
+        height: 58px;
+        margin-top: 12px;
+        font-size: 23px;
+        border-radius: 10px;
+        background: $color-primary;
+        color: $color-text_primary;
+        padding: 15px 30px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        transition: all 0.125s;
+        &:hover { 
+          background: $color-secondary;
+          scale: (1.2);
+        }
+
+        @media (max-width: $breakpoint-norm) {
+          font-size: 20px;
+          padding: 10px 20px;
+          width: 145px;
+          height: 50px;
+        }
+
+        @media (max-width: $breakpoint880) {
+          font-size: 18px;
+          padding: 10px 20px;
+          width: 125px;
+          height: 40px;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+          margin-top: 0px;
+          border-radius: 6px;
+          font-size: 16px;
+          padding: 8px 16px;
+          width: 100px;
+          height: 40px;
+        }
+}
+
+
+.atf-info  .cta-center {
+        display: flex;
+        justify-content: left;
+        padding-left: clamp(2vw, 12vw, 15vw);
+
+        @media (max-width: $breakpoint-sm) {
+          justify-content: center;
+          padding-left: 60px;
+        }
+
+        @media (max-width: $breakpoint-xxs) {
+          justify-content: center;
+          padding-left: 25px;
+        }
+}
+
+
+
+
+
+@media (max-width: $breakpoint-sm) {
+
+  .atf__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .atf-info {
+    max-width: 1000px; 
+    width: auto;
+    z-index: 30;
   }
 }
