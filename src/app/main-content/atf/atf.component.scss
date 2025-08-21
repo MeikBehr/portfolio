@@ -1,12 +1,19 @@
 @use '../../../styles/_variables' as *;
 
+
+section.atf { 
+  position: relative;
+  background-color: $color-bg;
+  // padding-top: calc($header-high + 24px);
+}
+
 .atf {
-    margin-top: 92px;          // TEMPORARY
+    position: relative;
+    margin-top: $header-high;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100px;
 }
 
 
@@ -38,7 +45,7 @@
 }
 .artStage .blob--purple{ 
     width: 75%;
-    left:  -9%;
+    left:  0%;
     bottom:-23%;
     z-index: 5;
 }
@@ -48,4 +55,51 @@
     right: -18%;
     top:    1.8%;
     z-index: 10;
+}
+
+//////////////////////////////////////////////////
+
+
+.atfCurve{
+  position: absolute;
+  top: 25%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  pointer-events: none;
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+
+  @media (max-width: 700px) {
+    top: 31%;
+  }  
+  @media (max-width: 654px) {
+    top: 35%;
+  }
+  @media (max-width: 616px) {
+    top: 38%;
+  }
+  @media (max-width: 576px) {
+    top: 42.5%;
+  }
+  @media (max-width: 544px) {
+    top: 46%;
+  }
+  @media (max-width: 480px) {
+    top: 51.5%;
+  }
+  @media (max-width: 448px) {
+    top: 54%;
+  }
+  @media (max-width: 400px) {
+    top: 58%;
+  }
+  @media (max-width: 380px) {
+    top: 61%;
+  }
+  @media (max-width: 340px) {
+    top: 64%;
+  }
 }
