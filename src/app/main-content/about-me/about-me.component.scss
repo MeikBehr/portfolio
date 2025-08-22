@@ -1,0 +1,17 @@
+ @use '../../../styles/_variables' as *;
+
+.about-me {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.about-me__wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1440px;
+}

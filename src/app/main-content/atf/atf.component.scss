@@ -6,16 +6,12 @@ $breakpoint880 : 880px;
 section.atf { 
   position: relative;
   background-color: $color-bg;
-}
-
-.atf {
-    position: relative;
-    margin-top: $header-high;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  margin-top: $header-high;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 
@@ -77,9 +73,9 @@ section.atf {
 }
 
 
-.atfCurve{
+.atfCurve {
   position: absolute;
-  top: 24%;
+  top: 0%;  // 24
   bottom: 0;
   left: 0;
   right: 0;
@@ -90,11 +86,11 @@ section.atf {
   margin-inline: auto;
 
   @media (max-width: 1440px) {
-    top: 22%;
+    top: 2%;     // 22
   }
 
   @media (max-width: 880px) {
-    top: 21%;
+    top: 10%;     // 21
   }
 
   @media (max-width: 768px) {
@@ -132,8 +128,6 @@ section.atf {
     top: 36%;
   }
 }
-
-
 
 .atf-headline {
   display: flex;
@@ -331,7 +325,7 @@ section.atf {
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 20;
+  z-index: 25;
   background: transparent;;
 
   @media (max-width: 768px) {
@@ -426,3 +420,8 @@ section.atf {
     margin-left: 6px;
   }
 }
+
+
+
+
+
