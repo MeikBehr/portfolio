@@ -9,7 +9,6 @@
   z-index: 1200;
   background: $color-bg;
   color: $color-text;
-  padding: $sp-5 $sp-7;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,6 +24,7 @@
 
 .name {
   z-index: 1201;
+  margin-left: 20px;
 }
 
 .welcomeHeader .name a {
@@ -53,6 +53,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-right: 20px;
   
 
   @media (max-width: $breakpoint-md) {
@@ -352,7 +353,7 @@
 .mobileMenu {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.80);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -385,15 +386,15 @@
 .overlayBrand{
   position: absolute;
   top: calc(var(--nav-top) + 3px);
-  left: calc(var(--header-pad) + 20px);
+  left: calc(var(--header-pad) - 10px);
   z-index: 2;
 
   @media(max-width: $breakpoint-xs) {
-    left: calc(var(--header-pad) + 26px);
+    left: calc(var(--header-pad) + 0px);
   }
 
   @media(max-width: $breakpoint-xxs) {
-    left: calc(var(--header-pad) + 32px);
+    left: calc(var(--header-pad) + 3px);
   }
 }
 
@@ -478,7 +479,10 @@
 
 
 @media (max-width: calc($breakpoint-sm + 1px)){
-  // .hiddenMobile{ visibility: hidden; }  // XXX
+  .hiddenMobile{ 
+    visibility: hidden; 
+    transition: visibility 0.25s ease-in-out;
+  }
 }
 
 
