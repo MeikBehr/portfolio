@@ -369,13 +369,20 @@ section.atf {
   a {
     display: flex;
     align-items: center;
-
-    img {
-      width: 32px;
-      height: 32px;
-    }
   }
 }
+
+
+.atf-bottom__icons .icon {
+  transition: fill 0.125s ease-in-out;
+  fill: $color-text_primary;
+}
+
+.atf-bottom__icons .icon:hover {
+  transition: fill 0.125s ease-in-out;
+  fill: $color-secondary;
+}
+
 
 .atf-bottom__mail {
   color: $color-text_primary;
