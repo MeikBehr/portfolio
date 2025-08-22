@@ -1,6 +1,8 @@
 @use '../../../styles/_variables' as *;
 
-/* Header-Container */
+
+
+
 .welcomeHeader {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -8,7 +10,6 @@
   background: $color-bg;
   color: $color-text;
   padding: $sp-5 $sp-7;
-  // box-shadow: $shadow-sm;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,20 +27,18 @@
   z-index: 1201;
 }
 
-/* Name/Logo links */
 .welcomeHeader .name a {
   color: $color-text;
   text-decoration: none;
   font-weight: 600;
 }
 
-/* Farbakzente im Namen */
 .greenTheme { color: $color-primary; }
 .purpleTheme { color: $color-secondary; }
 
 .logoWrap { 
   display: inline-block; 
-  line-height: 0; 
+  line-height: 0;
 }
 
 .logo { 
@@ -67,7 +66,6 @@
 }
 
 
-/* Desktop-Navigation */
 .normalNav a {
   position: relative;
   color: $color-text_primary;
@@ -107,7 +105,7 @@
   width: 28px;
   height: 3px;
   margin: 5px 0;
-  background: $color-text;   // oder deine Variable
+  background: $color-text;
   border-radius: 2px;
 }
 
@@ -171,13 +169,13 @@
 
 .menu-overlay {
   position: fixed;
-  inset: 0;                  // top:0; right:0; bottom:0; left:0;
+  inset: 0;
   background: rgba(20, 29, 47, 0.9);
-  display: none;             // per Default unsichtbar
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 999;              // ganz oben
+  z-index: 999;
 }
 
 .menu-overlay.open {
@@ -252,7 +250,6 @@
   }
 }
 
-/* ===== Vollbild-Overlay + Pane, das von rechts reinfährt ===== */
 .mobileMenu{
   position: fixed; 
   inset: 0;
@@ -265,21 +262,18 @@
   &.open{ opacity:1; pointer-events:auto; }
 }
 
-/* Seiten-Pane (rechts), das den Inhalt trägt */
 .pane{
   position: absolute; top:0; right:0;
   width: 100%; height: 100%;
-  /* Start: komplett rechts draußen, kommt dann rein */
   transform: translateX(100%);
   transition: transform .28s ease;
-  background: $color-bg-mobile; /* dunkler als Overlay; ggf. anpassen */
-
-  /* Inhalt mittig (horizontal + vertikal) */
+  background: $color-bg-mobile;
   display: grid; place-items: center;
 }
-.mobileMenu.open .pane{ transform: translateX(0); }
+.mobileMenu.open .pane{ 
+  transform: translateX(0); 
+}
 
-/* Menü in der Mitte */
 .menuList{
   list-style: none; margin:0; padding:0;
   display:flex; flex-direction:column; align-items:center; gap: 18px;
@@ -388,12 +382,19 @@
   transform: translateX(0);
 }
 
-
 .overlayBrand{
   position: absolute;
-  top: calc(var(--nav-top) + 0px);
-  left: calc(var(--header-pad) + 0px);
-  z-index: 2; /* über Pane-Inhalt */
+  top: calc(var(--nav-top) + 3px);
+  left: calc(var(--header-pad) + 20px);
+  z-index: 2;
+
+  @media(max-width: $breakpoint-xs) {
+    left: calc(var(--header-pad) + 26px);
+  }
+
+  @media(max-width: $breakpoint-xxs) {
+    left: calc(var(--header-pad) + 32px);
+  }
 }
 
 
@@ -408,11 +409,11 @@
   border-radius: 12px;
   font-weight: 600; 
   border: 1.5px solid $color-primary;
-  color: $color-text_primary; /* inaktiv = weiß auf dunkel */
+  color: $color-text_primary;
 }
 
 .langBtn.is-active{
-  color: $color-primary;                          // Text dunkel (guter Kontrast auf grün)
+  color: $color-primary;
   border-color: $color-primary; 
 }
 
@@ -461,17 +462,12 @@
 
 .burger_animated-main {
   margin-right: 0;
-  transition: margin-right 0.25s ease; /* sanfter Übergang */
+  transition: margin-right 0.25s ease;
 }
 
 .burger_animated-main.shifted {
   margin-right: 16px;
 }
-
-
-
-/* *********************************************************   */
-/* ********************************************************** */
 
 
 @media (min-width: 769px) {
@@ -482,7 +478,7 @@
 
 
 @media (max-width: calc($breakpoint-sm + 1px)){
-  .hiddenMobile{ visibility: hidden; }
+  // .hiddenMobile{ visibility: hidden; }  // XXX
 }
 
 
@@ -500,7 +496,6 @@
   }
 }
 
-/* Desktop erst ab 769px */
 @media (min-width: calc($breakpoint-sm + 1px)){
 
   .navIcon, 
@@ -514,7 +509,6 @@
 }
 
 
-/* Breakpoint: Mobile zeigt Burger + Overlay; Desktop zeigt normale Nav */
 @media (max-width: $breakpoint-sm) {
   .normalNav { 
     display: none; 

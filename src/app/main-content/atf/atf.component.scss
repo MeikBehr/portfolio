@@ -130,10 +130,6 @@ section.atf {
   margin-top: 48px;
   z-index: 25;
 
-  @media (max-width: $breakpoint-xxs) {
-    // padding-left: 65px;
-  }
-
   .iam {
       writing-mode: vertical-lr;
       transform: rotate(180deg);
@@ -292,10 +288,6 @@ section.atf {
           padding-left: 60px;
         }
 
-        @media (max-width: $breakpoint-xxs) {
-          justify-content: center;
-          padding-left: 25px;
-        }
 }
 
 
