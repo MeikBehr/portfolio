@@ -4,5 +4,10 @@
   "PORTFOLIO": "Portfolio",
   "CONTACT": "Kontakt",
   "PRIVACY-POLICY": "Datenschutz",
-  "IMPRINT": "Impressum"
+  "IMPRINT": "Impressum",
+  "ABOUT_ME_TITLE": "Über mich",
+  "ABOUT_ME_DESCRIPTION": "Hallo, ich bin Meik! Schreibe ein paar Informationen über dich – idealerweise mit Bezug zu IT. Warum bist du so begeistert vom Programmieren? Was motiviert dich, deine Fähigkeiten ständig zu verbessern?\n\nLass uns vernetzen und gemeinsam etwas Großartiges schaffen!",
+  "ABOUT_ME_LOCATION": "Wo wohnst du? Bist du offen für verschiedene Arbeitsmodelle – etwa Remote oder sogar einen Umzug?",
+  "ABOUT_ME_PASSION": "Zeige, dass du offen für Neues bist. Hast du Spaß daran, ständig neue Technologien zu lernen und deine Fähigkeiten weiterzuentwickeln?",
+  "ABOUT_ME_PROFESSION": "Beschreibe kurz, wie du Probleme angehst. Lernst du aus jeder Herausforderung und suchst du nach effizienten oder eleganten Lösungen? Nutze gern Stichworte wie analytisches Denken, Kreativität, Ausdauer und Teamarbeit."
 }

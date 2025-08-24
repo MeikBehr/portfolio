@@ -40,3 +40,85 @@
   .about-me__bg {background-position: center center; background-image: url('/assets/img/about_me/about_me_hero_blobs_curved_mobile.png');}
 }
 
+
+///////////////////////////////////////////////
+
+
+.about-me__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 471px;
+  min-height: 587px;
+  background: transparent;
+  z-index: 2;
+  position: relative;
+  padding: 80px 32px 32px 32px; // ggf. nachjustieren
+  color: $color-text_primary;
+
+  @media (max-width: 768px) {
+    max-width: 90vw;
+    min-height: auto;
+    padding: 40px 8vw 32px 8vw;
+    margin: 0 auto;
+  }
+}
+
+// Überschrift
+.about-me__headline {
+  font-size: 90px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: $color-text_primary;
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 54px;
+    margin-bottom: 24px;
+  }
+}
+
+// Beschreibungstext
+.about-me__description {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: $color-text_primary;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+}
+
+// Liste/Info
+.about-me__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-me__info-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+// Icon
+.about-me__icon img {
+  width: 32px;
+  height: auto;
+  min-width: 22px; // falls mal kleineres Icon dabei
+}
+
+// Text neben Icon
+.about-me__info-text {
+  font-size: 16px;
+  color: $color-text_primary;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+

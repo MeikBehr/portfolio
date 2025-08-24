@@ -1,11 +1,45 @@
 <section class="about-me">
   <div class="about-me__wrapper">
     <div class="about-me__bg"></div>
+
+
     <div class="about-me__content">
-      <!-- Dein About-Me-Text + ggf. Icons etc -->
-      <h2>About me</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius earum quo odio. Necessitatibus distinctio, autem hic porro fugit, perferendis maiores quidem error, quasi quae vel cumque dicta sequi est cupiditate?</p>
-      <!-- hier ggf. Listen/SVG-Icons für Softskills etc. -->
-    </div>
+      <div class="about-me__text">
+        <h2 class="about-me__headline">{{ 'ABOUT_ME_TITLE' | translate }}</h2>
+        <div class="about-me__description">
+          {{ 'ABOUT_ME_DESCRIPTION' | translate }}
+        </div>
+        <div class="about-me__info-list">
+          <div class="about-me__info-row">
+            <div class="about-me__icon">
+              <img src="assets/img/about_me/about_me_location.png" width="32" height="25" alt="Location Icon" />
+            </div>
+            <div class="about-me__info-text">
+              {{ 'ABOUT_ME_LOCATION' | translate }}
+            </div>
+          </div>
+          <div class="about-me__info-row">
+            <div class="about-me__icon">
+              <img src="assets/img/about_me/about_me_bulb.png" width="32" height="22" alt="Lightbulb Icon" />
+            </div>
+            <div class="about-me__info-text">
+              {{ 'ABOUT_ME_PASSION' | translate }}
+            </div>
+          </div>
+          <div class="about-me__info-row">
+            <div class="about-me__icon">
+              <img src="assets/img/about_me/about_me_puzzle.png" width="30" height="30" alt="Puzzle Icon" />
+            </div>
+            <div class="about-me__info-text">
+              {{ 'ABOUT_ME_PROFESSION' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
   </div>
 </section>
