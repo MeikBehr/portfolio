@@ -2,7 +2,6 @@
 
 .about-me {
   width: 100vw;
-  min-height: 800px;
   position: relative;
   background: $color-bg;
   overflow: hidden;
@@ -13,6 +12,7 @@
   margin: 0 auto;
   position: relative;
   min-height: 880px;
+  margin-top: 50px;
 }
 
 .about-me__bg {
@@ -23,7 +23,7 @@
   z-index: 1;
   background-image: url('/assets/img/about_me/about_me_hero_blobs_curved.png');
   background-size: cover;
-  background-position: right center;
+  background-position: right top;
   pointer-events: none;
 }
 
@@ -36,64 +36,42 @@
 }
 
 
-@media (max-width: 768px) {
-  .about-me__bg {background-position: center center; background-image: url('/assets/img/about_me/about_me_hero_blobs_curved_mobile.png');}
-}
-
-
-///////////////////////////////////////////////
-
-
 .about-me__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 471px;
-  min-height: 587px;
+  max-width: 520px;
   background: transparent;
   z-index: 2;
   position: relative;
-  padding: 80px 32px 32px 32px; // ggf. nachjustieren
+  padding: 80px 32px 32px 32px; 
   color: $color-text_primary;
 
-  @media (max-width: 768px) {
-    max-width: 90vw;
-    min-height: auto;
-    padding: 40px 8vw 32px 8vw;
-    margin: 0 auto;
-  }
 }
 
-// Überschrift
+.about-me__text {
+  width: 500px;
+  text-overflow: ellipsis;
+}
+
+
 .about-me__headline {
   font-size: 90px;
   line-height: 1.2;
   font-weight: 700;
   color: $color-text_primary;
   margin-bottom: 32px;
-
-  @media (max-width: 768px) {
-    font-size: 54px;
-    margin-bottom: 24px;
-  }
 }
 
-// Beschreibungstext
 .about-me__description {
   font-size: 16px;
   line-height: 1.2;
   font-weight: 400;
   color: $color-text_primary;
   margin-bottom: 40px;
-
-  @media (max-width: 768px) {
-    font-size: 15px;
-    margin-bottom: 24px;
-  }
 }
 
-// Liste/Info
 .about-me__info-list {
   display: flex;
   flex-direction: column;
@@ -106,14 +84,12 @@
   gap: 18px;
 }
 
-// Icon
 .about-me__icon img {
   width: 32px;
   height: auto;
-  min-width: 22px; // falls mal kleineres Icon dabei
+  min-width: 22px;
 }
 
-// Text neben Icon
 .about-me__info-text {
   font-size: 16px;
   color: $color-text_primary;
@@ -121,4 +97,62 @@
   line-height: 1.2;
 }
 
+.about-me__content,
+.about-me__content h1,
+.about-me__content h2 {
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
 
+
+
+
+@media (max-width: 1200px) {
+  .about-me__bg {
+    background-position: right top;
+    background-image: url('/assets/img/about_me/about_me_hero_blobs_curved_1024.png');
+  }
+}
+
+
+@media (max-width: 950px) {
+
+   
+    .about-me__content {
+      min-height: auto;
+      padding: 40px 8vw 32px 8vw;
+      margin: 0 auto;
+      margin-top: 600px;
+      margin-top: 75vw;
+      max-width: 90vw;
+    }
+
+    .about-me__headline {
+      font-size: 54px;
+      margin-bottom: 24px;
+    }
+
+    .about-me__description {
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .about-me__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 880px;
+    }
+
+    .about-me__bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 820px;
+      height: 100vw;
+      z-index: 1;
+      background-position: center bottom; 
+      background-image: url('/assets/img/about_me/about_me_hero_blobs_curved_mobile.png');
+    }
+   
+}
