@@ -1,1 +1,91 @@
-<p class="test">skill-set works!</p>
+<section class="skills-section">
+  <div class="skills-section__wrapper">
+
+    <!-- Skills-Icon-Grid -->
+    <div class="skills-grid">
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/html.svg" alt="HTML" class="skills-grid__icon" />
+        <span class="skills-grid__label">HTML</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/css.svg" alt="CSS" class="skills-grid__icon" />
+        <span class="skills-grid__label">CSS</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/javascript.svg" alt="JavaScript" class="skills-grid__icon" />
+        <span class="skills-grid__label">JavaScript</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/typescript.svg" alt="TypeScript" class="skills-grid__icon" />
+        <span class="skills-grid__label">TypeScript</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/angular.svg" alt="Angular" class="skills-grid__icon" />
+        <span class="skills-grid__label">Angular</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/firebase.svg" alt="Firebase" class="skills-grid__icon" />
+        <span class="skills-grid__label">Firebase</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/git.svg" alt="Git" class="skills-grid__icon" />
+        <span class="skills-grid__label">Git</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/rest_api.svg" alt="REST-API" class="skills-grid__icon" />
+        <span class="skills-grid__label">REST-API</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/scrum.svg" alt="Scrum" class="skills-grid__icon" />
+        <span class="skills-grid__label">Scrum</span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/materiralDesign.svg" alt="Material Design" class="skills-grid__icon" />
+        <span class="skills-grid__label">
+          Material<br />Design
+        </span>
+      </div>
+      <div class="skills-grid__item">
+        <img src="assets/img/skills/containuallyLearning.svg" alt="Continually learning" class="skills-grid__icon" />
+        <span class="skills-grid__label">
+          Continually<br />learning
+        </span>
+      </div>
+      <div class="skills-grid__item skills-grid__item--empty"></div>
+    </div>
+
+    <!-- Skills-Content-Bereich -->
+    <div class="skills-content">
+      <div class="skills-content__inner">
+
+        <h2 class="skills-content__headline">
+          {{ 'skills.headline' | translate }}
+        </h2>
+
+        <div class="skills-content__variety">
+          {{ 'skills.variety' | translate }}
+        </div>
+
+        <div class="skills-content__subheadline">
+          <span class="skills-content__subheadline-normal">{{ 'skills.looking_for' | translate }}</span>
+          <span class="skills-content__subheadline-purple">{{ 'skills.another_skill' | translate }}</span>
+          <span class="skills-content__subheadline-normal">?</span>
+        </div>
+
+        <div class="skills-content__reveal">
+          {{ 'skills.reveal' | translate }}
+        </div>
+
+        <div class="skills-content__cta-center">
+          <a href="#contact" aria-label="Kontaktformular">
+            <button class="skills-content__cta">
+              {{ 'skills.cta' | translate }}
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="skills-content__line"></div>
+    </div>
+
+  </div>
+</section>

@@ -9,6 +9,14 @@
   "ABOUT_ME_DESCRIPTION": "Ich bin Meik, Frontend-Entwickler und Qualitätsmanager. Für mich ist Programmieren weit mehr als nur ein Beruf – es ist Leidenschaft.",
   "ABOUT_ME_LOCATION": "Ich lebe in der Nähe von Kassel und arbeite am liebsten remote. Moderne, flexible Arbeitsmodelle passen zu meinem Anspruch an Effizienz und Balance.",
   "ABOUT_ME_PASSION": "Neugier und Lernbereitschaft sind für mich keine Pflicht, sondern ein Teil meiner Persönlichkeit. Ich liebe es, neue Technologien auszuprobieren und mich immer wieder auf unbekanntes Terrain zu begeben.",
-  "ABOUT_ME_PROFESSION": "Herausforderungen gehe ich analytisch, strukturiert und kreativ an. Mit langjähriger Führungserfahrung und Ausdauer finde ich für (fast) jedes Problem eine Lösung – auch wenn sie mal unkonventionell ist."
-}
+  "ABOUT_ME_PROFESSION": "Herausforderungen gehe ich analytisch, strukturiert und kreativ an. Mit langjähriger Führungserfahrung und Ausdauer finde ich für (fast) jedes Problem eine Lösung – auch wenn sie mal unkonventionell ist.",
 
+  "skills": {
+    "headline": "Meine Skills",
+    "variety": "Hier siehst du, mit welchen Frontend-Technologien und Tools ich gearbeitet habe – keine leere Aufzählung.",
+    "looking_for": "Du",
+    "another_skill": "vermisst einen Skill",
+    "reveal": "Ich lerne ständig dazu und freue mich über jede neue Herausforderung – von modernen Frameworks bis zu ungewöhnlichen Tools.",
+    "cta": "Get in touch"
+  }
+}

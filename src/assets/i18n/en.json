@@ -9,5 +9,14 @@
   "ABOUT_ME_DESCRIPTION": "I'm Meik, a frontend developer and quality manager. For me, coding is much more than just a profession – it's a true passion.",
   "ABOUT_ME_LOCATION": "Based near Kassel, I prefer working remotely. Modern, flexible work models align perfectly with my commitment to efficiency and work-life balance.",
   "ABOUT_ME_PASSION": "Curiosity and a love of learning are not just duties for me – they’re part of who I am. I thrive on exploring new technologies and venturing into uncharted territory.",
-  "ABOUT_ME_PROFESSION": "I approach challenges with an analytical, structured, and creative mindset. Drawing on years of leadership experience and persistence, I find solutions to (almost) any problem – even if it means taking unconventional paths."
+  "ABOUT_ME_PROFESSION": "I approach challenges with an analytical, structured, and creative mindset. Drawing on years of leadership experience and persistence, I find solutions to (almost) any problem – even if it means taking unconventional paths.",
+
+  "skills": {
+    "headline": "My Skills",
+    "variety": "Here you can see the frontend technologies and tools I’ve actually worked with — no empty buzzword bingo.",
+    "looking_for": "You",
+    "another_skill": "are missing a skill",
+    "reveal": "I’m constantly learning and always up for a new challenge — from modern frameworks to unconventional tools.",
+    "cta": "Get in touch"
+  }
 }

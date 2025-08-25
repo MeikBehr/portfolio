@@ -14,7 +14,7 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
     AboutMeComponent,
     ContactComponent,
     ProjectsComponent,
-    SkillSetComponent
+    SkillSetComponent,
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
