@@ -32,6 +32,7 @@
 }
 
 
+
 *,
 *::before,
 *::after {
@@ -49,6 +50,7 @@ html {
   font-size: 100%;
   scroll-behavior: smooth;
   display: inline-block;
+  overflow-x: hidden;
 }
 
 

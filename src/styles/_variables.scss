@@ -71,3 +71,20 @@ $breakpoint-xs: 36em!default;
 
 // 448px oder schmaler 
 $breakpoint-xxs: 28em!default;
+
+
+/*
+Bezeichnung     Breite (px)     Typisches Gerät/Use-Case
+320	       X        320	        Minimum, „iPhone SE“, Ultra-Klein
+375        X    	375	        iPhone 6/7/8/X/12 mini, Google Pixel
+390	       X        390	        Neuere iPhones, z. B. iPhone 14
+425	       X        425	        Galaxy S8+, größere Smartphones
+480/500	   X        480–500    	Kleine Tablets im Portrait, Foldables
+600             	600	        Kleine Tablets, Galaxy Fold Landscape
+768	       X        768	        iPad, Standard-Tablet
+950	       X        950	        Dein eigener Tablet/Small-Desktop-Cut
+1024       X    	1024      	Standard iPad Landscape, Surface
+1200       X    	1200    	Kleiner Desktop/Laptop
+1440       X    	1440	    Großer Desktop, FullHD, Macbook
+
+*/
