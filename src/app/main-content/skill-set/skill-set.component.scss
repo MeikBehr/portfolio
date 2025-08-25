@@ -1,5 +1,7 @@
 @use '../../../styles/_variables' as *;
 
+$paddingRightText : 100px;
+
 .skills-section {
   background: $color-bg;
   width: 100%;
@@ -14,6 +16,7 @@
   align-items: flex-start;
   gap: 40px;
   padding: 0 32px;
+  padding-right: 0px;
   position: relative;
   overflow-x: hidden;
   z-index: 30;
@@ -23,9 +26,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 112px);
-  gap: 32px 40px;
+  gap: 40px 88px;
   min-width: 420px;
-  max-width: 520px;
+  max-width: 580px;
   width: 40%;
   padding-top: 18px;
 }
@@ -68,7 +71,7 @@
   justify-content: flex-start;
   padding-top: 14px;
   min-width: 340px;
-  max-width: 555px;
+  max-width: 600px;
 }
 
 .skills-content__inner {
@@ -76,6 +79,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
+  align-items: flex-end;
+}
+
+.skills-content__headlineContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .skills-content__headline {
@@ -83,7 +93,15 @@
   font-weight: 700;
   line-height: 120%;
   margin-bottom: 10px;
+  padding-right: 32px;
   color: $color-text_primary;
+}
+
+.skills-content__line {
+  width: 68px;
+  height: 4px;
+  background: $color-text_purple;
+  border-radius: 3px;
 }
 
 .skills-content__variety {
@@ -92,6 +110,8 @@
   line-height: 120%;
   color: $color-text_primary;
   margin-bottom: 8px;
+  text-align: end;
+  padding-right: $paddingRightText;
 }
 
 .skills-content__subheadline {
@@ -101,14 +121,18 @@
   margin-bottom: 8px;
   display: flex;
   gap: 7px;
+  text-align: end;
+  padding-right: $paddingRightText;
 }
 
 .skills-content__subheadline-normal {
   color: $color-text_primary;
+  text-align: end;
 }
 
 .skills-content__subheadline-purple {
   color: $color-text_purple;
+  text-align: end;
 }
 
 .skills-content__reveal {
@@ -117,12 +141,15 @@
   line-height: 120%;
   color: $color-text_primary;
   margin-bottom: 14px;
+  text-align: end;
+  padding-right: $paddingRightText;
 }
 
 .skills-content__cta-center {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   width: 100%;
+  padding-right: $paddingRightText;
 }
 
 .skills-content__cta {
@@ -145,12 +172,19 @@
   }
 }
 
-.skills-content__line {
-  width: 68px;
-  height: 4px;
-  background: $color-text_purple;
-  border-radius: 3px;
-  margin: 36px 0 0 0;
+
+.skills-grid__item--continually {
+  color: #9747FF;    /* steuert "currentColor" */
+}
+.skills-grid__item--continually:hover {
+  color: #fff;
+}
+
+
+.skills-grid__item--continually .skills-grid__icon,
+.skills-grid__item--continually .skills-grid__label {
+  color: $color-secondary;
+  fill: $color-secondary; // Falls SVG das unterstützt
 }
 
 

@@ -45,7 +45,7 @@
           Material<br />Design
         </span>
       </div>
-      <div class="skills-grid__item">
+      <div class="skills-grid__item skills-grid__item--continually">
         <img src="assets/img/skills/containuallyLearning.svg" alt="Continually learning" class="skills-grid__icon" />
         <span class="skills-grid__label">
           Continually<br />learning
@@ -58,10 +58,14 @@
     <div class="skills-content">
       <div class="skills-content__inner">
 
-        <h2 class="skills-content__headline">
-          {{ 'skills.headline' | translate }}
-        </h2>
+        <div class="skills-content__headlineContainer">
+            <h2 class="skills-content__headline">
+            {{ 'skills.headline' | translate }}
+            </h2>
 
+            <div class="skills-content__line"></div>
+        </div>
+        
         <div class="skills-content__variety">
           {{ 'skills.variety' | translate }}
         </div>
@@ -84,7 +88,6 @@
           </a>
         </div>
       </div>
-      <div class="skills-content__line"></div>
     </div>
 
   </div>
