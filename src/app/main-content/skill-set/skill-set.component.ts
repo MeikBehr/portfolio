@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,17 +7,55 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [TranslateModule, CommonModule],
   templateUrl: './skill-set.component.html',
-  styleUrls: ['./skill-set.component.scss']
+  styleUrls: ['./skill-set.component.scss'],
 })
 export class SkillSetComponent {
+  @ViewChild('tooltipBtn', { static: false }) tooltipBtn!: ElementRef;
 
-  constructor(public translate: TranslateService) {}
+  constructor(private renderer: TranslateService) {}
 
-  scrollToAboutMe(event?: Event): void {
-    event?.preventDefault();
-    setTimeout(() => {
-      document.getElementById('mySkills')?.scrollIntoView({ behavior: 'smooth' });
-    }, 0);
+  isTooltipOpen = false;
+  tooltipTimeout: any = null;
+  private outsideClickHandler: any = null;
+
+  onTooltipIconClick(event: MouseEvent) {
+    event.stopPropagation();
+ 
+    if (window.innerWidth < 951) {
+      event.stopPropagation();
+
+      if (this.isTooltipOpen) {
+        this.closeTooltip();
+        return;
+      }
+
+      this.isTooltipOpen = true;
+      this.outsideClickHandler = (evt: Event) => {
+        if (
+          !(evt.target as HTMLElement).closest('.skills-grid__item--continually') &&
+          !(evt.target as HTMLElement).closest('.skills-tooltip')
+        ) {
+          this.closeTooltip();
+        }
+      };
+      document.addEventListener('click', this.outsideClickHandler);
+      this.tooltipTimeout = setTimeout(() => {
+        this.closeTooltip();
+      }, 2000);
+    }
   }
 
+  closeTooltip() {
+    this.isTooltipOpen = false;
+    if (this.tooltipTimeout) {
+      clearTimeout(this.tooltipTimeout);
+      this.tooltipTimeout = null;
+    }
+    if (this.outsideClickHandler) {
+      document.removeEventListener('click', this.outsideClickHandler);
+      this.outsideClickHandler = null;
+    }
+  }
+
+  
 }

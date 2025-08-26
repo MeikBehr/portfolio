@@ -1,7 +1,6 @@
 <section class="skills-section">
   <div class="skills-section__wrapper">
 
-    <!-- Skills-Icon-Grid -->
     <div class="skills-grid">
       <div class="skills-grid__item">
         <img src="assets/img/skills/html.svg" alt="HTML" class="skills-grid__icon" />
@@ -45,7 +44,8 @@
           Material<br />Design
         </span>
       </div>
-      <div class="skills-grid__item skills-grid__item--continually continually-learning">
+      <div class="skills-grid__item skills-grid__item--continually continually-learning"
+          (click)="onTooltipIconClick($event)">
 
         <svg width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1_28)">
@@ -75,7 +75,7 @@
           Continually<br />learning
         </span>
 
-        <div class="skills-tooltip">
+        <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
             <div class="skills-tooltip__content">
                 <span class="skills-tooltip__content-heading">I have a special interest in learning</span>
             <div class="skills-tooltip__logos">
@@ -122,13 +122,11 @@
                 <path d="M2 2L12 10L22 2" stroke="#fff" stroke-width="2" fill="none" />
             </svg>
         </div>
-        <!--  XXXXXXXXXXXXX-->
 
       </div>
       <div class="skills-grid__item skills-grid__item--empty"></div>
     </div>
 
-    <!-- Skills-Content-Bereich -->
     <div class="skills-content">
       <div class="skills-content__inner">
 

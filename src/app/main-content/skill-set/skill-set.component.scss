@@ -18,7 +18,7 @@ $paddingRightText : 100px;
   padding: 0 32px;
   padding-right: 0px;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 30;
 }
 
@@ -194,10 +194,8 @@ $paddingRightText : 100px;
 
 }
 
-.continually-learning {
-  position: relative;
 
-  .skills-tooltip {
+.skills-tooltip {
     position: absolute;
     left: 110%;
     top: -180px;
@@ -215,8 +213,20 @@ $paddingRightText : 100px;
     padding: 12px;
     text-align: center;
     box-shadow: 0 6px 24px 0 rgba(30, 30, 70, 0.14), 0 1.5px 6px 0 rgba(20, 20, 40, 0.08);
-  }
+}
 
+.skills-tooltip {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.skills-tooltip--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.continually-learning {
+  position: relative;
   &:hover .skills-tooltip,
   &:focus .skills-tooltip {
     opacity: 1;
@@ -230,7 +240,7 @@ $paddingRightText : 100px;
 .skills-tooltip__arrow {
   position: absolute;
   left: 30%;
-  bottom: -16px;
+  bottom: -15px;
   transform: translateX(-50%);
   width: 24px;
   height: 16px;
