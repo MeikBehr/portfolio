@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './skill-set.component.html',
   styleUrls: ['./skill-set.component.scss'],
 })
+
+
 export class SkillSetComponent {
   @ViewChild('tooltipBtn', { static: false }) tooltipBtn!: ElementRef;
 
@@ -17,12 +19,21 @@ export class SkillSetComponent {
   isTooltipOpen = false;
   tooltipTimeout: any = null;
   private outsideClickHandler: any = null;
+  isDesktop(): boolean {
+    return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  }
+
+
+  openTooltip() { this.isTooltipOpen = true; }
+
+  toggleTooltip(event: Event) {
+    event.stopPropagation();
+    this.isTooltipOpen = !this.isTooltipOpen;
+  }
 
   onTooltipIconClick(event: MouseEvent) {
     event.stopPropagation();
- 
-    if (window.innerWidth < 951) {
-      event.stopPropagation();
+    event.preventDefault();
 
       if (this.isTooltipOpen) {
         this.closeTooltip();
@@ -41,8 +52,14 @@ export class SkillSetComponent {
       document.addEventListener('click', this.outsideClickHandler);
       this.tooltipTimeout = setTimeout(() => {
         this.closeTooltip();
+        const emptyGridItem = document.querySelector('.skills-grid__item--empty') as HTMLElement;
+        if (emptyGridItem) {
+          emptyGridItem.focus();
+        }
       }, 2000);
-    }
+
+      
+    
   }
 
   closeTooltip() {

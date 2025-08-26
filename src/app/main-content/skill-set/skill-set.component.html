@@ -44,8 +44,12 @@
           Material<br />Design
         </span>
       </div>
-      <div class="skills-grid__item skills-grid__item--continually continually-learning"
-          (click)="onTooltipIconClick($event)">
+      
+     <div class="skills-grid__item skills-grid__item--continually continually-learning"
+      (mouseenter)="isDesktop() && openTooltip()"
+      (mouseleave)="isDesktop() && closeTooltip()"
+      (click)="!isDesktop() && onTooltipIconClick($event)">
+
 
         <svg width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1_28)">
@@ -75,6 +79,7 @@
           Continually<br />learning
         </span>
 
+        <section *ngIf="isTooltipOpen">
         <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
             <div class="skills-tooltip__content">
                 <span class="skills-tooltip__content-heading">I have a special interest in learning</span>
@@ -122,9 +127,9 @@
                 <path d="M2 2L12 10L22 2" stroke="#fff" stroke-width="2" fill="none" />
             </svg>
         </div>
-
+      </section>
       </div>
-      <div class="skills-grid__item skills-grid__item--empty"></div>
+      <div class="skills-grid__item skills-grid__item--empty" tabindex="0"></div>
     </div>
 
     <div class="skills-content">

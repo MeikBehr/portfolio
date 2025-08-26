@@ -192,6 +192,10 @@ $paddingRightText : 100px;
     transition: all 125ms ease-in-out;
   }
 
+  .skills-tooltip {
+  opacity: 1!important;
+  pointer-events: none;
+}
 }
 
 
@@ -286,10 +290,70 @@ $paddingRightText : 100px;
   }
 }
 
+
 @media (max-width: 949px) {
   .skills-grid__item .skills-grid__icon {
     animation: none !important;
   }
+
+  .skills-grid__item--continually:hover,
+  .skills-grid__item--continually:active {
+    animation: hoverFlash 2.8s forwards;
+  }
+
+  @keyframes hoverFlash {
+    0% {
+      color: $color-text_purple;
+      fill: $color-text_purple;
+    }
+    10% {
+      color: $color-text_primary;
+      fill: $color-text_primary;
+    }
+    80% {
+      color: $color-text_primary;
+      fill: $color-text_primary;
+    }
+    100% {
+      color: $color-text_purple;
+      fill: $color-text_purple;
+    }
+  }
+
+  .skills-grid__item--continually:hover .skills-grid__label,
+  .skills-grid__item--continually:active .skills-grid__label {
+    animation: hoverFlash 2.8s forwards;
+  }
 }
 
 
+
+
+.skills-grid__item--continually:hover,
+  .skills-grid__item--continually:active {
+    animation: hoverFlash 2.8s forwards;
+  }
+
+  @keyframes hoverFlash {
+    0% {
+      color: $color-text_purple;
+      fill: $color-text_purple;
+    }
+    10% {
+      color: $color-text_primary;
+      fill: $color-text_primary;
+    }
+    80% {
+      color: $color-text_primary;
+      fill: $color-text_primary;
+    }
+    100% {
+      color: $color-text_purple;
+      fill: $color-text_purple;
+    }
+  }
+
+  .skills-grid__item--continually:hover .skills-grid__label,
+  .skills-grid__item--continually:active .skills-grid__label {
+    animation: hoverFlash 2.8s forwards;
+  }
