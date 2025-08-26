@@ -146,13 +146,24 @@
       background-position: center bottom; 
       background-image: url('/assets/img/about_me/about_me_hero_blobs_curved_mobile.png');
     }
+
+    .about-me__content {
+      margin-left: 0;
+    }
+
+    .about-me__wrapper {
+      align-items: flex-start;
+    }
    
+    .about-me__text {
+      width: 100%;
+    }
 }
 
 
 @media (max-width: 650px) {
   .about-me__content {
-   padding: 20px 1vw 32px 1vw; 
+   padding: 20px 1vw 32px 8vw; 
   }
 }
 
@@ -181,6 +192,7 @@
   }
   .about-me__text {
       width: 360px;
+      padding-left: 24px;
   }
 
   .about-me__info-text {

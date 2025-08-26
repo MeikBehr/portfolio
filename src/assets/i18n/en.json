@@ -12,10 +12,10 @@
   "ABOUT_ME_PROFESSION": "I approach challenges with an analytical, structured, and creative mindset. Drawing on years of leadership experience and persistence, I find solutions to (almost) any problem – even if it means taking unconventional paths.",
 
   "skills": {
-    "headline": "My Skills",
+    "headline": "My skills",
     "variety": "I have gained experience building projects using a variety of front-end technologies such as Angular, JavaScript, HTML, CSS, and more. I thrive on learning new frameworks, adapting to change, and staying ahead through continuous professional development.",
-    "looking_for": "You",
-    "another_skill": "are missing a skill",
+    "looking_for": "You are",
+    "another_skill": "missing a skill",
     "reveal": "I’m constantly learning and always up for a new challenge — from modern frameworks to unconventional tools.",
     "cta": "Get in touch"
   }

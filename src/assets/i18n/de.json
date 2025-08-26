@@ -14,8 +14,8 @@
   "skills": {
     "headline": "Meine Skills",
     "variety": "Ich habe viel Erfahrung darin, Projekte mit verschiedenen Frontend-Technologien wie Angular, JavaScript, HTML, CSS und weiteren umzusetzen. Neues zu lernen, mich auf Veränderungen einzulassen und durch kontinuierliche Weiterbildung am Ball zu bleiben, ist für mich selbstverständlich.",
-    "looking_for": "Du",
-    "another_skill": "vermisst einen Skill",
+    "looking_for": "Du vermisst",
+    "another_skill": "einen Skill",
     "reveal": "Ich lerne ständig dazu und freue mich über jede neue Herausforderung – von modernen Frameworks bis zu ungewöhnlichen Tools.",
     "cta": "Get in touch"
   }
