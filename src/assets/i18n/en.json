@@ -18,5 +18,10 @@
     "another_skill": "missing a skill",
     "reveal": "I’m constantly learning and always up for a new challenge — from modern frameworks to unconventional tools.",
     "cta": "Get in touch"
+  },
+
+  "projects": {
+    "headline": "Portfolio",
+    "variety": "Check out my projects and discover my potential."
   }
 }

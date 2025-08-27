@@ -18,5 +18,10 @@
     "another_skill": "einen Skill",
     "reveal": "Ich lerne ständig dazu und freue mich über jede neue Herausforderung – von modernen Frameworks bis zu ungewöhnlichen Tools.",
     "cta": "Get in touch"
+  },
+
+  "projects": {
+    "headline": "Portfolio",
+    "variety": "Schau dir meine Projekte an und entdecke mein Potential."
   }
 }

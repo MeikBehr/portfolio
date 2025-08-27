@@ -6,7 +6,7 @@ $paddingRightText1200: 80px;
 
 .skills {
   position: relative;
-  max-width: $container-max;
+  // max-width: $container-max;
 }
 
 .skills-desktop {
@@ -323,7 +323,7 @@ $paddingRightText1200: 80px;
   background: url("/assets/img/skills/skills_green_shadow.png");
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 0;
+  z-index: 1;
 }
 
 
