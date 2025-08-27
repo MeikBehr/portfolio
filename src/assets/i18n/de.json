@@ -5,11 +5,14 @@
   "CONTACT": "Kontakt",
   "PRIVACY-POLICY": "Datenschutz",
   "IMPRINT": "Impressum",
-  "ABOUT_ME_TITLE": "Über mich",
-  "ABOUT_ME_DESCRIPTION": "Ich bin Meik, Frontend-Entwickler und Qualitätsmanager. Für mich ist Programmieren weit mehr als nur ein Beruf – es ist Leidenschaft.",
-  "ABOUT_ME_LOCATION": "Ich lebe in der Nähe von Kassel und arbeite am liebsten remote. Moderne, flexible Arbeitsmodelle passen zu meinem Anspruch an Effizienz und Balance.",
-  "ABOUT_ME_PASSION": "Neugier und Lernbereitschaft sind für mich keine Pflicht, sondern ein Teil meiner Persönlichkeit. Ich liebe es, neue Technologien auszuprobieren und mich immer wieder auf unbekanntes Terrain zu begeben.",
-  "ABOUT_ME_PROFESSION": "Herausforderungen gehe ich analytisch, strukturiert und kreativ an. Mit langjähriger Führungserfahrung und Ausdauer finde ich für (fast) jedes Problem eine Lösung – auch wenn sie mal unkonventionell ist.",
+
+  "about_me": {
+    "title": "Über mich",
+    "description": "Ich bin Meik, Frontend-Entwickler und Qualitätsmanager. Für mich ist Programmieren weit mehr als nur ein Beruf – es ist Leidenschaft.",
+    "location": "Ich lebe in der Nähe von Kassel und arbeite am liebsten remote. Moderne, flexible Arbeitsmodelle passen zu meinem Anspruch an Effizienz und Balance.",
+    "passion": "Neugier und Lernbereitschaft sind für mich keine Pflicht, sondern ein Teil meiner Persönlichkeit. Ich liebe es, neue Technologien auszuprobieren und mich immer wieder auf unbekanntes Terrain zu begeben.",
+    "profession": "Herausforderungen gehe ich analytisch, strukturiert und kreativ an. Mit langjähriger Führungserfahrung und Ausdauer finde ich für (fast) jedes Problem eine Lösung – auch wenn sie mal unkonventionell ist."
+  },
 
   "skills": {
     "headline": "Meine Skills",
@@ -22,6 +25,22 @@
 
   "projects": {
     "headline": "Portfolio",
-    "variety": "Schau dir meine Projekte an und entdecke mein Potential."
+    "variety": "Schau dir meine Projekte an und entdecke mein Potenzial.",
+    "join": {
+      "headline": "Join",
+      "skills": "Angular | TypeScript | HTML | CSS | Firebase",
+      "variety": "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-drop, weise Nutzer und Kategorien zu."
+    },
+    "elPolloLoco": {
+      "headline": "El Pollo Loco",
+      "skills": "JavaScript | HTML | CSS",
+      "variety": "Ein simples Jump-and-Run-Spiel auf objektorientierter Basis. Hilf Sharkie, Münzen und Giftflaschen zu sammeln, um gegen den Killerwal zu bestehen."
+    },
+    "pokedex": {
+      "headline": "Pokédex",
+      "skills": "JavaScript | HTML | CSS | API",
+      "variety": "Auf der PokéAPI basierende Web-App, die Pokémon-Informationen bereitstellt und katalogisiert."
+    }
   }
+
 }

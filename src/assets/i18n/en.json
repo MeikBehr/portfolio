@@ -5,11 +5,14 @@
   "CONTACT": "Contact",
   "PRIVACY-POLICY": "Privacy Policy",
   "IMPRINT": "Imprint",
-  "ABOUT_ME_TITLE": "About me",
-  "ABOUT_ME_DESCRIPTION": "I'm Meik, a frontend developer and quality manager. For me, coding is much more than just a profession – it's a true passion.",
-  "ABOUT_ME_LOCATION": "Based near Kassel, I prefer working remotely. Modern, flexible work models align perfectly with my commitment to efficiency and work-life balance.",
-  "ABOUT_ME_PASSION": "Curiosity and a love of learning are not just duties for me – they’re part of who I am. I thrive on exploring new technologies and venturing into uncharted territory.",
-  "ABOUT_ME_PROFESSION": "I approach challenges with an analytical, structured, and creative mindset. Drawing on years of leadership experience and persistence, I find solutions to (almost) any problem – even if it means taking unconventional paths.",
+
+  "about_me": {
+    "title": "About me",
+    "description": "I'm Meik, a frontend developer and quality manager. For me, coding is much more than just a profession – it's a true passion.",
+    "location": "Based near Kassel, I prefer working remotely. Modern, flexible work models align perfectly with my commitment to efficiency and work-life balance.",
+    "passion": "Curiosity and a love of learning are not just duties for me – they’re part of who I am. I thrive on exploring new technologies and venturing into uncharted territory.",
+    "profession": "I approach challenges with an analytical, structured, and creative mindset. Drawing on years of leadership experience and persistence, I find solutions to (almost) any problem – even if it means taking unconventional paths."
+  },
 
   "skills": {
     "headline": "My skills",
@@ -22,6 +25,23 @@
 
   "projects": {
     "headline": "Portfolio",
-    "variety": "Check out my projects and discover my potential."
+    "variety": "Check out my projects and discover my potential.",
+    "join" : {
+      "headline": "Join",
+      "skills": "Angular | TypeScript | HTML | CSS | Firebase",
+      "variety": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "elPolloLoco": {
+      "headline": "El Pollo Loco",
+      "skills": "JavaScript | HTML | CSS",
+      "variety": "A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale."
+    },
+
+    "pokedex": {
+      "headline": "JavaScript | HTML | CSS",
+      "skills": "JavaScript | HTML | CSS | Api",
+      "variety": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+    }
   }
+
 }

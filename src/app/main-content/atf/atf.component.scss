@@ -229,6 +229,32 @@
   span {
     margin-left: 6px;
   }
+
+  animation: scrollBounce 1.8s cubic-bezier(.32,1.56,.53,.93) infinite;
+  will-change: transform;
+
+  &:hover,
+  &:focus-visible {
+    animation-duration: 1.2s;
+    transform: translateY(-2px);
+  }
+}
+
+
+
+@keyframes scrollBounce {
+  0%   { transform: translateY(0); }
+  33%  { transform: translateY(-8px); }
+  66%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .atf-scroll-down {
+    animation: none;
+    transform: none;
+  }
 }
 
 

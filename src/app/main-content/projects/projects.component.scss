@@ -3,7 +3,7 @@
 .portfolio {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 72px 24px 40px 24px;
+  padding: 72px 0px 40px 0px;
   background: $color-bg;
   position: relative;
   overflow-x: hidden;
@@ -19,7 +19,7 @@
 .portfolio_header__wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .portfolio_header__headlineContainer {
@@ -34,10 +34,19 @@
   content: '';
   display: block;
   height: 4px;
-  width: 120px;
+  width: 100px;
   background: $color-secondary;
   border-radius: 2px;
   margin: 0 20px;
+}
+
+.portfolio_header-content__line-left {
+    margin-left: 0px;
+}
+
+.portfolio_header-content__line-right {
+    width: 507px;
+    margin-right: 0px;
 }
 
 .portfolio_header__headline {
@@ -63,7 +72,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  gap: 80px;
   position: relative;
 }
 
@@ -77,7 +86,7 @@
 }
 
 .portfolio_card-rechts {
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: flex-end;
 }
 
@@ -92,8 +101,8 @@
 
 .portfolio_card-links-img img,
 .portfolio_card-rechts-img img {
-  width: 300px;
-  height: auto;
+  width: 600px;
+  height: 339px;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 8px 32px #00000030;
@@ -108,31 +117,40 @@
   justify-content: center;
   gap: 16px;
   min-width: 320px;
-  max-width: 400px;
+  max-width: 490px;
+  padding-top: 70px;
+}
+
+.portfolio_card-rechts-container {
+    text-align: end;
+    align-items: flex-end;
 }
 
 
 .portfolio_card-links-container > div:first-child,
 .portfolio_card-rechts-container > div:first-child {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   color: $color-text_purple;
+  line-height: 120%;
   margin-bottom: 4px;
 }
 
 .portfolio_card-links-container > div:nth-child(2),
 .portfolio_card-rechts-container > div:nth-child(2) {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 23px;
+  font-weight: 400;
   color: $color-text_green;
+  line-height: 120%;
   margin-bottom: 4px;
 }
 
 .portfolio_card-links-container > div:nth-child(3),
 .portfolio_card-rechts-container > div:nth-child(3) {
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 400;
   color: $color-text_primary;
-  opacity: 0.9;
+  line-height: 120%;
   margin-bottom: 16px;
 }
 
@@ -171,13 +189,14 @@
 }
 
 .portfolio_btn-github:hover {
+  transition: all 0.125s ease-in-out;
   background: $color-primary;
-  color: #141d2f;
   border-color: $color-primary;
 }
 
 .portfolio_btn-live:hover {
-  background: #b388ff;
+  transition: all 0.125s ease-in-out;
+  background: $color-primary;
 }
 
 
