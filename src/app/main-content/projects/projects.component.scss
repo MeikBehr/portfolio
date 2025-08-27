@@ -50,21 +50,20 @@
 }
 
 .portfolio_header__headline {
-  font-size: 48px;
+  font-size: 90px;
   font-weight: 700;
   color: $color-text_primary;
   line-height: 1.2;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.75px;
   margin: 0;
 }
 
 .portfolio_head-content__variety {
   margin-top: 18px;
   color: $color-text_primary;
-  opacity: 0.8;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.2;
   text-align: center;
-  max-width: 460px;
 }
 
 
@@ -79,9 +78,9 @@
 .portfolio_card-links,
 .portfolio_card-rechts {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
   margin-bottom: 0;
 }
 
@@ -92,20 +91,21 @@
 
 .portfolio_card-links-img,
 .portfolio_card-rechts-img {
-  flex: 0 0 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 320px;
 }
 
 .portfolio_card-links-img img,
 .portfolio_card-rechts-img img {
-  width: 600px;
+  width: 620px;
   height: 339px;
   object-fit: contain;
-  border-radius: 12px;
   box-shadow: 0 8px 32px #00000030;
+}
+
+.portfolio_card-links-container {
+    width: 513px;
 }
 
 .portfolio_card-links-container,
@@ -117,8 +117,8 @@
   justify-content: center;
   gap: 16px;
   min-width: 320px;
-  max-width: 490px;
-  padding-top: 70px;
+  max-width: 513px;
+  padding-top: 40px;
 }
 
 .portfolio_card-rechts-container {
@@ -158,25 +158,37 @@
 .portfolio_card-links-container > div:last-child,
 .portfolio_card-rechts-container > div:last-child {
   display: flex;
-  gap: 20px;
+  gap: 86px;
+}
+
+
+.portfolio_btn-live {
+    width: 152px;
+    height: 58px;
+}
+
+.portfolio_btn-github {
+    width: 137px;
+    height: 58px;
 }
 
 .portfolio_btn-live,
 .portfolio_btn-github {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 120%;
   border: none;
   outline: none;
-  padding: 10px 28px;
-  border-radius: 8px;
-  transition: all 0.2s;
+  padding: 15px 30px;
+  border-radius: 10px;
+  transition: all 0.125s ease-in-out;
   cursor: pointer;
   margin-top: 0;
 }
 
 .portfolio_btn-live {
   background: $color-secondary;
-  color: #fff;
+  color: $color-text_primary;
   box-shadow: 0 2px 12px #9747ff44;
   border: none;
 }
@@ -185,7 +197,7 @@
   background: transparent;
   color: $color-text_primary;
   border: 2px solid $color-primary;
-  transition: border 0.2s, color 0.2s;
+  transition: border 0.125s, color 0.125s ease-in-out;
 }
 
 .portfolio_btn-github:hover {
