@@ -6,7 +6,6 @@ $paddingRightText1200: 80px;
 
 .skills {
   position: relative;
-  // max-width: $container-max;
 }
 
 .skills-desktop {
@@ -316,7 +315,7 @@ $paddingRightText1200: 80px;
 
 .skills-blob {
   position: absolute;
-  top: -25px;
+  top: -312px;
   left: -30px;
   width: 290px;
   height: 700px;
@@ -326,6 +325,13 @@ $paddingRightText1200: 80px;
   z-index: 1;
 }
 
+.skills-blob-container {
+  position: relative;
+  max-width: 1440px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
@@ -595,12 +601,17 @@ $paddingRightText1200: 80px;
     .skills-content__cta-center {
       padding-right: 0;
     }
+
+    .skills-content__reveal {
+      max-width: 90%;
+    }
     .skills-content__inner {
       align-items: flex-end;
       padding-right: 62px;
       padding-left: 62px;
     }
   }
+
 
   .skills-tooltip {
     position: absolute;
@@ -610,7 +621,7 @@ $paddingRightText1200: 80px;
   }
 
   .skills-blob {
-    top: 224px;
+    top: -521px;
     left: -0.5%;
   }
 }
@@ -618,9 +629,13 @@ $paddingRightText1200: 80px;
 @media (max-width: 768px) {
     .skills-blob {
       left: -0.5%;
-      top: 420px;
+      top: -521px;
       width: 200px;
       height: 545px;
+    }
+
+    .skills-content__reveal {
+      max-width: 85%;
     }
 }
 
@@ -685,7 +700,7 @@ $paddingRightText1200: 80px;
 
   .skills-blob {
       left: -0.5%;
-      top: 654px;
+      top: -521px;
       width: 170px;
       height: 624px;
   }
@@ -727,6 +742,13 @@ $paddingRightText1200: 80px;
   .skills-grid__bottom {
     gap: 40px 0px;
     min-width: 70%;
+  }
+
+  .skills-blob {
+      left: -2.5%;
+      top: -521px;
+      width: 150px;
+      height: 480px;
   }
 }
 
@@ -790,13 +812,12 @@ $paddingRightText1200: 80px;
 
 }
 
-
 @media (max-width: 420px) {
     .skills-blob {
-      left: -0.5%;
-      top: 680px;
+      left: -2.5%;
+      top: -521px;
       width: 132px;
-      height: 624px;
+      height: 480px;
   }
 
   .skills-grid__label {
@@ -832,12 +853,11 @@ $paddingRightText1200: 80px;
 
   .skills-blob {
     left: -4.5%;
-    top: 717px;
-    width: 173px;
-    height: 633px;
+    top: -521px;
+    width: 150px;
+    height: 480px;
   }
 }
-
 
 
 @media (max-width: 320px) {
@@ -860,9 +880,9 @@ $paddingRightText1200: 80px;
 
   .skills-blob {
     left: -28.5%;
-    top: 757px;
+    top: -600px;
     width: 198px;
-    height: 633px;
+    height: 570px;
     transform: rotate(17deg);
   }
 
