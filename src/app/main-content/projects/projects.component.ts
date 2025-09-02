@@ -12,11 +12,5 @@ export class ProjectsComponent {
 
   constructor(public translate: TranslateService) {}
 
-  scrollToAboutMe(event?: Event): void {
-    event?.preventDefault();
-    setTimeout(() => {
-      document.getElementById('aboutMe')?.scrollIntoView({ behavior: 'smooth' });
-    }, 0);
-  }
 
 }

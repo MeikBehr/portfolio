@@ -1,0 +1,254 @@
+@use '../../../styles/_variables' as *;
+
+// * {
+//     border: 1px solid red;
+// }
+
+
+* {
+    transition: all 125ms ease-in-out;
+}
+
+.contact {
+    position: relative;
+    background-color: $color-bg;
+    width: $container-max;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+
+.contact-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.contact-header__line {
+  height: 4px;
+  width: 535px;
+  background: $color-primary;
+  border-radius: 2px;
+  z-index: 5;
+}
+
+.contact-header__headline {
+    padding-left: 32px;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120%;
+    color: $color-text;
+    z-index: 5;
+}
+
+
+.contact-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.contact-content__text {
+    margin-left: 100px;
+    width: 474px;
+}
+
+.contact-content__text-headling {
+    font-size: 32px;
+    line-height: 120%;
+    font-weight: 700;
+    padding-bottom: 24px;
+}
+
+.contact-content__text-content {
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 400;
+    padding-bottom: 16px;
+}
+
+.contact-content__text-question {
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 400;
+}
+
+.contact-content__form-container {
+    width: 617px;
+    margin-right: 100px;
+    margin-bottom: 180px;
+}
+
+.contact-content__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    z-index: 10;
+}
+
+.contact-content__form {
+    width: 100%;
+}
+
+.contact-form_name,
+.contact-form_mail,
+.contact-form_message {
+    width: 100%;
+    border-radius: 10px;
+    background-color: $color-bg;
+    border: 1px solid $color-secondary;
+    border-radius: 10px;
+    padding-left: 16px;
+    color: $color-text;
+
+    &:hover {
+        border: 1px solid $color-primary;
+    }
+}
+
+
+.contact-form_name,
+.contact-form_mail {
+    height: 50px;
+}
+
+.contact-form_message {
+    height: 200px;
+    padding-top: 16px;
+
+}
+
+
+.contact-form_agreement {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 400;
+    gap: 8px;
+}
+
+.contact-form_agreement a {
+    color: $color-secondary;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.contact-form_agreement svg {
+    color: $color-primary;
+    &:hover {
+      color: $color-secondary;
+    }
+}
+
+.contact-form_button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form_button {
+    width: 253px;
+    height: 58px;
+    border-radius: 10px;
+    padding: 15px 30px 15px 30px;
+    color: $color-text;
+    background-color: $color-muted;
+    border: none;
+    font-size: 23px;
+    line-height: 120%;
+    font-weight: 400;
+
+    &.checked {
+        background-color: $color-primary;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.contact-purple_shadow {
+  position: absolute;
+  content: none;
+  left: 0;
+  top: 284px;
+  width: 678px;
+  height: 805px;
+  background: url(../../../assets/img/contact/contact_purple_shadow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.contact-go_up-container {
+    width: 100%;
+    position: relative;
+}
+
+.contact-go_up {
+  position: absolute;
+  right: 100px;
+  bottom: 81px;
+  z-index: 10;
+  color: $color-text;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+
+
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 1024px) {
+  
+}
+
+@media (max-width: 950px) {
+
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 500px) {
+  
+}
+
+@media (max-width: 390px) {
+  
+}
+
+@media (max-width: 320px) {
+  
+}

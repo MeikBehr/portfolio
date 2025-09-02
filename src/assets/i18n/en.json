@@ -42,6 +42,18 @@
       "skills": "JavaScript | HTML | CSS | Api",
       "variety": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
     }
+  },
+
+  "contact": {
+    "headline": "Contact",
+    "sub_headline": "Got a problem to solve?",
+    "content": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    "contact_need": "Need a Frontend developer? ",
+    "contact_me": "Contact me!",
+    "legal_agree-start": "I've read the",
+    "legal_agree-center": "privacy policy",
+    "legal_agree-end": "and agree to the processing of my data as outlined.",
+    "send" : "Send message :)"
   }
 
 }

@@ -17,7 +17,7 @@
   "skills": {
     "headline": "Meine Skills",
     "variety": "Ich habe viel Erfahrung darin, Projekte mit verschiedenen Frontend-Technologien wie Angular, JavaScript, HTML, CSS und weiteren umzusetzen. Neues zu lernen, mich auf Veränderungen einzulassen und durch kontinuierliche Weiterbildung am Ball zu bleiben, ist für mich selbstverständlich.",
-    "looking_for": "Du vermisst",
+    "looking_for": "Sie vermissen",
     "another_skill": "einen Skill",
     "reveal": "Ich lerne ständig dazu und freue mich über jede neue Herausforderung – von modernen Frameworks bis zu ungewöhnlichen Tools.",
     "cta": "Get in touch"
@@ -25,7 +25,7 @@
 
   "projects": {
     "headline": "Portfolio",
-    "variety": "Schau dir meine Projekte an und entdecke mein Potenzial.",
+    "variety": "Schauen Sie sich meine Projekte an und entdecke Sie mein Potenzial.",
     "join": {
       "headline": "Join",
       "skills": "Angular | TypeScript | HTML | CSS | Firebase",
@@ -41,6 +41,20 @@
       "skills": "JavaScript | HTML | CSS | API",
       "variety": "Auf der PokéAPI basierende Web-App, die Pokémon-Informationen bereitstellt und katalogisiert."
     }
+  },
+
+  "contact": {
+    "headline": "Kontakt",
+    "sub_headline": "Sie haben ein Problem zu lösen?",
+    "content": "Kontaktieren Sie mich gerne, wenn Sie Unterstützung oder eine neue Perspektive für Ihr Projekt suchen. Beschreiben Sie kurz Ihr Anliegen und welche Rolle ich übernehmen könnte. Ich zeige Ihnen gerne, wie ich echten Mehrwert für Ihr Vorhaben schaffe.",
+    "contact_need": "Sie suchen einen Frontend-Entwickler? ",
+    "contact_me": "Bitte kontaktieren Sie mich!",
+    "legal_agree-start": "Ich habe die",
+    "legal_agree-center": "Datenschutzerklärung",
+    "legal_agree-end": "gelesen und erkläre mich mit der Verarbeitung meiner Daten einverstanden.",
+    "send" : "Absenden :)"
+
   }
+
 
 }
