@@ -1,2 +1,11 @@
 @use "sass:color";
 @use 'sass:math';
+@use '_variables' as *;
+
+@mixin placeholder-style {
+  color: $color-text;
+  font-family: Poppins;
+  line-height: 120%;
+  font-size: 16px;
+  opacity: 1;
+}
