@@ -87,7 +87,7 @@
           <section *ngIf="isTooltipOpen">
           <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
               <div class="skills-tooltip__content">
-                  <span class="skills-tooltip__content-heading">I have a special interest in learning</span>
+                  <span class="skills-tooltip__content-heading">{{ 'skills.popUp'  | translate }}</span>
               <div class="skills-tooltip__logos">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                           viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
@@ -291,7 +291,7 @@
               <section *ngIf="isTooltipOpen">
               <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
                   <div class="skills-tooltip__content">
-                      <span class="skills-tooltip__content-heading">I have a special interest in learning</span>
+                      <span class="skills-tooltip__content-heading">{{ 'skills.popUp'  | translate }}</span>
                   <div class="skills-tooltip__logos">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                               viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
@@ -426,7 +426,7 @@
               <section *ngIf="isTooltipOpen">
               <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
                   <div class="skills-tooltip__content">
-                      <span class="skills-tooltip__content-heading">I have a special interest in learning</span>
+                      <span class="skills-tooltip__content-heading">{{ 'skills.popUp'  | translate }}</span>
                   <div class="skills-tooltip__logos">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                               viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
@@ -492,6 +492,7 @@
 
             <div class="skills-content__cta-center">
               <a href="#contact" aria-label="Kontaktformular">
+                <!-- intentional English branding -->
                 <button class="skills-content__cta">
                   {{ 'skills.cta' | translate }}
                 </button>
