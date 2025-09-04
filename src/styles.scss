@@ -5,7 +5,6 @@
 
 
 
-/* Poppins Bold (700) – lokal */
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Bold.ttf') format('truetype');
@@ -14,7 +13,6 @@
   font-display: swap;
 }
 
-/* Optional: Regular (400) für Fließtext */
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
@@ -112,9 +110,3 @@ a:hover {
     color: $color-secondary;
 }
 
-
-.test {
-    min-height: 300px;
-    background-color: $color-bg;
-    text-align: center;
-}

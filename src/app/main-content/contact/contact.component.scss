@@ -10,7 +10,7 @@
 .contact {
     position: relative;
     background-color: $color-bg;
-    width: $container-max;
+    max-width: $container-max;
     margin-left: auto;
     margin-right: auto;
     margin-top: 120px;
@@ -148,6 +148,22 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     gap: 8px;
 }
 
+.contact-form_agreement-checkbox {
+    border: none;
+    border-radius: 50%;
+    background-color: $color-bg;
+    width: 24px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-primary;
+    &:hover {
+        background-color: $color-accent;
+    }
+}
+
+
 .contact-form_agreement a {
     color: $color-secondary;
 
@@ -156,12 +172,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     }
 }
 
-.contact-form_agreement svg {
-    color: $color-primary;
-    &:hover {
-      color: $color-secondary;
-    }
-}
 
 .contact-form_button-container {
     width: 100%;
