@@ -56,8 +56,9 @@
     "legal_agree-start": "Ich habe die",
     "legal_agree-center": "Datenschutzerklärung",
     "legal_agree-end": "gelesen und erkläre mich mit der Verarbeitung meiner Daten einverstanden.",
-    "send" : "Absenden :)"
-
+    "send" : "Absenden :)",
+    "contact_error_name_required": "Name ist erforderlich.",
+    "contact_error_name_pattern": "Bitte gib nur Buchstaben, Leerzeichen und Bindestrich ein (2–30 Zeichen)."
   }
 
 

@@ -11,13 +11,52 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
+
+
 export class ContactComponent {
 
   constructor(public translate: TranslateService) {}
 
 
 
+    contactName: string = '';
+    nameErrorKey: string | null = null;
+    nameValid: boolean | null = null;
+    inputFocused: boolean = false;
+
+    validateName() {
+    if (!this.contactName || this.contactName.trim() === '') {
+        this.nameErrorKey = 'contact.contact_error_name_required';
+        this.nameValid = false;
+        return;
+    }
+
+    const pattern = /^[A-Za-zÄÖÜäöüß\s-]{2,30}$/;
+    if (!pattern.test(this.contactName.trim())) {
+        this.nameErrorKey = 'contact.contact_error_name_pattern';
+        this.nameValid = false;
+        return;
+    }
+
+    this.nameErrorKey = null;
+    this.nameValid = true;
+    }
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
 
 
 /*

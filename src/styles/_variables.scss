@@ -19,14 +19,16 @@ $color-bg-mobile:      #141D2FCC;
 $color-text:           #ffffff;
 $color-muted:          #B6B6B6;
 $color-accent:         #18346D;
+$color-error:          #E61C40;
+$color-success:        #70E61C;
 
 /* Typo */
 $font-family:          'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 $body-size:            16px;
 $line-height:          1.5;
-$h1-size:              48px;   // TODO
-$h2-size:              32px;   // TODO
-$h3-size:              24px;   // TODO
+$h1-size:              48px;
+$h2-size:              32px;
+$h3-size:              24px;
 
 /* Spacing Scale */
 $sp-1: 4px;

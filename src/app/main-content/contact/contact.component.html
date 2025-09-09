@@ -21,20 +21,60 @@
 
         <div class="contact-content__form-container">
             <form action="" class="contact-content__form">
-                <input id="contact-name" class="contact-form_name" type="text" placeholder="{{ 'contact.input-name'  | translate }}" required>
-                <input id="contact-mail" class="contact-form_mail" type="email" placeholder="{{ 'contact.input-mail'  | translate }}" utocomplete="email" required>
-                <textarea name="" id="contact-message" class="contact-form_message" type="text" minlength="4" placeholder="{{ 'contact.input-message'  | translate }}" required></textarea>
-                <div class="contact-form_agreement">
-                    <div class="contact-form_agreement-checkbox">
-                        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 18.5C1.45 18.5 0.979167 18.3042 0.5875 17.9125C0.195833 17.5208 0 17.05 0 16.5V2.5C0 1.95 0.195833 1.47917 0.5875 1.0875C0.979167 0.695833 1.45 0.5 2 0.5H16C16.55 0.5 17.0208 0.695833 17.4125 1.0875C17.8042 1.47917 18 1.95 18 2.5V16.5C18 17.05 17.8042 17.5208 17.4125 17.9125C17.0208 18.3042 16.55 18.5 16 18.5H2ZM2 16.5H16V2.5H2V16.5Z" fill="currentColor"/>
-                    </svg>
+
+                <div class="contact-form-group">
+                    <div class="input-icon-wrapper">
+                        <input id="contact-name"
+                            name="contactName"
+                            class="contact-form_name"
+                            type="text"
+                            placeholder="{{ 'contact.input-name'  | translate }}"
+                            required
+                            [(ngModel)]="contactName"
+                            [ngClass]="{'input-error': nameValid === false || (inputFocused && !contactName)}"
+                            [ngClass]="{'input-success': nameValid === true}"
+                            (focus)="inputFocused = true"
+                            (blur)="inputFocused = false; validateName()" 
+                        />
+
+                        <span class="error-icon-inside"
+                            *ngIf="nameValid === false && nameErrorKey">!</span>
+                        <span class="success-icon-inside"
+                            *ngIf="nameValid === true">&#10003;</span>
                     </div>
-                    <div>{{ 'contact.legal_agree-start'  | translate }} <a>{{ 'contact.legal_agree-center'  | translate }}</a> {{ 'contact.legal_agree-end'  | translate }}</div>
+
+                    <div class="contact-form__feedback" *ngIf="nameValid === false && nameErrorKey">
+                        {{ nameErrorKey | translate }}
+                    </div>
                 </div>
-                <div class="contact-form_button-container">
-                    <button class="contact-form_button" type="submit">{{ 'contact.send'  | translate }}</button>
+
+
+
+                <div class="contact-form-group">
+                    <input id="contact-mail" class="contact-form_mail" type="email" placeholder="{{ 'contact.input-mail'  | translate }}" utocomplete="email" required>
                 </div>
+
+                <div class="contact-form-group">
+                    <textarea name="" id="contact-message" class="contact-form_message" type="text" minlength="4" placeholder="{{ 'contact.input-message'  | translate }}" required></textarea>
+                </div>
+
+                <div class="contact-form-group">
+                    <div class="contact-form_agreement">
+                        <div class="contact-form_agreement-checkbox">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 18.5C1.45 18.5 0.979167 18.3042 0.5875 17.9125C0.195833 17.5208 0 17.05 0 16.5V2.5C0 1.95 0.195833 1.47917 0.5875 1.0875C0.979167 0.695833 1.45 0.5 2 0.5H16C16.55 0.5 17.0208 0.695833 17.4125 1.0875C17.8042 1.47917 18 1.95 18 2.5V16.5C18 17.05 17.8042 17.5208 17.4125 17.9125C17.0208 18.3042 16.55 18.5 16 18.5H2ZM2 16.5H16V2.5H2V16.5Z" fill="currentColor"/>
+                        </svg>
+                        </div>
+                        <div>{{ 'contact.legal_agree-start'  | translate }} <a>{{ 'contact.legal_agree-center'  | translate }}</a> {{ 'contact.legal_agree-end'  | translate }}</div>
+                    </div>
+                </div>
+
+                <div class="contact-form-group">
+                    <div class="contact-form_button-container">
+                        <button class="contact-form_button" type="submit">{{ 'contact.send'  | translate }}</button>
+                    </div>
+                </div>
+
             </form>
         </div>
         

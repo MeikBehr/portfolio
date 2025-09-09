@@ -107,10 +107,14 @@
     border-radius: 10px;
     padding-left: 16px;
     color: $color-text;
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 400;
 
     &:hover {
         border: 1px solid $color-primary;
     }
+
 }
 
 
@@ -135,7 +139,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 .contact-form_message {
     height: 200px;
     padding-top: 16px;
-
+    resize: none;
 }
 
 
@@ -204,13 +208,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 
-
-
-
-
-
-
-
 .contact-purple_shadow {
   position: absolute;
   content: none;
@@ -242,6 +239,106 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
         color: $color-primary;
     }
 }
+
+
+
+.contact-form-group {
+    width: 100%;
+}
+
+.contact-form_name {
+  border: 1px solid $color-secondary;
+  transition: border-color 0.2s ease-in-out;
+  &:hover { border: 1px solid $color-primary; }
+  &:focus { border: 1px solid $color-error; }
+  &:focus::placeholder {
+    color: transparent;
+    transition: color 0.2s; 
+  }
+  &.input-success {
+    border: 1px solid $color-success !important;
+  }
+}
+
+.contact-form_name.ng-invalid.ng-touched {
+  border: 1px solid $color-error;
+}
+
+
+.contact-form_name.input-error,
+.contact-form_name.input-error:focus {
+  border: 1px solid $color-error !important;
+  outline: none;
+}
+
+
+
+.contact-form_name.input-error:focus,
+.contact-form_name.input-error {
+  border: 1px solid $color-error;
+  outline: none;
+}
+
+
+.contact-form_name .input-success {
+    border: 1px solid $color-success !important;
+}
+
+.contact-form__feedback {
+  color: $color-error;
+  font-size: 14px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.input-icon-wrapper {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding-right: 38px;
+  }
+
+  .error-icon-inside,
+  .success-icon-inside {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    pointer-events: none;
+  }
+
+  .error-icon-inside {
+    background: $color-error;
+    color: $color-bg;
+  }
+
+  .success-icon-inside {
+    background: $color-success;
+    color: $color-text_primary;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
