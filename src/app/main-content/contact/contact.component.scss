@@ -284,6 +284,20 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     border: 1px solid $color-success !important;
 }
 
+
+.input-icon-wrapper .contact-form_mail.input-success,
+.input-icon-wrapper .contact-form_mail.input-success:focus {
+  border: 1px solid $color-success !important;
+}
+
+.input-icon-wrapper .contact-form_mail.input-error,
+.input-icon-wrapper .contact-form_mail.input-error:focus {
+  border: 1px solid $color-error !important;
+}
+
+
+
+
 .contact-form__feedback {
   color: $color-error;
   font-size: 14px;

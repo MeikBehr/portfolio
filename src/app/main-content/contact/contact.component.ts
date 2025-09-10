@@ -43,6 +43,28 @@ export class ContactComponent {
     }
 
 
+    contactMail: string = '';
+    mailErrorKey: string | null = null;
+    mailValid: boolean | null = null;
+    mailInputFocused: boolean = false;
+
+    validateMail() {
+    if (!this.contactMail || this.contactMail.trim() === '') {
+        this.mailErrorKey = 'contact.contact_error_mail_required';
+        this.mailValid = false;
+        return;
+    }
+
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!pattern.test(this.contactMail.trim())) {
+        this.mailErrorKey = 'contact.contact_error_mail_pattern';
+        this.mailValid = false;
+        return;
+    }
+
+    this.mailErrorKey = null;
+    this.mailValid = true;
+    }
 
 
 

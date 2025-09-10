@@ -31,28 +31,51 @@
                             placeholder="{{ 'contact.input-name'  | translate }}"
                             required
                             [(ngModel)]="contactName"
-                            [ngClass]="{'input-error': nameValid === false || (inputFocused && !contactName)}"
-                            [ngClass]="{'input-success': nameValid === true}"
+                            [ngClass]="{
+                                'input-error': nameValid === false || (inputFocused && !contactName),
+                                'input-success': nameValid === true
+                            }"
                             (focus)="inputFocused = true"
                             (blur)="inputFocused = false; validateName()" 
                         />
-
                         <span class="error-icon-inside"
                             *ngIf="nameValid === false && nameErrorKey">!</span>
                         <span class="success-icon-inside"
                             *ngIf="nameValid === true">&#10003;</span>
                     </div>
-
                     <div class="contact-form__feedback" *ngIf="nameValid === false && nameErrorKey">
                         {{ nameErrorKey | translate }}
                     </div>
                 </div>
 
 
-
                 <div class="contact-form-group">
-                    <input id="contact-mail" class="contact-form_mail" type="email" placeholder="{{ 'contact.input-mail'  | translate }}" utocomplete="email" required>
+                    <div class="input-icon-wrapper">
+                        <input id="contact-mail"
+                            name="contactMail"
+                            class="contact-form_mail"
+                            type="email"
+                            placeholder="{{ 'contact.input-mail' | translate }}"
+                            required
+                            [(ngModel)]="contactMail"
+                            [ngClass]="{
+                                'input-error': mailValid === false || (mailInputFocused && !contactMail),
+                                'input-success': mailValid === true
+                            }"
+                            (focus)="mailInputFocused = true"
+                            (blur)="mailInputFocused = false; validateMail()" 
+                        />
+                        <span class="error-icon-inside"
+                        *ngIf="mailValid === false && mailErrorKey">!</span>
+                        <span class="success-icon-inside"
+                        *ngIf="mailValid === true">&#10003;</span>
+                    </div>
+                    <div class="contact-form__feedback" *ngIf="mailValid === false && mailErrorKey">
+                        {{ mailErrorKey | translate }}
+                    </div>
                 </div>
+
+
 
                 <div class="contact-form-group">
                     <textarea name="" id="contact-message" class="contact-form_message" type="text" minlength="4" placeholder="{{ 'contact.input-message'  | translate }}" required></textarea>
