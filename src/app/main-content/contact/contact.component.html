@@ -87,11 +87,11 @@
                             required
                             [(ngModel)]="contactMessage"
                             [ngClass]="{
-                                'input-error': msgValid === false || (inputFocused && !contactMessage),
+                                'input-error': msgValid === false || (msgInputFocused && !contactMessage),
                                 'input-success': msgValid === true
                             }"
-                            (focus)="inputFocused = true"
-                            (blur)="inputFocused = false; validateMessage()"
+                            (focus)="msgInputFocused = true"
+                            (blur)="msgInputFocused = false; validateMessage()"
                             >
                         </textarea>
 
@@ -102,7 +102,15 @@
                             *ngIf="msgValid === true">&#10003;
                         </span>
 
-                        <div class="counter">{{ contactMessage.length }} / 1000 {{ 'contact.chars' | translate }}</div>
+                        <div 
+                            class="counter"
+                            *ngIf="msgInputFocused && contactMessage.length > 0"
+                            [ngClass]="{
+                                'warning' : contactMessage.length > 950
+                            }"
+                        >
+                            {{ contactMessage.length }} / 1000 {{ 'contact.chars' | translate }}
+                        </div>
 
                     </div>
                     <div class="contact-form__feedback" *ngIf="msgValid === false && msgErrorKey">

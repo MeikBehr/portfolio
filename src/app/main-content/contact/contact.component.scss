@@ -374,7 +374,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   color: $color-secondary;
 }
 
-
+.counter.warning { color: $color-error; }
 
 
 
