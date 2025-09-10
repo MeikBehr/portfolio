@@ -92,7 +92,41 @@ export class ContactComponent {
     this.msgValid = true;
     }
 
+    privacyChecked: boolean = false;
+    privacyTouched: boolean = false;
 
+    get allFieldsValid() {
+     return this.nameValid && this.mailValid && this.msgValid;
+    }
+
+    submitContactForm() {
+        if (!this.allFieldsValid || !this.privacyChecked) {
+            this.privacyTouched = true;
+            return;
+         }
+         console.log('SENDEN!');
+    }
+
+
+
+    privacyErrorVisible: boolean = false;
+    private privacyErrorTimeout: any;
+
+    onButtonClick() {
+        if (this.allFieldsValid && !this.privacyChecked) {
+            this.privacyTouched = true;
+            this.privacyErrorVisible = true;
+            clearTimeout(this.privacyErrorTimeout);
+            this.privacyErrorTimeout = setTimeout(() => {
+            this.privacyErrorVisible = false;
+            }, 3000);
+            return;
+        }
+
+        if (this.allFieldsValid && this.privacyChecked) {
+            this.submitContactForm();
+        }
+    }
 }
 
 
