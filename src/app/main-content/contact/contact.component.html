@@ -76,10 +76,43 @@
                 </div>
 
 
-
                 <div class="contact-form-group">
-                    <textarea name="" id="contact-message" class="contact-form_message" type="text" minlength="4" placeholder="{{ 'contact.input-message'  | translate }}" required></textarea>
+                    <div class="input-icon-wrapper-msg">
+                        <textarea 
+                            name="contactMessage" 
+                            id="contact-message" 
+                            class="contact-form_message" 
+                            type="text" minlength="4" 
+                            placeholder="{{ 'contact.input-message'  | translate }}" 
+                            required
+                            [(ngModel)]="contactMessage"
+                            [ngClass]="{
+                                'input-error': msgValid === false || (inputFocused && !contactMessage),
+                                'input-success': msgValid === true
+                            }"
+                            (focus)="inputFocused = true"
+                            (blur)="inputFocused = false; validateMessage()"
+                            >
+                        </textarea>
+
+                        <span class="error-icon-inside"
+                            *ngIf="msgValid === false && msgErrorKey">!
+                        </span>
+                        <span class="success-icon-inside"
+                            *ngIf="msgValid === true">&#10003;
+                        </span>
+
+                        <div class="counter">{{ contactMessage.length }} / 1000 {{ 'contact.chars' | translate }}</div>
+
+                    </div>
+                    <div class="contact-form__feedback" *ngIf="msgValid === false && msgErrorKey">
+                        {{ msgErrorKey | translate }}
+                    </div>
                 </div>
+
+                
+
+
 
                 <div class="contact-form-group">
                     <div class="contact-form_agreement">

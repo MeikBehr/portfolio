@@ -60,7 +60,9 @@
     "contact_error_name_required": "Name ist erforderlich.",
     "contact_error_name_pattern": "Bitte gib nur Buchstaben, Leerzeichen und Bindestrich ein (2–30 Zeichen).",
     "contact_error_mail_required": "E-Mail-Adresse ist erforderlich.",
-    "contact_error_mail_pattern": "Bitte gib eine gültige E-Mail-Adresse ein."
+    "contact_error_mail_pattern": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "contact_error_msg_required": "Sie haben keine Nachricht angegeben!",
+    "contact_error_msg_pattern": "Bitte gib nur Buchstaben, Zahlen, Leerzeichen und die gängigen Satzzeichen ein (5–1000 Zeichen)."
   }
 
 

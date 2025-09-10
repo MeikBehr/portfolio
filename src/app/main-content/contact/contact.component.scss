@@ -308,7 +308,8 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 
-.input-icon-wrapper {
+.input-icon-wrapper,
+.input-icon-wrapper-msg {
   position: relative;
   width: 100%;
 
@@ -346,12 +347,32 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 
+.input-icon-wrapper-msg {
+  .error-icon-inside,
+  .success-icon-inside {
+    top: 12%;
+  }
+}
 
 
+.input-icon-wrapper-msg .contact-form_message.input-success,
+.input-icon-wrapper-msg .contact-form_message.input-success:focus {
+  border: 1px solid $color-success !important;
+}
+
+.input-icon-wrapper-msg .contact-form_message.input-error,
+.input-icon-wrapper-msg .contact-form_message.input-error:focus {
+  border: 1px solid $color-error !important;
+}
 
 
-
-
+.counter {
+  position: absolute;
+  right: 16px;
+  bottom: -14px;
+  font-size: 13px;
+  color: $color-secondary;
+}
 
 
 

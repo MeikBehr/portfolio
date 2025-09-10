@@ -61,7 +61,9 @@
     "contact_error_name_required": "Name is required.",
     "contact_error_name_pattern": "Please use only letters, spaces or hyphens (2–30 characters).",
     "contact_error_mail_required": "E-mail is required.",
-    "contact_error_mail_pattern": "Please enter a valid e-mail address."
+    "contact_error_mail_pattern": "Please enter a valid e-mail address.",
+    "contact_error_msg_required": "Your message is empty",
+    "contact_error_msg_pattern": "Please use only letters, numbers, spaces and common punctuation marks (5–1000 characters)."
 
   }
 
