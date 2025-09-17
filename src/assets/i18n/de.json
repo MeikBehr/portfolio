@@ -64,6 +64,10 @@
     "contact_error_msg_required": "Sie haben keine Nachricht angegeben!",
     "contact_error_msg_pattern": "Bitte gib nur Buchstaben, Zahlen, Leerzeichen und die gängigen Satzzeichen ein (5–1000 Zeichen).",
     "privacy_error": "Bitte akzeptiere die Datenschutzerklärung."
+  },
+
+  "privacy_policy": {
+    "title": "Datenschutz­erklärung"
   }
 
 

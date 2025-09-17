@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -127,6 +128,9 @@ export class ContactComponent {
             this.submitContactForm();
         }
     }
+
+    showPrivacyModal: boolean = false;
+
 }
 
 

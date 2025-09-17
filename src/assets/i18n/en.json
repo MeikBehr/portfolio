@@ -66,6 +66,9 @@
     "contact_error_msg_pattern": "Please use only letters, numbers, spaces and common punctuation marks (5–1000 characters).",
     "privacy_error": "Please accept the privacy policy."
 
-  }
+  },
 
+  "privacy_policy": {
+    "title": "privacy policy"
+  }
 }

@@ -142,9 +142,13 @@
 
                         <div>
                         {{ 'contact.legal_agree-start'  | translate }}
-                        <a href="/privacy-policy">
+                        <!-- <a href="/privacy-policy">
                             {{ 'contact.legal_agree-center' | translate }}
+                        </a> -->
+                        <a href="#" (click)="showPrivacyModal = true; $event.preventDefault();">
+                              {{ 'contact.legal_agree-center' | translate }}
                         </a>
+
                         {{ 'contact.legal_agree-end'  | translate }}
                         </div>
                     </div>
@@ -174,6 +178,16 @@
                 </div>
 
             </form>
+
+            <!-- Overlay -->
+            <div class="modal-overlay" *ngIf="showPrivacyModal" (click)="showPrivacyModal = false">
+                <div class="modal-content" (click)="$event.stopPropagation()">
+                    <button class="modal-close" (click)="showPrivacyModal = false" aria-label="Close modal">&times;</button>
+                    <h2>{{ 'privacy_policy.title' | translate }}</h2>
+                        <app-privacy-policy></app-privacy-policy>
+                </div>
+            </div>
+
         </div>
         
     </div>
