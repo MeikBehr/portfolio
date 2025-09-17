@@ -30,7 +30,7 @@ $paddingRightText1200: 80px;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  padding: 0 32px;
+  padding: 0 100px;
   padding-right: 0px;
   position: relative;
   overflow: hidden;
@@ -116,7 +116,7 @@ $paddingRightText1200: 80px;
 .skills-content__line {
   width: 68px;
   height: 4px;
-  background: $color-text_purple;
+  background: $color-primary;
   border-radius: 3px;
 }
 

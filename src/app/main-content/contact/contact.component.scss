@@ -52,10 +52,11 @@
     flex-direction: row;
     justify-content: space-between;
     z-index: 10;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .contact-content__text {
-    margin-left: 100px;
     width: 474px;
 }
 
@@ -81,7 +82,6 @@
 
 .contact-content__form-container {
     width: 617px;
-    margin-right: 100px;
     margin-bottom: 180px;
 }
 
@@ -432,11 +432,10 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   transition: background 0.2s, color 0.2s;
 }
 
-//////////////////////
 
 .modal-overlay {
   position: fixed;
-  z-index: 1002;
+  z-index: 100000;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(16,18,36,0.85);
   display: flex;
@@ -468,33 +467,109 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 
+@media (max-width: 1330px) {
 
 
+  .contact-content {
+    gap: 64px;
+  }
 
+  .contact-header__line {
+    max-width: 535px;
+    width: 30%;
+  }
+
+}
 
 
 @media (max-width: 1200px) {
+  .contact-content {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .contact-go_up {
+    right: 7vw;
+  }
 
 }
 
-@media (max-width: 1024px) {
-  
-}
 
 @media (max-width: 950px) {
+  .contact-content {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
+  }
+
+  .contact-content__text,
+  .contact-content__form-container {
+    max-width: 617px;
+    width: 80%;
+  }
+
+  .contact-purple_shadow {
+    top: 575px;
+    left: -118px;
+  }
+
+  .contact-purple_shadow {
+    transform: scale(0.8);
+    top: 600px;
+    left: -100px;
+  }  
 
 }
 
 @media (max-width: 768px) {
-  
+  .contact-header__line {
+    max-width: 300px;
+    width: 20%;
+  }
+
+  .contact-header__headline {
+    font-size: 70px;
+  }
+
+  .contact-content__text-headling {
+    font-size: 28px;
+  }
+
+  .contact-form_button {
+    width: 195px;
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 500px) {
-  
+  .contact-header__line {
+    max-width: 200px;
+    width: 15%;
+  }
+
+  .contact-header__headline {
+    font-size: 45px;
+  }
+
+  .contact-content__text-headling {
+    font-size: 23px;
+  }
+
+  .contact-form_button {
+    font-size: 16px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 }
 
 @media (max-width: 390px) {
-  
+  .contact-purple_shadow {
+    transform: scale(0.6);
+    top: 600px;
+    left: -180px;
+  }
 }
 
 @media (max-width: 320px) {

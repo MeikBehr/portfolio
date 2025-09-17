@@ -20,11 +20,11 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0 100px;
 }
 
 .name {
   z-index: 1201;
-  margin-left: 20px;
 }
 
 .welcomeHeader .name a {
@@ -53,7 +53,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
   
 
   @media (max-width: $breakpoint-md) {
