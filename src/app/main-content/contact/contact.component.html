@@ -26,6 +26,7 @@
                     <div class="input-icon-wrapper">
                         <input id="contact-name"
                             name="contactName"
+                            aria-label="Name"
                             class="contact-form_name"
                             type="text"
                             placeholder="{{ 'contact.input-name'  | translate }}"
@@ -53,6 +54,7 @@
                     <div class="input-icon-wrapper">
                         <input id="contact-mail"
                             name="contactMail"
+                            aria-label="E-Mail"
                             class="contact-form_mail"
                             type="email"
                             placeholder="{{ 'contact.input-mail' | translate }}"
@@ -70,7 +72,7 @@
                         <span class="success-icon-inside"
                         *ngIf="mailValid === true">&#10003;</span>
                     </div>
-                    <div class="contact-form__feedback" *ngIf="mailValid === false && mailErrorKey">
+                    <div class="contact-form__feedback" *ngIf="mailValid === false && mailErrorKey" role="alert">
                         {{ mailErrorKey | translate }}
                     </div>
                 </div>
@@ -80,8 +82,9 @@
                     <div class="input-icon-wrapper-msg">
                         <textarea 
                             name="contactMessage" 
-                            id="contact-message" 
-                            class="contact-form_message" 
+                            id="contact-message"
+                            class="contact-form_message"
+                            aria-label="Nachricht"
                             type="text" minlength="4" 
                             placeholder="{{ 'contact.input-message'  | translate }}" 
                             required
@@ -122,7 +125,7 @@
                 <div class="contact-form-group">
                     <div class="contact-form_agreement">
 
-                        <label class="contact-form_agreement-checkbox">
+                        <label class="contact-form_agreement-checkbox" aria-label="Datenschutz zustimmen">
                             <input
                                 name="privacyChecked"
                                 type="checkbox"
@@ -139,7 +142,9 @@
 
                         <div>
                         {{ 'contact.legal_agree-start'  | translate }}
-                        <a>{{ 'contact.legal_agree-center' | translate }}</a>
+                        <a href="/privacy-policy">
+                            {{ 'contact.legal_agree-center' | translate }}
+                        </a>
                         {{ 'contact.legal_agree-end'  | translate }}
                         </div>
                     </div>
