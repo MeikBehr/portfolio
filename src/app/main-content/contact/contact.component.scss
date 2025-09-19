@@ -51,7 +51,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    z-index: 10;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -180,11 +179,13 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 
 .contact-form_button-container {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .contact-form_button {
@@ -442,28 +443,36 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   align-items: center;
   justify-content: center;
 }
+
 .modal-content {
-  background: #181d2f;
-  color: #fff;
+  background: $color-bg;
+  color: $color-text_primary;
   border-radius: 16px;
   padding: 2rem;
   max-width: 680px;
   width: 90vw;
   max-height: 80vh;
   overflow: auto;
-  box-shadow: 0 6px 32px 0 #1417363d;
+  box-shadow: 0 6px 32px 0 $color-bg-mobile;
   position: relative;
 }
+
 .modal-close {
   position: absolute;
   right: 1.2rem; top: 1.2rem;
   font-size: 2rem;
-  background: none; border: none; color: #fff; cursor: pointer;
+  background: none; border: none; color: $color-text_primary; cursor: pointer;
 }
+
 .modal-scroll-content {
   margin-top: 2rem;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100dvh;
 }
 
 

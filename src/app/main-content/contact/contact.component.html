@@ -142,11 +142,8 @@
 
                         <div>
                         {{ 'contact.legal_agree-start'  | translate }}
-                        <!-- <a href="/privacy-policy">
+                        <a href="#" (click)="openPrivacyModal(); $event.preventDefault();">
                             {{ 'contact.legal_agree-center' | translate }}
-                        </a> -->
-                        <a href="#" (click)="showPrivacyModal = true; $event.preventDefault();">
-                              {{ 'contact.legal_agree-center' | translate }}
                         </a>
 
                         {{ 'contact.legal_agree-end'  | translate }}
@@ -179,24 +176,22 @@
 
             </form>
 
-            <!-- Overlay -->
-            <div class="modal-overlay" *ngIf="showPrivacyModal" (click)="showPrivacyModal = false">
+            <div class="modal-overlay" *ngIf="showPrivacyModal" (click)="closePrivacyModal()">
                 <div class="modal-content" (click)="$event.stopPropagation()">
-                    <button class="modal-close" (click)="showPrivacyModal = false" aria-label="Close modal">&times;</button>
+                    <button class="modal-close" (click)="closePrivacyModal()" aria-label="Close modal">&times;</button>
                     <h2>{{ 'privacy_policy.title' | translate }}</h2>
-                        <app-privacy-policy></app-privacy-policy>
+                    <app-privacy-policy></app-privacy-policy>
                 </div>
             </div>
+
 
         </div>
         
     </div>
 
 
-    <!-- blobb absolut-->
     <div class="contact-purple_shadow"></div>
 
-    <!-- go up-->
      <div class="contact-go_up-container">
         <a href="#top" class="contact-go_up" aria-label="Contact - go Top">
             <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">

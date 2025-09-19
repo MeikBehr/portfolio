@@ -131,6 +131,18 @@ export class ContactComponent {
 
     showPrivacyModal: boolean = false;
 
+    openPrivacyModal() {
+        this.showPrivacyModal = true;
+        document.documentElement.classList.add('no-scroll');
+        console.log(document.documentElement);
+    }
+
+    closePrivacyModal() {
+        this.showPrivacyModal = false;
+        document.documentElement.classList.remove('no-scroll');
+    }
+
+
 }
 
 
