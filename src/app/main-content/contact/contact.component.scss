@@ -484,12 +484,12 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 @media (max-width: 1200px) {
   .contact-content {
-    padding-left: 7vw;
-    padding-right: 7vw;
+    padding-left: $container-pad-l-r;
+    padding-right: $container-pad-l-r;
   }
 
   .contact-go_up {
-    right: 7vw;
+    right: $container-pad-l-r;
   }
 
 }
@@ -537,7 +537,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   }
 
   .contact-form_button {
-    width: 195px;
+    width: 225px;
     font-size: 18px;
   }
 }
@@ -557,6 +557,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   }
 
   .contact-form_button {
+    width: 195px;
     font-size: 16px;
     padding-left: 0;
     padding-right: 0;

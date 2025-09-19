@@ -32,7 +32,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 520px;
+  max-width: 620px;
+  width: 100%;
   background: transparent;
   z-index: 2;
   position: relative;
@@ -42,7 +43,8 @@
 }
 
 .about-me__text {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   text-overflow: ellipsis;
 }
 
@@ -97,24 +99,38 @@
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: $breakpoint-lg) {
   .about-me__bg {
     background-position: right top;
     background-image: url('/assets/img/about_me/about_me_hero_blobs_curved_1024.png');
-    // margin-top: -80px;
   }
+
+  .about-me__content {
+    padding: 0;
+    padding-left: $container-pad-l-r;
+  }  
+
 }
 
+
+@media (max-width: $breakpoint-norm) {
+
+  .about-me__content {
+    max-width: 520px;
+  }  
+
+  .about-me__headline {
+    font-size: 64px;
+  }
+
+}
 
 @media (max-width: 950px) {
   
     .about-me__content {
-      min-height: auto;
-      padding: 40px 8vw 32px 8vw;
-      margin: 0 auto;
-      margin-top: 600px;
       margin-top: 75vw;
-      max-width: 90vw;
+      max-width: 100%;
+      padding: 0 $container-pad-l-r;
     }
 
     .about-me__headline {
@@ -149,6 +165,7 @@
 
     .about-me__content {
       margin-left: 0;
+      align-items: center;
     }
 
     .about-me__wrapper {
@@ -157,19 +174,24 @@
    
     .about-me__text {
       width: 100%;
+      max-width: 80%;
     }
 }
 
 
 @media (max-width: 650px) {
   .about-me__content {
-   padding: 20px 1vw 32px 8vw; 
+   padding: 20px $container-pad-l-r 32px $container-pad-l-r;
+  }
+
+  .about-me__text {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .about-me__text {
-    width: 450px;
+    max-width: 100%;
   }
 
   .about-me__wrapper {
@@ -179,7 +201,7 @@
 
 @media (max-width: 500px) {
   .about-me__text {
-      width: 380px;
+      max-width: 380px;
   }
 }
 
@@ -189,10 +211,6 @@
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-  }
-  .about-me__text {
-      width: 360px;
-      padding-left: 24px;
   }
 
   .about-me__info-text {
@@ -211,13 +229,13 @@
 @media (max-width: 425px) {
 
   .about-me__text {
-      width: 340px;
+      max-width: 340px;
   }
 }
 
 @media (max-width: 390px) {
   .about-me__text {
-      width: 320px;
+      max-width: 320px;
   }
 
   .about-me__wrapper {
@@ -227,7 +245,7 @@
 
 @media (max-width: 375px) {
   .about-me__text {
-        width: 290px;
+        max-width: 290px;
   }
 }
 

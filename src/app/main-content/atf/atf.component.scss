@@ -258,6 +258,11 @@
   }
 }
 
+@media (max-width: $breakpoint-lg) {
+  .atf-scroll-down {
+    margin-right: $container-pad-l-r;
+  }
+}
 
 @media (max-width: $breakpoint-sm) {
 

@@ -313,7 +313,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 16px;
+    right: $container-pad-l-r;
     top: 32px;
     z-index: 1300;
 }
@@ -385,15 +385,15 @@
 .overlayBrand{
   position: absolute;
   top: calc(var(--nav-top) + 3px);
-  left: calc(var(--header-pad) - 10px);
+  left: calc(var(--header-pad) + 20px);
   z-index: 2;
 
   @media(max-width: $breakpoint-xs) {
-    left: calc(var(--header-pad) + 0px);
+    left: calc(var(--header-pad) + 16px);
   }
 
   @media(max-width: $breakpoint-xxs) {
-    left: calc(var(--header-pad) + 3px);
+    left: calc(var(--header-pad) + 13px);
   }
 }
 
@@ -577,4 +577,10 @@
       padding-inline: 0;
     }
 
+}
+
+@media (max-width: 1200px) {
+  .header__layout {
+    padding: 0 $container-pad-l-r;
+  }
 }

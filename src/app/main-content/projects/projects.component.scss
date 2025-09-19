@@ -249,8 +249,8 @@
   }
 
   .portfolio_content-container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: $container-pad-l-r;
+    padding-right: $container-pad-l-r;
   }
 
   .portfolio_card-links-container > div:last-child,
@@ -450,6 +450,10 @@
   .portfolio_header__headline-mobile {
     font-size: 70px;
   }
+  
+  .portfolio_purple-shadow {
+    bottom: 334px;
+  }
 }
 
 
@@ -468,7 +472,6 @@
   }
 
   .portfolio_purple-shadow {
-    bottom: 211px;
     width: 213px;
     height: 388px;
   }
