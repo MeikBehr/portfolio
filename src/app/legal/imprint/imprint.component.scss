@@ -1,0 +1,125 @@
+@use '../../../styles/_variables' as *;
+
+.legal-notice {
+  margin-top: 168px;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.legal-notice_header {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.legal-notice_header__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 95%;
+}
+
+.legal-notice_header__headlineContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.legal-notice_header-content__line-left,
+.legal-notice_header-content__line-right {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 130px;
+  background: $color-secondary;
+  border-radius: 2px;
+  margin: 0 20px;
+}
+
+.legal-notice_header-content__line-left {
+    margin-left: 0px;
+}
+
+.legal-notice_header-content__line-right {
+    width: 400px;
+    margin-right: 0px;
+}
+
+.legal-notice_header__headline {
+  font-size: 61px;
+  font-weight: 700;
+  color: $color-text_purple;
+  color: $color-primary;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.legal-notice_head-content__variety {
+  margin-top: 18px;
+  color: $color-text_primary;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.legal-notice_hr {
+    content: none;
+    height: 4px;
+    width: 100%;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    background-color: $color-secondary;
+    border-radius: 2px;
+}
+
+.legal-notice_content {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px $container-pad-l-r 100px $container-pad-l-r;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.imprint-block_headline {
+    font-size: 33px;
+    line-height: 120%;
+    font-weight: 700;
+    color: $color-secondary;
+    padding-bottom: 24px;
+}
+
+.imprint_adress {
+    font: 19px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 24px;
+}
+
+.imprint_contact,
+.imprint_respo {
+    padding-bottom: 16px;
+}
+
+.legal-notice_article {
+    position: relative;
+}
+
+.legal-notice_article-headline {
+    color: $color-text_purple;   
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.legal-notice_article-text {
+    color: $color-text;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    padding-bottom: 24px;
+}
+

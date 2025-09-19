@@ -1,19 +1,101 @@
-<p class="test">imprint works!</p>
+<section class="legal-notice">
+
+    <header class="legal-notice_header">
+        <div class="legal-notice_header__wrapper">
+            <div class="legal-notice_header__headlineContainer">
+                <div class="legal-notice_header-content__line-left"></div>
+                <h2 class="legal-notice_header__headline">{{ 'legal_notice.title' | translate }}</h2>
+                <div class="legal-notice_header-content__line-right"></div>
+            </div>
+         </div>
+    </header>
+
+    <section class="legal-notice_content">
+
+          <!-- Offizielles Impressum, deutsch/englisch -->
+        <div class="imprint-block">
+            <div class="imprint-block_headline">{{ 'legal_notice.imprint' | translate }}</div>
+            <div class="imprint_adress">
+            {{ 'legal_notice.address.name' | translate }}<br>
+            {{ 'legal_notice.address.careof' | translate }}<br>
+            {{ 'legal_notice.address.street' | translate }}<br>
+            {{ 'legal_notice.address.zipcity' | translate }}<br>
+            </div>
+            <div class="imprint_contact" [innerHTML]="'legal_notice.contact' | translate"></div>
+            <div class="imprint_respo">{{ 'legal_notice.responsible' | translate }}</div>
+            <div [innerHTML]="'legal_notice.disclaimer' | translate"></div>
+        </div>
+
+        <div class="legal-notice_hr"></div>
+
+        <!-- DA-Legal-Notice-Abschnitt -->
+        <div class="da-legal-notice">
+
+            <div class="legal-notice_article">
+                <div class="legal-notice_article-headline">
+                    {{ 'legal_notice.da_legal_notice.acceptance' | translate }}     
+                </div>
+                <div class="legal-notice_article-text" 
+                    [innerHTML]="'legal_notice.da_legal_notice.acceptance_text' | translate">
+                </div>
+            </div>
+
+            <div class="legal-notice_article">
+                <div class="legal-notice_article-headline">
+                    {{ 'legal_notice.da_legal_notice.scope' | translate }}  
+                </div>
+                <div class="legal-notice_article-text" 
+                    [innerHTML]="'legal_notice.da_legal_notice.scope_text' | translate">
+                </div>
+            </div>
+
+            <div class="legal-notice_article">
+                <div class="legal-notice_article-headline">
+                    {{ 'legal_notice.da_legal_notice.proprietary' | translate }}  
+                </div>
+                <div class="legal-notice_article-text" 
+                    [innerHTML]="'legal_notice.da_legal_notice.proprietary_text' | translate">
+                </div>
+            </div>
+
+            <div class="legal-notice_article">
+                <div class="legal-notice_article-headline">
+                    {{ 'legal_notice.da_legal_notice.use' | translate }}  
+                </div>
+                <div class="legal-notice_article-text" 
+                    [innerHTML]="'legal_notice.da_legal_notice.use_text' | translate">
+                </div>
+            </div>
+
+            <div class="legal-notice_article">
+                <div class="legal-notice_article-headline">
+                    {{ 'legal_notice.da_legal_notice.disclaimer' | translate }}
+                </div>
+                <div class="legal-notice_article-text" 
+                    [innerHTML]="'legal_notice.da_legal_notice.disclaimer_text' | translate">
+                </div>
+            </div>
+
+            <div class="legal-notice_article">
+                <div class="legal-notice_article-headline">
+                    {{ 'legal_notice.da_legal_notice.indemnity' | translate }}
+                </div>
+                <div class="legal-notice_article-text" 
+                    [innerHTML]="'legal_notice.da_legal_notice.indemnity_text' | translate">
+                </div>
+            </div>
+            
+            <div  class="legal-notice_article-text"
+                [innerHTML]="'legal_notice.da_legal_notice.contact_note' | translate">
+            </div>
+            <div  class="legal-notice_article-text">
+            {{ 'legal_notice.da_legal_notice.date' | translate }}
+            </div>
+        </div>
+        </section>
 
 
-<h1>WICHTIG</h1>
-<p>
+    </section>
 
-Angaben gemäß § 5 TMG 
 
-Meik Behr
-c/o Behr Technik GmbH
-An der Ziegelei 2
-34289 Zierenberg
 
-Kontakt  
-E-Mail: info&#64;develobehr.de
-
-Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:  
-Meik Behr (Anschrift wie oben)
-</p>

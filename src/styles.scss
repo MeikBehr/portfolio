@@ -117,3 +117,17 @@ body.no-scroll {
   overflow: hidden !important;
   height: 100vh !important;
 }
+
+.purple {
+    color: $color-text_purple;
+}
+
+.legal-link {
+  color: #9747FF;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.legal-link:hover {
+  color: #70E61C;
+}

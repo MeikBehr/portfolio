@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-imprint',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss'
 })
 export class ImprintComponent {
-
+  constructor(public translate: TranslateService) {}
 }
+
+
