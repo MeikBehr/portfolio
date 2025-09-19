@@ -66,6 +66,36 @@
     "privacy_error": "Bitte akzeptiere die Datenschutzerklärung."
   },
 
+  "legal_notice": {
+    "title": "Impressum",
+    "imprint": "Impressum",
+    "address": {
+      "name": "Meik Behr",
+      "careof": "c/o Behr Technik GmbH",
+      "street": "An der Ziegelei 2",
+      "zipcity": "34289 Zierenberg"
+    },
+    "contact": "Kontakt: <a href='mailto:info&#64;develobehr.de' class='legal-link'>info&#64;develobehr.de</a>",
+    "responsible": "Verantwortlich für den Inhalt: Meik Behr (Anschrift wie oben)",
+    "disclaimer": "Dieses Portfolio wurde im Rahmen eines Webentwicklungs-Bootcamps der <span class='purple'>Developer Akademie GmbH</span> erstellt.",
+    "da_legal_notice": {
+      "acceptance": "Akzeptanz der Bedingungen",
+      "acceptance_text": "Mit dem Zugriff und der Nutzung von <span class='purple'>Portfolio</span> erkennen Sie die folgenden Bedingungen sowie alle Richtlinien, Anleitungen oder Änderungen an, die Ihnen von Zeit zu Zeit präsentiert werden können, an und stimmen ihnen zu. Wir, die aufgeführten Teilnehmer, können die Bedingungen jederzeit und ohne vorherige Ankündigung aktualisieren oder ändern.",
+      "scope": "Geltungsbereich und Urheberschaft des Produkts",
+      "scope_text": "<span class='purple'>Portfolio</span> wurde im Rahmen eines Gruppenprojekts eines Webentwicklungs-Bootcamps an der <span class='purple'>Developer Akademie GmbH</span> entwickelt. Das Projekt dient ausschließlich Bildungszwecken und ist nicht für umfangreiche private oder geschäftliche Nutzung bestimmt. Daher können wir keine durchgehende Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder einen anderen Aspekt von Qualität für dieses Produkt garantieren.<br><br>Das Design von <span class='purple'>Portfolio</span> ist Eigentum der <span class='purple'>Developer Akademie GmbH</span>. Jede unautorisierte Nutzung, Vervielfältigung, Modifikation, Verbreitung oder Replikation des Designs ist strengstens untersagt.",
+      "proprietary": "Eigentumsrechte",
+      "proprietary_text": "Abgesehen vom Design, das der <span class='purple'>Developer Akademie GmbH</span> gehört, behalten wir, die aufgeführten Teilnehmer, alle Eigentumsrechte an <span class='purple'>Portfolio</span>, einschließlich aller zugehörigen urheberrechtlich geschützten Materialien, Marken und sonstigen Schutzrechten.",
+      "use": "Nutzung des Produkts",
+      "use_text": "<span class='purple'>Portfolio</span> darf ausschließlich zu rechtmäßigen Zwecken und im Einklang mit allen geltenden Gesetzen und Vorschriften genutzt werden. Jegliche Nutzung von <span class='purple'>Portfolio</span> für illegale Aktivitäten oder um andere Personen zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist strengstens untersagt. Sie sind allein für Ihre Interaktionen mit anderen Nutzern von <span class='purple'>Portfolio</span> verantwortlich.",
+      "disclaimer": "Haftungsausschluss und Begrenzung der Haftung",
+      "disclaimer_text": "<span class='purple'>Portfolio</span> wird 'wie gesehen' und ohne jegliche Gewährleistung – weder ausdrücklich noch stillschweigend – bereitgestellt, einschließlich, aber nicht beschränkt auf die stillschweigende Gewährleistung der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung von Rechten Dritter. In keinem Fall haften wir, die aufgeführten Teilnehmer oder die <span class='purple'>Developer Akademie GmbH</span>, für direkte, indirekte, zufällige, besondere, Folge- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf entgangenen Gewinn, Goodwill, Datenverluste oder andere immaterielle Verluste, selbst wenn auf die Möglichkeit solcher Schäden hingewiesen wurde und diese im Zusammenhang mit der Nutzung oder Leistung von <span class='purple'>Portfolio</span> entstehen.",
+      "indemnity": "Freistellung",
+      "indemnity_text": "Sie erklären sich damit einverstanden, uns, die aufgeführten Teilnehmer, die <span class='purple'>Developer Akademie GmbH</span> sowie unsere verbundenen Unternehmen, Partner, Geschäftsführer, Bevollmächtigten und Mitarbeiter von sämtlichen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten), die im Zusammenhang mit Ihrer Nutzung von <span class='purple'>Portfolio</span> und/oder Ihrer Verletzung dieses Impressums entstehen, freizustellen, zu verteidigen und schadlos zu halten.",
+      "contact_note": "Für Fragen oder Hinweise kontaktieren Sie uns bitte unter <a href='mailto:info&#64;developerakademie.com' class='legal-link'>info&#64;developerakademie.com</a>.",
+      "date": "Stand: 26. Juli 2025"
+    }
+  },
+
   "privacy_policy": {
     "title": "Datenschutz­erklärung"
   }
