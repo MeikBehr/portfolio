@@ -4,6 +4,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -21,4 +22,19 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
 })
 
 export class MainContentComponent {
+
+  constructor(private route: ActivatedRoute) {}
+   
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          const el = document.getElementById(fragment);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 50);
+      }
+    });
+    }
 }

@@ -2,6 +2,8 @@ import { Component, Inject, HostListener, OnDestroy } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { ViewportScroller } from '@angular/common'; 
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 type NavId = 'aboutMe' | 'mySkills' | 'portfolio';
 
@@ -18,10 +20,11 @@ export class HeaderComponent implements OnDestroy {
   activeLink: NavId | null = null;
 
   constructor(
-    private translate: TranslateService,
-    private viewport: ViewportScroller,
-    @Inject(DOCUMENT) private doc: Document
-  ) {
+      private translate: TranslateService,
+      private viewport: ViewportScroller,
+      private router: Router,
+      @Inject(DOCUMENT) private doc: Document
+    ) {
     this.currentLang = this.translate.currentLang?.toUpperCase() || 'EN';
   }
 
@@ -30,15 +33,10 @@ export class HeaderComponent implements OnDestroy {
     this.doc.body.style.overflow = open ? 'hidden' : '';
   }
 
-
-
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
     this.isMobileMenuOpen ? this.lockScroll() : this.unlockScroll();
   }
-
-
-
 
   closeMobileMenu(): void {
     this.setMobileMenu(false);
@@ -78,17 +76,29 @@ export class HeaderComponent implements OnDestroy {
     this.currentLang = lang.toUpperCase();
   }
 
+
+
+  navigateToSection(targetId: string, event: Event) {
+    event.preventDefault();
+    const currentUrl = this.router.url.split('#')[0];
+    if (currentUrl === '/' || currentUrl === '/index.html') {
+      this.scrollTo(targetId, event);
+    } else {
+      this.router.navigate(['/'], { fragment: targetId });
+    }
+  }
+
   scrollTo(targetId: string, event: Event): void {
     event.preventDefault();
 
     switch (targetId) {
       case 'aboutMe':
+      case 'atf':
       case 'mySkills':
       case 'portfolio':
         this.activeLink = targetId as NavId;
         break;
       default:
-        // z.B. 'contact' -> kein Desktop-Tab aktiv ändern
         break;
     }
 
@@ -137,6 +147,7 @@ export class HeaderComponent implements OnDestroy {
     this.activeLink = null as any;
     setTimeout(() => this.viewport.scrollToPosition([0, 0]), 0);
   }
+
 
 
 }

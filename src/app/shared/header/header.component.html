@@ -3,14 +3,7 @@
   <nav class="container header__layout" aria-label="Hauptnavigation">
   
     <div class="name">
-
-    <a href="#top"
-        class="logoWrap"
-        [class.hiddenMobile]="isMobileMenuOpen"
-        aria-label="Meik Behr – Logo"
-        (click)="scrollToTop($event)"
-      >
-    
+      <a (click)="navigateToSection('atf', $event)" class="logoWrap" [class.hiddenMobile]="isMobileMenuOpen" aria-label="Meik Behr – Logo">
         <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
           <title id="logoTitle">Meik</title>
 
@@ -32,11 +25,9 @@
     </div>
 
     <nav class="normalNav">
-      <a href="#aboutMe"   (click)="scrollTo('aboutMe', $event)"   [class.is-active]="activeLink==='aboutMe'">{{ 'ABOUT_ME'  | translate }}</a>
-      <a href="#mySkills"  (click)="scrollTo('mySkills', $event)"  [class.is-active]="activeLink==='mySkills'">{{ 'SKILLS'    | translate }}</a>
-      <a href="#portfolio" (click)="scrollTo('portfolio', $event)" [class.is-active]="activeLink==='portfolio'">{{ 'PORTFOLIO' | translate }}</a>
-
-
+      <a (click)="navigateToSection('aboutMe', $event)" [class.is-active]="activeLink==='aboutMe'">{{ 'ABOUT_ME' | translate }}</a>
+      <a (click)="navigateToSection('mySkills', $event)" [class.is-active]="activeLink==='mySkills'">{{ 'SKILLS' | translate }}</a>
+      <a (click)="navigateToSection('portfolio', $event)" [class.is-active]="activeLink==='portfolio'">{{ 'PORTFOLIO' | translate }}</a>
       <div class="desktopLang">
         <button type="button"
                 class="langBtn langBtn--desktop"
@@ -86,10 +77,10 @@
         </a>
 
         <ul class="menuList">
-          <li><a href="#aboutMe"   (click)="scrollTo('aboutMe', $event)">{{ 'ABOUT_ME'  | translate }}</a></li>
-          <li><a href="#mySkills"  (click)="scrollTo('mySkills', $event)">{{ 'SKILLS'    | translate }}</a></li>
-          <li><a href="#portfolio" (click)="scrollTo('portfolio', $event)">{{ 'PORTFOLIO'| translate }}</a></li>
-          <li><a href="#contact"   (click)="scrollTo('contact', $event)">{{ 'CONTACT'   | translate }}</a></li>
+          <li><a (click)="navigateToSection('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a></li>
+          <li><a (click)="navigateToSection('mySkills', $event)">{{ 'SKILLS' | translate }}</a></li>
+          <li><a (click)="navigateToSection('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a></li>
+          <li><a (click)="navigateToSection('contact', $event)">{{ 'CONTACT' | translate }}</a></li>
           <li class="langRow">
             <div class="langToggle">
               <button type="button"

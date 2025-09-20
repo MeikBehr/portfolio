@@ -81,9 +81,9 @@
 .legal-notice_content {
     margin-left: auto;
     margin-right: auto;
-    padding: 0px $container-pad-l-r 100px $container-pad-l-r;
     width: 100%;
     max-width: 1000px;
+    padding: 0 0 100px 0;
 }
 
 .imprint-block_headline {
@@ -125,7 +125,15 @@
     padding-bottom: 24px;
 }
 
-
+@media (max-width: 1200px) {
+  .legal-notice_content {
+    padding: 0px $container-pad-l-r 100px $container-pad-l-r;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 1024px) {
   .legal-notice_header {
