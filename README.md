@@ -6,7 +6,7 @@ This project showcases my personal portfolio, featuring an introduction to who I
 
 ## Link to my personal homepage
 
-https://meik-behr.de/
+https://develobehr.de/
 
 ## Technologies used
 
