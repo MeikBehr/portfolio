@@ -179,7 +179,6 @@
             <div class="modal-overlay" *ngIf="showPrivacyModal" (click)="closePrivacyModal()">
                 <div class="modal-content" (click)="$event.stopPropagation()">
                     <button class="modal-close" (click)="closePrivacyModal()" aria-label="Close modal">&times;</button>
-                    <h2>{{ 'privacy_policy.title' | translate }}</h2>
                     <app-privacy-policy></app-privacy-policy>
                 </div>
             </div>
