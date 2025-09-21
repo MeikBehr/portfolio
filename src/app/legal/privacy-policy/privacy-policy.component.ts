@@ -10,5 +10,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent {
-  constructor(public translate: TranslateService) {}
+
+  currentLang: string;
+  
+  constructor(private translate: TranslateService) {
+    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
+    this.translate.onLangChange.subscribe(lang => {
+      this.currentLang = lang.lang;
+    });
+  }
 }

@@ -13,12 +13,13 @@
     <header class="privacy-policy_header">
         <div class="privacy-policy_header__wrapper">
             <div class="privacy-policy_header__headlineContainer">
-                <div class="privacy-policy_header-content__line-left"></div>
-                <h2 class="privacy-policy_header__headline">{{ 'privacy_policy.title' | translate }}</h2>
-                <div class="privacy-policy_header-content__line-right"></div>
+            <div class="privacy-policy_header-content__line-left"></div>
+            <h2 [ngClass]="currentLang === 'de' ? 'headline--de' : 'headline--en'" class="privacy-policy_header__headline">{{ 'privacy_policy.title' | translate }}</h2>
+            <div [ngClass]="currentLang === 'de' ? 'headline_line--de' : 'headline_line--en'" class="privacy-policy_header-content__line-right"></div>
             </div>
-         </div>
+        </div>
     </header>
+
 
     <section class="privacy-policy_content">
 
@@ -111,6 +112,12 @@
                 <div class="privacy-paragraph">{{ 'privacy_policy.section3.paragraph10-1' | translate }} </div>
                 <div class="privacy-paragraph">{{ 'privacy_policy.section3.paragraph10-2' | translate }} </div>
 
+            </div>
+
+            
+
+            <div class="privacy-policy_article">
+
                 <h2>{{ 'privacy_policy.section4.headline' | translate }}</h2>
 
                 <h3>{{ 'privacy_policy.section4.subheadline1' | translate }}</h3>
@@ -124,7 +131,7 @@
                 <div class="privacy-paragraph">{{ 'privacy_policy.section4.paragraph2-3' | translate }} </div>
                 <div class="privacy-paragraph">{{ 'privacy_policy.section4.paragraph2-4' | translate }} </div>
             </div>
-            
+
         </section>
     </section>
 
