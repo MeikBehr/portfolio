@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-footer',
@@ -12,17 +13,40 @@ import { TranslateModule } from '@ngx-translate/core';
 export class FooterComponent {
   currentYear: number = new Date().getFullYear();
 
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      const fragment = this.route.snapshot.fragment;
+      if (fragment) {
+        setTimeout(() => {
+          document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+        }, 0);
+      }
+    });
+  }
 
   navigate(route: string) {
     this.router.navigate([route]);
   }
 
-  scrollTo(targetId: string, event: Event) {
+  navigateToSection(targetRoute: string, targetAnchor: string, event: Event) {
     event.preventDefault();
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    const currentUrl = this.router.url.split('#')[0];
+    if (currentUrl === `/${targetRoute}` || currentUrl === `/${targetRoute}/`) {
+      this.scrollTo(targetAnchor, event);
+    } else {
+      this.router.navigate([targetRoute], { fragment: targetAnchor });
     }
   }
+
+  scrollTo(targetId: string, event: Event): void {
+    event.preventDefault();
+    setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+  }
+
 }
