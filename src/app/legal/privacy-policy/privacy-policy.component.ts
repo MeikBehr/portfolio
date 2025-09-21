@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,6 +12,12 @@ import { CommonModule } from '@angular/common';
 export class PrivacyPolicyComponent {
 
   currentLang: string;
+
+  @Output() close = new EventEmitter<void>();
+
+  onClose() {
+    this.close.emit();
+  }
   
   constructor(private translate: TranslateService) {
     this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();

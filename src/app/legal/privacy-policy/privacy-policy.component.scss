@@ -159,6 +159,10 @@
   height: 41px;
   transition: all 0.125s ease-in-out;
 
+    & button {
+      background-color: transparent;
+    }
+
     &:hover {
         border: 2px solid $color-primary;
 
