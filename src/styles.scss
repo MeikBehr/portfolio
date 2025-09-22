@@ -131,3 +131,10 @@ body.no-scroll {
 .legal-link:hover {
   color: #70E61C;
 }
+
+
+@media (max-width: 768px) {
+  .modal-overlay .privacy-policy_mobile-nav-container {
+    display: none!important;
+  }
+}
