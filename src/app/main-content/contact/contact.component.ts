@@ -4,11 +4,12 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
+import { SuccessSnackbarComponent } from '../../shared/success-snackbar/success-snackbar.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent],
+  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent, SuccessSnackbarComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -24,6 +25,7 @@ export class ContactComponent {
     nameErrorKey: string | null = null;
     nameValid: boolean | null = null;
     inputFocused: boolean = false;
+    showSuccess = true; // FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE 
 
     validateName() {
     if (!this.contactName || this.contactName.trim() === '') {

@@ -178,10 +178,10 @@
       "paragraph2-3": "Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.",
       "paragraph2-4": "Quelle: https://www.e-recht24.de"
     }
+  },
 
-
-
-
+  "snackbar" : {
+    "success": "Erfolgreich gesendet!"
   }
 
 
