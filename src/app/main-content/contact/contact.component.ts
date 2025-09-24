@@ -24,7 +24,7 @@ export class ContactComponent {
     nameErrorKey: string | null = null;
     nameValid: boolean | null = null;
     inputFocused: boolean = false;
-    showSuccess = true; // FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE 
+    showSuccessOverlay = false;          /// FALSE ///
 
     validateName() {
     if (!this.contactName || this.contactName.trim() === '') {
@@ -105,11 +105,19 @@ export class ContactComponent {
         if (!this.allFieldsValid || !this.privacyChecked) {
             this.privacyTouched = true;
             return;
-         }
-         console.log('SENDEN!');
+        }
+
+        console.log('SENDEN!');
+        this.showSuccessOverlay = true;
+        setTimeout(() => {
+            this.showSuccessOverlay = false;
+            this.resetForm();
+        }, 1800);
     }
 
-
+    resetForm() {
+        console.log('FORM LEEREN!');
+    }
 
     privacyErrorVisible: boolean = false;
     private privacyErrorTimeout: any;
@@ -127,7 +135,16 @@ export class ContactComponent {
 
         if (this.allFieldsValid && this.privacyChecked) {
             this.submitContactForm();
+            this.showSuccessOverlay = false
         }
+    }
+
+    // Nur für Testzwecke
+    test() {
+         this.showSuccessOverlay = !this.showSuccessOverlay;
+         setTimeout(() => {
+           this.showSuccessOverlay = !this.showSuccessOverlay; 
+         }, 2000);
     }
 
     showPrivacyModal: boolean = false;
@@ -145,5 +162,4 @@ export class ContactComponent {
 
 
 }
-
 

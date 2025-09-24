@@ -63,7 +63,8 @@
     "contact_error_mail_pattern": "Bitte gib eine gültige E-Mail-Adresse ein.",
     "contact_error_msg_required": "Sie haben keine Nachricht angegeben!",
     "contact_error_msg_pattern": "Bitte gib nur Buchstaben, Zahlen, Leerzeichen und die gängigen Satzzeichen ein (5–1000 Zeichen).",
-    "privacy_error": "Bitte akzeptiere die Datenschutzerklärung."
+    "privacy_error": "Bitte akzeptiere die Datenschutzerklärung.",
+    "success": "Erfolgreich gesendet!"
   },
 
   "legal_notice": {
@@ -178,11 +179,6 @@
       "paragraph2-3": "Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.",
       "paragraph2-4": "Quelle: https://www.e-recht24.de"
     }
-  },
-
-  "snackbar" : {
-    "success": "Erfolgreich gesendet!"
   }
-
 
 }

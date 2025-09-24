@@ -64,7 +64,8 @@
     "contact_error_mail_pattern": "Please enter a valid e-mail address.",
     "contact_error_msg_required": "Your message is empty",
     "contact_error_msg_pattern": "Please use only letters, numbers, spaces and common punctuation marks (5–1000 characters).",
-    "privacy_error": "Please accept the privacy policy."
+    "privacy_error": "Please accept the privacy policy.",
+    "success": "Message sent successfully!"
 
   },
 
@@ -179,9 +180,6 @@
       "paragraph2-3": "The data you send to us via contact requests will remain with us until you ask us to delete it, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after processing your request). Mandatory statutory provisions – in particular statutory retention periods – remain unaffected.",
       "paragraph2-4": "Source: https://www.e-recht24.de"
     }
-  },
-  "snackbar" : {
-    "success": "Message sent successfully!"
   }
 
 }
