@@ -4,12 +4,11 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
-import { SuccessSnackbarComponent } from '../../shared/success-snackbar/success-snackbar.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent, SuccessSnackbarComponent],
+  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
