@@ -47,16 +47,39 @@
   transition: width 0.2s;
 }
 
-.atf__blob--left {
-  width: 400px;
+.atf__blob--left,
+.atf__blob--right {
   height: auto;
   z-index: 1;
+  animation: shadowPulse 10s linear infinite;
+  animation-delay: 0s;
+  will-change: transform, opacity;
+}
+
+.atf__blob--left {
+  width: 400px;
+  animation-delay: 0s;
 }
 
 .atf__blob--right {
   width: 340px;
-  height: auto;
-  z-index: 1;
+  animation-delay: 5s;
+}
+
+
+@keyframes shadowPulse {
+  0% {
+    transform: scale(1) translateZ(0);
+    opacity: 0.90;
+  }
+  50% {
+    transform: scale(1.2) translateZ(0);
+    opacity: 1.0;
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+    opacity: 0.90;
+  }
 }
 
 .atf-headline-wrapper {
