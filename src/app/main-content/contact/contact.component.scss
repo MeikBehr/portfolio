@@ -526,6 +526,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 .success-text {
+  text-align: center;
   color: $color-text_green;
   font-size: 2rem;
   font-weight: 700;
@@ -624,6 +625,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   }
 }
 
+
 @media (max-width: 500px) {
   .contact-header__line {
     max-width: 200px;
@@ -653,9 +655,12 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     top: 600px;
     left: -180px;
   }
+
 }
 
-@media (max-width: 320px) {
-  
+@media (max-width: 380px) {
+  .success-message {
+    width: 96%;
+  }  
 }
 
