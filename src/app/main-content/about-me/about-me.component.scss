@@ -26,6 +26,16 @@
   background-size: cover;
   background-position: right top;
   pointer-events: none;
+
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 1.1s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.7s linear, transform 1.1s linear;
+}
+
+.about-me__bg.is-inview {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .about-me__content {
@@ -66,16 +76,59 @@
   margin-bottom: 40px;
 }
 
+.about-me__headline,
+.about-me__description {
+  opacity: 0;
+  transform: perspective(800px) rotateX(60deg) scale(0.96);
+}
+
 .about-me__info-list {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
+.about-me__headline.is-inview,
+.about-me__description.is-inview {
+  animation: flipInY 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.about-me__headline.is-inview {
+  animation-delay: 0.1s;
+}
+.about-me__description.is-inview {
+  animation-delay: 0.2s;
+}
+
+
+@keyframes flipInY {
+  from {
+    transform: perspective(800px) rotateX(60deg) scale(0.96);
+    opacity: 0;
+  }
+  70% {
+    transform: perspective(800px) rotateX(-5deg) scale(1.04);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(800px) rotateX(0) scale(1.0);
+    opacity: 1;
+  }
+}
+
+
 .about-me__info-row {
   display: flex;
   align-items: flex-start;
   gap: 18px;
+  opacity: 0;
+  transform: perspective(700px) rotateX(80deg) scale(0.98);
+  transition: opacity 0.2s;  
+}
+
+.about-me__info-row.is-inview {
+  animation: flipInY_text 0.7s linear forwards;
+  animation-delay: 0.3s;
 }
 
 .about-me__icon img {
@@ -98,6 +151,20 @@
 }
 
 
+@keyframes flipInY_text {
+  from {
+    transform: perspective(700px) rotateX(80deg) scale(0.98);
+    opacity: 0;
+  }
+  70% {
+    transform: perspective(700px) rotateX(-10deg) scale(1.03);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(700px) rotateX(0) scale(1.0);
+    opacity: 1;
+  }
+}
 
 
 @media (max-width: $breakpoint-lg) {

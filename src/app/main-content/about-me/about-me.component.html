@@ -1,16 +1,25 @@
 <section class="about-me">
   <div class="about-me__wrapper">
-    <div class="about-me__bg"></div>
+    <div class="about-me__bg" [ngClass]="{ 'is-inview': bgInView }" #bgRow></div>
 
 
     <div class="about-me__content">
       <div class="about-me__text">
-        <h2 class="about-me__headline">{{ 'about_me.title' | translate }}</h2>
-        <div class="about-me__description">
-          {{ 'about_me.description' | translate }}
-        </div>
+      <h2
+        class="about-me__headline"
+        [ngClass]="{ 'is-inview': titleInView }"
+        #titleRow>
+        {{ 'about_me.title' | translate }}
+      </h2>
+
+      <div
+        class="about-me__description"
+        [ngClass]="{ 'is-inview': descInView }"
+        #descRow>
+        {{ 'about_me.description' | translate }}
+      </div>
         <div class="about-me__info-list">
-          <div class="about-me__info-row">
+          <div class="about-me__info-row" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>
             <div class="about-me__icon">
               <img src="assets/img/about_me/about_me_location.png" width="32" height="25" alt="Location Icon" />
             </div>
@@ -18,7 +27,7 @@
               {{ 'about_me.location' | translate }}
             </div>
           </div>
-          <div class="about-me__info-row">
+          <div class="about-me__info-row" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>
             <div class="about-me__icon">
               <img src="assets/img/about_me/about_me_bulb.png" width="32" height="22" alt="Lightbulb Icon" />
             </div>
@@ -26,7 +35,7 @@
               {{ 'about_me.passion' | translate }}
             </div>
           </div>
-          <div class="about-me__info-row">
+          <div class="about-me__info-row" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>
             <div class="about-me__icon">
               <img src="assets/img/about_me/about_me_puzzle.png" width="30" height="30" alt="Puzzle Icon" />
             </div>
