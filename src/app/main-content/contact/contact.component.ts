@@ -143,8 +143,8 @@ export class ContactComponent {
     test() {
          this.showSuccessOverlay = !this.showSuccessOverlay;
          setTimeout(() => {
-           this.showSuccessOverlay = !this.showSuccessOverlay; 
-         }, 2000);
+           this.showSuccessOverlay = false; 
+         }, 1800);
     }
 
     showPrivacyModal: boolean = false;
