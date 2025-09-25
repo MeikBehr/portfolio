@@ -24,7 +24,7 @@ export class ContactComponent {
     nameErrorKey: string | null = null;
     nameValid: boolean | null = null;
     inputFocused: boolean = false;
-    showSuccessOverlay = false;          /// FALSE ///
+    showSuccessOverlay = false;
 
     validateName() {
     if (!this.contactName || this.contactName.trim() === '') {
@@ -137,14 +137,6 @@ export class ContactComponent {
             this.submitContactForm();
             this.showSuccessOverlay = false
         }
-    }
-
-    // Nur für Testzwecke
-    test() {
-         this.showSuccessOverlay = !this.showSuccessOverlay;
-         setTimeout(() => {
-           this.showSuccessOverlay = false; 
-         }, 1800);
     }
 
     showPrivacyModal: boolean = false;
