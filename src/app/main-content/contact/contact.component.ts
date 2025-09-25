@@ -4,6 +4,8 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
+import { ViewChild, ElementRef } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -18,7 +20,8 @@ export class ContactComponent {
 
   constructor(public translate: TranslateService) {}
 
-
+    @ViewChild('nameInput') nameInput!: ElementRef<HTMLInputElement>;
+    @ViewChild('contactForm') contactForm!: NgForm;
 
     contactName: string = '';
     nameErrorKey: string | null = null;
@@ -111,12 +114,14 @@ export class ContactComponent {
         this.showSuccessOverlay = true;
         setTimeout(() => {
             this.showSuccessOverlay = false;
-            this.resetForm();
+            this.clearForm();
         }, 1800);
     }
 
-    resetForm() {
-        console.log('FORM LEEREN!');
+    clearForm() {
+        if (this.contactForm) {
+            this.contactForm.resetForm();
+        }
     }
 
     privacyErrorVisible: boolean = false;
@@ -135,7 +140,6 @@ export class ContactComponent {
 
         if (this.allFieldsValid && this.privacyChecked) {
             this.submitContactForm();
-            this.showSuccessOverlay = false
         }
     }
 
