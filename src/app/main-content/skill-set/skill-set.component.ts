@@ -1,6 +1,6 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-skill-set',
@@ -13,8 +13,24 @@ import { CommonModule } from '@angular/common';
 
 export class SkillSetComponent {
   @ViewChild('tooltipBtn', { static: false }) tooltipBtn!: ElementRef;
+  @ViewChildren('skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11') skillSvgs!: QueryList<ElementRef>;
+  skillsInView = Array(11).fill(false);
+
 
   constructor(private renderer: TranslateService) {}
+
+
+  ngAfterViewInit() {
+    this.skillSvgs.forEach((svg, i) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          this.skillsInView[i] = entry.isIntersecting;
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(svg.nativeElement);
+    });
+  }
 
   isTooltipOpen = false;
   tooltipTimeout: any = null;

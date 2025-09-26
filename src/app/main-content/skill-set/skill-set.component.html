@@ -7,53 +7,54 @@
     <div class="skills-section__wrapper">
 
       <div class="skills-grid">
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[0] }" #skill1>
           <img src="assets/img/skills/html.svg" alt="HTML" class="skills-grid__icon" />
           <span class="skills-grid__label">HTML</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[1] }" #skill2>
           <img src="assets/img/skills/css.svg" alt="CSS" class="skills-grid__icon" />
           <span class="skills-grid__label">CSS</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[2] }" #skill3>
           <img src="assets/img/skills/javascript.svg" alt="JavaScript" class="skills-grid__icon" />
           <span class="skills-grid__label">JavaScript</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[3] }" #skill4>
           <img src="assets/img/skills/typescript.svg" alt="TypeScript" class="skills-grid__icon" />
           <span class="skills-grid__label">TypeScript</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[4] }" #skill5>
           <img src="assets/img/skills/angular.svg" alt="Angular" class="skills-grid__icon" />
           <span class="skills-grid__label">Angular</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[5] }" #skill6>
           <img src="assets/img/skills/firebase.svg" alt="Firebase" class="skills-grid__icon" />
           <span class="skills-grid__label">Firebase</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[6] }" #skill7>
           <img src="assets/img/skills/git.svg" alt="Git" class="skills-grid__icon" />
           <span class="skills-grid__label">Git</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[7] }" #skill8>
           <img src="assets/img/skills/rest_api.svg" alt="REST-API" class="skills-grid__icon" />
           <span class="skills-grid__label">REST-API</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[8] }" #skill9>
           <img src="assets/img/skills/scrum.svg" alt="Scrum" class="skills-grid__icon" />
           <span class="skills-grid__label">Scrum</span>
         </div>
-        <div class="skills-grid__item">
+        <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': skillsInView[9] }" #skill10>
           <img src="assets/img/skills/materiralDesign.svg" alt="Material Design" class="skills-grid__icon" />
           <span class="skills-grid__label">
             Material<br />Design
           </span>
         </div>
         
-      <div class="skills-grid__item skills-grid__item--continually continually-learning"
+      <div class="skills-grid__item skills-grid__item--continually continually-learning skill-svg"
         (mouseenter)="isDesktop() && openTooltip()"
         (mouseleave)="isDesktop() && closeTooltip()"
-        (click)="!isDesktop() && onTooltipIconClick($event)">
+        (click)="!isDesktop() && onTooltipIconClick($event)"
+        [ngClass]="{ 'is-inview': skillsInView[10] }" #skill11>
 
 
           <svg width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,8 +133,9 @@
                   <path d="M2 2L12 10L22 2" stroke="#fff" stroke-width="2" fill="none" />
               </svg>
           </div>
-        </section>
+          </section>
         </div>
+
         <div class="skills-grid__item skills-grid__item--empty" tabindex="0"></div>
       </div>
 

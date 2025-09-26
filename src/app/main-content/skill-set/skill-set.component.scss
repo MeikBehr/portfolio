@@ -347,6 +347,21 @@ $paddingRightText1200: 80px;
 }
 
 
+.skill-svg {
+  opacity: 0;
+  transform: scale(0.1) rotate(-26deg);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.skill-svg.is-inview {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  filter: drop-shadow(0 4px 18px rgba(80,200,120,0.21));
+}
+
+
+
+
 
 
 /* --------- MEDIA ------------- */
