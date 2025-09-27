@@ -112,7 +112,34 @@ $paddingRightText1200: 80px;
   margin-bottom: 10px;
   color: $color-text_primary;
   padding-right: 16px;
+
+  opacity: 0;
+  transform: perspective(800px) rotateX(60deg) scale(0.96);
 }
+
+.skills-content__headline.is-inview {
+  animation: flipInY 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.skills-content__headline.is-inview {
+  animation-delay: 0.1s;
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(800px) rotateX(60deg) scale(0.96);
+    opacity: 0;
+  }
+  70% {
+    transform: perspective(800px) rotateX(-5deg) scale(1.04);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(800px) rotateX(0) scale(1.0);
+    opacity: 1;
+  }
+}
+
 
 .skills-content__line {
   width: 68px;
@@ -128,7 +155,32 @@ $paddingRightText1200: 80px;
   color: $color-text_primary;
   margin-bottom: 8px;
   text-align: end;
+
+  opacity: 0;
+  transform: perspective(700px) rotateX(80deg) scale(0.98);
+  transition: opacity 0.2s;
 }
+
+.skills-content__variety.is-inview {
+  animation: flipInY_text 0.7s linear forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes flipInY_text {
+  from {
+    transform: perspective(700px) rotateX(80deg) scale(0.98);
+    opacity: 0;
+  }
+  70% {
+    transform: perspective(700px) rotateX(-10deg) scale(1.03);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(700px) rotateX(0) scale(1.0);
+    opacity: 1;
+  }
+}
+
 
 .skills-content__subheadline {
   font-size: 28px;
@@ -138,6 +190,15 @@ $paddingRightText1200: 80px;
   display: flex;
   gap: 7px;
   text-align: end;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: perspective(700px) rotateX(80deg) scale(0.98);
+  transition: opacity 0.2s;
+}
+
+.skills-content__subheadline.is-inview {
+  animation: flipInY_text 0.7s linear forwards;
+  animation-delay: 0.3s;
 }
 
 .skills-content__subheadline-normal {
@@ -157,6 +218,14 @@ $paddingRightText1200: 80px;
   color: $color-text_primary;
   margin-bottom: 14px;
   text-align: end;
+  opacity: 0;
+  transform: perspective(700px) rotateX(80deg) scale(0.98);
+  transition: opacity 0.2s;
+}
+
+.skills-content__reveal.is-inview {
+  animation: flipInY_text 0.7s linear forwards;
+  animation-delay: 0.3s;
 }
 
 .skills-content__cta-center {
@@ -187,6 +256,14 @@ $paddingRightText1200: 80px;
     background: $color-text_purple;
     transform: scale(1.06);
   }
+  opacity: 0;
+  transform: perspective(700px) rotateX(80deg) scale(0.98);
+  transition: opacity 0.2s;
+}
+
+.skills-content__cta.is-inview {
+  animation: flipInY_text 0.7s linear forwards;
+  animation-delay: 0.3s;
 }
 
 .skills-desktop .skills-section__wrapper {

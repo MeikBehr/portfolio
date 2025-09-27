@@ -143,7 +143,7 @@
         <div class="skills-content__inner">
 
           <div class="skills-content__headlineContainer">
-              <h2 class="skills-content__headline">
+              <h2 class="skills-content__headline" [ngClass]="{ 'is-inview': titleInView }" #titleRow>
               {{ 'skills.headline' | translate }}
               </h2>
 
@@ -153,23 +153,23 @@
 
           <div class="skills-content__inner-text">
 
-            <div class="skills-content__variety">
+            <div class="skills-content__variety" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>
               {{ 'skills.variety' | translate }}
             </div>
 
-            <div class="skills-content__subheadline">
+            <div class="skills-content__subheadline" [ngClass]="{ 'is-inview': infoInView[1] }" #row2>
               <span class="skills-content__subheadline-normal">{{ 'skills.looking_for' | translate }}</span>
               <span class="skills-content__subheadline-purple">{{ 'skills.another_skill' | translate }}</span>
               <span class="skills-content__subheadline-normal">?</span>
             </div>
 
-            <div class="skills-content__reveal">
+            <div class="skills-content__reveal" [ngClass]="{ 'is-inview': infoInView[2] }" #row3>
               {{ 'skills.reveal' | translate }}
             </div>
 
             <div class="skills-content__cta-center">
               <a href="#contact" aria-label="Kontaktformular">
-                <button class="skills-content__cta">
+                <button class="skills-content__cta" [ngClass]="{ 'is-inview': infoInView[3] }" #row4>
                   {{ 'skills.cta' | translate }}
                 </button>
               </a>
@@ -195,7 +195,7 @@
             <div class="">
               <div class="skills-content__inner">
                 <div class="skills-content__headlineContainer">
-                    <h2 class="skills-content__headline">
+                    <h2 class="skills-content__headline" [ngClass]="{ 'is-inview': titleMobileInView }" #titleMobileRow>
                     {{ 'skills.headline' | translate }}
                     </h2>
                     <div class="skills-content__line"></div>
@@ -213,7 +213,7 @@
           <div class="above">
           <div class="skills-content">
             <div class="skills-content__inner">
-              <div class="skills-content__variety">
+              <div class="skills-content__variety" [ngClass]="{ 'is-inview': infoMobileView[0] }" #mobileRow1>
                 {{ 'skills.variety' | translate }}
               </div>
             </div>
@@ -494,20 +494,20 @@
         <div class="skills-content">
           <div class="skills-content__inner">
 
-            <div class="skills-content__subheadline">
+            <div class="skills-content__subheadline" [ngClass]="{ 'is-inview': infoMobileView[1] }" #mobileRow2>
               <span class="skills-content__subheadline-normal">{{ 'skills.looking_for' | translate }}</span>
               <span class="skills-content__subheadline-purple">{{ 'skills.another_skill' | translate }}</span>
               <span class="skills-content__subheadline-normal">?</span>
             </div>
 
-            <div class="skills-content__reveal">
+            <div class="skills-content__reveal" [ngClass]="{ 'is-inview': infoMobileView[2] }" #mobileRow3>
               {{ 'skills.reveal' | translate }}
             </div>
 
             <div class="skills-content__cta-center">
               <a href="#contact" aria-label="Kontaktformular">
                 <!-- intentional English branding -->
-                <button class="skills-content__cta">
+                <button class="skills-content__cta" [ngClass]="{ 'is-inview': infoMobileView[3] }" #mobileRow4>
                   {{ 'skills.cta' | translate }}
                 </button>
               </a>
