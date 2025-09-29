@@ -25,7 +25,7 @@ export class AboutMeComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-      if (this.bgRow) {
+    if (this.bgRow) {
       const obsBg = new IntersectionObserver(
         ([entry]) => {
           this.bgInView = entry.isIntersecting;

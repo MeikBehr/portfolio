@@ -14,9 +14,9 @@
     <div class="contact-content">
 
         <div class="contact-content__text">
-            <div class="contact-content__text-headling">{{ 'contact.sub_headline'  | translate }}</div>
-            <div class="contact-content__text-content">{{ 'contact.content'  | translate }}</div>
-            <div class="contact-content__text-question">{{ 'contact.contact_need'  | translate }}<b>{{ 'contact.contact_me'  | translate }}</b></div>
+            <div class="contact-content__text-headling" [ngClass]="{ 'is-inview': titleInView }" #titleRow>{{ 'contact.sub_headline'  | translate }}</div>
+            <div class="contact-content__text-content" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>{{ 'contact.content'  | translate }}</div>
+            <div class="contact-content__text-question" [ngClass]="{ 'is-inview': infoInView[1] }" #row2>{{ 'contact.contact_need'  | translate }}<b>{{ 'contact.contact_me'  | translate }}</b></div>
         </div>
 
         <div class="contact-content__form-container">

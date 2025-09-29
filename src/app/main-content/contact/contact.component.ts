@@ -1,10 +1,9 @@
 
-import { Component } from '@angular/core';
+import {Component,AfterViewInit,ViewChildren,ViewChild,ElementRef,QueryList} from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
-import { ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -22,7 +21,6 @@ export class ContactComponent {
 
     @ViewChild('nameInput') nameInput!: ElementRef<HTMLInputElement>;
     @ViewChild('contactForm') contactForm!: NgForm;
-
     contactName: string = '';
     nameErrorKey: string | null = null;
     nameValid: boolean | null = null;
@@ -156,6 +154,35 @@ export class ContactComponent {
         document.documentElement.classList.remove('no-scroll');
     }
 
+
+    @ViewChild('titleRow') titleRow!: ElementRef;
+    @ViewChildren('row1, row2') infoRows!: QueryList<ElementRef>;
+    titleInView = true;
+    infoInView = [true, true];    
+
+
+  ngAfterViewInit() {
+    if (this.titleRow) {
+      const obsTitle = new IntersectionObserver(
+        ([entry]) => {
+          this.titleInView = entry.isIntersecting;
+        },
+        { threshold: 0.25 
+        }
+      );
+    obsTitle.observe(this.titleRow.nativeElement);
+    }
+
+    this.infoRows.forEach((row, i) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          this.infoInView[i] = entry.isIntersecting;
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(row.nativeElement);
+    });
+  }
 
 }
 
