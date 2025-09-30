@@ -83,9 +83,9 @@
             </div>
 
           <div class="skills-grid__item skills-grid__item--continually continually-learning skill-svg"
-            (mouseenter)="isDesktop() && openTooltip()"
-            (mouseleave)="isDesktop() && closeTooltip()"
-            (click)="!isDesktop() && onTooltipIconClick($event)"
+            (mouseenter)="openTooltip()"
+            (mouseleave)="closeTooltip()"
+            (click)="onTooltipIconClick($event)"
             [ngClass]="{ 'is-inview': mobSkillsInView[10] }" #mobSkill11>
 
 
@@ -218,9 +218,9 @@
             </div>
             
           <div class="skills-grid__item skills-grid__item--continually continually-learning"
-            (mouseenter)="isDesktop() && openTooltip()"
-            (mouseleave)="isDesktop() && closeTooltip()"
-            (click)="!isDesktop() && onTooltipIconClick($event)">
+            (mouseenter)="openTooltip()"
+            (mouseleave)="closeTooltip()"
+            (click)="onTooltipIconClick($event)">
 
 
               <svg width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -319,7 +319,7 @@
             </div>
 
             <div class="skills-content__cta-center">
-              <a href="#contact" aria-label="Kontaktformular">
+              <a href="#contact" aria-label="Kontaktformular" class="cta-link">
                 <!-- intentional English branding -->
                 <button class="skills-content__cta" [ngClass]="{ 'is-inview': infoMobileView[3] }" #mobileRow4>
                   {{ 'skills.cta' | translate }}

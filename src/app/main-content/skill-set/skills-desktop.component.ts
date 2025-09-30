@@ -93,8 +93,7 @@ export class SkillsDesktopComponent implements AfterViewInit {
           emptyGridItem.focus();
         }
       }, 2000);
-
-      
+     
     
   }
 
@@ -109,6 +108,5 @@ export class SkillsDesktopComponent implements AfterViewInit {
       this.outsideClickHandler = null;
     }
   }
-
   
 }

@@ -13,10 +13,7 @@ import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, QueryLis
 
 export class SkillsMobileComponent implements AfterViewInit {
   @ViewChild('tooltipBtn', { static: false }) tooltipBtn!: ElementRef;
-  @ViewChildren('skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11') skillSvgs!: QueryList<ElementRef>;
   @ViewChildren('mobSkill1, mobSkill2, mobSkill3, mobSkill4, mobSkill5, mobSkill6, mobSkill7, mobSkill8, mobSkill9, mobSkill10, mobSkill11') mobSkillSvgs!: QueryList<ElementRef>;
-  @ViewChild('titleRow', { static: false }) titleRow!: ElementRef;
-  @ViewChildren('row1, row2, row3, row4') infoRows!: QueryList<ElementRef>;
   @ViewChild('titleMobileRow') titleMobileRow!: ElementRef;
   @ViewChildren('mobileRow1, mobileRow2, mobileRow3, mobileRow4') infoMobileRows!: QueryList<ElementRef>;
   infoInView = [false, false, false, false];
@@ -32,41 +29,12 @@ export class SkillsMobileComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.skillSvgs.forEach((svg, i) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          this.skillsInView[i] = entry.isIntersecting;
-        },
-        { threshold: 0.2 }
-      );
-      observer.observe(svg.nativeElement);
-    });
-
     this.mobSkillSvgs.forEach((svg, i) => {
       const observer = new IntersectionObserver(
         ([entry]) => this.mobSkillsInView[i] = entry.isIntersecting,
         { threshold: 0.2 }
       );
       observer.observe(svg.nativeElement);
-    });
-
-    if (this.titleRow) {
-      const obsTitle = new IntersectionObserver(
-        ([entry]) => {this.titleInView = entry.isIntersecting;
-        },
-        { threshold: 0.2 }
-      );
-      obsTitle.observe(this.titleRow.nativeElement);
-    }
-
-    this.infoRows.forEach((row, i) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          this.infoInView[i] = entry.isIntersecting;
-        },
-        { threshold: 0.2 }
-      );
-      observer.observe(row.nativeElement);
     });
 
     if (this.titleMobileRow) {
@@ -93,10 +61,6 @@ export class SkillsMobileComponent implements AfterViewInit {
   isTooltipOpen = false;
   tooltipTimeout: any = null;
   private outsideClickHandler: any = null;
-  isDesktop(): boolean {
-    return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  }
-
 
   openTooltip() { this.isTooltipOpen = true; }
 
@@ -131,8 +95,6 @@ export class SkillsMobileComponent implements AfterViewInit {
           emptyGridItem.focus();
         }
       }, 2000);
-
-      
     
   }
 
@@ -147,6 +109,5 @@ export class SkillsMobileComponent implements AfterViewInit {
       this.outsideClickHandler = null;
     }
   }
-
   
 }
