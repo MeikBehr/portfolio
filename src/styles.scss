@@ -66,6 +66,7 @@ body {
   color: $color-text;
   background: $color-bg;
   overflow: visible;
+  overflow-x: hidden;
   direction: ltr;
 }
 
