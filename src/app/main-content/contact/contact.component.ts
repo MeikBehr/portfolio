@@ -1,5 +1,5 @@
 
-import {Component,AfterViewInit,ViewChildren,ViewChild,ElementRef,QueryList} from '@angular/core';
+import {Component, ViewChildren,ViewChild,ElementRef,QueryList} from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

@@ -1,0 +1,343 @@
+
+<section class="skills">
+
+
+<section class="skills-mobile">
+
+
+          <div class="skills-mobile_header">
+            <div class="">
+              <div class="skills-content__inner">
+                <div class="skills-content__headlineContainer">
+                    <h2 class="skills-content__headline" [ngClass]="{ 'is-inview': titleMobileInView }" #titleMobileRow>
+                    {{ 'skills.headline' | translate }}
+                    </h2>
+                    <div class="skills-content__line"></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+
+
+  <section class="skills-section">
+
+
+    <div class="skills-section__wrapper">
+
+          <div class="above">
+          <div class="skills-content">
+            <div class="skills-content__inner">
+              <div class="skills-content__variety" [ngClass]="{ 'is-inview': infoMobileView[0] }" #mobileRow1>
+                {{ 'skills.variety' | translate }}
+              </div>
+            </div>
+          </div>
+        </div> 
+
+
+
+        <div class="skills-grid">
+
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[0] }" #mobSkill1>
+              <img src="assets/img/skills/html.svg" alt="HTML" class="skills-grid__icon" />
+              <span class="skills-grid__label">HTML</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[1] }" #mobSkill2>
+              <img src="assets/img/skills/css.svg" alt="CSS" class="skills-grid__icon" />
+              <span class="skills-grid__label">CSS</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[2] }" #mobSkill3>
+              <img src="assets/img/skills/javascript.svg" alt="JavaScript" class="skills-grid__icon" />
+              <span class="skills-grid__label">JavaScript</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[3] }" #mobSkill4>
+              <img src="assets/img/skills/typescript.svg" alt="TypeScript" class="skills-grid__icon" />
+              <span class="skills-grid__label">TypeScript</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[4] }" #mobSkill5>
+              <img src="assets/img/skills/angular.svg" alt="Angular" class="skills-grid__icon" />
+              <span class="skills-grid__label">Angular</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[5] }" #mobSkill6>
+              <img src="assets/img/skills/firebase.svg" alt="Firebase" class="skills-grid__icon" />
+              <span class="skills-grid__label">Firebase</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[6] }" #mobSkill7>
+              <img src="assets/img/skills/git.svg" alt="Git" class="skills-grid__icon" />
+              <span class="skills-grid__label">Git</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[7] }" #mobSkill8>
+              <img src="assets/img/skills/rest_api.svg" alt="REST-API" class="skills-grid__icon" />
+              <span class="skills-grid__label">REST-API</span>
+            </div>
+            <div class="skills-grid__item skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[8] }" #mobSkill9>
+              <img src="assets/img/skills/scrum.svg" alt="Scrum" class="skills-grid__icon" />
+              <span class="skills-grid__label">Scrum</span>
+            </div>
+
+            <div class="skills-grid__item skills-grid__item--material skill-svg" [ngClass]="{ 'is-inview': mobSkillsInView[9] }" #mobSkill10>
+              <img src="assets/img/skills/materiralDesign.svg" alt="Material Design" class="skills-grid__icon" />
+              <span class="skills-grid__label">
+                Material<br />Design
+              </span>
+            </div>
+
+          <div class="skills-grid__item skills-grid__item--continually continually-learning skill-svg"
+            (mouseenter)="isDesktop() && openTooltip()"
+            (mouseleave)="isDesktop() && closeTooltip()"
+            (click)="!isDesktop() && onTooltipIconClick($event)"
+            [ngClass]="{ 'is-inview': mobSkillsInView[10] }" #mobSkill11>
+
+
+              <svg width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1_28)">
+                  <g clip-path="url(#clip1_1_28)">
+                  <path d="M93.4225 23.9001L94.304 23.3257C95.372 22.6237 95.2363 21.1079 94.0667 20.5814L87.0485 17.4383C85.8618 16.9118 84.5227 17.7893 84.6243 19.0179L85.3025 26.3092C85.421 27.5218 86.8958 28.1759 87.9638 27.4739L89.2183 26.6602C100.373 43.5724 97.3723 66.1006 81.7763 79.8218C66.4348 93.3195 42.7867 94.963 25.5465 83.7307C24.3938 82.9809 22.8003 83.2521 22.0036 84.3369C21.2068 85.422 21.495 86.9217 22.6477 87.6715C31.1746 93.2239 41.0915 95.9522 50.9915 95.9522C63.3835 95.9522 75.7415 91.6762 85.2515 83.3159C102.661 67.9832 106.018 42.7588 93.4225 23.9001Z" fill="currentColor"/>
+                  </g>
+                  <path d="M79 49V66.2047C79 66.9807 78.6495 67.6788 78.0652 68.0667L52.9265 84.7089C52.3588 85.097 51.6577 85.097 51.0735 84.7089L25.9348 68.0667C25.3505 67.6788 25 66.9807 25 66.2047V49L38.9382 58.2134L51.0735 66.2629C51.6412 66.6508 52.3423 66.6508 52.9265 66.2629L65.0618 58.2134L79 49Z" fill="currentColor"/>
+                  <g clip-path="url(#clip2_1_28)">
+                  <path d="M80.5219 10.3284C61.332 -2.18019 35.0055 -0.345383 17.918 14.6841C0.0674755 30.3995 -3.13646 55.5125 10.1709 74.6902L8.93339 75.488C7.86541 76.19 8.00103 77.7057 9.17073 78.2323L16.1889 81.3754C17.3755 81.9018 18.7147 81.0243 18.613 79.7958L17.9349 72.5045C17.8163 71.2919 16.3414 70.6378 15.2734 71.3398L14.358 71.946C2.52553 54.7308 5.39042 32.2503 21.3932 18.1782C36.7347 4.68039 60.3829 3.02108 77.623 14.2693C78.7757 15.0191 80.3692 14.7479 81.166 13.663C81.9627 12.578 81.6745 11.0783 80.5219 10.3284Z" fill="currentColor"/>
+                  </g>
+                  <path d="M85.0201 40.9602L52.5403 62.4108C51.9556 62.8095 51.2334 62.8095 50.6316 62.4108L18.1518 40.9602C16.8795 40.1229 16.8795 37.9896 18.1518 37.1325L50.6316 15.6818C51.2163 15.2831 51.9385 15.2831 52.5403 15.6818L85.0201 37.1325C86.2924 37.9698 86.2924 40.1029 85.0201 40.9602Z" fill="currentColor"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_1_28">
+                  <rect width="104" height="98" fill="white"/>
+                  </clipPath>
+                  <clipPath id="clip1_1_28">
+                  <rect width="80" height="80" fill="white" transform="translate(21 16)"/>
+                  </clipPath>
+                  <clipPath id="clip2_1_28">
+                  <rect width="80" height="80" fill="white" transform="translate(2 2)"/>
+                  </clipPath>
+                  </defs>
+              </svg>
+
+              <span class="skills-grid__label">
+                Continually<br />learning
+              </span>
+
+              <section *ngIf="isTooltipOpen">
+              <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
+                  <div class="skills-tooltip__content">
+                      <span class="skills-tooltip__content-heading">{{ 'skills.popUp'  | translate }}</span>
+                  <div class="skills-tooltip__logos">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                          <g>
+                              <path style="fill:#1565C0;" d="M10,12l3,25l-8.019-8.019c-1.189-1.189-1.508-2.996-0.796-4.52L10,12z"/>
+                              <g>
+                                  <path style="fill:#42A5F5;" d="M27.319,6.319C26.474,5.474,25.329,5,24.135,5c-0.745,0-1.479,0.185-2.135,0.538L10,12v20.343
+                                      c0,1.061,0.421,2.078,1.172,2.828L13,37h22v-5l7-11L27.319,6.319z"/>
+                              </g>
+                              <path style="fill:#1565C0;" d="M10,12h21.343c1.061,0,2.078,0.421,2.828,1.172L42,21v16h-7L10,12z"/>
+                              <polygon style="fill:#85CBF8;" points="35,37 13,37 19,43 35,43 	"/>
+                          </g>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 166 202">
+                      <defs>
+                          <linearGradient id="triangleGradient">
+                          <stop offset="20%" stop-color="#000000" stop-opacity=".55" />
+                          <stop offset="85%" stop-color="#616161" stop-opacity=".01" />
+                          </linearGradient>
+                          <linearGradient id="rectangleGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+                          <stop offset="20%" stop-color="#000000" stop-opacity=".15" />
+                          <stop offset="85%" stop-color="#616161" stop-opacity=".01" />
+                          </linearGradient>
+                      </defs>
+                          <path fill="#42A5F5" fill-opacity=".8" d="M37.7 128.9 9.8 101 100.4 10.4 156.2 10.4" />
+                          <path fill="#42A5F5" fill-opacity=".8" d="M156.2 94 100.4 94 79.5 114.9 107.4 142.8" />
+                          <path fill="#0D47A1" d="M79.5 170.7 100.4 191.6 156.2 191.6 156.2 191.6 107.4 142.8" />
+                          <g transform="matrix(0.7071, -0.7071, 0.7071, 0.7071, -77.667, 98.057)">
+                              <rect width="39.4" height="39.4" x="59.8" y="123.1" fill="#42A5F5" />
+                              <rect width="39.4" height="5.5" x="59.8" y="162.5" fill="url(#rectangleGradient)" />
+                          </g>
+                          <path d="M79.5 170.7 120.9 156.4 107.4 142.8" fill="url(#triangleGradient)" />
+                      </svg>
+                  </div>
+                  <div class="skills-tooltip__labels">
+                      <span>Dart</span>
+                      <span>Flutter</span>
+                  </div>
+                  </div>
+                  <div class="skills-tooltip__arrow"></div>
+                  <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 2L12 10L22 2" stroke="#fff" stroke-width="2" fill="none" />
+                  </svg>
+              </div>
+            </section>
+            </div>
+        </div>
+
+        <div class="skills-grid-3">
+
+          <div class="skills-grid__top">
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/html.svg" alt="HTML" class="skills-grid__icon" />
+              <span class="skills-grid__label">HTML</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/css.svg" alt="CSS" class="skills-grid__icon" />
+              <span class="skills-grid__label">CSS</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/javascript.svg" alt="JavaScript" class="skills-grid__icon" />
+              <span class="skills-grid__label">JavaScript</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/typescript.svg" alt="TypeScript" class="skills-grid__icon" />
+              <span class="skills-grid__label">TypeScript</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/angular.svg" alt="Angular" class="skills-grid__icon" />
+              <span class="skills-grid__label">Angular</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/firebase.svg" alt="Firebase" class="skills-grid__icon" />
+              <span class="skills-grid__label">Firebase</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/git.svg" alt="Git" class="skills-grid__icon" />
+              <span class="skills-grid__label">Git</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/rest_api.svg" alt="REST-API" class="skills-grid__icon" />
+              <span class="skills-grid__label">REST-API</span>
+            </div>
+            <div class="skills-grid__item">
+              <img src="assets/img/skills/scrum.svg" alt="Scrum" class="skills-grid__icon" />
+              <span class="skills-grid__label">Scrum</span>
+            </div>
+          </div>
+          <div class="skills-grid__bottom">
+            <div class="skills-grid__item skills-grid__item--material">
+              <img src="assets/img/skills/materiralDesign.svg" alt="Material Design" class="skills-grid__icon" />
+              <span class="skills-grid__label">
+                Material<br />Design
+              </span>
+            </div>
+            
+          <div class="skills-grid__item skills-grid__item--continually continually-learning"
+            (mouseenter)="isDesktop() && openTooltip()"
+            (mouseleave)="isDesktop() && closeTooltip()"
+            (click)="!isDesktop() && onTooltipIconClick($event)">
+
+
+              <svg width="104" height="98" viewBox="0 0 104 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1_28)">
+                  <g clip-path="url(#clip1_1_28)">
+                  <path d="M93.4225 23.9001L94.304 23.3257C95.372 22.6237 95.2363 21.1079 94.0667 20.5814L87.0485 17.4383C85.8618 16.9118 84.5227 17.7893 84.6243 19.0179L85.3025 26.3092C85.421 27.5218 86.8958 28.1759 87.9638 27.4739L89.2183 26.6602C100.373 43.5724 97.3723 66.1006 81.7763 79.8218C66.4348 93.3195 42.7867 94.963 25.5465 83.7307C24.3938 82.9809 22.8003 83.2521 22.0036 84.3369C21.2068 85.422 21.495 86.9217 22.6477 87.6715C31.1746 93.2239 41.0915 95.9522 50.9915 95.9522C63.3835 95.9522 75.7415 91.6762 85.2515 83.3159C102.661 67.9832 106.018 42.7588 93.4225 23.9001Z" fill="currentColor"/>
+                  </g>
+                  <path d="M79 49V66.2047C79 66.9807 78.6495 67.6788 78.0652 68.0667L52.9265 84.7089C52.3588 85.097 51.6577 85.097 51.0735 84.7089L25.9348 68.0667C25.3505 67.6788 25 66.9807 25 66.2047V49L38.9382 58.2134L51.0735 66.2629C51.6412 66.6508 52.3423 66.6508 52.9265 66.2629L65.0618 58.2134L79 49Z" fill="currentColor"/>
+                  <g clip-path="url(#clip2_1_28)">
+                  <path d="M80.5219 10.3284C61.332 -2.18019 35.0055 -0.345383 17.918 14.6841C0.0674755 30.3995 -3.13646 55.5125 10.1709 74.6902L8.93339 75.488C7.86541 76.19 8.00103 77.7057 9.17073 78.2323L16.1889 81.3754C17.3755 81.9018 18.7147 81.0243 18.613 79.7958L17.9349 72.5045C17.8163 71.2919 16.3414 70.6378 15.2734 71.3398L14.358 71.946C2.52553 54.7308 5.39042 32.2503 21.3932 18.1782C36.7347 4.68039 60.3829 3.02108 77.623 14.2693C78.7757 15.0191 80.3692 14.7479 81.166 13.663C81.9627 12.578 81.6745 11.0783 80.5219 10.3284Z" fill="currentColor"/>
+                  </g>
+                  <path d="M85.0201 40.9602L52.5403 62.4108C51.9556 62.8095 51.2334 62.8095 50.6316 62.4108L18.1518 40.9602C16.8795 40.1229 16.8795 37.9896 18.1518 37.1325L50.6316 15.6818C51.2163 15.2831 51.9385 15.2831 52.5403 15.6818L85.0201 37.1325C86.2924 37.9698 86.2924 40.1029 85.0201 40.9602Z" fill="currentColor"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_1_28">
+                  <rect width="104" height="98" fill="white"/>
+                  </clipPath>
+                  <clipPath id="clip1_1_28">
+                  <rect width="80" height="80" fill="white" transform="translate(21 16)"/>
+                  </clipPath>
+                  <clipPath id="clip2_1_28">
+                  <rect width="80" height="80" fill="white" transform="translate(2 2)"/>
+                  </clipPath>
+                  </defs>
+              </svg>
+
+              <span class="skills-grid__label">
+                Continually<br />learning
+              </span>
+
+              <section *ngIf="isTooltipOpen">
+              <div class="skills-tooltip" [class.skills-tooltip--open]="isTooltipOpen">
+                  <div class="skills-tooltip__content">
+                      <span class="skills-tooltip__content-heading">{{ 'skills.popUp'  | translate }}</span>
+                  <div class="skills-tooltip__logos">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                          <g>
+                              <path style="fill:#1565C0;" d="M10,12l3,25l-8.019-8.019c-1.189-1.189-1.508-2.996-0.796-4.52L10,12z"/>
+                              <g>
+                                  <path style="fill:#42A5F5;" d="M27.319,6.319C26.474,5.474,25.329,5,24.135,5c-0.745,0-1.479,0.185-2.135,0.538L10,12v20.343
+                                      c0,1.061,0.421,2.078,1.172,2.828L13,37h22v-5l7-11L27.319,6.319z"/>
+                              </g>
+                              <path style="fill:#1565C0;" d="M10,12h21.343c1.061,0,2.078,0.421,2.828,1.172L42,21v16h-7L10,12z"/>
+                              <polygon style="fill:#85CBF8;" points="35,37 13,37 19,43 35,43 	"/>
+                          </g>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 166 202">
+                      <defs>
+                          <linearGradient id="triangleGradient">
+                          <stop offset="20%" stop-color="#000000" stop-opacity=".55" />
+                          <stop offset="85%" stop-color="#616161" stop-opacity=".01" />
+                          </linearGradient>
+                          <linearGradient id="rectangleGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+                          <stop offset="20%" stop-color="#000000" stop-opacity=".15" />
+                          <stop offset="85%" stop-color="#616161" stop-opacity=".01" />
+                          </linearGradient>
+                      </defs>
+                          <path fill="#42A5F5" fill-opacity=".8" d="M37.7 128.9 9.8 101 100.4 10.4 156.2 10.4" />
+                          <path fill="#42A5F5" fill-opacity=".8" d="M156.2 94 100.4 94 79.5 114.9 107.4 142.8" />
+                          <path fill="#0D47A1" d="M79.5 170.7 100.4 191.6 156.2 191.6 156.2 191.6 107.4 142.8" />
+                          <g transform="matrix(0.7071, -0.7071, 0.7071, 0.7071, -77.667, 98.057)">
+                              <rect width="39.4" height="39.4" x="59.8" y="123.1" fill="#42A5F5" />
+                              <rect width="39.4" height="5.5" x="59.8" y="162.5" fill="url(#rectangleGradient)" />
+                          </g>
+                          <path d="M79.5 170.7 120.9 156.4 107.4 142.8" fill="url(#triangleGradient)" />
+                      </svg>
+                  </div>
+                  <div class="skills-tooltip__labels">
+                      <span>Dart</span>
+                      <span>Flutter</span>
+                  </div>
+                  </div>
+                  <div class="skills-tooltip__arrow"></div>
+                  <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 2L12 10L22 2" stroke="#fff" stroke-width="2" fill="none" />
+                  </svg>
+              </div>
+            </section>
+            </div>
+        </div>
+        </div>
+
+       <div class="below">
+        <div class="skills-content">
+          <div class="skills-content__inner">
+
+            <div class="skills-content__subheadline" [ngClass]="{ 'is-inview': infoMobileView[1] }" #mobileRow2>
+              <span class="skills-content__subheadline-normal">{{ 'skills.looking_for' | translate }}</span>
+              <span class="skills-content__subheadline-purple">{{ 'skills.another_skill' | translate }}</span>
+              <span class="skills-content__subheadline-normal">?</span>
+            </div>
+
+            <div class="skills-content__reveal" [ngClass]="{ 'is-inview': infoMobileView[2] }" #mobileRow3>
+              {{ 'skills.reveal' | translate }}
+            </div>
+
+            <div class="skills-content__cta-center">
+              <a href="#contact" aria-label="Kontaktformular">
+                <!-- intentional English branding -->
+                <button class="skills-content__cta" [ngClass]="{ 'is-inview': infoMobileView[3] }" #mobileRow4>
+                  {{ 'skills.cta' | translate }}
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</section>
+
+
+<section class="skills-blob-container">
+  <div class="skills-blob"></div>
+</section>
+
+</section>
