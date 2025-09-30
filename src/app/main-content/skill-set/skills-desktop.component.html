@@ -51,9 +51,9 @@
         </div>
         
       <div class="skills-grid__item skills-grid__item--continually continually-learning skill-svg"
-        (mouseenter)="isDesktop() && openTooltip()"
-        (mouseleave)="isDesktop() && closeTooltip()"
-        (click)="!isDesktop() && onTooltipIconClick($event)"
+        (mouseenter)="openTooltip()"
+        (mouseleave)="closeTooltip()"
+        (click)="onTooltipIconClick($event)"
         [ngClass]="{ 'is-inview': skillsInView[10] }" #skill11>
 
 
@@ -168,7 +168,7 @@
             </div>
 
             <div class="skills-content__cta-center">
-              <a href="#contact" aria-label="Kontaktformular">
+              <a href="#contact" aria-label="Kontaktformular" class="cta-link">
                 <button class="skills-content__cta" [ngClass]="{ 'is-inview': infoInView[3] }" #row4>
                   {{ 'skills.cta' | translate }}
                 </button>
