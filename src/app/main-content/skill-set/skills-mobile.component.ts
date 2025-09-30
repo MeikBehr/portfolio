@@ -14,6 +14,7 @@ import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, QueryLis
 export class SkillsMobileComponent implements AfterViewInit {
   @ViewChild('tooltipBtn', { static: false }) tooltipBtn!: ElementRef;
   @ViewChildren('mobSkill1, mobSkill2, mobSkill3, mobSkill4, mobSkill5, mobSkill6, mobSkill7, mobSkill8, mobSkill9, mobSkill10, mobSkill11') mobSkillSvgs!: QueryList<ElementRef>;
+  @ViewChildren('mobSkill3_1, mobSkill3_2, mobSkill3_3, mobSkill3_4, mobSkill3_5, mobSkill3_6, mobSkill3_7, mobSkill3_8, mobSkill3_9, mobSkill3_10, mobSkill3_11') mobSkill3Svgs!: QueryList<ElementRef>;
   @ViewChild('titleMobileRow') titleMobileRow!: ElementRef;
   @ViewChildren('mobileRow1, mobileRow2, mobileRow3, mobileRow4') infoMobileRows!: QueryList<ElementRef>;
   infoInView = [false, false, false, false];
@@ -22,6 +23,7 @@ export class SkillsMobileComponent implements AfterViewInit {
   titleMobileInView = false;
   skillsInView = Array(11).fill(false);
   mobSkillsInView = Array(11).fill(false);
+  mobSkillsInView3 = Array(11).fill(false);
 
 
 
@@ -36,7 +38,13 @@ export class SkillsMobileComponent implements AfterViewInit {
       );
       observer.observe(svg.nativeElement);
     });
-
+    this.mobSkill3Svgs.forEach((svg, i) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => this.mobSkillsInView3[i] = entry.isIntersecting,
+        { threshold: 0.2 }
+      );
+      observer.observe(svg.nativeElement);
+    });
     if (this.titleMobileRow) {
       const obsTitle = new IntersectionObserver(
         ([entry]) => {this.titleMobileInView = entry.isIntersecting;
