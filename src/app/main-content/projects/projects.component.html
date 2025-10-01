@@ -10,7 +10,7 @@
                 <h2 class="portfolio_header__headline">{{ 'projects.headline' | translate }}</h2>
                 <div class="portfolio_header-content__line-right"></div>
             </div>
-            <div class="portfolio_head-content__variety" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>{{ 'projects.variety' | translate }}</div>
+            <div class="portfolio_head-content__variety" [ngClass]="{ 'is-inview': varietyInView }" #variety>{{ 'projects.variety' | translate }}</div>
           </div>
     </header>
 
@@ -43,7 +43,7 @@
 
     <section class="portfolio_content-container">
 
-        <section class="portfolio_card-links">
+        <section class="portfolio_card-links" [ngClass]="{ 'is-inview': cardsInView[0] }" #card1>
             <article class="portfolio_card-links-img">
                 <img src="./assets/img/projects/projects_join.png" alt="">
             </article>
@@ -59,7 +59,7 @@
         </section>
 
 
-        <section class="portfolio_card-rechts">
+        <section class="portfolio_card-rechts" [ngClass]="{ 'is-inview': cardsInView[1] }" #card2>
             <article class="portfolio_card-rechts-container">
                 <div>{{ 'projects.elPolloLoco.headline' | translate }}</div>
                 <div>{{ 'projects.elPolloLoco.skills' | translate }}</div>
@@ -74,7 +74,7 @@
             </article>
         </section>
 
-        <section class="portfolio_card-links">
+        <section class="portfolio_card-links" [ngClass]="{ 'is-inview': cardsInView[2] }" #card3>
 
             <article class="portfolio_card-links-img">
                 <img src="./assets/img/projects/projects_pokedex.png" alt="">

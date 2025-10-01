@@ -13,9 +13,11 @@ export class ProjectsComponent {
   constructor(public translate: TranslateService) {}
 
   @ViewChild('titleRow') titleRow!: ElementRef;
-    @ViewChildren('row1, row2') infoRows!: QueryList<ElementRef>;
-    titleInView = true;
-    infoInView = [true];    
+  @ViewChild('variety') variety!: ElementRef;
+  @ViewChildren('card1, card2, card3') cards!: QueryList<ElementRef>;
+  titleInView = true;
+  varietyInView = true;
+  cardsInView = [true,true,true];
 
 
   ngAfterViewInit() {
@@ -29,15 +31,26 @@ export class ProjectsComponent {
       );
     obsTitle.observe(this.titleRow.nativeElement);
     }
+    if (this.variety) {
+      const obsTitle = new IntersectionObserver(
+        ([entry]) => {
+          this.varietyInView = entry.isIntersecting;
+        },
+        { threshold: 0.25 
+        }
+      );
+    obsTitle.observe(this.titleRow.nativeElement);
+    }
 
-    this.infoRows.forEach((row, i) => {
+
+    this.cards.forEach((card, i) => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          this.infoInView[i] = entry.isIntersecting;
+          this.cardsInView[i] = entry.isIntersecting;
         },
         { threshold: 0.2 }
       );
-      observer.observe(row.nativeElement);
+      observer.observe(card.nativeElement);
     });
   }
 
