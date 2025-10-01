@@ -179,7 +179,7 @@ $paddingRightText1200: 80px;
 
 
 .skills-content__subheadline {
-  font-size: 28px;
+  font-size: 27px;
   font-weight: 700;
   line-height: 120%;
   margin-bottom: 8px;
@@ -549,5 +549,11 @@ $paddingRightText1200: 80px;
     left: 90%;
     top: -180px;
     min-width: 180px;
+  }
+
+  .skills-content__subheadline {
+    font-size: 26px;
+    font-weight: 600;
+    gap: 7px;
   }
 }
