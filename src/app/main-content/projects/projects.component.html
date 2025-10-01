@@ -17,8 +17,7 @@
 
     <header class="portfolio_header-mobile">
 
-
-        <div class="portfolio_header__wrapper-mobile">
+        <div class="portfolio_header__wrapper-mobile" [ngClass]="{ 'is-inview': headerMobileInView }" #headerMobile>
             <div class="portfolio_header-mobile-left">
                 <div class="portfolio_header-content__line-left-mobile"></div>
             </div>
@@ -33,7 +32,7 @@
 
 
 
-        <div class="portfolio_head-content__wrapper-mobile">
+        <div class="portfolio_head-content__wrapper-mobile" [ngClass]="{ 'is-inview': varietyMobileInView }" #varietyMobile>
             <div class="portfolio_head-content__variety-mobile">
                 {{ 'projects.variety' | translate }}
             </div>

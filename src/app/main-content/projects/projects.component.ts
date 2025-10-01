@@ -14,9 +14,13 @@ export class ProjectsComponent {
 
   @ViewChild('titleRow') titleRow!: ElementRef;
   @ViewChild('variety') variety!: ElementRef;
+  @ViewChild('varietyMobile') varietyMobile!: ElementRef;
+  @ViewChild('headerMobile') headerMobile!: ElementRef;
   @ViewChildren('card1, card2, card3') cards!: QueryList<ElementRef>;
   titleInView = true;
   varietyInView = true;
+  varietyMobileInView = true;
+  headerMobileInView = true;
   cardsInView = [true,true,true];
 
 
@@ -26,20 +30,39 @@ export class ProjectsComponent {
         ([entry]) => {
           this.titleInView = entry.isIntersecting;
         },
-        { threshold: 0.25 
-        }
+        { threshold: 0.20}
       );
     obsTitle.observe(this.titleRow.nativeElement);
     }
+
     if (this.variety) {
       const obsTitle = new IntersectionObserver(
         ([entry]) => {
           this.varietyInView = entry.isIntersecting;
         },
-        { threshold: 0.25 
-        }
+        { threshold: 0.20 }
       );
-    obsTitle.observe(this.titleRow.nativeElement);
+    obsTitle.observe(this.variety.nativeElement);
+    }
+
+    if (this.headerMobile) {
+      const obsTitle = new IntersectionObserver(
+        ([entry]) => {
+          this.headerMobileInView = entry.isIntersecting;
+        },
+        { threshold: 0.05 }
+      );
+    obsTitle.observe(this.headerMobile.nativeElement);
+    }
+
+    if (this.varietyMobile) {
+      const obsTitle = new IntersectionObserver(
+        ([entry]) => {
+          this.varietyMobileInView = entry.isIntersecting;
+        },
+        { threshold: 0.05 }
+      );
+    obsTitle.observe(this.varietyMobile.nativeElement);
     }
 
 
@@ -48,11 +71,12 @@ export class ProjectsComponent {
         ([entry]) => {
           this.cardsInView[i] = entry.isIntersecting;
         },
-        { threshold: 0.2 }
+        { threshold: 0.025 }
       );
       observer.observe(card.nativeElement);
     });
   }
+
 
 
 }
