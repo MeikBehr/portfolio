@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChildren,ViewChild,ElementRef,QueryList} from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -48,5 +48,25 @@ export class FooterComponent {
       document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
     }, 0);
   }
+
+
+  @ViewChild('nameSVG', { static: false }) nameSVG!: ElementRef<SVGGElement>;
+  nameInView = false;
+
+  ngAfterViewInit() {
+    if (this.nameSVG) {
+      const obsTitle = new IntersectionObserver(
+        ([entry]) => {
+          this.nameInView = entry.isIntersecting;
+        },
+        { threshold: 0.1 }
+      );
+      obsTitle.observe(this.nameSVG.nativeElement);
+      
+    }
+  }
+
+
+
 
 }
