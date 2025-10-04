@@ -3,7 +3,7 @@
 
 
     <!-- Headnling mit Strich-->
-    <div class="contact-header">
+    <div class="contact-header"  [ngClass]="{ 'is-inview': titleInView }" #titleRow>
         <div class="contact-header__line"></div>
           
         <div class="contact-header__headline">{{ 'contact.headline'  | translate }}</div>
@@ -14,15 +14,15 @@
     <div class="contact-content">
 
         <div class="contact-content__text">
-            <div class="contact-content__text-headling" [ngClass]="{ 'is-inview': titleInView }" #titleRow>{{ 'contact.sub_headline'  | translate }}</div>
-            <div class="contact-content__text-content" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>{{ 'contact.content'  | translate }}</div>
-            <div class="contact-content__text-question" [ngClass]="{ 'is-inview': infoInView[1] }" #row2>{{ 'contact.contact_need'  | translate }}<b>{{ 'contact.contact_me'  | translate }}</b></div>
+            <div class="contact-content__text-headling" [ngClass]="{ 'is-inview': infoInView[0] }" #row1>{{ 'contact.sub_headline'  | translate }}</div>
+            <div class="contact-content__text-content" [ngClass]="{ 'is-inview': infoInView[1] }" #row2>{{ 'contact.content'  | translate }}</div>
+            <div class="contact-content__text-question" [ngClass]="{ 'is-inview': infoInView[2] }" #row3>{{ 'contact.contact_need'  | translate }}<b>{{ 'contact.contact_me'  | translate }}</b></div>
         </div>
 
         <div class="contact-content__form-container">
             <form #contactForm="ngForm" action="" class="contact-content__form">
 
-                <div class="contact-form-group">
+                <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[0] }" #form1>
                     <div class="input-icon-wrapper">
                         <input id="contact-name"
                             #nameInput
@@ -51,7 +51,7 @@
                 </div>
 
 
-                <div class="contact-form-group">
+                <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[1] }" #form2>
                     <div class="input-icon-wrapper">
                         <input id="contact-mail"
                             name="contactMail"
@@ -79,7 +79,7 @@
                 </div>
 
 
-                <div class="contact-form-group">
+                <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[2] }" #form3>
                     <div class="input-icon-wrapper-msg">
                         <textarea 
                             name="contactMessage" 
@@ -123,7 +123,7 @@
                 </div>
 
                 
-                <div class="contact-form-group">
+                <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[3] }" #form4>
                     <div class="contact-form_agreement">
 
                         <label class="contact-form_agreement-checkbox" aria-label="Datenschutz zustimmen">
@@ -158,7 +158,7 @@
 
 
 
-                <div class="contact-form-group">
+                <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[4] }" #form5>
                     <div class="contact-form_button-container">
                         <button
                             class="contact-form_button"

@@ -156,9 +156,11 @@ export class ContactComponent {
 
 
     @ViewChild('titleRow') titleRow!: ElementRef;
-    @ViewChildren('row1, row2') infoRows!: QueryList<ElementRef>;
+    @ViewChildren('row1, row2, row3') infoRows!: QueryList<ElementRef>;
+    @ViewChildren('form1, form2, form3, form4, form5') formInput!: QueryList<ElementRef>;
     titleInView = true;
-    infoInView = [true, true];    
+    infoInView = [true, true, true];
+    formInView = [false, false, false, false, false];
 
 
   ngAfterViewInit() {
@@ -167,7 +169,7 @@ export class ContactComponent {
         ([entry]) => {
           this.titleInView = entry.isIntersecting;
         },
-        { threshold: 0.25 
+        { threshold: 0.1 
         }
       );
     obsTitle.observe(this.titleRow.nativeElement);
@@ -178,11 +180,24 @@ export class ContactComponent {
         ([entry]) => {
           this.infoInView[i] = entry.isIntersecting;
         },
-        { threshold: 0.2 }
+        { threshold: 0.1 }
       );
       observer.observe(row.nativeElement);
     });
+  
+    this.formInput.forEach((input, i) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          this.formInView[i] = entry.isIntersecting;
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(input.nativeElement);
+    });    
+  
   }
+
+  
 
 }
 

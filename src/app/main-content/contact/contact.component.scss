@@ -25,7 +25,36 @@
     justify-content: flex-start;
     align-items: center;
     padding-bottom: 40px;
+  opacity: 0;
+  transform: rotateX(60deg) scale(0.96) translateX(-100px);    
 }
+
+
+.contact-header.is-inview {
+  animation: flipInYFromLeft  0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes flipInYFromLeft {
+  from {
+    transform: rotateX(60deg) scale(0.96) translateX(-100px);
+    opacity: 0;
+  }
+  70% {
+    transform: rotateX(-5deg) scale(1.04) translateX(10px);
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(0) scale(1.0) translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
 
 .contact-header__line {
   height: 4px;
@@ -302,7 +331,36 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 .contact-form-group {
     width: 100%;
+    transform: rotateX(60deg) scale(0.96) translateX(150px);
+    opacity: 0;    
 }
+
+.contact-form-group.is-inview {
+  animation: flipInX 0.7s linear forwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes flipInX {
+  from {
+    transform: rotateX(60deg) scale(0.96) translateX(150px);
+    opacity: 0;
+  }
+  40% {
+    transform: rotateX(25deg) scale(0.98) translateX(50px);
+    opacity: 0.25;
+  }
+  70% {
+    transform: rotateX(-5deg) scale(1.02) translateX(-3px);
+    opacity: 0.75;
+  }
+  to {
+    transform: rotateX(0) scale(1.0) translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+
 
 .contact-form_name {
   border: 1px solid $color-secondary;
