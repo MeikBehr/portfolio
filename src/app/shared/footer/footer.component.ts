@@ -57,16 +57,23 @@ export class FooterComponent {
     if (this.nameSVG) {
       const obsTitle = new IntersectionObserver(
         ([entry]) => {
-          this.nameInView = entry.isIntersecting;
+          if (entry.isIntersecting) {
+            this.nameInView = false;
+            setTimeout(() => {
+              this.nameInView = true;
+            }, 100);
+            setTimeout(() => {
+              this.nameInView = false;
+            }, 4000);
+          } else {
+            this.nameInView = false;
+          }
         },
         { threshold: 0.1 }
       );
       obsTitle.observe(this.nameSVG.nativeElement);
-      
     }
   }
-
-
 
 
 }
