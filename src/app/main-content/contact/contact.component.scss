@@ -29,27 +29,10 @@
   transform: rotateX(60deg) scale(0.96) translateX(-100px);    
 }
 
-
 .contact-header.is-inview {
   animation: flipInYFromLeft  0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.1s;
 }
-
-@keyframes flipInYFromLeft {
-  from {
-    transform: rotateX(60deg) scale(0.96) translateX(-100px);
-    opacity: 0;
-  }
-  70% {
-    transform: rotateX(-5deg) scale(1.04) translateX(10px);
-    opacity: 1;
-  }
-  to {
-    transform: rotateX(0) scale(1.0) translateX(0);
-    opacity: 1;
-  }
-}
-
 
 .contact-header__line {
   height: 4px;
@@ -67,7 +50,6 @@
     color: $color-text;
     z-index: 5;
 }
-
 
 .contact-content {
     position: relative;
@@ -98,21 +80,6 @@
   animation-delay: 0.1s;
 }
 
-@keyframes flipInY {
-  from {
-    transform: perspective(800px) rotateX(60deg) scale(0.96);
-    opacity: 0;
-  }
-  70% {
-    transform: perspective(800px) rotateX(-5deg) scale(1.04);
-    opacity: 1;
-  }
-  to {
-    transform: perspective(800px) rotateX(0) scale(1.0);
-    opacity: 1;
-  }
-}
-
 .contact-content__text-content {
     font-size: 16px;
     line-height: 120%;
@@ -138,22 +105,6 @@
   animation: flipInY_text 0.7s linear forwards;
   animation-delay: 0.3s; 
 }
-
-@keyframes flipInY_text {
-  from {
-    transform: perspective(700px) rotateX(80deg) scale(0.98);
-    opacity: 0;
-  }
-  70% {
-    transform: perspective(700px) rotateX(-10deg) scale(1.03);
-    opacity: 1;
-  }
-  to {
-    transform: perspective(700px) rotateX(0) scale(1.0);
-    opacity: 1;
-  }
-}
-
 
 .contact-content__form-container {
     width: 617px;
@@ -289,7 +240,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 }
 
-
 .contact-purple_shadow {
   position: absolute;
   content: none;
@@ -303,7 +253,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   pointer-events: none;
   z-index: 0;
 }
-
 
 .contact-go_up-container {
     width: 100%;
@@ -322,8 +271,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     }
 }
 
-
-
 .contact-form-group {
     width: 100%;
     transform: rotateX(60deg) scale(0.96) translateX(150px);
@@ -334,26 +281,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   animation: flipInX 0.7s linear forwards;
   animation-delay: 0.15s;
 }
-
-@keyframes flipInX {
-  from {
-    transform: rotateX(60deg) scale(0.96) translateX(150px);
-    opacity: 0;
-  }
-  40% {
-    transform: rotateX(25deg) scale(0.98) translateX(50px);
-    opacity: 0.25;
-  }
-  70% {
-    transform: rotateX(-5deg) scale(1.02) translateX(-3px);
-    opacity: 0.75;
-  }
-  to {
-    transform: rotateX(0) scale(1.0) translateX(0px);
-    opacity: 1;
-  }
-}
-
 
 .contact-form_name {
   border: 1px solid $color-secondary;
@@ -412,7 +339,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   gap: 6px;
 }
 
-
 .input-icon-wrapper,
 .input-icon-wrapper-msg {
   position: relative;
@@ -451,14 +377,12 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   }
 }
 
-
 .input-icon-wrapper-msg {
   .error-icon-inside,
   .success-icon-inside {
     top: 12%;
   }
 }
-
 
 .input-icon-wrapper-msg .contact-form_message.input-success,
 .input-icon-wrapper-msg .contact-form_message.input-success:focus {
@@ -470,7 +394,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   border: 1px solid $color-error !important;
 }
 
-
 .counter {
   position: absolute;
   right: 16px;
@@ -481,7 +404,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 .counter.warning { color: $color-error; }
 
-
 .contact-form_agreement-checkbox input[type="checkbox"] {
   opacity: 0;
   position: absolute;
@@ -491,17 +413,18 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   z-index: 2;
   cursor: pointer;
 }
+
 .contact-form_agreement-checkbox {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
+
 .contact-form_agreement-checkbox svg {
   position: relative;
   z-index: 1;
   pointer-events: none;
 }
-
 
 .privacy-error {
   color: $color-error;
@@ -509,7 +432,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   font-weight: 400;
   line-height: 120%;
 }
-
 
 .contact-form_button.button-disabled {
   background-color: $color-muted;
@@ -532,7 +454,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   opacity: 1;
   transition: background 0.2s, color 0.2s;
 }
-
 
 .modal-overlay {
   position: fixed;
@@ -628,132 +549,8 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 
-@keyframes pop-in {
-  0%   { transform: scale(0.8); opacity: 0.2;}
-  60%  { transform: scale(1.10); opacity: 1;}
-  100% { transform: scale(1); }
-}
+// Import Keyframes
+@import './contact-keyframes.component.scss';
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes fade-out {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@media (max-width: 1330px) {
-
-
-  .contact-content {
-    gap: 64px;
-  }
-
-  .contact-header__line {
-    max-width: 535px;
-    width: 30%;
-  }
-
-}
-
-
-@media (max-width: 1200px) {
-  .contact-content {
-    padding-left: $container-pad-l-r;
-    padding-right: $container-pad-l-r;
-  }
-
-  .contact-go_up {
-    right: $container-pad-l-r;
-  }
-
-}
-
-
-@media (max-width: 950px) {
-  .contact-content {
-    flex-direction: column;
-    padding-left: 0;
-    padding-right: 0;
-    align-items: center;
-  }
-
-  .contact-content__text,
-  .contact-content__form-container {
-    max-width: 617px;
-    width: 80%;
-  }
-
-  .contact-purple_shadow {
-    top: 575px;
-    left: -118px;
-  }
-
-  .contact-purple_shadow {
-    transform: scale(0.8);
-    top: 600px;
-    left: -100px;
-  }  
-
-}
-
-@media (max-width: 768px) {
-  .contact-header__line {
-    max-width: 300px;
-    width: 20%;
-  }
-
-  .contact-header__headline {
-    font-size: 70px;
-  }
-
-  .contact-content__text-headling {
-    font-size: 28px;
-  }
-
-  .contact-form_button {
-    width: 225px;
-    font-size: 18px;
-  }
-}
-
-
-@media (max-width: 500px) {
-  .contact-header__line {
-    max-width: 200px;
-    width: 15%;
-  }
-
-  .contact-header__headline {
-    font-size: 45px;
-  }
-
-  .contact-content__text-headling {
-    font-size: 23px;
-  }
-
-  .contact-form_button {
-    width: 195px;
-    font-size: 16px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-}
-
-@media (max-width: 390px) {
-  .contact-purple_shadow {
-    transform: scale(0.6);
-    top: 600px;
-    left: -180px;
-  }
-
-}
-
-@media (max-width: 380px) {
-  .success-message {
-    width: 96%;
-  }  
-}
-
+// Import mobile Media Queries
+@import './contact-queries.component.scss';
