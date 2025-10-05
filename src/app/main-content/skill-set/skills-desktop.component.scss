@@ -114,7 +114,7 @@ $paddingRightText1200: 80px;
 }
 
 .skills-content__headline.is-inview {
-  animation: flipInY 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipInY 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .skills-content__headline.is-inview {
@@ -158,8 +158,8 @@ $paddingRightText1200: 80px;
 }
 
 .skills-content__variety.is-inview {
-  animation: flipInY_text 0.7s linear forwards;
-  animation-delay: 0.3s;
+  animation: flipInY_text 0.4s linear forwards;
+  animation-delay: 0.2s;
 }
 
 @keyframes flipInY_text {
@@ -193,8 +193,8 @@ $paddingRightText1200: 80px;
 }
 
 .skills-content__subheadline.is-inview {
-  animation: flipInY_text 0.7s linear forwards;
-  animation-delay: 0.3s;
+  animation: flipInY_text 0.4s linear forwards;
+  animation-delay: 0.2s;
 }
 
 .skills-content__subheadline-normal {
@@ -220,8 +220,8 @@ $paddingRightText1200: 80px;
 }
 
 .skills-content__reveal.is-inview {
-  animation: flipInY_text 0.7s linear forwards;
-  animation-delay: 0.3s;
+  animation: flipInY_text 0.4s linear forwards;
+  animation-delay: 0.2s;
 }
 
 .skills-content__cta-center {
@@ -253,7 +253,7 @@ $paddingRightText1200: 80px;
 }
 
 .skills-content__cta.is-inview {
-  animation: flipInY_text 0.7s linear forwards;
+  animation: flipInY_text 0.4s linear forwards;
   opacity: 1;
 }
 

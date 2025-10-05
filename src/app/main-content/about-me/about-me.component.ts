@@ -16,10 +16,10 @@ export class AboutMeComponent implements AfterViewInit {
   @ViewChildren('row1, row2, row3') infoRows!: QueryList<ElementRef>;
   @ViewChild('bgRow') bgRow!: ElementRef;
   
-  bgInView = false;
-  titleInView = false;
-  descInView = false;
-  infoInView = [false, false, false];
+  bgInView = true;
+  titleInView = true;
+  descInView = true;
+  infoInView = [true, true, true];
 
   constructor(public translate: TranslateService) {}
 
@@ -38,12 +38,8 @@ export class AboutMeComponent implements AfterViewInit {
       const obsTitle = new IntersectionObserver(
         ([entry]) => {
           this.titleInView = entry.isIntersecting;
-          // if (entry.isIntersecting) {
-          //   this.titleInView = true;
-          //   obsTitle.disconnect();
-          // }
         },
-        { threshold: 0.25 
+        { threshold: 0.20 
         }
       );
     obsTitle.observe(this.titleRow.nativeElement);
@@ -53,12 +49,8 @@ export class AboutMeComponent implements AfterViewInit {
       const obsDesc = new IntersectionObserver(
         ([entry]) => {
           this.descInView = entry.isIntersecting;
-          // if (entry.isIntersecting) {
-          //   this.descInView = true;
-          //   obsDesc.disconnect();
-          // }
         },
-        { threshold: 0.25 }
+        { threshold: 0.20 }
       );
       obsDesc.observe(this.descRow.nativeElement);
     }
@@ -67,14 +59,8 @@ export class AboutMeComponent implements AfterViewInit {
       const observer = new IntersectionObserver(
         ([entry]) => {
           this.infoInView[i] = entry.isIntersecting;
-          // if (entry.isIntersecting) {
-          //   setTimeout(() => {
-          //     this.infoInView[i] = true;
-          //     observer.disconnect();
-          //   }, i * 120);
-          // }
         },
-        { threshold: 0.2 }
+        { threshold: 0.20 }
       );
       observer.observe(row.nativeElement);
     });

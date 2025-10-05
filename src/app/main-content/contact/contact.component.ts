@@ -160,7 +160,7 @@ export class ContactComponent {
     @ViewChildren('form1, form2, form3, form4, form5') formInput!: QueryList<ElementRef>;
     titleInView = true;
     infoInView = [true, true, true];
-    formInView = [false, false, false, false, false];
+    formInView = [true, true, true, true, true];
 
 
   ngAfterViewInit() {

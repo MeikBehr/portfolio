@@ -51,7 +51,7 @@
 .atf__blob--right {
   height: auto;
   z-index: 1;
-  animation: shadowPulse 10s linear infinite;
+  animation: shadowPulse 5s linear infinite;
   animation-delay: 0s;
   will-change: transform, opacity;
 }
@@ -252,7 +252,7 @@
     margin-left: 6px;
   }
 
-  animation: scrollBounce 1.8s cubic-bezier(.32,1.56,.53,.93) infinite;
+  animation: scrollBounce 1.2s cubic-bezier(.32,1.56,.53,.93) infinite;
   will-change: transform;
 
   &:hover,

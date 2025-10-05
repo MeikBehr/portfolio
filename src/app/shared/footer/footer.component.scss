@@ -126,8 +126,9 @@
 
 .hoppingDot.is-inview {
   animation: flipInYFromLeft  0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0s,
-             bouncing  1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.8s,
-             gone 0.7s ease-in forwards 2.7s,
+             bouncing  1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.7s,
+             droping 0.5s ease-in forwards 2.5s,
+             gone 0.5s linear forwards 3.0s,
              allBack 0.2s linear 4.1s;
 }
 
@@ -140,7 +141,7 @@
 .nameMeik.is-inview {
   transform-origin: 75% 86px;
   perspective: 800px;
-  animation: collapsing 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 2.5s,
+  animation: collapsing 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 2.3s,
              allBackText 0.2s linear 4.1s;
 }
 
@@ -150,7 +151,7 @@
 }
 
 .nameK.is-inview {
-  animation: collapsingK 2.75s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s,
+  animation: collapsingK 1.75s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
              allBackK 0.2s linear 4.1s;
 }
 
@@ -212,17 +213,25 @@
   }  
 }
 
-@keyframes gone {
+@keyframes droping {
   from {
     transform: translateY(0px);
     opacity: 1;
   }
-  70% {
+  to {
     transform: translateY(50px);
-    opacity: 0.5;
+    opacity: 1;
+  }
+}
+
+@keyframes gone {
+  from {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
   }
   to {
-    transform: translateY(80px);
     opacity: 0;
   }
 }
