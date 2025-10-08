@@ -1,0 +1,112 @@
+@use '../../../styles/_variables' as *;
+
+@media (max-width: 1200px) {
+  .header__layout {
+    padding: 0 $container-pad-l-r;
+  }
+}
+
+.normalNav {
+  @media (max-width: $breakpoint-lg) {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+    .normalNav {
+      font-size: 20px;
+    }
+
+    .langBtn--desktop {
+      min-width: 32px;
+      height: 26px;
+      padding: 4px 6px;
+      border-radius: 8px;
+    }
+
+    .desktopLang { 
+      margin-left: 76px; 
+    }
+}
+
+@media (max-width: 880px) {
+    .normalNav {
+      font-size: 18px;
+    }
+
+    .langBtn--desktop {
+      min-width: 28px;
+      height: 24px;
+      padding: 3px 5px;
+      border-radius: 6px;
+    }
+
+    .desktopLang { 
+      margin-left: 60px; 
+    }
+}
+
+@media (max-width: calc($breakpoint-sm + 1px)){
+  .hiddenMobile{ 
+    visibility: hidden; 
+    transition: visibility 0.25s ease-in-out;
+  }
+
+  .normalNav{ 
+    display:flex; 
+  }
+
+}
+
+@media (min-width: calc($breakpoint-sm + 1px)) {
+  .desktopLang { 
+    display: flex; 
+    align-items: center; 
+  }
+
+  .langBtn--desktop:not(.is-active):hover {
+    background: $color-secondary;
+    border-color: $color-secondary;
+    color: $color-text_primary;
+  }
+
+  .navIcon, 
+  .mobileMenu,
+  .burger_animated-main{ 
+    display:none !important; 
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .navIcon { 
+    display: none; 
+  }
+
+  .mobileMenu { 
+    display: none;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .normalNav { 
+    display: none; 
+  }
+  .navIcon { 
+    display: block; 
+  }
+  .mobileMenu { 
+    display: flex;
+  }
+}
+
+@media(max-width: $breakpoint-xs) {
+  .overlayBrand {
+    left: calc(var(--header-pad) + 16px);
+  }
+}
+
+@media(max-width: $breakpoint-xxs) {
+  .overlayBrand {
+    left: calc(var(--header-pad) + 13px);
+  }
+}

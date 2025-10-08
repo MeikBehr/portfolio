@@ -1,7 +1,7 @@
-<header class="welcomeHeader">
-  
+<header class="header--welcome">
   <nav class="container header__layout" aria-label="Hauptnavigation">
   
+    <!-- Logo / Brand -->
     <div class="name">
       <a (click)="navigateToSection('atf', $event)" class="logoWrap" [class.hiddenMobile]="isMobileMenuOpen" aria-label="Meik Behr – Logo">
         <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
@@ -24,6 +24,7 @@
       </a>
     </div>
 
+    <!-- Desktop Navigation -->
     <nav class="normalNav">
       <a (click)="navigateToSection('aboutMe', $event)" [class.is-active]="activeLink==='aboutMe'">{{ 'ABOUT_ME' | translate }}</a>
       <a (click)="navigateToSection('mySkills', $event)" [class.is-active]="activeLink==='mySkills'">{{ 'SKILLS' | translate }}</a>
@@ -40,42 +41,38 @@
       </div>
     </nav>
 
-    <main  class="burger_animated-main" [class.shifted]="isMobileMenuOpen">
+    <!-- Burger Button -->
+    <div class="burger_animated-main" [class.shifted]="isMobileMenuOpen">
       <section>
         <div 
-          class="burger_animated-container " 
-          [class.cross]="isMobileMenuOpen" 
+          class="burger_animated-container"
+          [class.cross]="isMobileMenuOpen"
           (click)="toggleMobileMenu()">
           <div></div>
           <div></div>
           <div></div>
         </div>
       </section>
-    </main>
+    </div>
 
-    <div class="mobileMenu" [class.open]="isMobileMenuOpen" (click)="toggleMenu()">
+    <!-- Mobile Overlay Menu -->
+    <div class="mobileMenu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
       <nav class="pane" (click)="$event.stopPropagation()" aria-modal="true" role="dialog">
-
         <a class="overlayBrand logoWrap" aria-label="Meik Behr – Logo (overlay)" *ngIf="isMobileMenuOpen">
           <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
-          <title id="logoTitle">Meik</title>
-
-        <text x="0" y="82"
-              font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
-              font-weight="700" font-size="88"
-              fill="var(--color-text)">Meik</text>
-
-        <g class="accents" transform="translate(0,0)">
-          <circle cx="148" cy="20" r="10" fill="var(--color-secondary)"/>
-        </g>
-
-        <g transform="translate(173,30) scale(2.6)">
-          <path d="M17 19.3466C17 19.6565 17 19.9665 16.6913 19.9665C16.6913 20.2764 16.3827 20.2764 16.074 20.2764H10.5185C10.2099 20.2764 9.90121 20.2764 9.59257 19.9665C9.59257 19.9665 9.59256 19.9665 9.28392 19.9665C8.97528 19.9665 8.97529 19.6565 8.97529 19.6565L4.65429 14.6972L0.950598 10.6677C0.641956 10.3578 0.641956 9.73784 0.950598 9.11792L8.04936 1.36894C8.04936 1.36894 8.35801 1.05898 8.66665 1.05898C8.97529 1.05898 9.28393 0.749023 9.59257 0.749023H15.1481C15.4568 0.749023 15.4568 0.749023 15.7654 1.05898C16.0741 1.36894 16.074 1.36894 16.074 1.6789V1.98886L15.7654 2.29882L9.28392 9.73784L17 18.4167C16.6913 18.7267 16.6913 18.7267 17 19.3466C17 19.0366 17 19.0366 17 19.3466Z" fill="#70E61C"/>
-        </g>
-
+            <title id="logoTitle">Meik</title>
+            <text x="0" y="82"
+                font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+                font-weight="700" font-size="88"
+                fill="var(--color-text)">Meik</text>
+            <g class="accents" transform="translate(0,0)">
+              <circle cx="148" cy="20" r="10" fill="var(--color-secondary)"/>
+            </g>
+            <g transform="translate(173,30) scale(2.6)">
+              <path d="M17 19.3466C17 19.6565 17 19.9665 16.6913 19.9665C16.6913 20.2764 16.3827 20.2764 16.074 20.2764H10.5185C10.2099 20.2764 9.90121 20.2764 9.59257 19.9665C9.59257 19.9665 9.59256 19.9665 9.28392 19.9665C8.97528 19.9665 8.97529 19.6565 8.97529 19.6565L4.65429 14.6972L0.950598 10.6677C0.641956 10.3578 0.641956 9.73784 0.950598 9.11792L8.04936 1.36894C8.04936 1.36894 8.35801 1.05898 8.66665 1.05898C8.97529 1.05898 9.28393 0.749023 9.59257 0.749023H15.1481C15.4568 0.749023 15.4568 0.749023 15.7654 1.05898C16.0741 1.36894 16.074 1.36894 16.074 1.6789V1.98886L15.7654 2.29882L9.28392 9.73784L17 18.4167C16.6913 18.7267 16.6913 18.7267 17 19.3466C17 19.0366 17 19.0366 17 19.3466Z" fill="#70E61C"/>
+            </g>
           </svg>
         </a>
-
         <ul class="menuList">
           <li><a (click)="navigateToSection('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a></li>
           <li><a (click)="navigateToSection('mySkills', $event)">{{ 'SKILLS' | translate }}</a></li>
@@ -98,6 +95,5 @@
       </nav>
     </div>
 
-</nav>
-
+  </nav>
 </header>
