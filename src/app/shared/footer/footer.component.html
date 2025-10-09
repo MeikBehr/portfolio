@@ -4,39 +4,34 @@
 
     <div class="footerStart">
   
-    <svg #nameSVG class="logo" viewBox="0 0 217.2 123" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
-      <title id="logoTitle">Meik</title>
-
-      <text x="0" y="82"
-            font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
-            font-weight="700" font-size="88"
-            fill="var(--color-text)"
-            [attr.class]="nameInView ? 'nameMeik is-inview' : 'nameMeik'">Meik</text>
-
-      <g transform="translate(0,0)">
-        <circle cx="148" cy="20" r="11" fill="var(--color-bg)"/>
-      </g>
-      <g [attr.class]="nameInView ? 'hoppingDot is-inview' : 'hoppingDot'" transform="translate(0,0)">
-        <circle cx="148" cy="20" r="10" fill="var(--color-secondary)"/>
-      </g>
-
-      <g transform="translate(173,30) scale(2.6)">
-        <g [attr.class]="nameInView ? 'nameK is-inview' : 'nameK'">
-          <path d="M17 19.3466C17 19.6565 17 19.9665 16.6913 19.9665C16.6913 20.2764 16.3827 20.2764 16.074 20.2764H10.5185C10.2099 20.2764 9.90121 20.2764 9.59257 19.9665C9.59257 19.9665 9.59256 19.9665 9.28392 19.9665C8.97528 19.9665 8.97529 19.6565 8.97529 19.6565L4.65429 14.6972L0.950598 10.6677C0.641956 10.3578 0.641956 9.73784 0.950598 9.11792L8.04936 1.36894C8.04936 1.36894 8.35801 1.05898 8.66665 1.05898C8.97529 1.05898 9.28393 0.749023 9.59257 0.749023H15.1481C15.4568 0.749023 15.4568 0.749023 15.7654 1.05898C16.0741 1.36894 16.074 1.36894 16.074 1.6789V1.98886L15.7654 2.29882L9.28392 9.73784L17 18.4167C16.6913 18.7267 16.6913 18.7267 17 19.3466C17 19.0366 17 19.0366 17 19.3466Z" fill="var(--color-primary)"/>
-        </g>    
-      </g>
-
-    </svg>
-
+      <svg #nameSVG class="logo" viewBox="0 0 217.2 123" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
+        <title id="logoTitle">Meik</title>
+        <text x="0" y="82"
+              font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+              font-weight="700" font-size="88"
+              fill="var(--color-text)"
+              [attr.class]="nameInView ? 'nameMeik is-inview' : 'nameMeik'">Meik
+        </text>
+        <g transform="translate(0,0)">
+          <circle cx="148" cy="20" r="11" fill="var(--color-bg)"/>
+        </g>
+        <g [attr.class]="nameInView ? 'hoppingDot is-inview' : 'hoppingDot'" transform="translate(0,0)">
+          <circle cx="148" cy="20" r="10" fill="var(--color-secondary)"/>
+        </g>
+        <g transform="translate(173,30) scale(2.6)">
+          <g [attr.class]="nameInView ? 'nameK is-inview' : 'nameK'">
+            <path d="M17 19.3466C17 19.6565 17 19.9665 16.6913 19.9665C16.6913 20.2764 16.3827 20.2764 16.074 20.2764H10.5185C10.2099 20.2764 9.90121 20.2764 9.59257 19.9665C9.59257 19.9665 9.59256 19.9665 9.28392 19.9665C8.97528 19.9665 8.97529 19.6565 8.97529 19.6565L4.65429 14.6972L0.950598 10.6677C0.641956 10.3578 0.641956 9.73784 0.950598 9.11792L8.04936 1.36894C8.04936 1.36894 8.35801 1.05898 8.66665 1.05898C8.97529 1.05898 9.28393 0.749023 9.59257 0.749023H15.1481C15.4568 0.749023 15.4568 0.749023 15.7654 1.05898C16.0741 1.36894 16.074 1.36894 16.074 1.6789V1.98886L15.7654 2.29882L9.28392 9.73784L17 18.4167C16.6913 18.7267 16.6913 18.7267 17 19.3466C17 19.0366 17 19.0366 17 19.3466Z" fill="var(--color-primary)"/>
+          </g>    
+        </g>
+      </svg>
 
     </div>
     
     <span class="cRight">© Meik Behr {{ currentYear }}</span>
-    
 
     <div class="footerIconContainer">
       <a href="https://github.com/MeikBehr" target="_blank" rel="noopener" aria-label="GitHub"><img src="assets/img/github.png" alt="GitHub"></a>
-      <a href="#contact" (click)="scrollTo('contact', $event)" aria-label="E-Mail"><img src="assets/img/mail.png" alt="Mail"></a>
+      <a href="#contact" (click)="scrollTo('contact')" aria-label="E-Mail"><img src="assets/img/mail.png" alt="Mail"></a>
       <a href="https://www.linkedin.com/in/meikbehr/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/img/linkedIn.png" alt="LinkedIn"></a>
     </div>
 

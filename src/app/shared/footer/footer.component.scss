@@ -1,14 +1,5 @@
-/* ===================== Footer (cleaned) =====================
-   - Mobile-first layout
-   - Grid areas for precise placement (mobile vs. desktop)
-   - No visual/behavioral changes intended
-========================================================== */
-
-
 @use '../../../styles/_variables' as *;
 
-
-/* Container */
 .footer {
     display: flex;
     justify-content: space-around;
@@ -118,7 +109,6 @@
   }
 }
 
-
 .hoppingDot {
   z-index: 1000;
   opacity: 1;
@@ -154,7 +144,6 @@
   animation: collapsingK 1.75s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
              allBackK 0.2s linear 4.1s;
 }
-
 
 @keyframes collapsingK {
   from {
@@ -293,9 +282,6 @@
   }
 }
 
-
-
-
 @media (max-width: $breakpoint-lg) {
   .contentFooter {
     padding: 24px $container-pad-l-r;
@@ -333,7 +319,6 @@
     }
 }
 
-
 @media (max-width: $breakpoint-sm) {
 
     .footer {
@@ -368,7 +353,6 @@
         text-align: center;
     }
 }
-
 
 @media (max-width: $breakpoint-xxs) {
     .footer {
