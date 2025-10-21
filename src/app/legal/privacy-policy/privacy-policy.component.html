@@ -2,8 +2,8 @@
 
     <nav class="privacy-policy_mobile-nav-container">
         <div class="privacy-policy_mobile-nav-go_back">
-            <a href="#top" class="privacy-policy_mobile-nav-go_back-arrow" aria-label="Contact - go Back">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="#top" class="privacy-policy_mobile-nav-go_back-arrow" aria-label="back to content">
+                <svg role="img" aria-label="back to content" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.828 9.02556L8.485 13.6826C8.87546 14.073 8.87546 14.7061 8.485 15.0966C8.09453 15.487 7.46146 15.487 7.071 15.0966L0.707106 8.73266C0.316581 8.34214 0.316582 7.70897 0.707106 7.31845L7.071 0.954558C7.46147 0.564092 8.09453 0.564092 8.485 0.954558C8.87547 1.34502 8.87547 1.97809 8.485 2.36856L3.828 7.02556L15 7.02556C15.5523 7.02556 16 7.47327 16 8.02556C16 8.57784 15.5523 9.02556 15 9.02556L3.828 9.02556Z" fill="currentColor"/>
                 </svg>
             </a>
@@ -20,9 +20,7 @@
         </div>
     </header>
 
-
     <section class="privacy-policy_content">
-
         <section class="privacy-policy_sections">
 
             <div class="privacy-policy_article">
@@ -33,13 +31,13 @@
 
                 <div class="privacy-policy-block">
                     <div class="privacy-policy-block_headline">{{ 'privacy_policy.block_headline' | translate }}</div>
-                    <div class="privacy-policy_adress">
+                    <address class="privacy-policy_adress">
                     {{ 'privacy_policy.address.name' | translate }}<br>
                     {{ 'privacy_policy.address.careof' | translate }}<br>
                     {{ 'privacy_policy.address.street' | translate }}<br>
                     {{ 'privacy_policy.address.zipcity' | translate }}<br>
                     <span [innerHTML]="'privacy_policy.address.email' | translate"></span>
-                    </div>
+                    </address>
                 </div>
 
                 <h3>{{ 'privacy_policy.section1.subheadline2' | translate }}</h3>
@@ -58,7 +56,6 @@
 
             </div>
 
-
             <div class="privacy-policy_article">
                 <h2>{{ 'privacy_policy.section2.headline' | translate }}</h2>
 
@@ -67,7 +64,6 @@
                 <div class="privacy-paragraph">{{ 'privacy_policy.section2.paragraph1-2' | translate }} </div>
 
             </div>
-
 
             <div class="privacy-policy_article">
                 <h2>{{ 'privacy_policy.section3.headline' | translate }}</h2>
@@ -114,8 +110,6 @@
 
             </div>
 
-            
-
             <div class="privacy-policy_article">
 
                 <h2>{{ 'privacy_policy.section4.headline' | translate }}</h2>
@@ -134,6 +128,5 @@
 
         </section>
     </section>
-
 
 </section>
