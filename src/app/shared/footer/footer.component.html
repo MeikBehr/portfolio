@@ -36,9 +36,9 @@
     </div>
 
     <nav class="legalWrap" aria-label="Legal">
-      <a (click)="navigateToSection('imprint','imprint-top', $event)">{{ 'IMPRINT' | translate }}</a>
+      <a href="#imprint-top" (click)="navigateToSection('imprint','imprint-top', $event)">{{ 'IMPRINT' | translate }}</a>
       <span aria-hidden="true"> | </span>
-      <a (click)="navigateToSection('privacy-policy','privacy-top', $event)">{{ 'PRIVACY-POLICY' | translate }}</a>
+      <a href="#privacy-top" (click)="navigateToSection('privacy-policy','privacy-top', $event)">{{ 'PRIVACY-POLICY' | translate }}</a>
     </nav>
 
   </section>
