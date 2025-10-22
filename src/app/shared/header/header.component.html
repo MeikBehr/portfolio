@@ -4,8 +4,8 @@
     <!-- Logo / Brand -->
     <div class="name">
       <a href="#top" (click)="navigateToSection('atf', $event)" class="logoWrap" [class.hiddenMobile]="isMobileMenuOpen" aria-label="Meik Behr – Logo">
-        <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
-          <title id="logoTitle">Meik</title>
+        <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitleHeader" text-rendering="geometricPrecision">
+          <title id="logoTitleHeader">Meik</title>
 
         <text x="0" y="82"
               font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
@@ -44,14 +44,16 @@
     <!-- Burger Button -->
     <div class="burger_animated-main" [class.shifted]="isMobileMenuOpen">
       <section>
-        <div 
+        <button 
           class="burger_animated-container"
           [class.cross]="isMobileMenuOpen"
-          (click)="toggleMobileMenu()">
+          (click)="toggleMobileMenu()"
+          aria-label="Menü auf/zu"
+          type="button">
           <div></div>
           <div></div>
           <div></div>
-        </div>
+        </button>
       </section>
     </div>
 
@@ -59,8 +61,8 @@
     <div class="mobileMenu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
       <nav class="pane" (click)="$event.stopPropagation()" aria-modal="true" role="dialog">
         <a class="overlayBrand logoWrap" aria-label="Meik Behr – Logo (overlay)" *ngIf="isMobileMenuOpen">
-          <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitle" text-rendering="geometricPrecision">
-            <title id="logoTitle">Meik</title>
+          <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitleOverlay" text-rendering="geometricPrecision">
+            <title id="logoTitleOverlay">Meik</title>
             <text x="0" y="82"
                 font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
                 font-weight="700" font-size="88"
@@ -84,7 +86,8 @@
                       class="langBtn"
                       [class.is-active]="currentLang === 'DE'"
                       (click)="switchLanguageTo('de')">DE</button>
-              <button class="langBtn_separator" aria-hidden="true">/</button>
+              <!-- <button class="langBtn_separator" aria-hidden="true">/</button> -->
+              <button class="langBtn_separator" tabindex="-1" aria-hidden="true">/</button>
               <button type="button" 
                       class="langBtn"
                       [class.is-active]="currentLang === 'EN'"
