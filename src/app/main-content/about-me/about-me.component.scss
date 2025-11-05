@@ -48,7 +48,6 @@
   position: relative;
   padding: 0px 32px 32px 100px; 
   color: $color-text_primary;
-
 }
 
 .about-me__text {
@@ -56,7 +55,6 @@
   width: 100%;
   text-overflow: ellipsis;
 }
-
 
 .about-me__headline {
   font-size: 90px;
@@ -98,7 +96,6 @@
   animation-delay: 0.2s;
 }
 
-
 @keyframes flipInY {
   from {
     transform: perspective(800px) rotateX(60deg) scale(0.96);
@@ -113,7 +110,6 @@
     opacity: 1;
   }
 }
-
 
 .about-me__info-row {
   display: flex;
@@ -148,7 +144,6 @@
   text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
-
 @keyframes flipInY_text {
   from {
     transform: perspective(700px) rotateX(80deg) scale(0.98);
@@ -164,7 +159,6 @@
   }
 }
 
-
 @media (max-width: $breakpoint-lg) {
   .about-me__bg {
     background-position: right top;
@@ -176,9 +170,7 @@
     padding: 0;
     padding-left: $container-pad-l-r;
   }  
-
 }
-
 
 @media (max-width: $breakpoint-norm) {
 
@@ -189,7 +181,6 @@
   .about-me__headline {
     font-size: 64px;
   }
-
 }
 
 @media (max-width: 950px) {
@@ -291,11 +282,9 @@
   .about-me__headline {
     font-size: 48px;
   }
-
 }
 
 @media (max-width: 425px) {
-
   .about-me__text {
       max-width: 340px;
   }

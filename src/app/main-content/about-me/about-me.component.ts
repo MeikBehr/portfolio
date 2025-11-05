@@ -1,7 +1,13 @@
-import {Component,AfterViewInit,ViewChildren,ViewChild,ElementRef,QueryList} from '@angular/core';
+import { Component, AfterViewInit, ViewChildren, ViewChild, ElementRef, QueryList } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
+/**
+ * AboutMeComponent displays the "About Me" section
+ * with animated reveal effects using IntersectionObserver.
+ * 
+ * Accessibility and Clean Code best practices applied.
+ */
 @Component({
   selector: 'app-about-me',
   standalone: true,
@@ -9,63 +15,62 @@ import { CommonModule } from '@angular/common';
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })
+
 export class AboutMeComponent implements AfterViewInit {
 
   @ViewChild('titleRow') titleRow!: ElementRef;
   @ViewChild('descRow') descRow!: ElementRef;
   @ViewChildren('row1, row2, row3') infoRows!: QueryList<ElementRef>;
   @ViewChild('bgRow') bgRow!: ElementRef;
-  
+
+  /** Controls background blob reveal animation. */
   bgInView = true;
+  /** Controls headline reveal animation. */
   titleInView = true;
+  /** Controls description reveal animation. */
   descInView = true;
+  /** Controls info row animations. */
   infoInView = [true, true, true];
 
+  /**
+   * Injects the translation service.
+   * @param translate Used for language switching.
+   */
   constructor(public translate: TranslateService) {}
 
-
-  ngAfterViewInit() {
-    if (this.bgRow) {
-      const obsBg = new IntersectionObserver(
-        ([entry]) => {
-          this.bgInView = entry.isIntersecting;
-        },
-        { threshold: 0.15 }
-      );
-      obsBg.observe(this.bgRow.nativeElement);
-    }
-    if (this.titleRow) {
-      const obsTitle = new IntersectionObserver(
-        ([entry]) => {
-          this.titleInView = entry.isIntersecting;
-        },
-        { threshold: 0.20 
-        }
-      );
-    obsTitle.observe(this.titleRow.nativeElement);
-    }
-
-    if (this.descRow) {
-      const obsDesc = new IntersectionObserver(
-        ([entry]) => {
-          this.descInView = entry.isIntersecting;
-        },
-        { threshold: 0.20 }
-      );
-      obsDesc.observe(this.descRow.nativeElement);
-    }
-
-    this.infoRows.forEach((row, i) => {
+  /**
+   * Helper to attach IntersectionObserver to any element.
+   * @param ref ElementRef to observe
+   * @param threshold Intersection threshold
+   * @param callback Callback when element enters/leaves view
+   */
+  private setupObserver(ref: ElementRef | undefined, threshold: number, callback: (inView: boolean) => void): void {
+    if (ref) {
       const observer = new IntersectionObserver(
-        ([entry]) => {
-          this.infoInView[i] = entry.isIntersecting;
-        },
-        { threshold: 0.20 }
+        ([entry]) => callback(entry.isIntersecting),
+        { threshold }
       );
-      observer.observe(row.nativeElement);
-    });
+      observer.observe(ref.nativeElement);
+    }
   }
 
+  /**
+   * Sets up intersection observers to trigger animations
+   * when elements come into the viewport.
+   */
+  ngAfterViewInit(): void {
+    this.setupObserver(this.bgRow, 0.15, (inView) => this.bgInView = inView);
+    this.setupObserver(this.titleRow, 0.20, (inView) => this.titleInView = inView);
+    this.setupObserver(this.descRow, 0.20, (inView) => this.descInView = inView);
+    this.infoRows.forEach((row, i) =>
+      this.setupObserver(row, 0.20, (inView) => this.infoInView[i] = inView)
+    );
+  }
+
+  /**
+   * Smooth scrolls to the About Me section.
+   * @param event Optional event to prevent default anchor behavior.
+   */
   scrollToAboutMe(event?: Event): void {
     event?.preventDefault();
     setTimeout(() => {
