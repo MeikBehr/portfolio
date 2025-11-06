@@ -1,6 +1,5 @@
 @use '../../../styles/_variables' as *;
 
-
 .atf { 
   position: relative;
   background-color: $color-bg;
@@ -12,7 +11,6 @@
   width: 100%;
 }
 
-
 .atf__content {
   display: flex;
   flex-direction: column;
@@ -23,7 +21,6 @@
   position: relative;
   width: 100%;
 }
-
 
 .atf__blobs {
   display: flex;
@@ -66,7 +63,6 @@
   animation-delay: 5s;
 }
 
-
 @keyframes shadowPulse {
   0% {
     transform: scale(1) translateZ(0);
@@ -99,7 +95,6 @@
   z-index: 25;
 }
 
-
 .iam {
   writing-mode: vertical-lr;
   transform: rotate(180deg);
@@ -111,7 +106,6 @@
   z-index: 30;
 }
 
-
 .atf-info {
     display: flex;
     flex-direction: column;
@@ -121,7 +115,6 @@
     max-width: 1000px; 
     z-index: 30;
 }
-
    
 .name {
   font-size: 90px;
@@ -162,12 +155,10 @@
   }
 }
 
-
 .cta-center {
   display: flex;
   justify-content: center;
 }
-
 
 .atf-bottom {
   width: 100%;
@@ -217,7 +208,6 @@
   fill: $color-secondary;
 }
 
-
 .atf-bottom__mail {
   color: $color-text_primary;
   font-size: 1.4rem;
@@ -262,15 +252,12 @@
   }
 }
 
-
-
 @keyframes scrollBounce {
   0%   { transform: translateY(0); }
   33%  { transform: translateY(-8px); }
   66%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .atf-scroll-down {
@@ -291,21 +278,35 @@
     margin-top: 0;
   }
 
-  .atf-bottom {flex-direction: row;
-  align-items: flex-start;
-  padding-bottom: 16px;
-  padding-top: 40px;}
+  .atf-bottom {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    padding-top: 40px;
+  }
 
   .atf-bottom__mail,
-  .atf-bottom__right {display: none;}
+  .atf-bottom__right {
+    display: none;
+  }
 
-  .name {font-size: 70px;}
+  .name {
+    font-size: 70px;
+  }
 
-  .title {font-size: 45px;}
+  .title {
+    font-size: 45px;
+  }
 
-  .iam {font-size: 50px;}
+  .iam {
+    font-size: 50px;
+  }
 
-  .cta {width: 150px; height: 50px; font-size: 18px;}
+  .cta {
+    width: 150px; 
+    height: 50px; 
+    font-size: 18px;
+  }
 
   .atf__blob--left {
     width: 300px;
@@ -314,27 +315,33 @@
   .atf__blob--right {
     width: 260px;
   }
-
-
 }
 
-
 @media (max-width: $breakpoint-xs) {
-  .atf-bottom {flex-direction: row;
-  align-items: flex-start;
-  padding-bottom: 16px;
-  padding-top: 40px;}
+  .atf-bottom {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    padding-top: 40px;
+  }
 
   .atf-bottom__mail,
-  .atf-bottom__right {display: none;}
+  .atf-bottom__right {
+    display: none;
+  }
 
-  .name {font-size: 50px;}
+  .name {
+    font-size: 50px;
+  }
 
-  .title {font-size: 30px; min-width: 0;}
+  .title {
+    font-size: 30px; 
+    min-width: 0;
+  }
 
-  .iam {font-size: 40px;}
-
-  .cta {width: 120px; height: 40px; font-size: 16px; margin-top: 8px; padding: 12px 16px; font-weight: 400;}
+  .iam {
+    font-size: 40px;
+  }
 
   .atf__blob--left {
     padding-bottom: 130px;
@@ -343,34 +350,54 @@
   .atf__blob--right {
     padding-top: 124px;
   }
-
 }
-
 
 @media (max-width: $breakpoint-xxs) {
-  .atf-bottom {flex-direction: row;
+  .atf-bottom {
+    flex-direction: row;
     align-items: flex-start;
     padding-bottom: 16px;
-    padding-top: 40px;}
+    padding-top: 40px;
+  }
 
   .atf-bottom__mail,
-  .atf-bottom__right {display: none;}
+  .atf-bottom__right {
+    display: none;
+  }
 
-  .name {font-size: 45px;}
+  .name {
+    font-size: 45px;
+  }
 
-  .title {font-size: 30px;}
+  .title {
+    font-size: 30px;
+  }
 
-  .iam {font-size: 32px;}
+  .iam {
+    font-size: 32px;
+  }
 
-  .cta {width: 133px; height: 48px; font-size: 20px; margin-top: 8px; padding: 14px 16px; font-weight: 400;}
+  .cta {
+    width: 133px; 
+    height: 48px; 
+    font-size: 20px; 
+    margin-top: 8px; 
+    padding: 14px 16px; 
+    font-weight: 400;
+  }
 }
 
-
-@media (max-width: 372px) {
-  .title {font-size: 24px;}
+@media (max-width: 384px) {
+  .title {
+    font-size: 24px;
+  }
 }
 
-@media (max-width: 350px) {
-  .name {font-size: 45px;}
-  .title {font-size: 24px;}
+@media (max-width: 330px) {
+  .name {
+    font-size: 45px;
+  }
+  .title {
+    font-size: 22px;
+  }
 }
