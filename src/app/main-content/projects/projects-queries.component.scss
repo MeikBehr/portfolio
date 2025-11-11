@@ -1,7 +1,5 @@
 @use '../../../styles/_variables' as *;
 
-
-
 @media (max-width: 1200px) {
   .portfolio_purple-shadow {
     bottom: -14px;
@@ -23,13 +21,11 @@
   }
 }
 
-
 @media (max-width: 1024px) {
 
   .portfolio_header__wrapper {
     max-width: 90%;
   }
-
 
   .portfolio_card-links-img img,
   .portfolio_card-rechts-img img {
@@ -41,7 +37,6 @@
       max-width: 420px;
   }
 
-
   .portfolio_card-rechts-container {
       padding-right: 50px;
       max-width: 420px;
@@ -50,7 +45,6 @@
 
 
 @media (max-width: 950px) {
-
   .portfolio_head-content__variety-mobile {
     padding-top: 32px;
   }
@@ -76,14 +70,12 @@
     flex-direction: column-reverse;
   }
 
-
   .portfolio_header-mobile {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-
 
   .portfolio_header-mobile-left {
     position: relative;
@@ -140,7 +132,6 @@
     max-width: 620px;
   }
 
-
   .portfolio_card-links-img img,
   .portfolio_card-rechts-img img {
     max-width: 620px;
@@ -149,7 +140,6 @@
   .portfolio_card-links-container {
       padding-left: 0px;
   }
-
 
   .portfolio_card-rechts-container {
       padding-right: 0px;
@@ -162,14 +152,12 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .portfolio_card-links-container,
   .portfolio_card-rechts-container {
     width: 520px;
     max-width: 520px;
   }
-
 
   .portfolio_card-links-img img,
   .portfolio_card-rechts-img img {
@@ -179,7 +167,6 @@
   .portfolio_card-links-container {
       padding-left: 0px;
   }
-
 
   .portfolio_card-rechts-container {
     padding-right: 0px;
@@ -193,7 +180,6 @@
     bottom: 334px;
   }
 }
-
 
 @media (max-width: 600px) {
   .portfolio_header__headline-mobile {
@@ -224,7 +210,6 @@
     max-width: 420px;
   }
 
-
   .portfolio_card-links-img img,
   .portfolio_card-rechts-img img {
     max-width: 420px;
@@ -237,7 +222,6 @@
   
 }
 
-
 @media (max-width: 500px) {
   .portfolio_header__headline-mobile {
     font-size: 54px;
@@ -248,7 +232,6 @@
     left: -24px;
   }
 }
-
 
 @media (max-width: 450px) {
   .portfolio_header-content__line-left-mobile {
@@ -271,9 +254,7 @@
   }
 }
 
-
 @media (max-width: 390px) {
-  
   .portfolio_header__headline-mobile {
     font-size: 45px;
   }
@@ -315,7 +296,6 @@
     max-width: 300px;
   }
 
-
   .portfolio_card-links-img img,
   .portfolio_card-rechts-img img {
     max-width: 300px;
@@ -340,7 +320,6 @@
     max-width: 280px;
   }
 
-
   .portfolio_card-links-img img,
   .portfolio_card-rechts-img img {
     max-width: 280px;
@@ -355,5 +334,3 @@
     scale: 0.8;
   }
 }
-
-
