@@ -1,1 +1,5 @@
-/* Intentionally left blank – styles are handled by child components */
+@media (prefers-reduced-motion: reduce) {
+  .is-inview { 
+    transition: none !important; 
+    animation: none !important; }
+}
