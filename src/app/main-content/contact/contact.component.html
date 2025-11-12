@@ -1,14 +1,13 @@
 <section id="contact" class="contact">
 
-
-
     <!-- Headnling mit Strich-->
     <div class="contact-header"  [ngClass]="{ 'is-inview': titleInView }" #titleRow>
         <div class="contact-header__line"></div>
           
-        <div class="contact-header__headline">{{ 'contact.headline'  | translate }}</div>
-    </div>
+        <!-- <div class="contact-header__headline">{{ 'contact.headline'  | translate }}</div> -->
+         <h2 class="contact-header__headline">{{ 'contact.headline'  | translate }}</h2>
 
+    </div>
 
     <!-- Contact Text und Feld-->
     <div class="contact-content">
@@ -24,6 +23,7 @@
 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[0] }" #form1>
                     <div class="input-icon-wrapper">
+                        <label for="contact-name" class="sr-only">Name</label>
                         <input id="contact-name"
                             #nameInput
                             name="contactName"
@@ -50,9 +50,9 @@
                     </div>
                 </div>
 
-
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[1] }" #form2>
                     <div class="input-icon-wrapper">
+                        <label for="contact-mail" class="sr-only">E-Mail</label>
                         <input id="contact-mail"
                             name="contactMail"
                             aria-label="E-Mail"
@@ -78,9 +78,9 @@
                     </div>
                 </div>
 
-
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[2] }" #form3>
                     <div class="input-icon-wrapper-msg">
+                        <label for="contact-message" class="sr-only">Text</label>
                         <textarea 
                             name="contactMessage" 
                             id="contact-message"
@@ -121,7 +121,6 @@
                         {{ msgErrorKey | translate }}
                     </div>
                 </div>
-
                 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[3] }" #form4>
                     <div class="contact-form_agreement">
@@ -155,9 +154,6 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[4] }" #form5>
                     <div class="contact-form_button-container">
                         <button
@@ -168,13 +164,13 @@
                                 'btn-disabled': !allFieldsValid || !privacyChecked, 
                                 'btn-active': allFieldsValid && privacyChecked 
                             }"
+                            [disabled]="!allFieldsValid || !privacyChecked"
                             [style.cursor]="privacyChecked && allFieldsValid ? 'pointer' : 'not-allowed'"
                         >
                         {{ 'contact.send' | translate }}
                         </button>
                     </div>
                 </div>
-
 
             <div class="contact-success-overlay" *ngIf="showSuccessOverlay" aria-live="polite" role="status">
                 <div class="success-message">
@@ -226,7 +222,6 @@
         
     </div>
 
-
     <div class="contact-purple_shadow"></div>
 
      <div class="contact-go_up-container">
@@ -237,6 +232,5 @@
             </svg>
         </a>
      </div>
-
 
 </section>

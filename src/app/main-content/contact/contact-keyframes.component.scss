@@ -17,7 +17,6 @@
   }
 }
 
-
 @keyframes flipInY {
   from {
     transform: perspective(800px) rotateX(60deg) scale(0.96);
@@ -33,7 +32,6 @@
   }
 }
 
-
 @keyframes flipInY_text {
   from {
     transform: perspective(700px) rotateX(80deg) scale(0.98);
@@ -48,7 +46,6 @@
     opacity: 1;
   }
 }
-
 
 @keyframes flipInX {
   from {
@@ -69,7 +66,6 @@
   }
 }
 
-
 @keyframes pop-in {
   0%   { transform: scale(0.8); opacity: 0.2;}
   60%  { transform: scale(1.10); opacity: 1;}
@@ -84,4 +80,3 @@
   from { opacity: 1; }
   to   { opacity: 0; }
 }
-

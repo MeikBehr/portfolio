@@ -2,11 +2,6 @@
 @use '../../../styles/_mixins' as *;
 
 
-
-* {
-    transition: all 125ms ease-in-out;
-}
-
 .contact {
     position: relative;
     background-color: $color-bg;
@@ -17,7 +12,6 @@
     min-height: 300px;
     overflow: hidden;
 }
-
 
 .contact-header {
     display: flex;
@@ -59,6 +53,7 @@
     justify-content: space-between;
     padding-left: 100px;
     padding-right: 100px;
+    gap: 16px;
 }
 
 .contact-content__text {
@@ -144,7 +139,6 @@
 
 }
 
-
 input::placeholder        { @include placeholder-style; }
 input::-webkit-input-placeholder { @include placeholder-style; }
 input::-moz-placeholder   { @include placeholder-style; }
@@ -157,7 +151,6 @@ textarea::-moz-placeholder   { @include placeholder-style; }
 textarea:-ms-input-placeholder     { @include placeholder-style; }
 textarea::-ms-input-placeholder    { @include placeholder-style; }
 
-
 .contact-form_name,
 .contact-form_mail {
     height: 50px;
@@ -168,7 +161,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     padding-top: 16px;
     resize: none;
 }
-
 
 .contact-form_agreement {
   position: relative;
@@ -198,6 +190,12 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     }
 }
 
+.contact-form_agreement-checkbox input[type="checkbox"]:focus-visible + svg,
+.contact-form_agreement-checkbox input[type="checkbox"]:focus-visible ~ svg {
+  outline: 2px solid $color-primary;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 .contact-form_agreement a {
     color: $color-secondary;
@@ -206,7 +204,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
         color: $color-primary;
     }
 }
-
 
 .contact-form_button-container {
     position: relative;
@@ -237,7 +234,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     &:hover {
         cursor: pointer;
     }
-
 }
 
 .contact-purple_shadow {
@@ -300,13 +296,11 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   border: 1px solid $color-error;
 }
 
-
 .contact-form_name.input-error,
 .contact-form_name.input-error:focus {
   border: 1px solid $color-error !important;
   outline: none;
 }
-
 
 .contact-form_name.input-error:focus,
 .contact-form_name.input-error {
@@ -314,11 +308,9 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   outline: none;
 }
 
-
 .contact-form_name .input-success {
     border: 1px solid $color-success !important;
 }
-
 
 .input-icon-wrapper .contact-form_mail.input-success,
 .input-icon-wrapper .contact-form_mail.input-success:focus {
@@ -394,6 +386,15 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   border: 1px solid $color-error !important;
 }
 
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  border: 0;
+  white-space: nowrap;
+}
+
 .counter {
   position: absolute;
   right: 16px;
@@ -402,7 +403,9 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   color: $color-secondary;
 }
 
-.counter.warning { color: $color-error; }
+.counter.warning { 
+  color: $color-error; 
+}
 
 .contact-form_agreement-checkbox input[type="checkbox"] {
   opacity: 0;
