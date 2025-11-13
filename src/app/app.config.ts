@@ -6,10 +6,19 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+/**
+ * HTTP loader factory for ngx-translate.
+ * @param http Angular HttpClient instance
+ * @returns TranslateHttpLoader for translation JSON files
+ */
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+/**
+ * Application config for Angular standalone app.
+ * Sets up router, HTTP, animations, and translation provider.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
