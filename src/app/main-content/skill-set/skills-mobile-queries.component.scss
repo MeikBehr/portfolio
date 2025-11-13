@@ -4,13 +4,11 @@ $paddingRightText : 100px;
 $paddingRightText1200: 80px;
 
 
-
 @media (min-width: 950px) and (hover: hover) and (pointer: fine) {
   .skills-grid__item:hover .skills-grid__icon {
     animation: bounceTooltip 1s cubic-bezier(.32,1.56,.53,.93) 1;
   }
 }
-
 
 @media (max-width: 949px) {
   .skills-grid__item .skills-grid__icon {
@@ -22,56 +20,34 @@ $paddingRightText1200: 80px;
     animation: hoverFlash 2.8s forwards;
   }
 
-  @keyframes hoverFlash {
-    0% {
-      color: $color-text_purple;
-      fill: $color-text_purple;
-    }
-    10% {
-      color: $color-text_primary;
-      fill: $color-text_primary;
-    }
-    80% {
-      color: $color-text_primary;
-      fill: $color-text_primary;
-    }
-    100% {
-      color: $color-text_purple;
-      fill: $color-text_purple;
-    }
-  }
-
   .skills-grid__item--continually:hover .skills-grid__label,
   .skills-grid__item--continually:active .skills-grid__label {
     animation: hoverFlash 2.8s forwards;
   }
 }
 
-
-
-
 .skills-grid__item--continually:hover,
   .skills-grid__item--continually:active {
     animation: hoverFlash 2.8s forwards;
-  }
+}
 
-  @keyframes hoverFlash {
-    0% {
-      color: $color-text_purple;
-      fill: $color-text_purple;
-    }
-    10% {
-      color: $color-text_primary;
-      fill: $color-text_primary;
-    }
-    80% {
-      color: $color-text_primary;
-      fill: $color-text_primary;
-    }
-    100% {
-      color: $color-text_purple;
-      fill: $color-text_purple;
-    }
+@keyframes hoverFlash {
+  0% {
+    color: $color-text_purple;
+    fill: $color-text_purple;
+  }
+  10% {
+    color: $color-text_primary;
+    fill: $color-text_primary;
+  }
+  80% {
+    color: $color-text_primary;
+    fill: $color-text_primary;
+  }
+  100% {
+    color: $color-text_purple;
+    fill: $color-text_purple;
+  }
 }
 
 .skills-grid__item--continually:hover .skills-grid__label,
@@ -84,9 +60,6 @@ $paddingRightText1200: 80px;
   flex-direction: column;
   margin-top: 100px;
 }
-
-
-
 
 @media (max-width: 950px) {
 
@@ -185,7 +158,6 @@ $paddingRightText1200: 80px;
     }
   }
 
-
   .skills-tooltip {
     position: absolute;
     left: 120%;
@@ -212,7 +184,6 @@ $paddingRightText1200: 80px;
     }
 }
 
-
 @media (max-width: 650px) {
   .above {
     padding-left: 0;
@@ -231,13 +202,10 @@ $paddingRightText1200: 80px;
 
   .skills-content__line {
     width: 7vw;
-  }
-  
+  } 
 }
 
-
 @media (max-width: 600px) {
-
   .skills-grid {
     display: none;
   }
@@ -248,7 +216,6 @@ $paddingRightText1200: 80px;
     margin-right: auto;
     z-index: 1;
   }
-
 
   .skills-grid-3 {
     display: flex;
@@ -294,11 +261,7 @@ $paddingRightText1200: 80px;
   }
 }
 
-
-
 @media (max-width: 500px) {
-
- 
   .skills-grid__item img {
     width: 48px;
     height: 48px;
@@ -312,12 +275,12 @@ $paddingRightText1200: 80px;
     }
   }
 
-    .skills-tooltip {
-      position: absolute;
-      left: 90%;
-      top: -180px;
-      min-width: 180px;
-    }
+  .skills-tooltip {
+    position: absolute;
+    left: 90%;
+    top: -180px;
+    min-width: 180px;
+  }
   
   .skills-grid__top {
     gap: 40px 0px;
@@ -339,7 +302,6 @@ $paddingRightText1200: 80px;
     min-width: 0;
   }
 }
-
 
 @media (max-width: 480px) {
   .skills-content__subheadline {
@@ -387,7 +349,6 @@ $paddingRightText1200: 80px;
     grid-template-rows: repeat(1, 90px);
     gap: 20px 0px;
   }
-
 }
 
 @media (max-width: 420px) {
@@ -431,7 +392,6 @@ $paddingRightText1200: 80px;
   }
 }
 
-
 @media (max-width: 320px) {
   .skills-content__variety {
     padding-right: 70px;
@@ -459,5 +419,13 @@ $paddingRightText1200: 80px;
     height: 570px;
     transform: rotate(17deg);
   }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .skills-grid__item,
+  .skills-grid__icon,
+  .skills-grid__label {
+    animation: none !important;
+    transition: none !important;
+  }
 }
