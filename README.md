@@ -1,37 +1,93 @@
-# Portfolio
+# Portfolio – Meik Behr
 
-## Description of the project
+## **Project Overview**
 
-This project showcases my personal portfolio, featuring an introduction to who I am, my skills and an overview of my latest projects. You can get in touch with me through a contact form. I'm looking forward to reading from you.
+This is my personal developer portfolio, built with Angular 18, showcasing my skills, selected projects, and a fully accessible contact form.
+The site is optimized for accessibility (WCAG 2.1 AA), responsive design, and real-world usability.
+Animations and transitions are designed to be keyboard-friendly and respect reduced-motion settings.
 
-## Link to my personal homepage
+## **Live Demo & Repository**
 
-https://develobehr.de/
+* **Live site:** [https://develobehr.de/](https://develobehr.de/)
+  (If not online, please use `ng serve` locally.)
+* **Source code:** [https://github.com/develobehr/portfolio](https://github.com/develobehr/portfolio)
 
-## Technologies used
+## **Key Features**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+* Modern, component-based SPA architecture (Angular 18, standalone components)
+* Bilingual: German (default) & English (ngx-translate, with browser language auto-detection)
+* Fully responsive grid & layout (mobile-first, custom breakpoints)
+* **Accessibility:**
 
-## Development server
+  * WCAG 2.1 AA (tested with screenreaders, keyboard, accessibility tools)
+  * Focus management, skip links, contrast, ARIA-labels, semantic HTML
+  * Keyboard navigation for all interactive elements
+* Animated skill/progress cards, smooth section transitions (motion safe, prefers-reduced-motion respected)
+* PHP-based backend for secure contact form submission (server-side validation)
+* Image optimization, webmanifest, favicons, and mobile app meta
+* All project links marked as “private, non-WCAG” where relevant
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## **How to Run Locally**
 
-## Code scaffolding
+1. **Clone repository**
+   `git clone https://github.com/develobehr/portfolio.git`
+2. **Install dependencies**
+   `npm install`
+3. **Start dev server**
+   `ng serve`
+   Open [http://localhost:4200/](http://localhost:4200/) in your browser.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> **Note:**
+> If you want to test the contact form locally, run a PHP server in the `/php/` directory
+> (e.g., `php -S localhost:8000`) or deploy on any standard webhosting with PHP 7.4+ and enabled `mail()` function.
 
-## Build
+## **Build**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Production build: `ng build --configuration production`
+* Static assets are in `dist/`
 
-## Running unit tests
+## **Backend / Contact Form**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Contact form POST requests are handled by `/php/contact.php`
+* PHP backend code is included under `/php/` (minimal, for demo; no database)
+* Server must support PHP 7.4+ and have `mail()` enabled
 
-## Running end-to-end tests
+## **Testing**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* No end-to-end or unit tests included (scope: DA project focus on UI, accessibility, and design)
+* Accessibility checked with WAVE, axe, and [accessibilitychecker.org](https://www.accessibilitychecker.org/audit/)
 
-## Further help
+## **Known Limitations**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* Portfolio projects section: Some links are for demonstration only and not fully WCAG-compliant
+* No database integration; contact messages are sent via email only
+* This is a showcase; no sensitive data, GDPR-safe (privacy policy linked)
+
+## **Credits**
+
+* Built by **Meik Behr** (2025)
+* Contact: [meik@develobehr.de](mailto:meik@develobehr.de)
+* Design tokens, colors, and animation curves inspired by Figma design system
+
+## **For Reviewers**
+
+* Please check both desktop and mobile, and test accessibility with screen reader and keyboard navigation
+* Animation and transitions auto-disable for reduced-motion OS settings
+* All code is fully documented (JSDoc, SCSS comments) and structured for maintainability
+* If you encounter any issues, please contact me directly or open an issue on Github.
+
+## **Changelog / Time Spent**
+
+* Total time invested: ~117 hours (Frontend, animations, accessibility, backend, testing) *(as of 13.11.2025)*
+* Final QA: ongoing
+
+## **Standard Angular CLI Commands**
+
+*(Moved to the end, since this is standard and not project-specific)*
+
+* `ng generate component <name>`
+* `ng build`
+* `ng test`
+* `ng e2e`
+
+---
