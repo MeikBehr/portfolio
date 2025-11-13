@@ -25,7 +25,13 @@ Animations and transitions are designed to be keyboard-friendly and respect redu
 * Animated skill/progress cards, smooth section transitions (motion safe, prefers-reduced-motion respected)
 * PHP-based backend for secure contact form submission (server-side validation)
 * Image optimization, webmanifest, favicons, and mobile app meta
-* All project links marked as “private, non-WCAG” where relevant
+* All project links marked as “private, non-WCAG” or “legacy” where relevant
+
+## **About the Project Links**
+
+Some project links included in this portfolio intentionally point to older, less polished, or non-accessible apps.
+They are included to transparently demonstrate my learning path and growth as a developer.
+Not all linked projects meet the same standards as this portfolio, but are shown for completeness and progression.
 
 ## **How to Run Locally**
 
@@ -59,7 +65,8 @@ Animations and transitions are designed to be keyboard-friendly and respect redu
 
 ## **Known Limitations**
 
-* Portfolio projects section: Some links are for demonstration only and not fully WCAG-compliant
+* Portfolio projects section: Some links intentionally point to older, non-accessible projects to illustrate my development progress
+* Not all projects are WCAG-compliant or maintained
 * No database integration; contact messages are sent via email only
 * This is a showcase; no sensitive data, GDPR-safe (privacy policy linked)
 
@@ -72,9 +79,20 @@ Animations and transitions are designed to be keyboard-friendly and respect redu
 ## **For Reviewers**
 
 * Please check both desktop and mobile, and test accessibility with screen reader and keyboard navigation
+* Some project links lead to legacy code or non-accessible demos for transparency about my skill evolution
 * Animation and transitions auto-disable for reduced-motion OS settings
 * All code is fully documented (JSDoc, SCSS comments) and structured for maintainability
-* If you encounter any issues, please contact me directly or open an issue on Github.
+* If you encounter any issues, please contact me directly or open an issue on Github
+
+## **What to Test (Reviewer Checklist)**
+
+* Keyboard navigation (TAB, SHIFT+TAB, Enter, ESC)
+* Screenreader labels & ARIA (try NVDA/VoiceOver)
+* Contact form validation and success/fail overlays
+* Responsive design across breakpoints/devices
+* Language switch (German/English)
+* Animation auto-disable with “reduced motion” OS setting
+* Try older project links to see evolution in code and design
 
 ## **Changelog / Time Spent**
 
@@ -90,4 +108,3 @@ Animations and transitions are designed to be keyboard-friendly and respect redu
 * `ng test`
 * `ng e2e`
 
----
