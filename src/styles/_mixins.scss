@@ -2,6 +2,10 @@
 @use 'sass:math';
 @use '_variables' as *;
 
+/**
+ * Sets accessible, readable placeholder styles for all inputs.
+ * Use with ::placeholder pseudo-selector for WCAG compliance.
+ */
 @mixin placeholder-style {
   color: $color-text;
   font-family: Poppins;

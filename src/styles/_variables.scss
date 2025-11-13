@@ -1,6 +1,12 @@
 @use "sass:color";
 @use 'sass:math';
 
+/**
+Project-wide design tokens for color, typography, layout and breakpoints.
+Adjust here to update theme globally.
+*/
+
+
 $color-primary: #70E61C;
 $color-secondary: #9747FF;
 $color-text_primary: #ffffff;
@@ -8,7 +14,6 @@ $color-text_purple: #9747FF;
 $color-text_green: #70E61C;
 
 $header-high: 100px;
-
 
 /* === DESIGN TOKENS (Figma) =================================== */
 /* Farben */
@@ -46,13 +51,10 @@ $radius-lg:            24px;
 $shadow-sm:            0 2px 10px rgba(0,0,0,.25);
 $shadow-md:            0 8px 24px rgba(0,0,0,.35);
 
-
 /* Container */
 $container-max: 1440px !default;
 $header-height: 100px !default;
 $container-pad-l-r: 7vw;
-
-
 
 /* Media Breakpoints*/
 // 1200px oder schmaler 
@@ -72,49 +74,3 @@ $breakpoint-xs: 36em!default;
 
 // 448px oder schmaler 
 $breakpoint-xxs: 28em!default;
-
-
-/*
-Bezeichnung     Breite (px)     Typisches Gerät/Use-Case
-320	       X        320	        Minimum, „iPhone SE“, Ultra-Klein
-375        X    	375	        iPhone 6/7/8/X/12 mini, Google Pixel
-390	       X        390	        Neuere iPhones, z. B. iPhone 14
-425	       X        425	        Galaxy S8+, größere Smartphones
-480/500	   X        480–500    	Kleine Tablets im Portrait, Foldables
-600             	600	        Kleine Tablets, Galaxy Fold Landscape
-768	       X        768	        iPad, Standard-Tablet
-950	       X        950	        Dein eigener Tablet/Small-Desktop-Cut
-1024       X    	1024      	Standard iPad Landscape, Surface
-1200       X    	1200    	Kleiner Desktop/Laptop
-1440       X    	1440	    Großer Desktop, FullHD, Macbook
-
-
-@media (max-width: 1200px) {
-
-}
-
-@media (max-width: 1024px) {
-  
-}
-
-@media (max-width: 950px) {
-
-}
-
-@media (max-width: 768px) {
-  
-}
-
-@media (max-width: 500px) {
-  
-}
-
-@media (max-width: 390px) {
-  
-}
-
-@media (max-width: 320px) {
-  
-}
-
-*/
