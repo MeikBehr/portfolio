@@ -3,8 +3,6 @@
 @use "sass:color";
 @use 'sass:math';
 
-
-
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Bold.ttf') format('truetype');
@@ -21,15 +19,10 @@
   font-display: swap;
 }
 
-
-
-
 * {
   margin: 0;
   padding: 0;
 }
-
-
 
 *,
 *::before,
@@ -52,11 +45,9 @@ html {
   overflow-x: hidden;
 }
 
-
 [id] { 
   scroll-margin-top: 109px; 
 }
-
 
 body {
   min-height: 100dvh;
@@ -103,7 +94,6 @@ a:hover {
   text-decoration: none;
 }
 
-
 .greenTheme {
     color: $color-primary;
 }
@@ -111,8 +101,6 @@ a:hover {
 .purpleTheme {
     color: $color-secondary;
 }
-
-
 
 html.no-scroll,
 body.no-scroll {
@@ -133,7 +121,6 @@ body.no-scroll {
 .legal-link:hover {
   color: #70E61C;
 }
-
 
 @media (max-width: 768px) {
   .modal-overlay .privacy-policy_mobile-nav-container {
