@@ -54,9 +54,14 @@ Not all linked projects meet the same standards as this portfolio, but are shown
 
 ## **Backend / Contact Form**
 
-* Contact form POST requests are handled by `/php/contact.php`
-* PHP backend code is included under `/php/` (minimal, for demo; no database)
-* Server must support PHP 7.4+ and have `mail()` enabled
+* The contact form submits data via POST to `/php/sendMail.php`
+* PHP backend code is included under `/php/` (minimal, for demo; no database required)
+* Input is validated server-side (required fields, email format, message length)
+* Header injection protection and a hidden honeypot field against bots are implemented
+* CORS is enabled for local and server deployment
+* Server must support PHP 7.4+ and have `mail()` enabled (on Windows, mail() may require extra setup)
+* For demo/testing: Script returns a success message if the request is valid, even if email delivery fails (no SMTP config)
+* **Not for production!** Use a real email service and add anti-abuse features for any live deployment
 
 ## **Testing**
 
