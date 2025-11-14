@@ -66,8 +66,10 @@
     "contact_error_msg_required": "Your message is empty",
     "contact_error_msg_pattern": "Please use only letters, numbers, spaces and common punctuation marks (5–1000 characters).",
     "privacy_error": "Please accept the privacy policy.",
-    "success": "Message sent successfully!"
-
+    "success": "Message sent successfully!",
+    "send_failed": "Sending the message failed. Please try again later.",
+    "too_many_requests": "Too many requests – please wait a minute before trying again.",
+    "invalid_input": "Invalid input. Please check your entries."
   },
 
   "legal_notice": {

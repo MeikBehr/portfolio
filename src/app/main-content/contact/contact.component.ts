@@ -1,20 +1,14 @@
-import {
-  Component,
-  ViewChildren,
-  ViewChild,
-  ElementRef,
-  QueryList,
-  AfterViewInit
-} from '@angular/core';
+import { Component, ViewChildren, ViewChild, ElementRef, QueryList, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
+import { ContactMailService } from './contact-mail.service';
 
 /**
- * ContactComponent handles the contact form logic,
- * including validation, accessibility feedback, 
- * and intersection-based animations.
+ * The ContactComponent handles the logic for the contact form,
+ * including validation, accessibility feedback, intersection-based animations,
+ * and secure submission to the PHP backend.
  */
 @Component({
   selector: 'app-contact',
@@ -24,8 +18,10 @@ import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-polic
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements AfterViewInit {
-
-  constructor(public translate: TranslateService) {}
+  constructor(
+    public translate: TranslateService,
+    private contactMailService: ContactMailService
+  ) {}
 
   /** Template references */
   @ViewChild('nameInput') nameInput!: ElementRef<HTMLInputElement>;
@@ -65,14 +61,22 @@ export class ContactComponent implements AfterViewInit {
   infoInView = [true, true, true];
   formInView = [true, true, true, true, true];
 
-  /** Computed form validity */
+  /** Submit handler states */
+  sending = false;
+  sendError = '';
+
+  /**
+   * Returns true if all required fields are valid.
+   */
   get allFieldsValid(): boolean {
     return !!(this.nameValid && this.mailValid && this.msgValid);
   }
 
   // ---------------------- VALIDATION ----------------------
 
-  /** Validates name input */
+  /**
+   * Validates the name input field and sets appropriate error messages.
+   */
   validateName(): void {
     if (!this.contactName?.trim()) {
       this.setNameError('contact.contact_error_name_required');
@@ -82,7 +86,9 @@ export class ContactComponent implements AfterViewInit {
     this.setValidationResult('name', pattern.test(this.contactName.trim()), 'contact.contact_error_name_pattern');
   }
 
-  /** Validates mail input */
+  /**
+   * Validates the email input field and sets appropriate error messages.
+   */
   validateMail(): void {
     if (!this.contactMail?.trim()) {
       this.setMailError('contact.contact_error_mail_required');
@@ -92,7 +98,9 @@ export class ContactComponent implements AfterViewInit {
     this.setValidationResult('mail', pattern.test(this.contactMail.trim()), 'contact.contact_error_mail_pattern');
   }
 
-  /** Validates message input */
+  /**
+   * Validates the message input field and sets appropriate error messages.
+   */
   validateMessage(): void {
     if (!this.contactMessage?.trim()) {
       this.setMsgError('contact.contact_error_msg_required');
@@ -102,9 +110,12 @@ export class ContactComponent implements AfterViewInit {
     this.setValidationResult('msg', pattern.test(this.contactMessage.trim()), 'contact.contact_error_msg_pattern');
   }
 
-  // ---------------------- HELPER METHODS ----------------------
-
-  /** Generic handler for validation outcomes */
+  /**
+   * Sets the validation result for a given field.
+   * @param field - The field name ('name', 'mail', or 'msg')
+   * @param valid - Whether the input passes validation
+   * @param errorKey - The i18n error key for invalid input
+   */
   private setValidationResult(field: 'name' | 'mail' | 'msg', valid: boolean, errorKey: string): void {
     const stateKey = `${field}Valid` as keyof this;
     const errorField = `${field}ErrorKey` as keyof this;
@@ -118,27 +129,74 @@ export class ContactComponent implements AfterViewInit {
     this[stateKey] = true as any;
   }
 
+  /** Helper for setting name error */
   private setNameError(key: string): void { this.nameErrorKey = key; this.nameValid = false; }
+  /** Helper for setting mail error */
   private setMailError(key: string): void { this.mailErrorKey = key; this.mailValid = false; }
+  /** Helper for setting message error */
   private setMsgError(key: string): void { this.msgErrorKey = key; this.msgValid = false; }
 
   // ---------------------- FORM HANDLING ----------------------
 
-  /** Main submit handler */
+  /**
+   * Main submit handler for the contact form.
+   * Submits form data via ContactMailService, handles loading and error states.
+   */
   submitContactForm(): void {
     if (!this.allFieldsValid || !this.privacyChecked) {
       this.privacyTouched = true;
       return;
     }
-    this.triggerSuccessOverlay();
+
+    this.sending = true;
+    this.sendError = '';
+
+    this.contactMailService.sendMail({
+      name: this.contactName,
+      email: this.contactMail,
+      message: this.contactMessage,
+      website: ''
+    }).subscribe({
+      next: (resp) => {
+        this.sending = false;
+        if (resp && resp.success) {
+          this.triggerSuccessOverlay();
+        } else {
+          this.showError('contact.send_failed');
+        }
+      },
+      error: (err) => {
+        this.sending = false;
+
+        if (err.status === 429) {
+          this.showError('contact.too_many_requests');
+        } else if (err.status === 400) {
+          this.showError('contact.invalid_input');
+        } else {
+          this.showError('contact.send_failed');
+        }
+      }
+    });
   }
 
-  /** Clears form after submit */
+  /** Displays an error message and auto-hides it after 4 seconds */
+  private showError(key: string): void {
+    this.sendError = key;
+    setTimeout(() => {
+      this.sendError = '';
+    }, 3000);
+  }
+
+  /**
+   * Resets the contact form to its initial state.
+   */
   private clearForm(): void {
     this.contactForm?.resetForm();
   }
 
-  /** Shows success overlay briefly */
+  /**
+   * Shows the success overlay briefly, then clears the form.
+   */
   private triggerSuccessOverlay(): void {
     this.showSuccessOverlay = true;
     setTimeout(() => {
@@ -147,7 +205,9 @@ export class ContactComponent implements AfterViewInit {
     }, 1800);
   }
 
-  /** Handles the submit button click with privacy logic */
+  /**
+   * Handles submit button click with privacy logic and double validation.
+   */
   onButtonClick(): void {
     if (this.allFieldsValid && !this.privacyChecked) {
       this.showPrivacyError();
@@ -156,7 +216,9 @@ export class ContactComponent implements AfterViewInit {
     if (this.allFieldsValid && this.privacyChecked) this.submitContactForm();
   }
 
-  /** Displays a temporary privacy error */
+  /**
+   * Displays a temporary privacy error message.
+   */
   private showPrivacyError(): void {
     this.privacyTouched = true;
     this.privacyErrorVisible = true;
@@ -168,13 +230,17 @@ export class ContactComponent implements AfterViewInit {
 
   // ---------------------- PRIVACY MODAL ----------------------
 
-  /** Opens the privacy modal and prevents background scroll */
+  /**
+   * Opens the privacy modal and disables background scrolling.
+   */
   openPrivacyModal(): void {
     this.showPrivacyModal = true;
     document.documentElement.classList.add('no-scroll');
   }
 
-  /** Closes the privacy modal and restores scroll */
+  /**
+   * Closes the privacy modal and re-enables background scrolling.
+   */
   closePrivacyModal(): void {
     this.showPrivacyModal = false;
     document.documentElement.classList.remove('no-scroll');
@@ -182,7 +248,9 @@ export class ContactComponent implements AfterViewInit {
 
   // ---------------------- INTERSECTION OBSERVERS ----------------------
 
-  /** Initializes intersection observers for animations */
+  /**
+   * Initializes intersection observers for animations after the view has initialized.
+   */
   ngAfterViewInit(): void {
     this.observeElement(this.titleRow, (inView) => (this.titleInView = inView));
     this.infoRows.forEach((row, i) =>
@@ -193,7 +261,11 @@ export class ContactComponent implements AfterViewInit {
     );
   }
 
-  /** Generic IntersectionObserver setup */
+  /**
+   * Sets up a generic IntersectionObserver for a given element and callback.
+   * @param ref - The ElementRef to observe.
+   * @param callback - Callback function to handle visibility.
+   */
   private observeElement(ref: ElementRef | undefined, callback: (inView: boolean) => void): void {
     if (!ref) return;
     const observer = new IntersectionObserver(([entry]) => callback(entry.isIntersecting), {

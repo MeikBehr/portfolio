@@ -156,6 +156,11 @@
 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[4] }" #form5>
                     <div class="contact-form_button-container">
+
+                        <div class="contact-form_button_error" *ngIf="sendError" aria-live="assertive">
+                            {{ sendError | translate }}
+                        </div>
+
                         <button
                             class="contact-form_button"
                             type="button"
@@ -171,6 +176,7 @@
                         </button>
                     </div>
                 </div>
+
 
             <div class="contact-success-overlay" *ngIf="showSuccessOverlay" aria-live="polite" role="status">
                 <div class="success-message">

@@ -65,7 +65,10 @@
     "contact_error_msg_required": "Sie haben keine Nachricht angegeben!",
     "contact_error_msg_pattern": "Bitte gib nur Buchstaben, Zahlen, Leerzeichen und die gängigen Satzzeichen ein (5–1000 Zeichen).",
     "privacy_error": "Bitte akzeptiere die Datenschutzerklärung.",
-    "success": "Erfolgreich gesendet!"
+    "success": "Erfolgreich gesendet!",
+    "send_failed": "Das Senden der Nachricht ist fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+    "too_many_requests": "Zu viele Anfragen – bitte warten Sie eine Minute, bevor Sie es erneut versuchen.",
+    "invalid_input": "Ungültige Eingabe. Bitte überprüfen Sie Ihre Eingaben."
   },
 
   "legal_notice": {
