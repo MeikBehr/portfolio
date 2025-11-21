@@ -289,10 +289,6 @@
     cursor: pointer;
 }
 
-.langBtn {
-  cursor: pointer;
-}
-
 .langRow{ 
   margin-top: 6px; 
   padding-top: 10px; 
@@ -384,17 +380,18 @@
 }
 
 .langBtn{
+  cursor: pointer;
   min-width: 54px; 
   padding: 6px 12px; 
   border-radius: 12px;
   font-weight: 600; 
-  border: 1.5px solid $color-primary;
+  border: 1.5px solid $color-primary-wcag;
   color: $color-text_primary;
 }
 
 .langBtn.is-active{
   color: $color-primary;
-  border-color: $color-primary; 
+  border-color: $color-primary-wcag; 
 }
 
 .langBtn_separator {
@@ -422,7 +419,7 @@
   height: 32px;
   padding: 5px 8px;
   border-radius: 10px;
-  border: 1px solid $color-primary;
+  border: 1px solid $color-primary-wcag;
   background: transparent;
   color: $color-text_primary;
   line-height: 1;
@@ -431,9 +428,9 @@
 }
 
 .langBtn--desktop.is-active {
-  background: $color-primary;
+  background: $color-primary-wcag;
   color: $color-text_primary;
-  border-color: $color-primary;
+  border-color: $color-primary-wcag;
   font-weight: bold;
 }
 

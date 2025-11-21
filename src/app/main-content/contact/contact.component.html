@@ -23,11 +23,10 @@
 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[0] }" #form1>
                     <div class="input-icon-wrapper">
-                        <label for="contact-name" class="sr-only">Name</label>
+                        <label for="contact-name" class="sr-only">{{ 'contact.input-name'  | translate }}</label>
                         <input id="contact-name"
                             #nameInput
                             name="contactName"
-                            aria-label="Name"
                             class="contact-form_name"
                             type="text"
                             placeholder="{{ 'contact.input-name'  | translate }}"
@@ -52,10 +51,9 @@
 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[1] }" #form2>
                     <div class="input-icon-wrapper">
-                        <label for="contact-mail" class="sr-only">E-Mail</label>
+                        <label for="contact-mail" class="sr-only">{{ 'contact.input-mail' | translate }}</label>
                         <input id="contact-mail"
                             name="contactMail"
-                            aria-label="E-Mail"
                             class="contact-form_mail"
                             type="email"
                             placeholder="{{ 'contact.input-mail' | translate }}"
@@ -80,12 +78,11 @@
 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[2] }" #form3>
                     <div class="input-icon-wrapper-msg">
-                        <label for="contact-message" class="sr-only">Text</label>
+                        <label for="contact-message" class="sr-only">{{ 'contact.input-message'  | translate }}</label>
                         <textarea 
                             name="contactMessage" 
                             id="contact-message"
                             class="contact-form_message"
-                            aria-label="Nachricht"
                             type="text" minlength="4" 
                             placeholder="{{ 'contact.input-message'  | translate }}" 
                             required
@@ -125,18 +122,18 @@
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[3] }" #form4>
                     <div class="contact-form_agreement">
 
-                        <label class="contact-form_agreement-checkbox" aria-label="Datenschutz zustimmen">
+                        <label class="contact-form_agreement-checkbox">
                             <input
                                 name="privacyChecked"
                                 type="checkbox"
                                 [(ngModel)]="privacyChecked"
-                                aria-label="Datenschutz zustimmen"
+                                [attr.aria-label]="'contact.privacy_policy_aria' | translate"
                             />
                             <ng-container *ngIf="privacyChecked; else noCheck">
-                                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.6 10.9L5.45 8.75C5.26667 8.56667 5.03333 8.475 4.75 8.475C4.46667 8.475 4.23333 8.56667 4.05 8.75C3.86667 8.93333 3.775 9.16667 3.775 9.45C3.775 9.73333 3.86667 9.96667 4.05 10.15L6.9 13C7.1 13.2 7.33333 13.3 7.6 13.3C7.86667 13.3 8.1 13.2 8.3 13L13.95 7.35C14.1333 7.16667 14.225 6.93333 14.225 6.65C14.225 6.36667 14.1333 6.13333 13.95 5.95C13.7667 5.76667 13.5333 5.675 13.25 5.675C12.9667 5.675 12.7333 5.76667 12.55 5.95L7.6 10.9ZM2 18.5C1.45 18.5 0.979167 18.3042 0.5875 17.9125C0.195833 17.5208 0 17.05 0 16.5V2.5C0 1.95 0.195833 1.47917 0.5875 1.0875C0.979167 0.695833 1.45 0.5 2 0.5H16C16.55 0.5 17.0208 0.695833 17.4125 1.0875C17.8042 1.47917 18 1.95 18 2.5V16.5C18 17.05 17.8042 17.5208 17.4125 17.9125C17.0208 18.3042 16.55 18.5 16 18.5H2ZM2 16.5H16V2.5H2V16.5Z" fill="currentColor"/> </svg>
+                                <svg aria-hidden="true" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.6 10.9L5.45 8.75C5.26667 8.56667 5.03333 8.475 4.75 8.475C4.46667 8.475 4.23333 8.56667 4.05 8.75C3.86667 8.93333 3.775 9.16667 3.775 9.45C3.775 9.73333 3.86667 9.96667 4.05 10.15L6.9 13C7.1 13.2 7.33333 13.3 7.6 13.3C7.86667 13.3 8.1 13.2 8.3 13L13.95 7.35C14.1333 7.16667 14.225 6.93333 14.225 6.65C14.225 6.36667 14.1333 6.13333 13.95 5.95C13.7667 5.76667 13.5333 5.675 13.25 5.675C12.9667 5.675 12.7333 5.76667 12.55 5.95L7.6 10.9ZM2 18.5C1.45 18.5 0.979167 18.3042 0.5875 17.9125C0.195833 17.5208 0 17.05 0 16.5V2.5C0 1.95 0.195833 1.47917 0.5875 1.0875C0.979167 0.695833 1.45 0.5 2 0.5H16C16.55 0.5 17.0208 0.695833 17.4125 1.0875C17.8042 1.47917 18 1.95 18 2.5V16.5C18 17.05 17.8042 17.5208 17.4125 17.9125C17.0208 18.3042 16.55 18.5 16 18.5H2ZM2 16.5H16V2.5H2V16.5Z" fill="currentColor"/> </svg>
                             </ng-container>
                             <ng-template #noCheck>
-                                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M2 18.5C1.45 18.5 0.979167 18.3042 0.5875 17.9125C0.195833 17.5208 0 17.05 0 16.5V2.5C0 1.95 0.195833 1.47917 0.5875 1.0875C0.979167 0.695833 1.45 0.5 2 0.5H16C16.55 0.5 17.0208 0.695833 17.4125 1.0875C17.8042 1.47917 18 1.95 18 2.5V16.5C18 17.05 17.8042 17.5208 17.4125 17.9125C17.0208 18.3042 16.55 18.5 16 18.5H2ZM2 16.5H16V2.5H2V16.5Z" fill="currentColor"/> </svg>
+                                <svg aria-hidden="true" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M2 18.5C1.45 18.5 0.979167 18.3042 0.5875 17.9125C0.195833 17.5208 0 17.05 0 16.5V2.5C0 1.95 0.195833 1.47917 0.5875 1.0875C0.979167 0.695833 1.45 0.5 2 0.5H16C16.55 0.5 17.0208 0.695833 17.4125 1.0875C17.8042 1.47917 18 1.95 18 2.5V16.5C18 17.05 17.8042 17.5208 17.4125 17.9125C17.0208 18.3042 16.55 18.5 16 18.5H2ZM2 16.5H16V2.5H2V16.5Z" fill="currentColor"/> </svg>
                             </ng-template>
                         </label>
 
@@ -232,7 +229,7 @@
 
      <div class="contact-go_up-container">
         <a href="#top" class="contact-go_up" aria-label="Contact - go Top">
-            <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="1" y="1" width="37" height="37" rx="18.5" stroke-width="2"  stroke="currentColor"/>
                 <path d="M18 15.828L13.343 20.485C12.9526 20.8755 12.3195 20.8755 11.929 20.485C11.5386 20.0945 11.5386 19.4615 11.929 19.071L18.2929 12.7071C18.6834 12.3166 19.3166 12.3166 19.7071 12.7071L26.071 19.071C26.4615 19.4615 26.4615 20.0945 26.071 20.485C25.6806 20.8755 25.0475 20.8755 24.657 20.485L20 15.828L20 27C20 27.5523 19.5523 28 19 28C18.4477 28 18 27.5523 18 27L18 15.828Z" fill="currentColor"/>
             </svg>
