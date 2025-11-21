@@ -69,7 +69,8 @@
     "send_failed": "Das Senden der Nachricht ist fehlgeschlagen. Bitte versuchen Sie es später erneut.",
     "too_many_requests": "Zu viele Anfragen – bitte warten Sie eine Minute, bevor Sie es erneut versuchen.",
     "invalid_input": "Ungültige Eingabe. Bitte überprüfen Sie Ihre Eingaben.",
-    "privacy_policy_aria" : "Hiermit stimmen Sie den Datenschutzbestimmungen zu."
+    "privacy_policy_aria" : "Hiermit stimmen Sie den Datenschutzbestimmungen zu.",
+    "go_top_aria" : "Zurück zum Seitenanfang"
   },
 
   "legal_notice": {

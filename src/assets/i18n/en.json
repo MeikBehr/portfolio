@@ -70,7 +70,8 @@
     "send_failed": "Sending the message failed. Please try again later.",
     "too_many_requests": "Too many requests – please wait a minute before trying again.",
     "invalid_input": "Invalid input. Please check your entries.",
-    "privacy_policy_aria": "I agree to the privacy policy"
+    "privacy_policy_aria": "I agree to the privacy policy",
+    "go_top_aria" : "Back to top of page"
   },
 
   "legal_notice": {

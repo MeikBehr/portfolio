@@ -163,7 +163,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 .contact-form_agreement {
-  position: relative;
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -198,7 +198,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 .contact-form_agreement a {
-    color: $color-secondary;
+    color: $color-secondary-wcag;
 
     &:hover {
         color: $color-primary;
