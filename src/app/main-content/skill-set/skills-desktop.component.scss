@@ -317,8 +317,8 @@ $paddingRightText1200: 80px;
 
 .skills-tooltip {
     position: absolute;
-    left: 110%;
-    top: -180px;
+    left: 100px;
+    bottom: 100%;
     transform: translateX(-50%) scale(0.9);
     transition: all 125ms ease-in-out;
     opacity: 0;

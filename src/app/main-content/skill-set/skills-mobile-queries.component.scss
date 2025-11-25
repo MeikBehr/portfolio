@@ -160,7 +160,7 @@ $paddingRightText1200: 80px;
 
   .skills-tooltip {
     position: absolute;
-    left: 120%;
+    left: 100%;
     top: -180px;
     min-width: 180px;
   }
@@ -258,6 +258,13 @@ $paddingRightText1200: 80px;
       top: -521px;
       width: 170px;
       height: 624px;
+  }
+
+  .skills-tooltip {
+    position: absolute;
+    left: 75%;
+    top: -180px;
+    min-width: 180px;
   }
 }
 
