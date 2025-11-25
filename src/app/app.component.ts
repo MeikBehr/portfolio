@@ -50,10 +50,10 @@ export class AppComponent implements OnInit {
   /**
    * Checks if the device is in landscape mode with limited height,
    * and updates the blocking flag accordingly. Prevents scrolling if in landscape mode.
-   * Devices with width > height and height < 420px are considered "blocked".
+   * Devices with width > height and height < 480px are considered "blocked".
    */
   checkLandscape(): void {
-    this.isLandscapeBlocked = window.innerWidth > window.innerHeight && window.innerHeight < 420;
+    this.isLandscapeBlocked = window.innerWidth > window.innerHeight && window.innerHeight < 480;
     // No-Scroll toggeln:
     if (this.isLandscapeBlocked) {
       document.documentElement.classList.add('no-scroll');
