@@ -23,7 +23,7 @@ $color-primary:        #70E61C;
 
 /* Darker variant for WCAG AA compliance (Contrast > 4.5:1 with white text) */
 /* Use for: Buttons, Active States, Important Links */
-$color-primary-wcag:   #3f830e;
+$color-primary-wcag:   #3f830e; 
 $color-secondary-wcag: #C084FC;
 
 /* Secondary Colors */
@@ -40,7 +40,7 @@ $color-muted:          #B6B6B6;
 /* Functional Colors */
 $color-accent:         #18346D;
 $color-error:          #E61C40;
-$color-success:        #70E61C; /* Keep neon for icons, or use wcag-variant for text! */
+$color-success:        #3f830e; /*  Darker variant for WCAG AA compliance */
 
 /* Typo */
 $font-family:          'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;

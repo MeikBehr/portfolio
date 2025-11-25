@@ -262,6 +262,9 @@
   .about-me__text {
       max-width: 380px;
   }
+  .about-me__wrapper {
+    margin-top: -40px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -297,6 +300,10 @@
 
   .about-me__wrapper {
     margin-top: -40px;
+  }
+
+  .about-me__headline {
+    font-size: 40px;
   }
 }
 

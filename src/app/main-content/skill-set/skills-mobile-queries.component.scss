@@ -247,6 +247,7 @@ $paddingRightText1200: 80px;
     min-width: 420px;
     max-width: 580px;
     width: 40%;
+    padding-top: 24px;
   }
 
   .skills-content__headline {
@@ -418,6 +419,14 @@ $paddingRightText1200: 80px;
     top: -521px;
     width: 150px;
     height: 480px;
+  }
+
+  .skills-grid__bottom {
+    padding-top: 0px;
+  }
+
+  .skills-content__headline {
+    font-size: 40px;
   }
 }
 
