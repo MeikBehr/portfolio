@@ -25,6 +25,11 @@
     "contact_aria": "Contact form"
   },
 
+  "landscape": {
+    "one": "This page is not optimally usable in landscape mode on small devices.",
+    "two": "Please rotate your device to portrait mode."
+  },
+
   "projects": {
     "headline": "Portfolio",
     "variety": "Check out my projects and discover my potential.",

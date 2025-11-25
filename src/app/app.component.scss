@@ -1,0 +1,25 @@
+.landscape-warning {
+  display: none;
+  position: fixed;
+  z-index: 5000;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #141d2f;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 150%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  border-radius: 0;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+}
+
+@media (max-height: 420px) and (orientation: landscape) {
+  .landscape-warning { display: flex !important; }
+}

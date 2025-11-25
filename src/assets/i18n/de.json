@@ -25,6 +25,11 @@
     "contact_aria": "Kontaktformular"
   },
 
+  "landscape": {
+    "one": "Diese Seite ist im Landscape-Modus auf kleinen Geräten nicht optimal nutzbar.",
+    "two": "Bitte drehe dein Gerät ins Hochformat."
+  },
+
   "projects": {
     "headline": "Portfolio",
     "variety": "Schauen Sie sich meine Projekte an und entdecke Sie mein Potenzial.",
