@@ -524,39 +524,3 @@ $paddingRightText1200: 80px;
   }
 
 }
-
-
-@media (max-width: 1024px) {
-
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 100px);
-    gap: 12px 12px;
-  }
-
-  .skills-section {
-    margin-top: -300px;
-  }
-
-  .skills-grid__item img {
-    min-height: 60px;
-    min-width: 50px;
-  }
-
-  .skills-grid__item img {
-    height: 50px;
-  }
-
-  .skills-tooltip {
-    position: absolute;
-    left: 90%;
-    top: -180px;
-    min-width: 180px;
-  }
-
-  .skills-content__subheadline {
-    font-size: 26px;
-    font-weight: 600;
-    gap: 7px;
-  }
-}
