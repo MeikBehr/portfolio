@@ -346,6 +346,22 @@ $paddingRightText1200: 80px;
   }
 }
 
+.continually-learning--svg-container {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+
+  & svg {
+    transform: scale(1.2);
+  }
+}
+
+.continually-learning--svg {
+  margin-bottom: 10px;
+}
+
 .skills-tooltip__arrow {
   position: absolute;
   left: 30%;
