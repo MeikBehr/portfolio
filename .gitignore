@@ -43,3 +43,6 @@ Thumbs.db
 
 # Ignore PHP mail log
 /php/mail_errors.log
+
+# Gimp Studio raw data
+/gimp/*
