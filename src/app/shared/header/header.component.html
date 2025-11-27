@@ -1,5 +1,7 @@
 <header class="header--welcome">
-  <nav class="container header__layout" aria-label="Hauptnavigation">
+  <nav 
+    class="container header__layout" 
+    [attr.aria-label]="'header.menu_aria' | translate">
   
     <!-- Logo / Brand -->
     <div class="name">
@@ -30,9 +32,9 @@
 
     <!-- Desktop Navigation -->
     <nav class="normalNav">
-      <a href="#aboutMe" (click)="navigateToSection('aboutMe', $event)" [class.is-active]="activeLink==='aboutMe'">{{ 'ABOUT_ME' | translate }}</a>
-      <a href="#mySkills" (click)="navigateToSection('mySkills', $event)" [class.is-active]="activeLink==='mySkills'">{{ 'SKILLS' | translate }}</a>
-      <a href="#portfolio" (click)="navigateToSection('portfolio', $event)" [class.is-active]="activeLink==='portfolio'">{{ 'PORTFOLIO' | translate }}</a>
+      <a href="#aboutMe" (click)="navigateToSection('aboutMe', $event)" [class.is-active]="activeLink==='aboutMe'">{{ 'header.about' | translate }}</a>
+      <a href="#mySkills" (click)="navigateToSection('mySkills', $event)" [class.is-active]="activeLink==='mySkills'">{{ 'header.skills' | translate }}</a>
+      <a href="#portfolio" (click)="navigateToSection('portfolio', $event)" [class.is-active]="activeLink==='portfolio'">{{ 'header.portfolio' | translate }}</a>
       <div class="desktopLang">
         <button type="button"
                 class="langBtn langBtn--desktop"
@@ -52,7 +54,7 @@
           class="burger_animated-container"
           [class.cross]="isMobileMenuOpen"
           (click)="toggleMobileMenu()"
-          aria-label="Menü auf/zu"
+          [attr.aria-label]="'header.menu_toggle_aria' | translate"
           type="button">
           <div></div>
           <div></div>
@@ -66,7 +68,7 @@
       <nav 
         class="pane" 
         (click)="$event.stopPropagation()" 
-        [attr.aria-label]="'header_menu_aria' | translate">
+        [attr.aria-label]="'header.menu_aria' | translate">
         <a class="overlayBrand logoWrap" aria-label="Meik Behr – Logo (overlay)" *ngIf="isMobileMenuOpen">
           <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitleOverlay" text-rendering="geometricPrecision">
             <title id="logoTitleOverlay">Meik</title>
@@ -83,10 +85,10 @@
           </svg>
         </a>
         <ul class="menuList">
-          <li><a href="#aboutMe" (click)="navigateToSection('aboutMe', $event)">{{ 'ABOUT_ME' | translate }}</a></li>
-          <li><a href="#mySkills" (click)="navigateToSection('mySkills', $event)">{{ 'SKILLS' | translate }}</a></li>
-          <li><a href="#portfolio" (click)="navigateToSection('portfolio', $event)">{{ 'PORTFOLIO' | translate }}</a></li>
-          <li><a href="#contact" (click)="navigateToSection('contact', $event)">{{ 'CONTACT' | translate }}</a></li>
+          <li><a href="#aboutMe" (click)="navigateToSection('aboutMe', $event)">{{ 'header.about' | translate }}</a></li>
+          <li><a href="#mySkills" (click)="navigateToSection('mySkills', $event)">{{ 'header.skills' | translate }}</a></li>
+          <li><a href="#portfolio" (click)="navigateToSection('portfolio', $event)">{{ 'header.portfolio' | translate }}</a></li>
+          <li><a href="#contact" (click)="navigateToSection('contact', $event)">{{ 'header.contact' | translate }}</a></li>
           <li class="langRow">
             <div class="langToggle">
               <button type="button"

@@ -1,11 +1,20 @@
 {
-  "ABOUT_ME": "About Me",
-  "SKILLS": "Skills",
-  "PORTFOLIO": "Portfolio",
-  "CONTACT": "Contact",
-  "PRIVACY-POLICY": "Privacy Policy",
-  "IMPRINT": "Imprint",
-  "header_menu_aria": "Mainnavigation mobil",
+
+  "header": {
+    "about": "About Me",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "menu_aria": "Main navigation mobile",
+    "menu_toggle_aria": "Toggle navigation menu"
+  },
+
+  "footer": {
+    "nav_aria": "Legal navigation",
+    "privacy": "Privacy Policy",
+    "imprint": "Legal Notice",
+    "content": "Footer content"
+  },
 
   "about_me": {
     "title": "About me",
