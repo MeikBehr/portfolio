@@ -244,7 +244,8 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   top: 284px;
   width: 678px;
   height: 805px;
-  background: url(../../../assets/img/contact/contact_purple_shadow.png);
+  background: url(/assets/img/contact/contact_purple_shadow.png);
+  background: url(/angular-projects/portfolio/assets/img/contact/contact_purple_shadow.png);
   background-repeat: no-repeat;
   background-size: cover;
   pointer-events: none;
@@ -574,26 +575,12 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   animation: fadeInUp 0.25s ease;
 }
 
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-8px);
-  }
-}
-
-// Optional: Abstand falls auf Mobil zu eng
 @media (max-width: 600px) {
   .contact-form_button_error {
     font-size: 0.93rem;
     padding: 5px 12px;
   }
 }
-
 
 // Import Keyframes
 @import './contact-keyframes.component.scss';
