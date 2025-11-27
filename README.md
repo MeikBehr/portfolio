@@ -33,6 +33,18 @@ Some project links included in this portfolio intentionally point to older, less
 They are included to transparently demonstrate my learning path and growth as a developer.
 Not all linked projects meet the same standards as this portfolio, but are shown for completeness and progression.
 
+## Accessibility & WCAG Compliance
+
+An external accessibility audit was conducted to evaluate the compliance of this portfolio with current accessibility standards.
+
+- Tool used: accessibilitychecker.org  
+- Standards: WCAG 2.2, EN 301 549, BITV  
+- Result: **0 Critical Issues**, **95% automated audit score**
+- All detected ARIA-related issues in the mobile navigation overlay were identified and corrected with proper semantic markup and accessible naming.
+- Manual accessibility checks (e.g. keyboard navigation, focus order, screen reader behavior) are required and planned, as these cannot be fully validated by automated tools in modern Single Page Applications (SPAs).
+
+This project follows a quality-first approach with a strong focus on real-world accessibility requirements.
+
 ## **How to Run Locally**
 
 1. **Clone repository**

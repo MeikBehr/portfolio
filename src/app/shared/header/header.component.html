@@ -63,7 +63,10 @@
 
     <!-- Mobile Overlay Menu -->
     <div class="mobileMenu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-      <nav class="pane" (click)="$event.stopPropagation()" aria-modal="true" role="dialog">
+      <nav 
+        class="pane" 
+        (click)="$event.stopPropagation()" 
+        [attr.aria-label]="'header_menu_aria' | translate">
         <a class="overlayBrand logoWrap" aria-label="Meik Behr – Logo (overlay)" *ngIf="isMobileMenuOpen">
           <svg class="logo" viewBox="0 0 217.2 95" role="img" aria-labelledby="logoTitleOverlay" text-rendering="geometricPrecision">
             <title id="logoTitleOverlay">Meik</title>
