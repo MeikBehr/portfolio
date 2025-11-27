@@ -91,6 +91,7 @@
 
   "legal_notice": {
     "title": "Legal Notice",
+    "back_to_content_aria": "Go back to main content",
     "imprint": "Imprint",
     "address": {
       "name": "Meik Behr",
@@ -122,6 +123,7 @@
 
   "privacy_policy": {
     "title": "Privacy Policy",
+    "back_to_content_aria": "Go back to main content",
     "block_headline": "The data controller responsible for data processing on this website is:",
     "address": {
       "name": "Meik Behr",

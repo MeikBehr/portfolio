@@ -91,6 +91,7 @@
   "legal_notice": {
     "title": "Impressum",
     "imprint": "Impressum",
+    "back_to_content_aria": "Zurück zum Hauptinhalt",
     "address": {
       "name": "Meik Behr",
       "careof": "c/o Behr Technik GmbH",
@@ -121,6 +122,7 @@
 
   "privacy_policy": {
     "title": "Datenschutz­erklärung",
+    "back_to_content_aria": "Zurück zum Hauptinhalt",
     "block_headline": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
     "address": {
       "name": "Meik Behr",
