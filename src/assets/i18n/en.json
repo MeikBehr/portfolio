@@ -46,7 +46,7 @@
     },
 
     "pokedex": {
-      "headline": "JavaScript | HTML | CSS",
+      "headline": "Pokédex",
       "skills": "JavaScript | HTML | CSS | Api",
       "variety": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
     }
