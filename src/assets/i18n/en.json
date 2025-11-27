@@ -86,7 +86,9 @@
     "too_many_requests": "Too many requests – please wait a minute before trying again.",
     "invalid_input": "Invalid input. Please check your entries.",
     "privacy_policy_aria": "I agree to the privacy policy",
-    "go_top_aria" : "Back to top of page"
+    "go_top_aria" : "Back to top of page",
+    "link_aria": "Go to contact form",
+    "modal": "Close Modal"
   },
 
   "legal_notice": {
