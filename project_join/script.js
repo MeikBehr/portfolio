@@ -1,18 +1,18 @@
 const translations = {
   de: {
-    projectName: "Pokédex",
-    headline: "Pokédex – Demo-Projekt",
-    descriptionLine1: "Dies ist ein privates Demo- und Trainingsprojekt zur Darstellung moderner Web-App-Funktionalität.",
-    descriptionLine2: "Die Anwendung arbeitet mit externen APIs und verarbeitet Testdaten – bitte keine echten personenbezogenen Daten eingeben.",
+    projectName: "JOIN",
+    headline: "JOIN – Kanban Demo-Projekt",
+    descriptionLine1: "Dies ist ein privates Demo- und Trainingsprojekt zur Umsetzung eines Kanban-Task-Managers für Webanwendungen.",
+    descriptionLine2: "Die Anwendung speichert Testdaten lokal im Browser (LocalStorage) und nutzt zusätzlich Firebase zur Synchronisation – bitte keine echten personenbezogenen Daten eingeben.",
     start: "Ich stimme zu und will starten",
     imprint: "Impressum",
     privacy: "Datenschutz"
   },
   en: {
-    projectName: "Pokédex",
-    headline: "Pokédex – Demo Project",
-    descriptionLine1: "This is a private demo and training project showcasing modern web application functionality.",
-    descriptionLine2: "The application uses external APIs and processes test data – please do not enter any real personal data.",
+    projectName: "JOIN",
+    headline: "JOIN – Kanban Demo Project",
+    descriptionLine1: "This is a private demo and training project showcasing a Kanban-based task management web application.",
+    descriptionLine2: "The application stores test data locally in the browser (LocalStorage) and also uses Firebase for synchronization – please do not enter any real personal data.",
     start: "I agree and want to start",
     imprint: "Imprint",
     privacy: "Privacy Policy"
