@@ -2,7 +2,6 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="Pokédex Demo-Projekt – privates Trainingsprojekt mit Datenschutzhinweis">
@@ -14,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/android-chrome-512x512.png">
     <link rel="stylesheet" type="text/css" href="./styles.css">
-    <script defer src="./script.js" type="text/javascript"></script>
+    <script defer src="./script.js"></script>
     <title>Develo Behr – Pokédex Demo</title>
     <meta name="theme-color" content="#141D2F">
   </head>
@@ -34,11 +33,13 @@
           <button 
             type="button" 
             class="langBtn consent-lang-btn"
+            aria-label="Language English"
             onclick="setLang('de')">DE</button>
 
           <button 
             type="button" 
             class="langBtn consent-lang-btn"
+            aria-label="Sprache Deutsch"
             onclick="setLang('en')">EN</button>
         </div>
 
@@ -57,9 +58,9 @@
         <div class="consent-atf__text-wrapper">
 
           <div class="consent-atf__info">
-             <span class="consent-atf__info__headline"data-i18n="headline">Pokédex – Demo-Projekt</span>
-             <span class="consent-atf__info__descriptionLine1" data-i18n="descriptionLine1"></span>
-             <span class="consent-atf__info__descriptionLine2" data-i18n="descriptionLine2"></span>
+             <h1 class="consent-atf__info__headline"data-i18n="headline">Pokédex – Demo-Projekt</h1>
+             <p class="consent-atf__info__descriptionLine1" data-i18n="descriptionLine1"></p>
+             <p class="consent-atf__info__descriptionLine2" data-i18n="descriptionLine2"></p>
           </div>
 
           <button

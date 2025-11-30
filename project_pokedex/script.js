@@ -19,34 +19,63 @@ const translations = {
   }
 };
 
-
-function setLang(lang) {
+/**
+ * Updates all visible text based on the selected language.
+ * @param {string} lang - Language key ("de" | "en")
+ */
+function updateTranslations(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    el.textContent = translations[lang][key];
+    el.textContent = translations[lang][el.dataset.i18n];
   });
-
-  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
-    const key = el.dataset.i18nAria;
-    el.setAttribute("aria-label", translations[lang][key]);
-  });
-
-    document.querySelectorAll(".consent-lang-btn").forEach(btn => {
-        btn.classList.remove("is-active");
-
-        if (btn.textContent.toLowerCase() === lang) {
-        btn.classList.add("is-active");
-        }
-    });
 }
 
-document.getElementById("startBtn").addEventListener("click", () => {
-  window.location.href = "./app/";
-});
+/**
+ * Updates all aria-labels based on the selected language.
+ * @param {string} lang - Language key ("de" | "en")
+ */
+function updateAriaLabels(lang) {
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    el.setAttribute("aria-label", translations[lang][el.dataset.i18nAria]);
+  });
+}
 
+/**
+ * Updates the active state of the language buttons.
+ * @param {string} lang - Language key ("de" | "en")
+ */
+function updateLangButtons(lang) {
+  document.querySelectorAll(".consent-lang-btn").forEach(btn => {
+    btn.classList.toggle("is-active", btn.textContent.toLowerCase() === lang);
+  });
+}
 
-// Initial language
-setLang('de');
+/**
+ * Sets the active language and updates the UI.
+ * @param {string} lang - Language key ("de" | "en")
+ */
+function setLang(lang) {
+  updateTranslations(lang);
+  updateAriaLabels(lang);
+  updateLangButtons(lang);
+}
 
-// set actual year
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+/**
+ * Registers the start button click handler.
+ */
+function initStartButton() {
+  document.getElementById("startBtn").addEventListener("click", () => {
+    window.location.href = "./app/";
+  });
+}
+
+/**
+ * Sets the current year in the footer.
+ */
+function setCurrentYear() {
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+}
+
+/* ---------- Init ---------- */
+setLang("de");
+initStartButton();
+setCurrentYear();
