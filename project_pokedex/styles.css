@@ -242,6 +242,8 @@ textarea:focus-visible {
   width: 100%;
   pointer-events: none;
   z-index: 1;
+  overflow: hidden;
+  height: 100%;
 }
 
 .consent-atf__blob {
