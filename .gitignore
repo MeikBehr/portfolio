@@ -46,3 +46,8 @@ Thumbs.db
 
 # Gimp Studio raw data
 /gimp/*
+
+# Demo project app folders (exclude real projects)
+project_join/app/
+project_el_pollo_loco/app/
+project_pokedex/app/
