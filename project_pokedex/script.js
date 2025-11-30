@@ -40,6 +40,11 @@ function setLang(lang) {
     });
 }
 
+document.getElementById("startBtn").addEventListener("click", () => {
+  window.location.href = "./app/";
+});
+
+
 // Initial language
 setLang('de');
 

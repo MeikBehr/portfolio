@@ -359,13 +359,12 @@ textarea:focus-visible {
   margin-top: 12px;
   font-size: 24px;
   border-radius: 10px;
-  background: var(--color-background);
+  background: var(--first-color);
   color: var(--color-font);
   padding: 15px 30px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.125s;
-  border: 2px solid var(--first-color);
   transform: scale(1);
   max-width: 90%;
   text-shadow:
@@ -374,7 +373,7 @@ textarea:focus-visible {
 
 .consent-atf__cta:hover { 
     background: var(--first-color);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* =====================   Footer   ==================================== */
