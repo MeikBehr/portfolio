@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Pokédex Demo-Projekt – privates Trainingsprojekt mit Datenschutzhinweis">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/android-chrome-512x512.png">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script defer src="./script.js"></script>
+    <title>Develo Behr – Pokédex Demo</title>
+    <meta name="theme-color" content="#141D2F">
+  </head>
+
+  <body>
+
+    <header class="consent-header">
+      <div class="container consent-header__layout">
+
+        <!-- Name of Project -->
+        <div class="consent-header__project">
+          <span data-i18n="projectName">Pokédex</span>
+        </div>
+
+        <!-- Language Switch -->
+        <div class="consent-header__lang">
+          <button 
+            type="button" 
+            class="langBtn consent-lang-btn"
+            aria-label="Language English"
+            onclick="setLang('de')">DE</button>
+
+          <button 
+            type="button" 
+            class="langBtn consent-lang-btn"
+            aria-label="Sprache Deutsch"
+            onclick="setLang('en')">EN</button>
+        </div>
+
+      </div>
+    </header>
+
+    <main id="atf" class="consent-atf container">
+
+      <div class="consent-atf__content">
+
+        <div class="consent-atf__blobs">
+          <img src="./assets/img/purple_atf.png" class="consent-atf__blob consent-atf__blob--left" aria-hidden="true" />
+          <img src="./assets/img/turquoise_atf.png" class="consent-atf__blob consent-atf__blob--right" aria-hidden="true" />
+        </div>
+
+        <div class="consent-atf__text-wrapper">
+
+          <div class="consent-atf__info">
+             <h1 class="consent-atf__info__headline"data-i18n="headline">Pokédex – Demo-Projekt</h1>
+             <p class="consent-atf__info__descriptionLine1" data-i18n="descriptionLine1"></p>
+             <p class="consent-atf__info__descriptionLine2" data-i18n="descriptionLine2"></p>
+          </div>
+
+          <button
+              class="consent-atf__cta"
+              id="startBtn"
+              data-i18n="start"
+              data-i18n-aria="start"
+              aria-label="Ich stimme zu und will starten">
+              Ich stimme zu und will starten
+          </button>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="consent-footer">
+
+      <section class="consent-footer__content container">
+
+        <nav class="consent-footer__legal">
+          <a href="./app/impressum.html" target="_blank" data-i18n="imprint" rel="noopener noreferrer">Impressum</a>
+          <span aria-hidden="true"> | </span>
+          <a href="./app/datenschutz.html" target="_blank" data-i18n="privacy" rel="noopener noreferrer">Datenschutz</a>
+        </nav>
+
+        <span class="consent-footer__copyright">
+        © Meik Behr <span id="currentYear"></span>
+        </span>
+
+      </section>
+
+    </footer>
+
+  </body>
+</html>
