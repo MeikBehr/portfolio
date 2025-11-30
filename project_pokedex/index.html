@@ -56,24 +56,20 @@
 
         <div class="consent-atf__text-wrapper">
 
-          <div class="consent-atf__headline">
-            <span data-i18n="headline">Pokédex – Demo-Projekt</span>
-
-            <div class="consent-atf__info">
-              <span data-i18n="descriptionLine1"></span>
-              <span data-i18n="descriptionLine2"></span>
-            </div>
+          <div class="consent-atf__info">
+             <span class="consent-atf__info__headline"data-i18n="headline">Pokédex – Demo-Projekt</span>
+             <span class="consent-atf__info__descriptionLine1" data-i18n="descriptionLine1"></span>
+             <span class="consent-atf__info__descriptionLine2" data-i18n="descriptionLine2"></span>
           </div>
 
-          <div class="consent-atf__cta">
-            <button
+          <button
+              class="consent-atf__cta"
               id="startBtn"
               data-i18n="start"
-              data-i18n-aria="startAria"
+              data-i18n-aria="start"
               aria-label="Ich stimme zu und will starten">
               Ich stimme zu und will starten
-            </button>
-          </div>
+          </button>
 
         </div>
 
@@ -86,9 +82,9 @@
       <section class="consent-footer__content container">
 
         <nav class="consent-footer__legal">
-          <a href="./app/impressum.html" data-i18n="imprint">Impressum</a>
+          <a href="./app/impressum.html" target="_blank" data-i18n="imprint" rel="noopener noreferrer">Impressum</a>
           <span aria-hidden="true"> | </span>
-          <a href="./app/datenschutz.html" data-i18n="privacy">Datenschutz</a>
+          <a href="./app/datenschutz.html" target="_blank" data-i18n="privacy" rel="noopener noreferrer">Datenschutz</a>
         </nav>
 
         <span class="consent-footer__copyright">

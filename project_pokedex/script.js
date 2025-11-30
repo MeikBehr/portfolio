@@ -5,7 +5,6 @@ const translations = {
     descriptionLine1: "Dieses Projekt ist ein privates Trainingsprojekt.",
     descriptionLine2: "Es demonstriert den Umgang mit der öffentlichen PokéAPI.",
     start: "Ich stimme zu und will starten",
-    startAria: "Pokédex Demo-Projekt starten",
     imprint: "Impressum",
     privacy: "Datenschutz"
   },
@@ -15,7 +14,6 @@ const translations = {
     descriptionLine1: "This is a private training project.",
     descriptionLine2: "It demonstrates working with the public PokéAPI.",
     start: "I agree and want to start",
-    startAria: "Start Pokédex demo project",
     imprint: "Imprint",
     privacy: "Privacy Policy"
   }
