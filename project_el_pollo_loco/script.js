@@ -1,18 +1,18 @@
 const translations = {
   de: {
-    projectName: "Pokédex",
-    headline: "Pokédex – Demo-Projekt",
-    descriptionLine1: "Dies ist ein privates Demo- und Trainingsprojekt zur Darstellung moderner Web-App-Funktionalität.",
-    descriptionLine2: "Die Anwendung arbeitet mit externen APIs und verarbeitet Testdaten – bitte keine echten personenbezogenen Daten eingeben.",
+    projectName: "El Pollo Loco",
+    headline: "El Pollo Loco – Demo-Spiel",
+    descriptionLine1: "Dies ist ein privates Demo- und Trainingsprojekt zur Umsetzung eines 2D-Action-Spiels mit JavaScript.",
+    descriptionLine2: "Das Spiel verarbeitet ausschließlich lokale Testdaten – bitte keine echten personenbezogenen Daten eingeben.",
     start: "Ich stimme zu und will starten",
     imprint: "Impressum",
     privacy: "Datenschutz"
   },
   en: {
-    projectName: "Pokédex",
-    headline: "Pokédex – Demo Project",
-    descriptionLine1: "This is a private demo and training project showcasing modern web application functionality.",
-    descriptionLine2: "The application uses external APIs and processes test data – please do not enter any real personal data.",
+    projectName: "El Pollo Loco",
+    headline: "El Pollo Loco – Demo Game",
+    descriptionLine1: "This is a private demo and training project showcasing a 2D action game built with JavaScript.",
+    descriptionLine2: "The game processes local test data only – please do not enter any real personal data.",
     start: "I agree and want to start",
     imprint: "Imprint",
     privacy: "Privacy Policy"
