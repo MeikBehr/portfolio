@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Pokédex Demo-Projekt – privates Trainingsprojekt mit Datenschutzhinweis">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/android-chrome-512x512.png">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script defer src="./script.js" type="text/javascript"></script>
+    <title>Develo Behr</title>
+    <meta name="theme-color" content="#141D2F">
+  </head>
+
+  <body>
+
+    <header class="header--welcome">
+        <div class="container header__layout">
+    
+            <!-- Name of Project -->
+            <div class="name">
+                <span>Pokedex</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="normalNav">
+            <div class="desktopLang">
+                <button 
+                    type="button" 
+                    class="langBtn langBtn--desktop"
+                    onclick="setLang('de')">DE</button>
+                <button 
+                    type="button" 
+                    class="langBtn langBtn--desktop"
+                    onclick="setLang('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <main id="atf" class="atf container">
+
+        <div class="atf__content">
+            <div class="atf__blobs">
+                <img src="./assets/img/purple_atf.png" alt="" class="atf__blob atf__blob--left" aria-hidden="true" />
+                <img src="./assets/img/turquoise_atf.png"   alt="" class="atf__blob atf__blob--right" aria-hidden="true" />
+            </div>
+            <div class="atf-headline-wrapper">
+                <div class="atf-headline">
+                    <span>Pokedex</span>
+                    <div class="atf-info">
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span>
+                        <span>Beatae ullam magnam nostrum vel distinctio soluta aliquam. Quia quas officiis quod iure voluptatum, id enim necessitatibus inventore, aliquid numquam assumenda vero.</span>
+                    </div>
+                </div>
+                <div class="cta-center">
+                    <button
+                        id="startBtn"
+                        data-i18n="start"
+                        data-i18n-aria="startAria"
+                        aria-label="Ich stimme zu und will starten">
+                        Ich stimme zu und will starten
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <section class="contentFooter container">
+
+            <nav class="legalWrap">
+            <a href="./app/impressum.html">Impressum</a>
+            <span aria-hidden="true"> | </span>
+            <a href="./app/datenschutz.html">Datenschutz</a>
+            </nav>
+       
+            <span class="cRight">© Meik Behr 2025</span>
+
+        </section>
+
+    </footer>
+
+  </body>
+</html>
+
+
