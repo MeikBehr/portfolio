@@ -2,8 +2,8 @@ const translations = {
   de: {
     projectName: "Pokédex",
     headline: "Pokédex – Demo-Projekt",
-    descriptionLine1: "Dieses Projekt ist ein privates Trainingsprojekt.",
-    descriptionLine2: "Es demonstriert den Umgang mit der öffentlichen PokéAPI.",
+    descriptionLine1: "Dies ist ein privates Demo- und Trainingsprojekt zur Darstellung moderner Web-App-Funktionalität.",
+    descriptionLine2: "Die Anwendung arbeitet mit externen APIs und verarbeitet Testdaten – bitte keine echten personenbezogenen Daten eingeben.",
     start: "Ich stimme zu und will starten",
     imprint: "Impressum",
     privacy: "Datenschutz"
@@ -11,8 +11,8 @@ const translations = {
   en: {
     projectName: "Pokédex",
     headline: "Pokédex – Demo Project",
-    descriptionLine1: "This is a private training project.",
-    descriptionLine2: "It demonstrates working with the public PokéAPI.",
+    descriptionLine1: "This is a private demo and training project showcasing modern web application functionality.",
+    descriptionLine2: "The application uses external APIs and processes test data – please do not enter any real personal data.",
     start: "I agree and want to start",
     imprint: "Imprint",
     privacy: "Privacy Policy"
