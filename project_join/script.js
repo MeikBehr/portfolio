@@ -6,7 +6,8 @@ const translations = {
     descriptionLine2: "Die Anwendung speichert Testdaten lokal im Browser (LocalStorage) und nutzt zusätzlich Firebase zur Synchronisation – bitte keine echten personenbezogenen Daten eingeben.",
     start: "Ich stimme zu und will starten",
     imprint: "Impressum",
-    privacy: "Datenschutz"
+    privacy: "Datenschutz",
+    landscapeWarningText: "Bitte nutzen Sie dieses Demo im Hochformat."
   },
   en: {
     projectName: "JOIN",
@@ -15,7 +16,8 @@ const translations = {
     descriptionLine2: "The application stores test data locally in the browser (LocalStorage) and also uses Firebase for synchronization – please do not enter any real personal data.",
     start: "I agree and want to start",
     imprint: "Imprint",
-    privacy: "Privacy Policy"
+    privacy: "Privacy Policy",
+    landscapeWarningText: "Please use this demo in portrait mode."
   }
 };
 
@@ -75,7 +77,37 @@ function setCurrentYear() {
   document.getElementById("currentYear").textContent = new Date().getFullYear();
 }
 
+/**
+ * Checks if landscape warning must be displayed.
+ */
+function checkLandscapeWarning() {
+  const warning = document.getElementById("landscapeWarning");
+  const isLandscape = window.innerWidth > window.innerHeight;
+  const isTooSmall = window.innerHeight < 450;
+
+  if (isLandscape && isTooSmall) {
+    warning.classList.remove("d-none");
+    document.documentElement.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
+  } else {
+    warning.classList.add("d-none");
+    document.documentElement.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
+  }
+}
+
+/**
+ * Initializes landscape warning listeners and performs initial check.
+ */
+function initLandscapeWarning() {
+  window.addEventListener("resize", checkLandscapeWarning);
+  window.addEventListener("orientationchange", checkLandscapeWarning);
+  checkLandscapeWarning();
+}
+
+
 /* ---------- Init ---------- */
 setLang("de");
 initStartButton();
 setCurrentYear();
+initLandscapeWarning();
