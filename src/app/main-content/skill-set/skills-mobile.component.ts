@@ -97,17 +97,22 @@ export class SkillsMobileComponent implements AfterViewInit {
   }
 
   /**
-   * Handles icon click for tooltip: opens and sets up close logic (outside click, timeout, focus shift).
+    * Handles click interaction on the tooltip icon.
+    * Toggles the tooltip on touch and click devices.
+    * Prevents default browser behavior and event bubbling.
    * @param event MouseEvent
    */
   onTooltipIconClick(event: MouseEvent): void {
     event.stopPropagation();
-    event.preventDefault();
+    if (this.isTouchDevice()) {
+      event.preventDefault();
+    }
 
     if (this.isTooltipOpen) {
       this.closeTooltip();
       return;
     }
+
     this.openTooltipAndRegisterClose();
   }
 
@@ -133,7 +138,7 @@ export class SkillsMobileComponent implements AfterViewInit {
         this.closeTooltip();
       }
     };
-    document.addEventListener('click', this.outsideClickHandler);
+    document.addEventListener('click', this.outsideClickHandler, { once: true });
   }
 
   /**
@@ -170,4 +175,32 @@ export class SkillsMobileComponent implements AfterViewInit {
       this.outsideClickHandler = null;
     }
   }
+
+  /**
+   * Detects whether the current device supports touch interaction.
+   * Used to separate mobile and desktop interaction behavior.
+   */
+  private isTouchDevice(): boolean {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0
+    );
+  }
+
+  /**
+   * Opens the tooltip on mouse hover for non-touch devices only.
+   */
+  onMouseEnter(): void {
+    if (this.isTouchDevice()) return;
+    this.openTooltip();
+  }
+
+  /**
+   * Closes the tooltip on mouse leave for non-touch devices only.
+   */
+  onMouseLeave(): void {
+    if (this.isTouchDevice()) return;
+    this.closeTooltip();
+  }
+
 }
