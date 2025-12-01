@@ -1,6 +1,7 @@
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild, AfterViewInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skills-mobile',
@@ -27,7 +28,9 @@ export class SkillsMobileComponent implements AfterViewInit {
   private tooltipTimeout: ReturnType<typeof setTimeout> | null = null;
   private outsideClickHandler: ((evt: Event) => void) | null = null;
 
-  constructor(private translate: TranslateService) {}
+  constructor(
+    private translate: TranslateService,
+    private router: Router) {}
 
   /**
    * After view init: set up intersection observers for skill icons and content rows.
@@ -201,6 +204,34 @@ export class SkillsMobileComponent implements AfterViewInit {
   onMouseLeave(): void {
     if (this.isTouchDevice()) return;
     this.closeTooltip();
+  }
+
+  /**
+   * Scrolls to the given section (by fragment or in-page anchor).
+   * @param targetId Section ID or fragment.
+   * @param event Mouse/keyboard event.
+   */
+  navigateToSection(targetId: string, event: Event): void {
+    event.preventDefault();
+    const currentUrl = this.router.url.split('#')[0];
+    if (currentUrl === '/' || currentUrl === '/index.html') {
+      this.scrollTo(targetId);
+    } else {
+      this.router.navigate(['/'], { fragment: targetId });
+    }
+  }
+
+  /**
+   * Scrolls smoothly to the given target section by ID.
+   * @param targetId Section anchor ID.
+   */
+  scrollTo(targetId: string): void {
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
   }
 
 }

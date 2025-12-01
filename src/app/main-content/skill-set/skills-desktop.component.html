@@ -165,7 +165,10 @@
               </div>
 
               <div class="skills-content__cta-center">
-                <a href="#contact" class="cta-link">
+                <a 
+                  href="#contact" 
+                  class="cta-link"
+                  (click)="navigateToSection('contact', $event)">
                     <!-- intentional English branding -->
                     <span class="skills-content__cta" [ngClass]="{ 'is-inview': infoInView[3] }" #row4> 
                      {{ 'skills.cta' | translate }}

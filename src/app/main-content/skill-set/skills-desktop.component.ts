@@ -1,14 +1,7 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ViewChild,
-  ViewChildren,
-  AfterViewInit,
-  ElementRef,
-  QueryList,
-  OnDestroy
-} from '@angular/core';
+import { Component, ViewChild, ViewChildren, AfterViewInit, ElementRef, QueryList, OnDestroy } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 /**
  * Desktop variant of the Skills section.
@@ -54,7 +47,9 @@ export class SkillsDesktopComponent implements AfterViewInit, OnDestroy {
   @ViewChildren('row1, row2, row3, row4')
   private infoRows!: QueryList<ElementRef>;
 
-  constructor(private readonly translate: TranslateService) {}
+  constructor(
+    private readonly translate: TranslateService,
+    private router: Router) {}
 
   /**
    * Initializes IntersectionObservers for skill icons,
@@ -69,6 +64,34 @@ export class SkillsDesktopComponent implements AfterViewInit, OnDestroy {
   /** Clean up listeners and timers to avoid memory leaks. */
   ngOnDestroy(): void {
     this.closeTooltip();
+  }
+
+  /**
+   * Scrolls to the given section (by fragment or in-page anchor).
+   * @param targetId Section ID or fragment.
+   * @param event Mouse/keyboard event.
+   */
+  navigateToSection(targetId: string, event: Event): void {
+    event.preventDefault();
+    const currentUrl = this.router.url.split('#')[0];
+    if (currentUrl === '/' || currentUrl === '/index.html') {
+      this.scrollTo(targetId);
+    } else {
+      this.router.navigate(['/'], { fragment: targetId });
+    }
+  }
+
+  /**
+   * Scrolls smoothly to the given target section by ID.
+   * @param targetId Section anchor ID.
+   */
+  scrollTo(targetId: string): void {
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
   }
 
   // ────────────────────────────────────────────────

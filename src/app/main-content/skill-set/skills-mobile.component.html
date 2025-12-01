@@ -298,6 +298,7 @@
               <div class="skills-content__cta-center">
                 <a 
                   href="#contact" 
+                  (click)="navigateToSection('contact', $event)"
                   class="cta-link skills-content__cta" 
                   [attr.aria-label]="'skills.contact_aria' | translate"
                   [ngClass]="{ 'is-inview': infoMobileView[3] }" 
