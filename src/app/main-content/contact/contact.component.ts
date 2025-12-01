@@ -221,7 +221,25 @@ export class ContactComponent implements AfterViewInit {
    * Resets the contact form to its initial state.
    */
   private clearForm(): void {
-    this.contactForm?.resetForm();
+    this.contactForm?.resetForm({
+      contactName: '',
+      contactMail: '',
+      contactMessage: '',
+      privacyChecked: false,
+    });
+    this.contactMessage = '';
+    this.nameValid = null;
+    this.mailValid = null;
+    this.msgValid = null;
+    this.nameErrorKey = null;
+    this.mailErrorKey = null;
+    this.msgErrorKey = null;
+    this.inputFocused = false;
+    this.mailInputFocused = false;
+    this.msgInputFocused = false;
+    this.privacyTouched = false;
+    this.privacyErrorVisible = false;
+    this.sendError = '';
   }
 
   /**

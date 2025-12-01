@@ -102,12 +102,12 @@
 
                         <div 
                             class="counter"
-                            *ngIf="msgInputFocused && contactMessage.length > 0"
+                            *ngIf="msgInputFocused && contactMessage && contactMessage.length > 0"
                             [ngClass]="{
-                                'warning' : contactMessage.length > 950
+                                'warning' : contactMessage && contactMessage.length > 950
                             }"
                         >
-                            {{ contactMessage.length }} / 1000 {{ 'contact.chars' | translate }}
+                            {{ contactMessage?.length || 0 }} / 1000 {{ 'contact.chars' | translate }}
                         </div>
 
                     </div>
