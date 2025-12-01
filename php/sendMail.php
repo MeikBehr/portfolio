@@ -10,6 +10,15 @@
  *  - CORS enabled for dev & prod
  */
 
+require_once __DIR__ . '/phpmailer/Exception.php';
+require_once __DIR__ . '/phpmailer/PHPMailer.php';
+require_once __DIR__ . '/phpmailer/SMTP.php';
+require_once __DIR__ . '/mail_config.php';
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 // ==== CONFIGURATION ====
 $recipient = 'info@develobehr.de';     // Change to your real mailbox!
 $max_log_size = 1024 * 1024;           // 1 MB = 1024*1024 bytes
@@ -81,19 +90,35 @@ $message = htmlspecialchars(strip_tags($params->message), ENT_QUOTES, 'UTF-8');
 $subject = "Contact from $email";
 $body = "From: $name <$email>\n\n" . $message;
 
-// ==== Headers ====
-$headers   = [];
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-type: text/plain; charset=utf-8';
-$headers[] = "From: noreply@develobehr.de";
-$headers[] = "Reply-To: $email";
 
 // ==== Send Mail ====
-$success = @mail($recipient, $subject, $body, implode("\r\n", $headers));
 
-if (!$success) {
-    logError("Mail send failed for $ip");
+try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host       = 'w01fb0f6.kasserver.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'info@develobehr.de';
+    $mail->Password   = SMTP_PASSWORD;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+    $mail->CharSet    = 'UTF-8';
+
+    $mail->setFrom('info@develobehr.de', 'DeveloBehr Portfolio');
+    $mail->addAddress($recipient);
+    $mail->addReplyTo($email, $name);
+
+    $mail->Subject = $subject;
+    $mail->Body    = $body;
+
+    $mail->send();
+    $success = true;
+
+} catch (Exception $e) {
+    logError("SMTP error for $ip: " . $e->getMessage());
+    $success = false;
 }
+
 
 // ==== JSON Response ====
 header('Content-Type: application/json');

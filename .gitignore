@@ -51,3 +51,6 @@ Thumbs.db
 project_join/app/
 project_el_pollo_loco/app/
 project_pokedex/app/
+
+# PHP
+mail_config.php
