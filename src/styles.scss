@@ -122,6 +122,13 @@ body.no-scroll {
   color: #70E61C;
 }
 
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @media (max-width: 768px) {
   .modal-overlay .privacy-policy_mobile-nav-container {
     display: none!important;

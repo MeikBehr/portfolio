@@ -3,10 +3,7 @@
     <!-- Headnling mit Strich-->
     <div class="contact-header"  [ngClass]="{ 'is-inview': titleInView }" #titleRow>
         <div class="contact-header__line"></div>
-          
-        <!-- <div class="contact-header__headline">{{ 'contact.headline'  | translate }}</div> -->
          <h2 class="contact-header__headline">{{ 'contact.headline'  | translate }}</h2>
-
     </div>
 
     <!-- Contact Text und Feld-->
@@ -233,7 +230,7 @@
         
     </div>
 
-    <div class="contact-purple_shadow"></div>
+    <div class="contact-purple_shadow no-select"></div>
 
      <div class="contact-go_up-container">
         <a href="#top" class="contact-go_up" [attr.aria-label]="'contact.go_top_aria' | translate">

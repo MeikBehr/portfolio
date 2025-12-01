@@ -36,7 +36,7 @@
 
         <section class="portfolio_card-links" [ngClass]="{ 'is-inview': cardsInView[0] }" #card1>
             <article class="portfolio_card-links-img">
-                <img src="./assets/img/projects/projects_join.png" alt="">
+                <img class="no-select" src="./assets/img/projects/projects_join.png" alt="">
             </article>
             <article class="portfolio_card-links-container">
                 <div>{{ 'projects.join.headline' | translate }}</div>
@@ -60,14 +60,14 @@
                  </div>
             </article>
             <article class="portfolio_card-rechts-img">
-                <img src="./assets/img/projects/projects_el_pollo_loco.png" alt="">
+                <img class="no-select" src="./assets/img/projects/projects_el_pollo_loco.png" alt="">
             </article>
         </section>
 
         <section class="portfolio_card-links" [ngClass]="{ 'is-inview': cardsInView[2] }" #card3>
 
             <article class="portfolio_card-links-img">
-                <img src="./assets/img/projects/projects_pokedex.png" alt="">
+                <img class="no-select" src="./assets/img/projects/projects_pokedex.png" alt="">
             </article>
             
             <article class="portfolio_card-links-container">
@@ -84,6 +84,6 @@
 
     </section>
 
-    <div class="portfolio_purple-shadow"></div>
+    <div class="portfolio_purple-shadow no-select"></div>
 
 </section>
