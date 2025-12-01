@@ -17,7 +17,13 @@
         </div>
         <div class="cta-center">
             <!-- intentional English branding -->
-            <a href="#contact" class="cta">Let’s talk!</a>
+            <!-- <a href="#contact" class="cta">Let’s talk!</a> -->
+             <a href="#contact"
+              class="cta"
+              (click)="navigateToSection('contact', $event)">
+              Let’s talk!
+            </a>
+
         </div>
     </div>
   </div>
