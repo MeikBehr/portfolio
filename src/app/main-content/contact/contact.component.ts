@@ -4,6 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
 import { ContactMailService } from './contact-mail.service';
+import { Router } from '@angular/router';
 
 /**
  * The ContactComponent handles the logic for the contact form,
@@ -20,7 +21,8 @@ import { ContactMailService } from './contact-mail.service';
 export class ContactComponent implements AfterViewInit {
   constructor(
     public translate: TranslateService,
-    private contactMailService: ContactMailService
+    private contactMailService: ContactMailService,
+    private router: Router
   ) {}
 
   /** Template references */
@@ -71,6 +73,34 @@ export class ContactComponent implements AfterViewInit {
   get allFieldsValid(): boolean {
     return !!(this.nameValid && this.mailValid && this.msgValid);
   }
+
+  /**
+   * Scrolls to the given section (by fragment or in-page anchor).
+   * @param targetId Section ID or fragment.
+   * @param event Mouse/keyboard event.
+   */
+  navigateToSection(targetId: string, event: Event): void {
+    event.preventDefault();
+    const currentUrl = this.router.url.split('#')[0];
+    if (currentUrl === '/' || currentUrl === '/index.html') {
+      this.scrollTo(targetId);
+    } else {
+      this.router.navigate(['/'], { fragment: targetId });
+    }
+  }
+
+  /**
+   * Scrolls smoothly to the given target section by ID.
+   * @param targetId Section anchor ID.
+   */
+  scrollTo(targetId: string): void {
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
+  }  
 
   // ---------------------- VALIDATION ----------------------
 
