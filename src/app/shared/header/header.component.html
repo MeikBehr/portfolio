@@ -5,10 +5,12 @@
   
     <!-- Logo / Brand -->
     <div class="name">
-      <a href="#top" 
+      <a 
         (click)="navigateToSection('atf', $event)" 
         class="logoWrap" 
-        [class.hiddenMobile]="isMobileMenuOpen">
+        [class.hiddenMobile]="isMobileMenuOpen"
+        role="link"
+        tabindex="0">
         <svg aria-hidden="true" focusable="false" class="logo" viewBox="0 0 217.2 95" role="img" text-rendering="geometricPrecision">
           <title id="logoTitleHeader">Meik</title>
 

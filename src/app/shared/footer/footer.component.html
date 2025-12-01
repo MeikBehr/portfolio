@@ -33,16 +33,16 @@
 
     <div class="footerIconContainer">
       <a href="https://github.com/MeikBehr" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="assets/img/github.png" alt="GitHub"></a>
-      <a href="#contact" (click)="scrollTo('contact')" aria-label="E-Mail"><img src="assets/img/mail.png" alt="Mail"></a>
+      <a href="#contact" (click)="navigateToSection('contact', $event)" aria-label="E-Mail"><img src="assets/img/mail.png" alt="Mail"></a>
       <a href="https://www.linkedin.com/in/meik-behr-477aa7273/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/img/linkedIn.png" alt="LinkedIn"></a>
     </div>
 
     <nav 
       class="legalWrap" 
       [attr.aria-label]="'footer.nav_aria' | translate">
-      <a href="#imprint-top" (click)="navigateToSection('imprint','imprint-top', $event)">{{ 'footer.imprint' | translate }}</a>
+      <a href="#imprint-top" (click)="navigateToComponent('imprint','imprint-top', $event)">{{ 'footer.imprint' | translate }}</a>
       <span aria-hidden="true"> | </span>
-      <a href="#privacy-top" (click)="navigateToSection('privacy-policy','privacy-top', $event)">{{ 'footer.privacy' | translate }}</a>
+      <a href="#privacy-top" (click)="navigateToComponent('privacy-policy','privacy-top', $event)">{{ 'footer.privacy' | translate }}</a>
     </nav>
 
   </section>

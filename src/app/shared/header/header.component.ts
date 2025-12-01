@@ -77,13 +77,17 @@ export class HeaderComponent implements OnDestroy {
    */
   navigateToSection(targetId: string, event: Event): void {
     event.preventDefault();
-    const currentUrl = this.router.url.split('#')[0];
-    if (currentUrl === '/' || currentUrl === '/index.html') {
+    if (this.router.url === '/') {
       this.scrollTo(targetId);
-    } else {
-      this.router.navigate(['/'], { fragment: targetId });
+      return;
     }
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        this.scrollTo(targetId);
+      }, 50);
+    });
   }
+
 
   /**
    * Scrolls smoothly to the given target section by ID.

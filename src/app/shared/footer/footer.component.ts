@@ -50,12 +50,30 @@ export class FooterComponent {
   }
 
   /**
+   * Scrolls to the given section (by fragment or in-page anchor).
+   * @param targetId Section ID or fragment.
+   * @param event Mouse/keyboard event.
+   */
+  navigateToSection(targetId: string, event: Event): void {
+    event.preventDefault();
+    if (this.router.url === '/') {
+      this.scrollTo(targetId);
+      return;
+    }
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        this.scrollTo(targetId);
+      }, 50);
+    });
+  }
+
+  /**
    * Navigates to a section anchor within a route, with smooth scroll.
    * @param targetRoute Route path
    * @param targetAnchor Element ID of target section
    * @param event Mouse or keyboard event
    */
-  navigateToSection(targetRoute: string, targetAnchor: string, event: Event): void {
+  navigateToComponent(targetRoute: string, targetAnchor: string, event: Event): void {
     event.preventDefault();
     const currentUrl = this.router.url.split('#')[0];
     if (currentUrl === `/${targetRoute}` || currentUrl === `/${targetRoute}/`) {
@@ -66,12 +84,15 @@ export class FooterComponent {
   }
 
   /**
-   * Smoothly scrolls to the given anchor ID.
-   * @param targetId Element ID to scroll to
+   * Scrolls smoothly to the given target section by ID.
+   * @param targetId Section anchor ID.
    */
   scrollTo(targetId: string): void {
     setTimeout(() => {
-      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }, 0);
   }
 
