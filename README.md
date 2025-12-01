@@ -3,14 +3,14 @@
 ## **Project Overview**
 
 This is my personal developer portfolio, built with Angular 18, showcasing my skills, selected projects, and a fully accessible contact form.
-The site is optimized for accessibility (WCAG 2.1 AA), responsive design, and real-world usability.
+The site is optimized for accessibility (WCAG 2.2 / EN 301 549 / BITV), responsive design, and real-world usability.
 Animations and transitions are designed to be keyboard-friendly and respect reduced-motion settings.
 
 ## **Live Demo & Repository**
 
 * **Live site:** [https://develobehr.de/](https://develobehr.de/)
   (If not online, please use `ng serve` locally.)
-* **Source code:** [https://github.com/develobehr/portfolio](https://github.com/develobehr/portfolio)
+* **Source code:** [https://github.com/MeikBehr/portfolio](https://github.com/MeikBehr/portfolio)
 
 ## **Key Features**
 
@@ -39,7 +39,7 @@ An external accessibility audit was conducted to evaluate the compliance of this
 
 - Tool used: accessibilitychecker.org  
 - Standards: WCAG 2.2, EN 301 549, BITV  
-- Result: **0 Critical Issues**, **95% automated audit score**
+- Result: **0 Critical Issues** in automated testing, **~95% audit score**
 - All detected ARIA-related issues in the mobile navigation overlay were identified and corrected with proper semantic markup and accessible naming.
 - Manual accessibility checks (e.g. keyboard navigation, focus order, screen reader behavior) are required and planned, as these cannot be fully validated by automated tools in modern Single Page Applications (SPAs).
 
@@ -62,7 +62,7 @@ This project follows a quality-first approach with a strong focus on real-world 
 ## **Build**
 
 * Production build: `ng build --configuration production`
-* Static assets are in `dist/`
+* Static assets are generated in `dist/portfolio/`
 
 ## **Backend / Contact Form**
 
@@ -98,7 +98,7 @@ This project follows a quality-first approach with a strong focus on real-world 
 * Please check both desktop and mobile, and test accessibility with screen reader and keyboard navigation
 * Some project links lead to legacy code or non-accessible demos for transparency about my skill evolution
 * Animation and transitions auto-disable for reduced-motion OS settings
-* All code is fully documented (JSDoc, SCSS comments) and structured for maintainability
+* Core logic is documented (JSDoc, SCSS comments) and structured for maintainability
 * If you encounter any issues, please contact me directly or open an issue on Github
 
 ## **What to Test (Reviewer Checklist)**
