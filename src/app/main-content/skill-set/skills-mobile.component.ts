@@ -51,7 +51,7 @@ export class SkillsMobileComponent implements AfterViewInit {
     svgs.forEach((svg, i) => {
       const observer = new IntersectionObserver(
         ([entry]) => inViewArr[i] = entry.isIntersecting,
-        { threshold: 0.2 }
+        { threshold: 0.25 }
       );
       observer.observe(svg.nativeElement);
     });
@@ -64,7 +64,7 @@ export class SkillsMobileComponent implements AfterViewInit {
     if (this.titleMobileRow) {
       const observer = new IntersectionObserver(
         ([entry]) => this.titleMobileInView = entry.isIntersecting,
-        { threshold: 0.2 }
+        { threshold: 0.30 }
       );
       observer.observe(this.titleMobileRow.nativeElement);
     }
@@ -77,7 +77,7 @@ export class SkillsMobileComponent implements AfterViewInit {
     this.infoMobileRows.forEach((row, i) => {
       const observer = new IntersectionObserver(
         ([entry]) => this.infoMobileView[i] = entry.isIntersecting,
-        { threshold: 0.2 }
+        { threshold: 0.25 }
       );
       observer.observe(row.nativeElement);
     });

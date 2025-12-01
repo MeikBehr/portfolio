@@ -59,11 +59,11 @@ export class AboutMeComponent implements AfterViewInit {
    * when elements come into the viewport.
    */
   ngAfterViewInit(): void {
-    this.setupObserver(this.bgRow, 0.15, (inView) => this.bgInView = inView);
-    this.setupObserver(this.titleRow, 0.20, (inView) => this.titleInView = inView);
-    this.setupObserver(this.descRow, 0.20, (inView) => this.descInView = inView);
+    this.setupObserver(this.bgRow, 0.25, (inView) => this.bgInView = inView);
+    this.setupObserver(this.titleRow, 0.25, (inView) => this.titleInView = inView);
+    this.setupObserver(this.descRow, 0.25, (inView) => this.descInView = inView);
     this.infoRows.forEach((row, i) =>
-      this.setupObserver(row, 0.20, (inView) => this.infoInView[i] = inView)
+      this.setupObserver(row, 0.25, (inView) => this.infoInView[i] = inView)
     );
   }
 

@@ -90,7 +90,7 @@ This project follows a quality-first approach with a strong focus on real-world 
 ## **Credits**
 
 * Built by **Meik Behr** (2025)
-* Contact: [meik@develobehr.de](mailto:meik@develobehr.de)
+* Contact: [info@develobehr.de](mailto:info@develobehr.de)
 * Design tokens, colors, and animation curves inspired by Figma design system
 
 ## **For Reviewers**
@@ -113,7 +113,7 @@ This project follows a quality-first approach with a strong focus on real-world 
 
 ## **Changelog / Time Spent**
 
-* Total time invested: ~117 hours (Frontend, animations, accessibility, backend, testing) *(as of 13.11.2025)*
+* Total time invested: ~152 hours (Frontend, animations, accessibility, backend, testing) *(as of 01.12.2025)*
 * Final QA: ongoing
 
 ## **Standard Angular CLI Commands**

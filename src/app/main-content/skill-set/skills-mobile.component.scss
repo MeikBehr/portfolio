@@ -93,6 +93,10 @@ $paddingRightText1200: 80px;
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  opacity: 0;
+  transform: perspective(800px) rotateX(60deg) scale(0.96);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity   0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skills-content__headline {
@@ -103,31 +107,11 @@ $paddingRightText1200: 80px;
   color: $color-text_primary;
   padding-right: 20px;
 
-  opacity: 0;
-  transform: perspective(800px) rotateX(60deg) scale(0.96);
 }
 
-.skills-content__headline.is-inview {
-  animation: flipInY 0.74 cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.skills-content__headline.is-inview {
-  animation-delay: 0.1s;
-}
-
-@keyframes flipInY {
-  from {
-    transform: perspective(800px) rotateX(60deg) scale(0.96);
-    opacity: 0;
-  }
-  70% {
-    transform: perspective(800px) rotateX(-5deg) scale(1.04);
-    opacity: 1;
-  }
-  to {
-    transform: perspective(800px) rotateX(0) scale(1.0);
-    opacity: 1;
-  }
+.skills-content__headlineContainer.is-inview {
+  opacity: 1;
+  transform: perspective(800px) rotateX(0deg) scale(1);
 }
 
 .skills-content__line {

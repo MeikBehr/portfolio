@@ -25,7 +25,7 @@
 }
 
 .contact-header.is-inview {
-  animation: flipInYFromLeft  0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipInYFromLeft  0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.1s;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .contact-content__text-headling.is-inview {
-  animation: flipInY 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipInY 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.1s;
 }
 
@@ -98,8 +98,8 @@
 
 .contact-content__text-content.is-inview,
 .contact-content__text-question.is-inview {
-  animation: flipInY_text 0.7s linear forwards;
-  animation-delay: 0.3s; 
+  animation: flipInY_text 0.2s linear forwards;
+  animation-delay: 0.2s; 
 }
 
 .contact-content__form-container {
@@ -275,8 +275,8 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 }
 
 .contact-form-group.is-inview {
-  animation: flipInX 0.7s linear forwards;
-  animation-delay: 0.15s;
+  animation: flipInX 0.2s linear forwards;
+  animation-delay: 0.1s;
 }
 
 .contact-form_name {

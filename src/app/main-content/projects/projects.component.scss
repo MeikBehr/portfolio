@@ -38,7 +38,7 @@
   transform: rotateX(60deg) scale(0.96) translateX(400px);}
 
 .portfolio_header__headlineContainer.is-inview {
-  animation: flipInYFromRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipInYFromRight 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.1s;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .portfolio_head-content__variety.is-inview {
-  animation: flipInYFromLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipInYFromLeft 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.15s;
 }
 
@@ -150,12 +150,12 @@
 }
 
 .portfolio_card-links.is-inview {
-  animation: zoomInLinks 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: zoomInLinks 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.25s;
 }
 
 .portfolio_card-rechts.is-inview {
-  animation: zoomInRechts 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: zoomInRechts 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: 0.25s;
 }
 
@@ -335,7 +335,7 @@
 }
 
 .portfolio_header__wrapper-mobile.is-inview {
-  animation: flipInXMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipInXMobile 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .portfolio_head-content__wrapper-mobile {
@@ -349,7 +349,7 @@
 }
 
 .portfolio_head-content__wrapper-mobile.is-inview {
-  animation: flipInYMobile  0.3s linear forwards;
+  animation: flipInYMobile  0.2s linear forwards;
   animation-delay: 0.1s;
 }
 
