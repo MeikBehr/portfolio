@@ -51,13 +51,13 @@ export class ProjectsComponent implements AfterViewInit {
    * on headlines and project cards (desktop and mobile).
    */
   ngAfterViewInit(): void {
-    this.setupObserver(this.titleRow, 0.20, (inView) => this.titleInView = inView);
-    this.setupObserver(this.variety, 0.20, (inView) => this.varietyInView = inView);
-    this.setupObserver(this.headerMobile, 0.05, (inView) => this.headerMobileInView = inView);
-    this.setupObserver(this.varietyMobile, 0.05, (inView) => this.varietyMobileInView = inView);
+    this.setupObserver(this.titleRow, 0.25, (inView) => this.titleInView = inView);
+    this.setupObserver(this.variety, 0.30, (inView) => this.varietyInView = inView);
+    this.setupObserver(this.headerMobile, 0.25, (inView) => this.headerMobileInView = inView);
+    this.setupObserver(this.varietyMobile, 0.25, (inView) => this.varietyMobileInView = inView);
 
     this.cards.forEach((card, i) =>
-      this.setupObserver(card, 0.025, (inView) => this.cardsInView[i] = inView)
+      this.setupObserver(card, 0.08, (inView) => this.cardsInView[i] = inView)
     );
   }
 
