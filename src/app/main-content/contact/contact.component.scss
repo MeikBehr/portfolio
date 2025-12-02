@@ -168,7 +168,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     gap: 8px;
     z-index: 20;
@@ -325,7 +325,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 .contact-form__feedback {
   color: $color-error;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 4px;
   display: flex;
   align-items: center;
@@ -432,7 +432,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 
 .privacy-error {
   color: $color-error;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 120%;
 }
