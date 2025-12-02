@@ -569,7 +569,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   white-space: pre-line;
   text-align: center;
   transition: opacity 0.2s, transform 0.2s;
-  aria-live: assertive;
   opacity: 1;
   animation: fadeInUp 0.25s ease;
 }
