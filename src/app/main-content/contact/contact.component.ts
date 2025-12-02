@@ -185,9 +185,9 @@ export class ContactComponent implements AfterViewInit {
     this.sendError = '';
 
     this.contactMailService.sendMail({
-      name: this.contactName,
-      email: this.contactMail,
-      message: this.contactMessage,
+      name: this.contactName.trim(),
+      email: this.contactMail.trim(),
+      message: this.contactMessage.trim(),
       website: ''
     }).subscribe({
       next: (resp) => {
