@@ -86,7 +86,8 @@
 
 .footerIconContainer a{
   display:inline-flex; align-items:center; justify-content:center;
-  width: 36px; height: 36px;
+  width: 44px; 
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,.2);
   transition: background .2s ease, border-color .2s ease, transform .12s ease;
@@ -103,8 +104,8 @@
   }
   
   img{ 
-    width: 18px; 
-    height: 18px; 
+    width: 24px; 
+    height: 24px; 
     display:block; 
   }
 }
