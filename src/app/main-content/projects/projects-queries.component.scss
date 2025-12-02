@@ -2,7 +2,7 @@
 
 @media (max-width: 1200px) {
   .portfolio_purple-shadow {
-    bottom: -14px;
+    top: 240px;
   }
 
   .portfolio_content-container {
@@ -122,10 +122,6 @@
     justify-content: flex-end;
   }
 
-  .portfolio_purple-shadow {
-    bottom: 75px;
-  }
-
   .portfolio_card-links-container,
   .portfolio_card-rechts-container {
     width: 620px;
@@ -145,11 +141,6 @@
       padding-right: 0px;
   }
 
-  .portfolio_purple-shadow {
-    bottom: 190px;
-    width: 261px;
-    height: 446px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -177,7 +168,7 @@
   }
   
   .portfolio_purple-shadow {
-    bottom: 334px;
+    left: -200px;
   }
 }
 
@@ -195,8 +186,7 @@
   }
 
   .portfolio_purple-shadow {
-    width: 213px;
-    height: 388px;
+    left: -250px;
   }
 
   .portfolio_card-rechts-container,
@@ -228,8 +218,7 @@
   }
 
   .portfolio_purple-shadow {
-    scale: 0.8;
-    left: -24px;
+    left: -300px;
   }
 }
 
@@ -250,7 +239,7 @@
   }
 
   .portfolio_purple-shadow {
-    bottom: 267px;
+
   }
 }
 
@@ -261,7 +250,7 @@
 
   .portfolio_purple-shadow {
     left: 0;
-    bottom: 248px;
+    top: 0px;
     width: 390px;
     height: 515px;
     background: url(../../../assets/img/projects/projects_purple_shadow_mobile.png);

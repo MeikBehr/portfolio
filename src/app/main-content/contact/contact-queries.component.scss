@@ -28,13 +28,7 @@
   }
 
   .contact-purple_shadow {
-    top: 575px;
-    left: -118px;
-  }
-
-  .contact-purple_shadow {
-    transform: scale(0.8);
-    top: 600px;
+    top: 694px;
     left: -100px;
   }  
 }
@@ -57,6 +51,11 @@
     width: 225px;
     font-size: 18px;
   }
+
+  .contact-purple_shadow {
+    top: 794px;
+    left: -100px;
+  }    
 }
 
 
@@ -80,13 +79,17 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  .contact-purple_shadow {
+    top: 832px;
+    left: -77px;
+  } 
 }
 
 @media (max-width: 390px) {
   .contact-purple_shadow {
-    transform: scale(0.6);
-    top: 600px;
-    left: -180px;
+    top: 910px;
+    left: -46px;
   }
 }
 

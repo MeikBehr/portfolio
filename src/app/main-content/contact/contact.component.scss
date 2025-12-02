@@ -10,7 +10,6 @@
     margin-right: auto;
     margin-top: 120px;
     min-height: 300px;
-    overflow: hidden;
 }
 
 .contact-header {
@@ -241,12 +240,12 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   position: absolute;
   content: none;
   left: 0;
-  top: 284px;
-  width: 678px;
-  height: 805px;
+  top: 480px;
+  width: 50%;
+  height: 50%;
   background: url(/assets/img/contact/contact_purple_shadow.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   pointer-events: none;
   z-index: 0;
 }
