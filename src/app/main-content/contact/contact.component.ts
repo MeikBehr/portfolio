@@ -123,12 +123,18 @@ export class ContactComponent implements AfterViewInit {
    * Validates the email input field and sets appropriate error messages.
    */
   validateMail(): void {
-    if (!this.contactMail?.trim()) {
+    const value = this.contactMail?.trim();
+
+    if (!value) {
       this.setMailError('contact.contact_error_mail_required');
       return;
     }
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    this.setValidationResult('mail', pattern.test(this.contactMail.trim()), 'contact.contact_error_mail_pattern');
+    const pattern = /^[^\s@]+@[^\s@.]+\.[a-zA-Z]{2,}$/;
+    this.setValidationResult(
+      'mail',
+      pattern.test(value),
+      'contact.contact_error_mail_pattern'
+    );
   }
 
   /**
