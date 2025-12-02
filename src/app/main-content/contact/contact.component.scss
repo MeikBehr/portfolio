@@ -291,10 +291,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   }
 }
 
-.contact-form_name.ng-invalid.ng-touched {
-  border: 1px solid $color-error;
-}
-
 .contact-form_name.input-error,
 .contact-form_name.input-error:focus {
   border: 1px solid $color-error !important;

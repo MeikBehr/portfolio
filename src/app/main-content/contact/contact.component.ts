@@ -60,6 +60,9 @@ export class ContactComponent implements AfterViewInit {
   private privacyErrorTimeout: any;
   showSuccessOverlay = false;
   showPrivacyModal = false;
+  private nameErrorTimeout: any;
+  private mailErrorTimeout: any;
+  private msgErrorTimeout: any;
 
   /** Animation states */
   titleInView = true;
@@ -111,22 +114,26 @@ export class ContactComponent implements AfterViewInit {
    * Validates the name input field and sets appropriate error messages.
    */
   validateName(): void {
-    if (!this.contactName?.trim()) {
-      this.setNameError('contact.contact_error_name_required');
+    const value = this.contactName?.trim() || '';
+    if (!value) {
+      this.setTemporaryNameError('contact.contact_error_name_required');
       return;
     }
     const pattern = /^[A-Za-zÄÖÜäöüß\s-]{2,30}$/;
-    this.setValidationResult('name', pattern.test(this.contactName.trim()), 'contact.contact_error_name_pattern');
+    this.setValidationResult(
+      'name',
+      pattern.test(value),
+      'contact.contact_error_name_pattern'
+    );
   }
 
   /**
    * Validates the email input field and sets appropriate error messages.
    */
   validateMail(): void {
-    const value = this.contactMail?.trim();
-
+    const value = this.contactMail?.trim() || '';
     if (!value) {
-      this.setMailError('contact.contact_error_mail_required');
+      this.setTemporaryMailError('contact.contact_error_mail_required');
       return;
     }
     const pattern = /^[^\s@]+@[^\s@.]+\.[a-zA-Z]{2,}$/;
@@ -141,12 +148,85 @@ export class ContactComponent implements AfterViewInit {
    * Validates the message input field and sets appropriate error messages.
    */
   validateMessage(): void {
-    if (!this.contactMessage?.trim()) {
-      this.setMsgError('contact.contact_error_msg_required');
+    const value = this.contactMessage?.trim() || '';
+
+    if (!value) {
+      this.setTemporaryMsgError('contact.contact_error_msg_required');
       return;
     }
+
     const pattern = /^[A-Za-zÄÖÜäöüß0-9\s.,;:!?@()'"-]{5,1000}$/u;
-    this.setValidationResult('msg', pattern.test(this.contactMessage.trim()), 'contact.contact_error_msg_pattern');
+    this.setValidationResult(
+      'msg',
+      pattern.test(value),
+      'contact.contact_error_msg_pattern'
+    );
+  }
+
+  /**
+   * Temporarily sets a validation error for the name field.
+   * Marks the field as touched and invalid, then automatically
+   * resets the error state after 3 seconds if the input is still empty.
+   *
+   * @param key Translation key for the validation error message.
+   */
+  private setTemporaryNameError(key: string): void {
+    this.nameErrorKey = key;
+    this.nameValid = false;
+    this.nameTouched = true;
+
+    clearTimeout(this.nameErrorTimeout);
+    this.nameErrorTimeout = setTimeout(() => {
+      if (!this.contactName?.trim()) {
+        this.nameErrorKey = null;
+        this.nameValid = null;
+        this.nameTouched = false;
+      }
+    }, 3000);
+  }
+
+  /**
+   * Temporarily sets a validation error for the email field.
+   * Marks the field as touched and invalid, then automatically
+   * clears the error state after 3 seconds if no input was provided.
+   *
+   * @param key Translation key for the validation error message.
+   */
+  private setTemporaryMailError(key: string): void {
+    this.mailErrorKey = key;
+    this.mailValid = false;
+    this.mailTouched = true;
+
+    clearTimeout(this.mailErrorTimeout);
+    this.mailErrorTimeout = setTimeout(() => {
+      if (!this.contactMail?.trim()) {
+        this.mailErrorKey = null;
+        this.mailValid = null;
+        this.mailTouched = false;
+      }
+    }, 3000);
+  }
+
+  /**
+   * Temporarily sets a validation error for the message field.
+   * Flags the field as touched and invalid and automatically
+   * resets the validation state after 3 seconds if the input remains empty.
+   *
+   * @param key Translation key for the validation error message.
+   */
+  private setTemporaryMsgError(key: string): void {
+    this.msgErrorKey = key;
+    this.msgValid = false;
+    this.msgTouched = true;
+
+    clearTimeout(this.msgErrorTimeout);
+    this.msgErrorTimeout = setTimeout(() => {
+      if (!this.contactMessage?.trim()) {
+        this.msgErrorKey = null;
+        this.msgValid = null;
+        this.msgTouched = false;
+      }
+    }, 3000);
   }
 
   /**
@@ -167,13 +247,6 @@ export class ContactComponent implements AfterViewInit {
     this[errorField] = null as any;
     this[stateKey] = true as any;
   }
-
-  /** Helper for setting name error */
-  private setNameError(key: string): void { this.nameErrorKey = key; this.nameValid = false; }
-  /** Helper for setting mail error */
-  private setMailError(key: string): void { this.mailErrorKey = key; this.mailValid = false; }
-  /** Helper for setting message error */
-  private setMsgError(key: string): void { this.msgErrorKey = key; this.msgValid = false; }
 
   // ---------------------- FORM HANDLING ----------------------
 
