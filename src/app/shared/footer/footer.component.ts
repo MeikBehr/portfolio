@@ -54,15 +54,15 @@ export class FooterComponent {
    * @param targetId Section ID or fragment.
    * @param event Mouse/keyboard event.
    */
-  navigateToSection(targetId: string, event: Event): void {
+  navigateToSection(targetId: string, event: Event, focusId?: string): void {
     event.preventDefault();
     if (this.router.url === '/') {
-      this.scrollTo(targetId);
+      this.scrollTo(targetId, focusId);
       return;
     }
     this.router.navigate(['/']).then(() => {
       setTimeout(() => {
-        this.scrollTo(targetId);
+        this.scrollTo(targetId, focusId);
       }, 50);
     });
   }
@@ -87,12 +87,18 @@ export class FooterComponent {
    * Scrolls smoothly to the given target section by ID.
    * @param targetId Section anchor ID.
    */
-  scrollTo(targetId: string): void {
+  scrollTo(targetId: string, focusId?: string): void {
     setTimeout(() => {
       const el = document.getElementById(targetId);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       }
+      if (focusId) {
+      const focusEl = document.getElementById(focusId) as HTMLElement | null;
+      if (focusEl && typeof focusEl.focus === 'function') {
+        focusEl.focus();
+      }
+    }
     }, 0);
   }
 
