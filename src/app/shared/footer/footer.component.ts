@@ -90,15 +90,22 @@ export class FooterComponent {
   scrollTo(targetId: string, focusId?: string): void {
     setTimeout(() => {
       const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (!el) return;
+
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
       if (focusId) {
-      const focusEl = document.getElementById(focusId) as HTMLElement | null;
-      if (focusEl && typeof focusEl.focus === 'function') {
-        focusEl.focus();
+        setTimeout(() => {
+          const focusEl = document.getElementById(focusId) as HTMLElement | null;
+          if (focusEl && typeof focusEl.focus === 'function') {
+            focusEl.focus({ preventScroll: true });
+          }
+        }, 400);
       }
-    }
+
     }, 0);
   }
 
