@@ -271,7 +271,7 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 .contact-form-group {
     width: 100%;
     transform: rotateX(60deg) scale(0.96) translateX(150px);
-    opacity: 0;    
+    opacity: 0;
 }
 
 .contact-form-group.is-inview {
@@ -325,10 +325,26 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
 .contact-form__feedback {
   color: $color-error;
   font-size: 16px;
-  margin-top: 4px;
+  margin-top: 0;
   display: flex;
   align-items: center;
   gap: 6px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    margin-top 0.2s ease;
+}
+
+.contact-form__feedback.is-visible {
+  max-height: 80px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 4px;
 }
 
 .input-icon-wrapper,

@@ -40,9 +40,14 @@
                         <span class="success-icon-inside"
                             *ngIf="nameValid === true">&#10003;</span>
                     </div>
-                    <div class="contact-form__feedback" *ngIf="nameValid === false && nameErrorKey">
-                        {{ nameErrorKey | translate }}
-                    </div>
+                    <div 
+                        class="contact-form__feedback"
+                        [class.is-visible]="nameValid === false && nameErrorKey"
+                        >
+                        <ng-container *ngIf="nameErrorKey">
+                            {{ nameErrorKey | translate }}
+                        </ng-container>
+                    </div>                    
                 </div>
 
                 <div class="contact-form-group" [ngClass]="{ 'is-inview': formInView[1] }" #form2>
@@ -66,8 +71,13 @@
                         <span class="success-icon-inside"
                         *ngIf="mailValid === true">&#10003;</span>
                     </div>
-                    <div class="contact-form__feedback" *ngIf="mailValid === false && mailErrorKey" role="alert">
-                        {{ mailErrorKey | translate }}
+                    <div 
+                        class="contact-form__feedback"
+                        [class.is-visible]="mailValid === false && mailErrorKey"
+                        >
+                        <ng-container *ngIf="mailErrorKey">
+                            {{ mailErrorKey | translate }}
+                        </ng-container>
                     </div>
                 </div>
 
@@ -108,9 +118,15 @@
                         </div>
 
                     </div>
-                    <div class="contact-form__feedback" *ngIf="msgValid === false && msgErrorKey">
-                        {{ msgErrorKey | translate }}
+                    <div 
+                        class="contact-form__feedback"
+                        [class.is-visible]="msgValid === false && msgErrorKey"
+                        >
+                        <ng-container *ngIf="msgErrorKey">
+                            {{ msgErrorKey | translate }}
+                        </ng-container>
                     </div>
+
                 </div>
                 
                 <div class="contact-form-group" 
