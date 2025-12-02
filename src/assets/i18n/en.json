@@ -51,7 +51,7 @@
     "elPolloLoco": {
       "headline": "El Pollo Loco",
       "skills": "JavaScript | HTML | CSS",
-      "variety": "A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale."
+      "variety": "A simple object-oriented jump-and-run game. Guide Pepe through one level, collect coins and salsa bottles, and face the final boss in the last battle."
     },
 
     "pokedex": {
