@@ -73,7 +73,7 @@ This project follows a quality-first approach with a strong focus on real-world 
 * CORS is enabled for local and server deployment
 * Server must support PHP 7.4+ and have `mail()` enabled (on Windows, mail() may require extra setup)
 * For demo/testing: Script returns a success message if the request is valid, even if email delivery fails (no SMTP config)
-* **Not for production!** Use a real email service and add anti-abuse features for any live deployment
+* **Not for production!** Use a real email service and add anti-abuse features for any live deployment. For production deployment on Apache, client-side routing requires a rewrite rule via .htaccess
 
 ## **Testing**
 
