@@ -45,6 +45,9 @@ export class ContactComponent implements AfterViewInit {
   inputFocused = false;
   mailInputFocused = false;
   msgInputFocused = false;
+  nameTouched = false;
+  mailTouched = false;
+  msgTouched = false;
 
   /** Error keys for translation */
   nameErrorKey: string | null = null;
@@ -207,6 +210,9 @@ export class ContactComponent implements AfterViewInit {
         }
       }
     });
+    this.nameTouched = true;
+    this.mailTouched = true;
+    this.msgTouched = true;
   }
 
   /** Displays an error message and auto-hides it after 4 seconds */

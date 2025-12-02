@@ -283,7 +283,6 @@ textarea::-ms-input-placeholder    { @include placeholder-style; }
   border: 1px solid $color-secondary;
   transition: border-color 0.2s ease-in-out;
   &:hover { border: 1px solid $color-primary; }
-  &:focus { border: 1px solid $color-error; }
   &:focus::placeholder {
     color: transparent;
     transition: color 0.2s; 

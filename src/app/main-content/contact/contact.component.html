@@ -30,11 +30,10 @@
                             required
                             [(ngModel)]="contactName"
                             [ngClass]="{
-                                'input-error': nameValid === false || (inputFocused && !contactName && contactName !== ''),
+                                'input-error': nameValid === false && nameTouched,
                                 'input-success': nameValid === true
                             }"
-                            (focus)="inputFocused = true"
-                            (blur)="inputFocused = false; validateName()" 
+                            (blur)="nameTouched = true; validateName()"
                         />
                         <span class="error-icon-inside"
                             *ngIf="nameValid === false && nameErrorKey">!</span>
@@ -57,11 +56,10 @@
                             required
                             [(ngModel)]="contactMail"
                             [ngClass]="{
-                                'input-error': mailValid === false || (mailInputFocused && !contactMail),
+                                'input-error': mailValid === false && mailTouched,
                                 'input-success': mailValid === true
                             }"
-                            (focus)="mailInputFocused = true"
-                            (blur)="mailInputFocused = false; validateMail()" 
+                            (blur)="mailTouched = true; validateMail()"
                         />
                         <span class="error-icon-inside"
                         *ngIf="mailValid === false && mailErrorKey">!</span>
@@ -85,11 +83,10 @@
                             required
                             [(ngModel)]="contactMessage"
                             [ngClass]="{
-                                'input-error': msgValid === false || (msgInputFocused && !contactMessage),
+                                'input-error': msgValid === false && msgTouched,
                                 'input-success': msgValid === true
                             }"
-                            (focus)="msgInputFocused = true"
-                            (blur)="msgInputFocused = false; validateMessage()"
+                            (blur)="msgTouched = true; validateMessage()"
                             >
                         </textarea>
 
@@ -102,9 +99,9 @@
 
                         <div 
                             class="counter"
-                            *ngIf="msgInputFocused && contactMessage && contactMessage.length > 0"
+                            *ngIf="contactMessage && contactMessage.length > 0"
                             [ngClass]="{
-                                'warning' : contactMessage && contactMessage.length > 950
+                                'warning': contactMessage.length > 950
                             }"
                         >
                             {{ contactMessage?.length || 0 }} / 1000 {{ 'contact.chars' | translate }}
