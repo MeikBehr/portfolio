@@ -1,5 +1,30 @@
 @use '../../../styles/_variables' as *;
 
+
+@media (max-width: 6000px) {
+  .portfolio {
+    margin-top: 320px;
+  }
+}
+
+@media (max-width: 3500px) {
+  .portfolio {
+    margin-top: 200px;
+  }
+}
+
+@media (max-width: 3000px) {
+  .portfolio {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 2600px) {
+  .portfolio {
+    margin-top: 0px;
+  }
+}
+
 @media (max-width: 1200px) {
   .portfolio_purple-shadow {
     top: 240px;
@@ -236,10 +261,6 @@
   .portfolio_card-links-container > div:last-child,
   .portfolio_card-rechts-container > div:last-child {
     gap: 50px;
-  }
-
-  .portfolio_purple-shadow {
-
   }
 }
 
