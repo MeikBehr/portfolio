@@ -4,7 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PrivacyPolicyComponent } from '../../legal/privacy-policy/privacy-policy.component';
 import { ContactMailService } from './contact-mail.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 /**
  * The ContactComponent handles the logic for the contact form,
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent],
+  imports: [CommonModule, FormsModule, TranslateModule, PrivacyPolicyComponent, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
