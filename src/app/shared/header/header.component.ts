@@ -92,28 +92,27 @@ export class HeaderComponent implements OnDestroy {
    * Scrolls smoothly to the given target section by ID.
    * @param targetId Section anchor ID.
    */
-  scrollTo(targetId: string): void {
-    this.closeMobileMenu();
+scrollTo(targetId: string): void {
+  this.closeMobileMenu();
 
-    setTimeout(() => {
-      const el = document.getElementById(targetId);
-      if (!el) return;
-      const overlay = document.querySelector('.hero-curve-overlay') as HTMLElement;
-      const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
-      const headerOffset = isFirefox ? 400 : 100;
-      const overlayOffset = overlay?.offsetHeight ?? 0;
-      const y =
-        el.getBoundingClientRect().top +
-        window.scrollY -
-        headerOffset -
-        overlayOffset;
+  setTimeout(() => {
+    const el = document.getElementById(targetId);
+    if (!el) return;
 
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-      });
-    }, 0);
-  }
+    const header = document.querySelector('header') as HTMLElement;
+    const headerOffset = header ? header.offsetHeight : 0;
+
+    const y =
+      el.getBoundingClientRect().top + 
+      window.scrollY -
+      headerOffset;
+
+    window.scrollTo({
+      top: Math.max(0, y),
+      behavior: 'smooth'
+    });
+  }, 0);
+}
 
 
 
