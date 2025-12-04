@@ -1,10 +1,15 @@
 @use '../../../styles/_variables' as *;
 
 .legal-notice {
-  margin-top: 168px;
+  margin-top: 200px;
   min-height: 100dvh;
   position: relative;
   width: 100%;
+  max-width: $container-max;
+  display: flex; 
+  flex-direction: column; 
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 .legal-notice_header {
@@ -19,7 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  width: 91%;
 }
 
 .legal-notice_header__headlineContainer {
@@ -81,7 +86,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: $container-max;
     padding: 0 0 100px 0;
 }
 
@@ -161,6 +166,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1620px) {
+  .legal-notice_content {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .legal-notice_content {
+    max-width: 1000px;
+  }
 }
 
 @media (max-width: 1200px) {
