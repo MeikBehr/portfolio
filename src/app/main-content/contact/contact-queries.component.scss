@@ -91,6 +91,14 @@
     top: 910px;
     left: -46px;
   }
+
+  .contact-form-group {
+    min-height: 80px;
+  }
+
+  .contact-form-group-message {
+    min-height: 266px;
+  }
 }
 
 @media (max-width: 380px) {
